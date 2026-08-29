@@ -1,0 +1,11 @@
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+.venv
+node_modules
+web/frontend/node_modules
+.env
+.vscode
+.git
+.gitignore

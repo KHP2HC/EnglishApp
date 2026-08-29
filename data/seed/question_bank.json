@@ -1,0 +1,8 @@
+[
+  {"level":"A1","question":"What is the capital of France?","options":["Paris","London","Berlin","Madrid"],"answer":"Paris"},
+  {"level":"A2","question":"Choose the correct past tense: I ___ to the store yesterday.","options":["go","went","gone","going"],"answer":"went"},
+  {"level":"B1","question":"Which sentence is conditional?","options":["If I had time, I would travel.","I have time, I will travel.","I traveled yesterday.","I travel often."],"answer":"If I had time, I would travel."},
+  {"level":"B2","question":"Choose the most appropriate linking word: She studied hard, ___ she passed the exam.","options":["despite","however","therefore","although"],"answer":"therefore"},
+  {"level":"C1","question":"Select the sentence with a subjunctive mood.","options":["It is important that he be present.","He is present now.","He was present yesterday.","He will be present tomorrow."],"answer":"It is important that he be present."},
+  {"level":"C2","question":"Choose the most nuanced synonym of 'obfuscate'.","options":["clarify","confuse","simplify","explain"],"answer":"confuse"}
+]

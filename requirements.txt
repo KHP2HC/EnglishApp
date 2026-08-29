@@ -1,0 +1,16 @@
+customtkinter==5.2.2
+SQLAlchemy==2.0.25
+apscheduler==3.10.4
+matplotlib==3.8.2
+edge-tts==6.1.9
+openai-whisper==20231117
+requests==2.31.0
+beautifulsoup4==4.12.2
+cryptography==42.0.5
+pydantic==2.5.3
+python-dotenv==1.0.0
+wordfreq==3.1.1
+eng_to_ipa==0.0.2
+wordhoard==1.5.5
+fastapi>=0.95.2
+uvicorn[standard]>=0.22.0
