@@ -8,6 +8,9 @@
 
 import type { VocabCard, ExamType, CEFRLevel } from './supabase'
 
+// Base path for static assets — works for both dev (/) and GitHub Pages (/EnglishApp/)
+const BASE = import.meta.env.BASE_URL || '/'
+
 // ── Types ────────────────────────────────────────────────────────────
 
 export interface SeedVocabEntry {
@@ -143,7 +146,7 @@ let speakingCache: SpeakingTest[] | null = null
 
 export async function loadVocabData(): Promise<SeedVocabEntry[]> {
   if (vocabCache) return vocabCache
-  const resp = await fetch('/data/vocab.json')
+  const resp = await fetch(`${BASE}data/vocab.json`)
   if (!resp.ok) throw new Error('Failed to load vocab data')
   vocabCache = await resp.json()
   return vocabCache!
@@ -151,7 +154,7 @@ export async function loadVocabData(): Promise<SeedVocabEntry[]> {
 
 export async function loadQuestionBank(): Promise<SeedQuestion[]> {
   if (questionCache) return questionCache
-  const resp = await fetch('/data/question_bank.json')
+  const resp = await fetch(`${BASE}data/question_bank.json`)
   if (!resp.ok) throw new Error('Failed to load question bank')
   questionCache = await resp.json()
   return questionCache!
@@ -159,7 +162,7 @@ export async function loadQuestionBank(): Promise<SeedQuestion[]> {
 
 export async function loadReadingTests(): Promise<ReadingTest[]> {
   if (readingCache) return readingCache
-  const resp = await fetch('/data/reading_tests.json')
+  const resp = await fetch(`${BASE}data/reading_tests.json`)
   if (!resp.ok) throw new Error('Failed to load reading tests')
   readingCache = await resp.json()
   return readingCache!
@@ -173,7 +176,7 @@ export async function loadReadingTest(id?: string): Promise<ReadingTest | null> 
 
 export async function loadListeningTests(): Promise<ListeningTest[]> {
   if (listeningCache) return listeningCache
-  const resp = await fetch('/data/listening_tests.json')
+  const resp = await fetch(`${BASE}data/listening_tests.json`)
   if (!resp.ok) throw new Error('Failed to load listening tests')
   listeningCache = await resp.json()
   return listeningCache!
@@ -187,7 +190,7 @@ export async function loadListeningTest(id?: string): Promise<ListeningTest | nu
 
 export async function loadWritingTests(): Promise<WritingTest[]> {
   if (writingCache) return writingCache
-  const resp = await fetch('/data/writing_tests.json')
+  const resp = await fetch(`${BASE}data/writing_tests.json`)
   if (!resp.ok) throw new Error('Failed to load writing tests')
   writingCache = await resp.json()
   return writingCache!
@@ -211,7 +214,7 @@ export async function loadWritingTask(id?: string): Promise<WritingTest | null> 
 
 export async function loadSpeakingTests(): Promise<SpeakingTest[]> {
   if (speakingCache) return speakingCache
-  const resp = await fetch('/data/speaking_tests.json')
+  const resp = await fetch(`${BASE}data/speaking_tests.json`)
   if (!resp.ok) throw new Error('Failed to load speaking tests')
   speakingCache = await resp.json()
   return speakingCache!

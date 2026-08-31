@@ -45,10 +45,11 @@ export function useNotifications() {
   const notify = useCallback(
     (title: string, body: string) => {
       if (permission === 'granted') {
+        const base = import.meta.env.BASE_URL || '/'
         new Notification(title, {
           body,
-          icon: '/icon-192.png',
-          badge: '/favicon.svg',
+          icon: `${base}icon-192.png`,
+          badge: `${base}favicon.svg`,
         })
       }
     },
