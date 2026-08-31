@@ -14,9 +14,11 @@ class Sidebar(ctk.CTkFrame):
             ("👂", "listening"),
             ("✍️", "writing"),
             ("🗣️", "speaking"),
+            ("�", "grammar"),
+            ("🧪", "mock"),
             ("📊", "progress"),
             ("🗓️", "planner"),
-            ("🧪", "placement"),
+            ("🎯", "placement"),
             ("⚙️", "settings")
         ]
         self.buttons = []

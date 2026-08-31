@@ -6,15 +6,23 @@ services:
       dockerfile: Dockerfile
     ports:
       - '8000:8000'
+    environment:
+      - API_PORT=8000
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:4173
     volumes:
       - .:/app:cached
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/api/v1/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   frontend:
     build:
-      context: ./web/frontend
+      context: ./web
       dockerfile: Dockerfile
       args:
-        VITE_API_BASE: http://backend:8000
+        VITE_API_BASE: http://localhost:8000
     ports:
       - '4173:80'
     depends_on:

@@ -19,3 +19,20 @@ This file tracks which issues have been mapped to an implementation/fix and whic
 
 ## Unmapped Issues
 - [x] Final regression verification suite
+
+## Phase 3-5 Implementation (New)
+- [x] Grammar lesson viewer — built-in lessons (Present Simple, Past Simple, Conditionals, Passive Voice, Articles, Present Continuous) with MCQ exercises and error-journal logging.
+- [x] Mock test mode — full exam simulation for TOEIC (200Q/120min), IELTS (4 sections), TOEFL, and VSTEP with timer, auto-submit, per-section results, band estimate, and improvement tips.
+- [x] Dashboard full spec — streak banner with 7-day heatmap, daily goal ring, quick stats (words learned, band, XP), today's plan cards, and word of the day from DB.
+- [x] Progress screen with charts — matplotlib bar chart (time per skill), radar chart (skill balance), line chart (band over time), error journal tab with weak-area review.
+- [x] System tray integration — minimize to tray, daily streak reminder, word-of-the-day notification, APScheduler-based.
+- [x] Settings with API key management — encrypted Claude API key storage, language selector (EN/VI), theme, profile editing.
+- [x] i18n hook — bilingual labels (English / Vietnamese) for all UI elements.
+- [x] Word card component — flip-able SRS flashcard with front/back display.
+- [x] Streak banner component — fire emoji + streak count + 7-day mini-heatmap.
+- [x] GitHub Actions CI/CD — test on PR, build EXE on tag, deploy docs on main.
+- [x] MkDocs Material documentation — full site with installation, features, architecture, database schema, and contributing guides.
+- [x] Pre-commit hooks — Ruff linting and formatting.
+- [x] CHANGELOG.md — semantic versioning changelog.
+- [x] Assets directory structure — fonts, icons, audio placeholders.
+- [x] AI tutor updated — uses claude-sonnet-4-6 model, passes user's exam type.

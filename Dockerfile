@@ -10,5 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ENV PYTHONUNBUFFERED=1
+ENV API_PORT=8000
+ENV CORS_ORIGINS=http://localhost:5173,http://localhost:4173
 EXPOSE 8000
-CMD ["uvicorn", "web.api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]

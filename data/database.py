@@ -6,8 +6,8 @@ from .models import Base
 DB_FILE = os.path.join(os.path.dirname(__file__), '..', 'data.db')
 DB_URI = f"sqlite:///{DB_FILE}"
 
-engine = create_engine(DB_URI, echo=False, future=True)
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+engine = create_engine(DB_URI, echo=False, future=True, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False, expire_on_commit=False)
 
 
 def migrate_schema():

@@ -38,7 +38,10 @@ class AITutor:
         return base64.urlsafe_b64encode(digest)
 
     def get_writing_feedback(self, essay, task_type, exam_type):
-        prompt = f"""You are an expert {exam_type} examiner. Evaluate this {task_type} response.
+        exam_label = exam_type
+        if hasattr(exam_type, 'name'):
+            exam_label = exam_type.name
+        prompt = f"""You are an expert {exam_label} examiner. Evaluate this {task_type} response.
         Provide: (1) Band score estimate, (2) Task Achievement, (3) Coherence,
         (4) Lexical Resource with word upgrades, (5) Grammar Range with 3 corrections,
         (6) One complete rewrite of the weakest paragraph.
@@ -51,8 +54,8 @@ class AITutor:
                 "anthropic-version": "2023-06-01",
             },
             json={
-                "model": "claude-3-5-sonnet-20241022",
-                "max_tokens": 800,
+                "model": "claude-sonnet-4-6",
+                "max_tokens": 1024,
                 "messages": [{"role": "user", "content": prompt}],
             },
             timeout=60,

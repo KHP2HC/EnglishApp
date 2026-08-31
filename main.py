@@ -59,6 +59,8 @@ def main():
     theme_mode = getattr(user, 'theme_mode', None) or 'dark'
     app.set_theme_mode(theme_mode)
     app.navigate(start_page)
+    # Set up system tray integration (optional, fails gracefully)
+    app.setup_tray(user)
     if user is None:
         app.notify('Complete onboarding to personalize your study plan.', duration=5000)
     app.mainloop()

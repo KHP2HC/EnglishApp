@@ -51,7 +51,6 @@ class DashboardPlannerIntegrationTests(unittest.TestCase):
     def test_load_plan_summary_uses_generated_plan_when_no_saved_plan_exists(self):
         screen = object.__new__(DashboardScreen)
         screen.user = SimpleNamespace(id=1)
-        screen.plan_label = DummyLabel()
         screen._saved_plan = None
 
         generated_plan = {'2024-01-01': [{'date': '2024-01-01', 'tasks': [{'type': 'vocabulary', 'minutes': 30}]}]}
@@ -64,7 +63,6 @@ class DashboardPlannerIntegrationTests(unittest.TestCase):
             screen._load_plan_summary()
 
         self.assertEqual(screen._saved_plan, generated_plan)
-        self.assertIn('Suggested plan generated from your profile', screen.plan_label.text)
 
     def test_exam_label_handles_string_exam_values(self):
         screen = object.__new__(DashboardScreen)

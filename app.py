@@ -1,11 +1,13 @@
 import customtkinter as ctk
 from ui.screens.dashboard import DashboardScreen
 from ui.screens.vocabulary import VocabularyScreen
+from ui.screens.grammar import GrammarScreen
 from ui.screens.progress import ProgressScreen
 from ui.screens.reading import ReadingScreen
 from ui.screens.listening import ListeningScreen
 from ui.screens.writing import WritingScreen
 from ui.screens.speaking import SpeakingScreen
+from ui.screens.mock_test import MockTestScreen
 from ui.screens.planner import PlannerScreen
 from ui.screens.settings import SettingsScreen
 from ui.screens.adaptive_test import AdaptiveTestScreen
@@ -17,9 +19,12 @@ class App(ctk.CTk):
         super().__init__()
         self.title("EnglishCoach Pro")
         self.geometry("1200x700")
+        self.minsize(1280, 720)
         self.theme_mode = "dark"
         ctk.set_appearance_mode(self.theme_mode)
         ctk.set_default_color_theme("blue")
+        self.tray = None
+        self.user = None
         
         # main container
         self.grid_rowconfigure(0, weight=1)
@@ -64,6 +69,8 @@ class App(ctk.CTk):
             screen = DashboardScreen(self.main_frame, self)
         elif page == "vocabulary":
             screen = VocabularyScreen(self.main_frame, self)
+        elif page == "grammar":
+            screen = GrammarScreen(self.main_frame, self)
         elif page == "progress":
             screen = ProgressScreen(self.main_frame, self)
         elif page == "reading":
@@ -74,6 +81,8 @@ class App(ctk.CTk):
             screen = WritingScreen(self.main_frame, self)
         elif page == "speaking":
             screen = SpeakingScreen(self.main_frame, self)
+        elif page == "mock":
+            screen = MockTestScreen(self.main_frame, self)
         elif page == "placement":
             screen = AdaptiveTestScreen(self.main_frame, self)
         elif page == "planner":
@@ -103,3 +112,28 @@ class App(ctk.CTk):
         except Exception:
             pass
         self._notification_job = self.after(duration, lambda: toast.destroy())
+
+    def setup_tray(self, user=None):
+        """Initialize system tray integration."""
+        try:
+            from core.tray import TrayIntegration
+            self.tray = TrayIntegration(self, user)
+            return self.tray.setup()
+        except Exception:
+            return False
+
+    def minimize_to_tray(self):
+        """Hide window to system tray."""
+        if self.tray:
+            self.tray.minimize_to_tray()
+        else:
+            self.withdraw()
+
+    def destroy(self):
+        """Override to clean up tray on exit."""
+        if self.tray:
+            try:
+                self.tray.shutdown()
+            except Exception:
+                pass
+        super().destroy()

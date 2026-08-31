@@ -1,3 +1,5 @@
+import os
+
 import customtkinter as ctk
 from datetime import datetime
 from data.models import SessionType
@@ -11,9 +13,15 @@ class WritingScreen(ctk.CTkFrame):
         super().__init__(master)
         self.app = app
         self.session_finalized = False
-        self.tutor = AITutor(config_path='config/ai_key.bin') if AITutor.is_configured('config/ai_key.bin') else None
+        config_path = self._get_config_path()
+        self.tutor = AITutor(config_path) if AITutor.is_configured(config_path) else None
         self._session_id = None
         self.build_ui()
+
+    def _get_config_path(self):
+        """Return the path for the encrypted API key file."""
+        app_data = os.path.join(os.environ.get("APPDATA", os.getcwd()), "EnglishCoachPro")
+        return os.path.join(app_data, "ai_key.bin")
 
     def build_ui(self):
         ctk.CTkLabel(self, text="Writing Practice", font=("Arial", 20)).pack(pady=10)
@@ -47,7 +55,8 @@ class WritingScreen(ctk.CTkFrame):
             return
 
         try:
-            response_text = self.tutor.get_writing_feedback(essay, task_type='essay', exam_type='IELTS')
+            exam_type = getattr(getattr(self.app, 'user', None), 'target_exam', 'IELTS')
+            response_text = self.tutor.get_writing_feedback(essay, task_type='essay', exam_type=exam_type)
             if isinstance(response_text, bytes):
                 response_text = response_text.decode('utf-8', errors='ignore')
             self.feedback_label.configure(text=response_text)

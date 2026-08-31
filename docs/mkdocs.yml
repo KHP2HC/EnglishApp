@@ -1,0 +1,56 @@
+site_name: EnglishCoach Pro
+site_description: AI-Powered English Exam Preparation Desktop App
+site_url: https://englishcoachpro.github.io/
+repo_url: https://github.com/englishcoachpro/EnglishCoachPro
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - First Run: getting-started/first-run.md
+  - Features:
+      - Dashboard: features/dashboard.md
+      - Vocabulary (SRS): features/vocabulary.md
+      - Grammar: features/grammar.md
+      - Reading: features/reading.md
+      - Listening: features/listening.md
+      - Writing: features/writing.md
+      - Speaking: features/speaking.md
+      - Mock Tests: features/mock-test.md
+      - Progress: features/progress.md
+      - Study Planner: features/planner.md
+  - Development:
+      - Architecture: development/architecture.md
+      - Database Schema: development/database.md
+      - Contributing: development/contributing.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
