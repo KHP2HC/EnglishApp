@@ -27,10 +27,21 @@ export function useDailyActivity(userId: string | undefined, days = 365) {
         return activity
       }
 
-      const data = await progressApi.getActivity(days)
-      return data.activity
+      try {
+        const data = await progressApi.getActivity(days)
+        return data.activity
+      } catch {
+        // API unreachable — return empty activity
+        const activity: Record<string, number> = {}
+        for (let i = 0; i < days; i++) {
+          const d = subDays(new Date(), i)
+          activity[format(d, 'yyyy-MM-dd')] = 0
+        }
+        return activity
+      }
     },
     enabled: !!userId,
+    retry: false,
   })
 }
 
@@ -43,9 +54,14 @@ export function useProgressStats(userId: string | undefined) {
       if (!userId) return null
       if (!isApiConfigured()) return null
 
-      return await progressApi.getStats()
+      try {
+        return await progressApi.getStats()
+      } catch {
+        return null
+      }
     },
     enabled: !!userId,
+    retry: false,
   })
 }
 
@@ -57,7 +73,11 @@ export function useErrorJournal(userId: string | undefined) {
     queryFn: async () => {
       if (!userId) return []
       if (!isApiConfigured()) return []
-      return await errorsApi.list(200)
+      try {
+        return await errorsApi.list(200)
+      } catch {
+        return []
+      }
     },
     enabled: !!userId,
   })

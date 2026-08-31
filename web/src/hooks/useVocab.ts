@@ -52,18 +52,24 @@ export function useDueCards(userId: string | undefined) {
         return await loadFromSeed()
       }
 
-      const data = await reviewsApi.getDue()
+      try {
+        const data = await reviewsApi.getDue()
 
-      // Cache for offline use
-      const allCards = [
-        ...data.review_cards.map((p) => p.card).filter(Boolean),
-        ...data.new_cards,
-      ] as VocabCard[]
-      await cacheSessionCards(allCards)
+        // Cache for offline use
+        const allCards = [
+          ...data.review_cards.map((p) => p.card).filter(Boolean),
+          ...data.new_cards,
+        ] as VocabCard[]
+        await cacheSessionCards(allCards)
 
-      return data
+        return data
+      } catch {
+        // API unreachable (CORS, network, server down) — fall back to seed data
+        return await loadFromSeed()
+      }
     },
     staleTime: 5 * 60 * 1000,
+    retry: false,
   })
 }
 
@@ -131,15 +137,18 @@ export function useRateCard(userId: string | undefined) {
       )
 
       if (isApiConfigured()) {
-        return await reviewsApi.rate(progress.card_id, quality)
-      } else {
-        // Local mode: save to localStorage
-        const cardId = progress.card_id
-        const local = getLocalProgress()
-        local[cardId] = { ...updated, card_id: cardId }
-        saveLocalProgress(local)
-        return { ...progress, ...updated }
+        try {
+          return await reviewsApi.rate(progress.card_id, quality)
+        } catch {
+          // API unreachable — fall back to local
+        }
       }
+      // Local mode: save to localStorage
+      const cardId = progress.card_id
+      const local = getLocalProgress()
+      local[cardId] = { ...updated, card_id: cardId }
+      saveLocalProgress(local)
+      return { ...progress, ...updated }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['vocab', 'due'] })
@@ -155,24 +164,27 @@ export function useStartCard(userId: string | undefined) {
 
   return useMutation({
     mutationFn: async (cardId: string) => {
-      if (!isApiConfigured()) {
-        // Local mode: create progress entry in localStorage
-        const local = getLocalProgress()
-        local[cardId] = {
-          card_id: cardId,
-          interval_days: 1,
-          easiness: 2.5,
-          repetitions: 0,
-          next_review: new Date().toISOString().split('T')[0],
-          last_quality: null,
-          times_seen: 0,
-          times_correct: 0,
+      if (isApiConfigured()) {
+        try {
+          return await reviewsApi.start(cardId)
+        } catch {
+          // API unreachable — fall back to local
         }
-        saveLocalProgress(local)
-        return local[cardId]
       }
-
-      return await reviewsApi.start(cardId)
+      // Local mode: create progress entry in localStorage
+      const local = getLocalProgress()
+      local[cardId] = {
+        card_id: cardId,
+        interval_days: 1,
+        easiness: 2.5,
+        repetitions: 0,
+        next_review: new Date().toISOString().split('T')[0],
+        last_quality: null,
+        times_seen: 0,
+        times_correct: 0,
+      }
+      saveLocalProgress(local)
+      return local[cardId]
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['vocab', 'due'] })

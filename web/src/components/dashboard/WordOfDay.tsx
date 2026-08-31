@@ -17,14 +17,18 @@ export function WordOfDay() {
     queryKey: ['word-of-day'],
     queryFn: async (): Promise<VocabCard | null> => {
       if (isApiConfigured()) {
-        // Fetch a random page of vocabulary
-        const data = await vocabularyApi.list({ page: 1, page_size: 1 })
-        if (data.items.length > 0) {
-          // Pick a random page
-          const randomPage = Math.floor(Math.random() * Math.max(1, data.total)) + 1
-          const randomData = await vocabularyApi.list({ page: randomPage, page_size: 1 })
-          if (randomData.items.length > 0) return randomData.items[0]
-          return data.items[0]
+        try {
+          // Fetch a random page of vocabulary
+          const data = await vocabularyApi.list({ page: 1, page_size: 1 })
+          if (data.items.length > 0) {
+            // Pick a random page
+            const randomPage = Math.floor(Math.random() * Math.max(1, data.total)) + 1
+            const randomData = await vocabularyApi.list({ page: randomPage, page_size: 1 })
+            if (randomData.items.length > 0) return randomData.items[0]
+            return data.items[0]
+          }
+        } catch {
+          // API unreachable — fall through to seed data
         }
       }
       // Fallback: load from local seed data

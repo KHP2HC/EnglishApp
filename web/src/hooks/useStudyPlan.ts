@@ -17,9 +17,15 @@ export function useStudyPlan(userId: string | undefined) {
     queryFn: async () => {
       if (!userId) return null
       if (!isApiConfigured()) return null
-      return await plannerApi.get()
+      try {
+        return await plannerApi.get()
+      } catch {
+        // API unreachable (CORS, network, server down) — fall back to no plan
+        return null
+      }
     },
     enabled: !!userId,
+    retry: false,
   })
 }
 
@@ -51,7 +57,28 @@ export function useGeneratePlan() {
         } as StudyPlan
       }
 
-      return await plannerApi.generate()
+      try {
+        return await plannerApi.generate()
+      } catch {
+        // API unreachable — fall back to local plan generation
+        const { generateWeeklyPlan } = await import('@/lib/planner')
+        type UserProfile = import('@/lib/planner').UserProfile
+        const userProfile: UserProfile = {
+          target_exam: profile.target_exam || 'IELTS',
+          target_score: profile.target_score || 6.5,
+          current_band: profile.current_band || 3,
+          skill_bands: profile.skill_bands || {},
+          exam_date: profile.exam_date || new Date(Date.now() + 90 * 86400000).toISOString(),
+          free_time: profile.free_time || { mon: 60, tue: 60, wed: 60, thu: 60, fri: 60, sat: 120, sun: 120 },
+        }
+        const plan = generateWeeklyPlan(userProfile)
+        return {
+          id: '',
+          user_id: profile.id,
+          week_start: new Date().toISOString().split('T')[0],
+          daily_tasks: plan,
+        } as StudyPlan
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['study-plan'] })
