@@ -7,8 +7,14 @@ services:
     ports:
       - '8000:8000'
     environment:
+      - ENVIRONMENT=development
       - API_PORT=8000
       - CORS_ORIGINS=http://localhost:5173,http://localhost:4173
+      # Provide these via .env or docker secrets in production:
+      # - JWT_SECRET=
+      # - SUPABASE_URL=
+      # - SUPABASE_ANON_KEY=
+      # - SUPABASE_SERVICE_ROLE_KEY=
     volumes:
       - .:/app:cached
     healthcheck:
