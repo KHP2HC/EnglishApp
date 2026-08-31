@@ -195,29 +195,24 @@ Output is in `web/dist/`, deployable to Cloudflare Pages, Netlify, or Vercel.
 
 See [docs/web-deployment.md](docs/web-deployment.md) for full deployment instructions.
 
-- **Frontend**: Cloudflare Pages, Vercel, or Netlify (static hosting)
-- **Backend**: Render, Railway, Fly.io, or any Docker host
+- **Frontend**: GitHub Pages (automatic via GitHub Actions) or Cloudflare Pages
+- **Backend**: Render (free tier) or any Docker host
 - **Database**: Supabase managed PostgreSQL
 - **Auth**: Supabase Auth
 
 ### Quick Deploy
 
-```bash
-# Backend (Docker)
-docker build -t englishcoach-api .
-docker run -p 8000:8000 \
-  -e JWT_SECRET=your-secret \
-  -e SUPABASE_URL=your-url \
-  -e SUPABASE_ANON_KEY=your-key \
-  -e SUPABASE_SERVICE_ROLE_KEY=your-key \
-  -e CORS_ORIGINS=https://your-frontend.pages.dev \
-  -e ENVIRONMENT=production \
-  englishcoach-api
+**Frontend → GitHub Pages** (automatic on push to `main`):
+1. Enable GitHub Pages in repo Settings → Pages → Source: GitHub Actions
+2. Set GitHub Secrets: `VITE_API_BASE_URL`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
+3. Push to `main` — the `deploy-pages.yml` workflow builds and deploys automatically
+4. Frontend URL: `https://khp2hc.github.io/EnglishApp/`
 
-# Frontend
-cd web && npm run build
-# Deploy web/dist to your static host
-```
+**Backend → Render**:
+1. Create a Web Service on Render from this GitHub repo
+2. Use `render.yaml` blueprint
+3. Set environment variables: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `JWT_SECRET`, `CORS_ORIGINS`, `ENVIRONMENT=production`
+4. Health check: `GET /api/v1/health` → 200
 
 ## Documentation
 

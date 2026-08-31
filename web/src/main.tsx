@@ -15,9 +15,12 @@ const queryClient = new QueryClient({
   },
 })
 
+// Derive basename from VITE_BASE_PATH (for GitHub Pages subpath hosting)
+const basename = import.meta.env.BASE_URL || '/'
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>

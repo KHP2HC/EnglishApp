@@ -1,0 +1,41 @@
+# Render Blueprint — EnglishCoach Pro Backend
+# https://render.com/docs/blueprint-spec
+# 
+# MANUAL ACTION REQUIRED:
+# 1. Create a Render account and connect your GitHub repo
+# 2. Create a new Web Service from this blueprint (or use the dashboard)
+# 3. Set the following environment variables in Render dashboard:
+#    - SUPABASE_URL
+#    - SUPABASE_ANON_KEY
+#    - SUPABASE_SERVICE_ROLE_KEY
+#    - JWT_SECRET
+#    - CORS_ORIGINS (your frontend URL, e.g. https://khp2hc.github.io)
+#    - ENVIRONMENT=production
+
+services:
+  - type: web
+    name: englishapp-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_AUDIENCE
+        value: authenticated
+      - key: CORS_ORIGINS
+        sync: false

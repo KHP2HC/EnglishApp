@@ -9,6 +9,7 @@ on:
       - 'core/**'
       - 'requirements.txt'
       - 'Dockerfile'
+      - 'render.yaml'
       - '.github/workflows/deploy-backend.yml'
   workflow_dispatch:
 
@@ -18,20 +19,45 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build and push Docker image
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
         run: |
-          echo "::notice::Backend deployment requires manual configuration."
-          echo "::notice::Build the Docker image:"
-          echo "::notice::  docker build -t englishcoach-api ."
-          echo "::notice::Run with environment variables:"
-          echo "::notice::  docker run -p 8000:8000 \\"
-          echo "::notice::    -e JWT_SECRET=\$JWT_SECRET \\"
-          echo "::notice::    -e SUPABASE_URL=\$SUPABASE_URL \\"
-          echo "::notice::    -e SUPABASE_ANON_KEY=\$SUPABASE_ANON_KEY \\"
-          echo "::notice::    -e SUPABASE_SERVICE_ROLE_KEY=\$SUPABASE_SERVICE_ROLE_KEY \\"
-          echo "::notice::    -e CORS_ORIGINS=\$FRONTEND_URL \\"
-          echo "::notice::    -e ENVIRONMENT=production \\"
-          echo "::notice::    englishcoach-api"
-          echo "::notice::"
-          echo "::notice::Deploy to: Render, Railway, Fly.io, or any Docker host"
-          echo "::notice::Health check: GET /api/v1/health → 200"
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-asyncio httpx
+
+      - name: Run tests
+        env:
+          ENVIRONMENT: testing
+          JWT_SECRET: test-secret
+          SUPABASE_URL: https://test.supabase.co
+          SUPABASE_ANON_KEY: test-anon-key
+          SUPABASE_SERVICE_ROLE_KEY: test-service-key
+        run: python -m pytest tests/ -v --tb=short
+
+      - name: Deploy to Render
+        if: success()
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$RENDER_DEPLOY_HOOK" ]; then
+            echo "::warning::RENDER_DEPLOY_HOOK secret is not set."
+            echo "::notice::To enable automatic backend deployment:"
+            echo "::notice::1. Create a Web Service on Render from this GitHub repo"
+            echo "::notice::2. Use render.yaml blueprint or manual config:"
+            echo "::notice::   Build: pip install -r requirements.txt"
+            echo "::notice::   Start: uvicorn api:app --host 0.0.0.0 --port \$PORT"
+            echo "::notice::3. Set environment variables in Render dashboard:"
+            echo "::notice::   SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY"
+            echo "::notice::   JWT_SECRET, CORS_ORIGINS, ENVIRONMENT=production"
+            echo "::notice::4. Copy the Deploy Hook URL from Render dashboard"
+            echo "::notice::5. Add it as RENDER_DEPLOY_HOOK in GitHub Secrets"
+            echo "::notice::Health check: GET /api/v1/health → 200"
+            exit 0
+          fi
+          curl -X POST "$RENDER_DEPLOY_HOOK"
+          echo "::notice::Deploy hook triggered. Check Render dashboard for build status."

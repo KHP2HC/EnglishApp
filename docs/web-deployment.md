@@ -8,8 +8,8 @@ This document provides exact, step-by-step instructions for deploying EnglishCoa
 
 - A [Supabase](https://supabase.com) account (free tier works)
 - A GitHub account (for CI/CD and source control)
-- A backend host (Render, Railway, Fly.io, or any Docker-compatible host)
-- A frontend host (Cloudflare Pages, Vercel, or Netlify)
+- A Render account (for backend hosting — free tier works)
+- GitHub Pages (for frontend hosting — free, built into GitHub)
 
 ---
 
@@ -142,16 +142,25 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 
 ## Step 7: Deploy FastAPI Backend
 
-### Option A: Render (recommended for free tier)
+### Option A: Render (recommended — free tier)
+
+**AUTOMATED BY CODE:** `render.yaml` blueprint exists in the repo
+
+**MANUAL USER ACTION REQUIRED:**
 
 1. Go to [render.com](https://render.com) and sign up
 2. Create a new **Web Service**
 3. Connect your GitHub repository
-4. Configure:
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `uvicorn api:app --host 0.0.0.0 --port $PORT`
-   - **Environment Variables:** Add all from Step 5
-5. Deploy
+4. Render will detect `render.yaml` — review and apply
+5. Set environment variables (or use the blueprint):
+   - `SUPABASE_URL` = your Supabase URL
+   - `SUPABASE_ANON_KEY` = your Supabase anon key
+   - `SUPABASE_SERVICE_ROLE_KEY` = your Supabase service role key
+   - `JWT_SECRET` = your Supabase JWT secret
+   - `CORS_ORIGINS` = your frontend URL (e.g., `https://khp2hc.github.io`)
+   - `ENVIRONMENT` = `production`
+6. Deploy
+7. Verify: `GET https://your-backend.onrender.com/api/v1/health` → `{"status":"healthy"}`
 
 ### Option B: Railway
 
@@ -175,7 +184,7 @@ fly secrets set JWT_SECRET=your-secret
 fly secrets set SUPABASE_URL=your-url
 fly secrets set SUPABASE_ANON_KEY=your-key
 fly secrets set SUPABASE_SERVICE_ROLE_KEY=your-key
-fly secrets set CORS_ORIGINS=https://your-frontend.pages.dev
+fly secrets set CORS_ORIGINS=https://khp2hc.github.io
 fly secrets set ENVIRONMENT=production
 
 # Deploy
@@ -191,7 +200,7 @@ docker run -p 8000:8000 \
   -e SUPABASE_URL=your-url \
   -e SUPABASE_ANON_KEY=your-key \
   -e SUPABASE_SERVICE_ROLE_KEY=your-key \
-  -e CORS_ORIGINS=https://your-frontend.pages.dev \
+  -e CORS_ORIGINS=https://khp2hc.github.io \
   -e ENVIRONMENT=production \
   englishcoach-api
 ```
@@ -200,7 +209,22 @@ docker run -p 8000:8000 \
 
 ## Step 8: Deploy React Frontend
 
-### Option A: Cloudflare Pages (recommended)
+### Option A: GitHub Pages (recommended — free, automatic)
+
+**AUTOMATED BY CODE:** `deploy-pages.yml` workflow exists in `.github/workflows/`
+
+**MANUAL USER ACTION REQUIRED:**
+
+1. Go to your GitHub repo → Settings → Pages
+2. Set **Source** to **GitHub Actions**
+3. Set GitHub Secrets (repo → Settings → Secrets and variables → Actions):
+   - `VITE_API_BASE_URL` = your backend URL (e.g., `https://englishapp-api.onrender.com`)
+   - `VITE_SUPABASE_URL` = your Supabase project URL
+   - `VITE_SUPABASE_ANON_KEY` = your Supabase anon key
+4. Push to `main` — the workflow builds and deploys automatically
+5. Your frontend will be at: `https://khp2hc.github.io/EnglishApp/`
+
+### Option B: Cloudflare Pages
 
 1. Go to [pages.cloudflare.com](https://pages.cloudflare.com)
 2. Create a new project from your GitHub repo
@@ -213,23 +237,14 @@ docker run -p 8000:8000 \
      - `VITE_SUPABASE_ANON_KEY` = your Supabase anon key
 4. Deploy
 
-### Option B: Vercel
+### Option C: Vercel / Netlify
 
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repo
-3. Set root directory to `web`
-4. Add environment variables
-5. Deploy
-
-### Option C: Netlify
-
-1. Go to [netlify.com](https://netlify.com)
-2. Create a new site from Git
-3. Set base directory to `web`
-4. Build command: `npm run build`
-5. Publish directory: `dist`
-6. Add environment variables
-7. Deploy
+1. Import your GitHub repo
+2. Set root/base directory to `web`
+3. Build command: `npm run build`
+4. Output directory: `dist`
+5. Add environment variables
+6. Deploy
 
 ---
 
@@ -240,7 +255,7 @@ docker run -p 8000:8000 \
 **MANUAL USER ACTION REQUIRED:**
 
 1. Set `CORS_ORIGINS` on the backend to your exact frontend URL
-   - Example: `https://your-app.pages.dev`
+   - GitHub Pages example: `https://khp2hc.github.io`
    - Do NOT use `*` in production
 2. If using a custom domain, update `CORS_ORIGINS` to include it
 
@@ -252,9 +267,10 @@ docker run -p 8000:8000 \
 
 1. In Supabase dashboard → Authentication → URL Configuration
 2. Set **Site URL** to your production frontend URL
+   - GitHub Pages: `https://khp2hc.github.io/EnglishApp/`
 3. Add redirect URLs:
-   - `https://your-app.pages.dev/**`
-   - `https://your-app.pages.dev/auth/callback`
+   - `https://khp2hc.github.io/EnglishApp/**`
+   - `http://localhost:5173/**` (for local development)
 
 ---
 
@@ -262,16 +278,38 @@ docker run -p 8000:8000 \
 
 **AUTOMATED BY CODE:** `GET /api/v1/health` endpoint exists
 
+## Step 12: Configure GitHub Secrets
+
+**MANUAL USER ACTION REQUIRED:**
+
+Go to your GitHub repo → Settings → Secrets and variables → Actions → New repository secret:
+
+| Secret Name | Value | Required For |
+|-------------|-------|-------------|
+| `VITE_API_BASE_URL` | Backend URL (e.g., `https://englishapp-api.onrender.com`) | Frontend deployment |
+| `VITE_SUPABASE_URL` | Supabase project URL | Frontend deployment |
+| `VITE_SUPABASE_ANON_KEY` | Supabase anon key | Frontend deployment |
+| `RENDER_DEPLOY_HOOK` | Render deploy hook URL (optional) | Auto-deploy backend |
+
+⚠️ **Never add `SUPABASE_SERVICE_ROLE_KEY` or `JWT_SECRET` as GitHub Secrets used in frontend builds.**
+These are backend-only and should be set directly in the Render dashboard.
+
+---
+
+## Step 13: Verify Health Endpoint
+
+**AUTOMATED BY CODE:** `GET /api/v1/health` endpoint exists
+
 **MANUAL USER ACTION REQUIRED:**
 
 ```bash
-curl https://your-backend-domain.example/api/v1/health
+curl https://your-backend-url/api/v1/health
 # Should return: {"status":"healthy"}
 ```
 
 ---
 
-## Step 12: Verify Public Website
+## Step 14: End-to-End Smoke Test
 
 **MANUAL USER ACTION REQUIRED:**
 
@@ -282,21 +320,26 @@ curl https://your-backend-domain.example/api/v1/health
 5. Complete onboarding
 6. Verify the dashboard loads
 7. Verify vocabulary loads
-8. Start a study session
-9. Rate a card
-10. Check progress page
+8. Search vocabulary
+9. Start a study session
+10. Rate a card (SRS review)
+11. Check progress page
+12. Open planner
+13. Open error journal
+14. Logout
+15. Login again — verify data persists
 
 ---
 
 ## Rollback Procedure
 
 ### Backend Rollback
-1. In your hosting platform, redeploy the previous version
-2. If database migration caused issues, use Supabase's point-in-time recovery
+1. In Render dashboard, select the previous deployment
+2. Click "Rollback to this deploy"
 
 ### Frontend Rollback
-1. In Cloudflare Pages (or your host), select a previous deployment
-2. Click "Rollback to this deployment"
+1. In GitHub Actions, re-run a previous `deploy-pages.yml` workflow
+2. Or in GitHub Pages settings, select a previous deployment
 
 ### Database Rollback
 1. Use Supabase's database backup/restore feature

@@ -159,9 +159,26 @@ Common issues and solutions for the EnglishCoach Pro web application.
 **Cause:** SPA routing not configured.
 
 **Solutions:**
-1. For Cloudflare Pages: add a `_redirects` file with `/* /index.html 200`
-2. For Nginx: use `try_files $uri $uri/ /index.html;`
-3. For Netlify: create a `public/_redirects` file
+1. GitHub Pages: the `deploy-pages.yml` workflow handles this automatically
+2. For Cloudflare Pages: add a `_redirects` file with `/* /index.html 200`
+3. For Nginx: use `try_files $uri $uri/ /index.html;`
+4. For Netlify: create a `public/_redirects` file
+
+### GitHub Pages shows 404 on refresh
+
+**Cause:** GitHub Pages doesn't handle SPA routing by default.
+
+**Solutions:**
+1. The `deploy-pages.yml` workflow uses `actions/deploy-pages` which handles SPA routing
+2. If issues persist, add a `web/public/404.html` that redirects to `index.html`
+3. The `BrowserRouter` in `main.tsx` uses `basename={import.meta.env.BASE_URL}` to handle the `/EnglishApp/` subpath
+
+### GitHub Pages build fails in Actions
+
+**Solutions:**
+1. Check that GitHub Secrets are set: `VITE_API_BASE_URL`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
+2. Verify the workflow has `permissions: pages: write, id-token: write`
+3. Check that Pages source is set to "GitHub Actions" in repo settings
 
 ### Environment variables not working
 
