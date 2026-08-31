@@ -27,14 +27,6 @@ export function Speaking() {
       .catch(() => setLoading(false))
   }, [])
 
-  if (loading) return <p className="text-gray-400">Loading speaking tests…</p>
-  if (tests.length === 0) return <p className="text-gray-400">No speaking tests available.</p>
-
-  const test = tests[testIdx]
-  const parts = test.parts || []
-  const part = parts[partIdx]
-  const question = part?.questions[questionIdx] || ''
-
   // Timer
   useEffect(() => {
     if (timerActive && secondsLeft > 0) {
@@ -44,7 +36,15 @@ export function Speaking() {
     if (timerActive && secondsLeft === 0) {
       setTimerActive(false)
     }
-  })
+  }, [timerActive, secondsLeft])
+
+  if (loading) return <p className="text-gray-400">Loading speaking tests…</p>
+  if (tests.length === 0) return <p className="text-gray-400">No speaking tests available.</p>
+
+  const test = tests[testIdx]
+  const parts = test.parts || []
+  const part = parts[partIdx]
+  const question = part?.questions[questionIdx] || ''
 
   const fmtTime = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`
 

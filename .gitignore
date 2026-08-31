@@ -78,6 +78,10 @@ htmlcov/
 
 # ── Build artifacts ──────────────────────────────────
 EnglishCoachPro.exe
+*.tsbuildinfo
+web/vite.config.js
+web/vite.config.d.ts
 
 # ── Misc ─────────────────────────────────────────────
 .understand-anything/
+supabase/.temp/

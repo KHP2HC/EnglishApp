@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import { useAuthStore } from '@/stores/auth.store'
 import { useSettingsStore } from '@/stores/settings.store'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -8,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useNotifications } from '@/hooks/useNotifications'
 import { getLevelInfo } from '@/lib/srs'
+import { profileApi } from '@/api/profile'
 
 export function Settings() {
   const { user, signOut, refreshProfile } = useAuthStore()
@@ -22,11 +22,12 @@ export function Settings() {
   const levelInfo = getLevelInfo(user.total_xp || 0)
 
   const save = async () => {
-    await supabase
-      .from('profiles')
-      .update({ name, avatar_emoji: avatar })
-      .eq('id', user.id)
-    await refreshProfile()
+    try {
+      await profileApi.update({ name, avatar_emoji: avatar })
+      await refreshProfile()
+    } catch {
+      // Non-fatal in demo mode
+    }
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
   }

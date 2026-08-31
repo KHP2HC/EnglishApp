@@ -1,11 +1,12 @@
 import { Volume2 } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
-import { supabase, type VocabCard } from '@/lib/supabase'
+import { type VocabCard } from '@/lib/supabase'
 import { loadVocabData } from '@/lib/seed-data'
 import { useSpeech } from '@/hooks/useSpeech'
+import { vocabularyApi } from '@/api/vocabulary'
 
-function isSupabaseConfigured(): boolean {
-  const url = import.meta.env.VITE_SUPABASE_URL
+function isApiConfigured(): boolean {
+  const url = import.meta.env.VITE_API_BASE_URL
   return !!url && !url.includes('placeholder')
 }
 
@@ -15,16 +16,15 @@ export function WordOfDay() {
   const { data: card } = useQuery({
     queryKey: ['word-of-day'],
     queryFn: async (): Promise<VocabCard | null> => {
-      if (isSupabaseConfigured()) {
-        const { count } = await supabase.from('vocab_cards').select('*', { count: 'exact', head: true })
-        if (count && count > 0) {
-          const offset = Math.floor(Math.random() * count)
-          const { data } = await supabase
-            .from('vocab_cards')
-            .select('*')
-            .range(offset, offset)
-            .single()
-          return data as VocabCard
+      if (isApiConfigured()) {
+        // Fetch a random page of vocabulary
+        const data = await vocabularyApi.list({ page: 1, page_size: 1 })
+        if (data.items.length > 0) {
+          // Pick a random page
+          const randomPage = Math.floor(Math.random() * Math.max(1, data.total)) + 1
+          const randomData = await vocabularyApi.list({ page: randomPage, page_size: 1 })
+          if (randomData.items.length > 0) return randomData.items[0]
+          return data.items[0]
         }
       }
       // Fallback: load from local seed data

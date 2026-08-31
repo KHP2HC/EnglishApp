@@ -125,7 +125,9 @@ export function useSpeechRecognition() {
       if (recognitionRef.current) {
         try {
           recognitionRef.current.stop()
-        } catch {}
+        } catch {
+          // Recognition may already be stopped — ignore
+        }
       }
     }
   }, [])

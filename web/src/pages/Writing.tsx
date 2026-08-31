@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '@/lib/supabase'
 import { useAuthStore } from '@/stores/auth.store'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -7,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Loader2, Sparkles, Timer, ChevronDown } from 'lucide-react'
 import { loadWritingTests, type WritingTest, type WritingSubTask } from '@/lib/seed-data'
+import { writingApi } from '@/api/writing'
 
 interface AIFeedback {
   band_estimate?: number
@@ -95,30 +95,16 @@ export function Writing() {
     setFeedback((f) => ({ ...f, [task.id]: null as any }))
 
     try {
-      const { data, error: fnError } = await supabase.functions.invoke('ai-feedback', {
-        body: {
-          exam_type: user?.target_exam || 'IELTS',
-          task_prompt: task.prompt,
-          essay,
-        },
+      const submission = await writingApi.submit({
+        exam_type: user?.target_exam || 'IELTS',
+        task_prompt: task.prompt,
+        user_essay: essay,
       })
 
-      if (fnError) throw fnError
-      const fb = data as AIFeedback
+      const fb = submission.ai_feedback as AIFeedback
       setFeedback((f) => ({ ...f, [task.id]: fb }))
-
-      // Save submission
-      if (user) {
-        await supabase.from('writing_submissions').insert({
-          user_id: user.id,
-          task_prompt: task.prompt,
-          user_essay: essay,
-          ai_feedback: data,
-          band_estimate: fb?.band_estimate || null,
-        })
-      }
     } catch (err: any) {
-      setError(err.message || 'Failed to get feedback. Make sure the AI service is configured.')
+      setError(err.message || 'Failed to get feedback. Make sure the API server is running.')
     } finally {
       setLoading(false)
     }

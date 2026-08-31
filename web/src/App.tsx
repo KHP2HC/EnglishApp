@@ -23,6 +23,11 @@ function isSupabaseConfigured(): boolean {
   return !!url && !url.includes('placeholder')
 }
 
+function isApiConfigured(): boolean {
+  const url = import.meta.env.VITE_API_BASE_URL
+  return !!url && !url.includes('placeholder')
+}
+
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { session, loading } = useAuthStore()
   const location = useLocation()

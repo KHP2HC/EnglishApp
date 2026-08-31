@@ -1,4 +1,4 @@
-import datetime
+from datetime import date, timedelta
 
 class SRSEngine:
     @staticmethod
@@ -28,7 +28,7 @@ class SRSEngine:
         easiness = progress.srs_easiness + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
         progress.srs_easiness = max(1.3, easiness)
         progress.srs_interval = interval
-        progress.next_review_date = datetime.date.today() + datetime.timedelta(days=interval)
+        progress.next_review_date = date.today() + timedelta(days=interval)
         progress.last_quality = quality
         progress.times_seen += 1
         if quality >= 3:

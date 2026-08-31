@@ -52,11 +52,11 @@ export function Dashboard() {
           <GoalRing minutes={todayMinutes} target={todayTarget} />
         </div>
         <div className="grid grid-cols-1 gap-2">
-          <StatCard icon={Brain} label="Words Learned" value={stats?.wordsLearned?.toString() || '0'} />
+          <StatCard icon={Brain} label="Words Learned" value={stats?.words_learned?.toString() || '0'} />
           <StatCard icon={Target} label="Current Band" value={user.current_band?.toString() || '—'} />
         </div>
         <div className="grid grid-cols-1 gap-2">
-          <StatCard icon={Zap} label="XP This Week" value={(stats?.totalXp || 0).toString()} />
+          <StatCard icon={Zap} label="XP This Week" value={(stats?.total_xp || 0).toString()} />
           <StatCard icon={Calendar} label="Days to Exam" value={daysLeft?.toString() || '—'} />
         </div>
       </div>

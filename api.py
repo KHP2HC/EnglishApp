@@ -1,8 +1,6 @@
 """EnglishCoach Pro — FastAPI application.
 
-Phase 1: Security foundation.
-
-This module configures the FastAPI application with:
+Configures the FastAPI application with:
 - Centralized configuration (environment variables)
 - Supabase JWT authentication
 - Role-based authorization (user / admin)
@@ -12,8 +10,8 @@ This module configures the FastAPI application with:
 - Structured logging with request IDs
 - Consistent error handling
 - Input validation via Pydantic
+- Domain routers for all Web API endpoints
 
-Existing endpoints are preserved and kept backward-compatible.
 All new endpoints use /api/v1/ prefix.
 """
 
@@ -24,11 +22,8 @@ import os
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from sqlalchemy.orm import Session
 
-import data.models as models
 from core.config import get_settings
-from core.deps import get_db
 from core.errors import register_exception_handlers
 from core.logging_config import RequestLoggingMiddleware, setup_logging
 from core.rate_limit import RateLimitMiddleware, rate_limit
@@ -42,7 +37,19 @@ from core.schemas import (
 )
 from core.security import AuthenticatedUser, get_current_user, require_admin
 from core.security_headers import SecurityHeadersMiddleware
-from core.srs_engine import SRSEngine
+from core.web_schemas import HealthResponse as WebHealthResponse
+
+# ── Domain routers ─────────────────────────────────────
+from routers import (
+    errors as errors_router,
+    planner as planner_router,
+    profile as profile_router,
+    progress as progress_router,
+    reviews as reviews_router,
+    study_sessions as study_sessions_router,
+    vocabulary as vocabulary_router,
+    writing as writing_router,
+)
 
 # ── Logging (must run before app creation) ─────────────
 setup_logging()
@@ -82,70 +89,26 @@ app.add_middleware(
 # ── Exception handlers ─────────────────────────────────
 register_exception_handlers(app)
 
-# ── Startup ────────────────────────────────────────────
-
-
-@app.on_event("startup")
-def startup_event() -> None:
-    """Initialize database on startup."""
-    from data.database import init_db
-
-    init_db()
-
+# ── Include domain routers ─────────────────────────────
+app.include_router(profile_router.router)
+app.include_router(vocabulary_router.router)
+app.include_router(reviews_router.router)
+app.include_router(study_sessions_router.router)
+app.include_router(progress_router.router)
+app.include_router(planner_router.router)
+app.include_router(errors_router.router)
+app.include_router(writing_router.router)
 
 # ── Health Check ───────────────────────────────────────
-# Liveness check — always returns 200 if the process is alive.
-# Does NOT depend on external services.
 
 
-@app.get("/api/v1/health", response_model=HealthResponse)
-def health_check() -> HealthResponse:
-    """Liveness probe. Returns 200 when the API process is running.
-
-    This endpoint does not check database connectivity or external
-    services, so it will not fail if an optional dependency is down.
-    """
-    return HealthResponse(status="healthy")
+@app.get("/api/v1/health", response_model=WebHealthResponse)
+def health_check() -> WebHealthResponse:
+    """Liveness probe. Returns 200 when the API process is running."""
+    return WebHealthResponse(status="healthy")
 
 
-# ── SRS Vocabulary ─────────────────────────────────────
-
-
-@app.post(
-    "/api/v1/vocab/rate",
-    response_model=MessageResponse,
-    dependencies=[Depends(get_current_user), Depends(rate_limit())],
-)
-def rate_card(
-    rating: SRSRating,
-    db: Session = Depends(get_db),
-    user: AuthenticatedUser = Depends(get_current_user),
-) -> MessageResponse:
-    """Rate a vocabulary card and update its SRS schedule.
-
-    Requires authentication. The card is scoped to the authenticated user.
-    """
-    progress = (
-        db.query(models.UserVocabularyProgress)
-        .filter(
-            models.UserVocabularyProgress.id == rating.card_id,
-        )
-        .first()
-    )
-
-    if not progress:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Card progress not found",
-        )
-
-    updated_progress = SRSEngine.update_card(progress, rating.quality)
-    db.commit()
-    db.refresh(updated_progress)
-    return MessageResponse(message="Card updated successfully")
-
-
-# ── Reading Tests ──────────────────────────────────────
+# ── Reading Tests (public endpoints) ──────────────────
 
 
 @app.get("/api/v1/reading/tests", response_model=list[ReadingTestSummary])
@@ -182,38 +145,6 @@ def grade_reading_test(test_id: str, answers: ReadingAnswers):
 
 
 # ── Legacy endpoints (backward compatibility) ──────────
-# These exist to avoid breaking any existing consumers.
-# They delegate to the v1 implementations.
-
-
-@app.post(
-    "/api/vocab/rate",
-    response_model=MessageResponse,
-    include_in_schema=False,
-)
-def rate_card_legacy(
-    rating: SRSRating,
-    db: Session = Depends(get_db),
-) -> MessageResponse:
-    """Legacy endpoint — delegates to /api/v1/vocab/rate logic.
-
-    Note: This endpoint does not require authentication for backward
-    compatibility. It will be removed in Phase 2.
-    """
-    progress = (
-        db.query(models.UserVocabularyProgress)
-        .filter(models.UserVocabularyProgress.id == rating.card_id)
-        .first()
-    )
-    if not progress:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Card progress not found",
-        )
-    updated_progress = SRSEngine.update_card(progress, rating.quality)
-    db.commit()
-    db.refresh(updated_progress)
-    return MessageResponse(message="Card updated successfully")
 
 
 @app.get("/api/reading/tests", include_in_schema=False)

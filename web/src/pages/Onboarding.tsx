@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { supabase } from '@/lib/supabase'
 import { useAuthStore } from '@/stores/auth.store'
 import type { ExamType, CEFRLevel } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
@@ -10,6 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { Card } from '@/components/ui/card'
 import { daysUntil } from '@/lib/utils'
+import { profileApi } from '@/api/profile'
 
 const EMOJIS = ['🧑', '👩', '👨', '🧑‍🎓', '👩‍🎓', '👨‍🎓', '🧑‍💼', '👩‍💼', '👨‍💼', '🌟', '🔥', '💎', '🎯', '🏆', '🚀', '📚', '🧠', '💡', '✨', '🌈']
 
@@ -63,9 +63,8 @@ export function Onboarding() {
       flatFreeTime[day] = Object.values(freeTime[day]).reduce((s, v) => s + v, 0)
     }
 
-    await supabase
-      .from('profiles')
-      .update({
+    try {
+      await profileApi.update({
         name,
         avatar_emoji: avatar,
         target_exam: exam,
@@ -74,7 +73,9 @@ export function Onboarding() {
         free_time: flatFreeTime,
         onboarded: true,
       })
-      .eq('id', user.id)
+    } catch {
+      // Non-fatal in demo mode
+    }
 
     await refreshProfile()
     navigate(skipPlacement ? '/app' : '/app/placement')

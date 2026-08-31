@@ -1,6 +1,12 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { supabase, type Profile } from '@/lib/supabase'
+import { profileApi } from '@/api/profile'
+
+function isApiConfigured(): boolean {
+  const url = import.meta.env.VITE_API_BASE_URL
+  return !!url && !url.includes('placeholder')
+}
 
 function isSupabaseConfigured(): boolean {
   const url = import.meta.env.VITE_SUPABASE_URL
@@ -59,12 +65,41 @@ export const useAuthStore = create<AuthState>()(
         }
         const session = get().session
         if (!session?.user?.id) return
-        const { data } = await supabase
-          .from('profiles')
-          .select('*')
-          .eq('id', session.user.id)
-          .single()
-        if (data) set({ user: data as Profile })
+
+        // Use API client for profile data — no direct Supabase CRUD
+        if (isApiConfigured()) {
+          try {
+            const profile = await profileApi.get()
+            if (profile) {
+              set({ user: profile as Profile })
+              return
+            }
+          } catch {
+            // API unavailable — fall through to basic session data
+          }
+        }
+
+        // Fallback: use session user data (no direct table access)
+        set({
+          user: {
+            id: session.user.id,
+            email: session.user.email || '',
+            name: session.user.user_metadata?.name || '',
+            avatar_emoji: session.user.user_metadata?.avatar_emoji || '',
+            target_exam: session.user.user_metadata?.target_exam || null,
+            target_score: session.user.user_metadata?.target_score || null,
+            current_band: session.user.user_metadata?.current_band || null,
+            skill_bands: {},
+            exam_date: null,
+            free_time: {},
+            session_time: 'EVENING',
+            streak_days: 0,
+            total_xp: 0,
+            last_active: null,
+            onboarded: false,
+            created_at: new Date().toISOString(),
+          } as unknown as Profile,
+        })
       },
     }),
     {

@@ -14,12 +14,12 @@ export function Progress() {
 
   if (!user) return <p>Loading…</p>
 
-  const radarData = Object.entries(stats?.skillAccuracy || {}).map(([skill, s]) => ({
+  const radarData = Object.entries(stats?.skill_accuracy || {}).map(([skill, s]) => ({
     skill: skill.charAt(0) + skill.slice(1).toLowerCase(),
     score: s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0,
   }))
 
-  const barData = Object.entries(stats?.timeBySkill || {}).map(([skill, mins]) => ({
+  const barData = Object.entries(stats?.time_by_skill || {}).map(([skill, mins]) => ({
     skill: skill.charAt(0) + skill.slice(1).toLowerCase(),
     minutes: mins,
   }))
@@ -37,10 +37,10 @@ export function Progress() {
 
         <TabsContent value="overview" className="space-y-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <StatBox label="Words Learned" value={stats?.wordsLearned || 0} />
-            <StatBox label="Words Mastered" value={stats?.wordsMastered || 0} />
-            <StatBox label="Total XP" value={stats?.totalXp || 0} />
-            <StatBox label="Sessions" value={stats?.totalSessions || 0} />
+            <StatBox label="Words Learned" value={stats?.words_learned || 0} />
+            <StatBox label="Words Mastered" value={stats?.words_mastered || 0} />
+            <StatBox label="Total XP" value={stats?.total_xp || 0} />
+            <StatBox label="Sessions" value={stats?.total_sessions || 0} />
           </div>
 
           <Card>

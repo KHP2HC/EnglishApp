@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase, type SessionType } from '@/lib/supabase'
+import { type SessionType } from '@/lib/supabase'
 import { useAuthStore } from '@/stores/auth.store'
 import { useDueCards, useRateCard, useStartCard } from '@/hooks/useVocab'
 import { FlashCard } from '@/components/vocab/FlashCard'
@@ -9,9 +9,10 @@ import { useSessionStore } from '@/stores/session.store'
 import { calculateXp, type Quality } from '@/lib/srs'
 import { Button } from '@/components/ui/button'
 import { Timer } from 'lucide-react'
+import { sessionsApi } from '@/api/sessions'
 
-function isSupabaseConfigured(): boolean {
-  const url = import.meta.env.VITE_SUPABASE_URL
+function isApiConfigured(): boolean {
+  const url = import.meta.env.VITE_API_BASE_URL
   return !!url && !url.includes('placeholder')
 }
 
@@ -31,8 +32,8 @@ export function Vocabulary() {
 
   // Build queue: review cards first, then new cards
   const queue = [
-    ...(data?.reviewCards?.map((p) => ({ type: 'review' as const, progress: p, card: p.card })) || []),
-    ...(data?.newCards?.map((c) => ({ type: 'new' as const, progress: null, card: c })) || []),
+    ...(data?.review_cards?.map((p: any) => ({ type: 'review' as const, progress: p, card: p.card })) || []),
+    ...(data?.new_cards?.map((c: any) => ({ type: 'new' as const, progress: null, card: c })) || []),
   ]
 
   useEffect(() => {
@@ -48,33 +49,30 @@ export function Vocabulary() {
   const startSession = async () => {
     setSessionActive(true)
     start('VOCABULARY')
-    if (isSupabaseConfigured() && user) {
-      const { data: s } = await supabase
-        .from('study_sessions')
-        .insert({ user_id: user.id, session_type: 'VOCABULARY' as SessionType })
-        .select()
-        .single()
-      setSessionId(s?.id || null)
+    if (isApiConfigured() && user) {
+      try {
+        const s = await sessionsApi.start('VOCABULARY' as SessionType)
+        setSessionId(s?.id || null)
+      } catch {
+        // Non-fatal: session continues without persistence
+      }
     }
   }
 
   const endSession = async () => {
     setSessionActive(false)
     setSessionEnded(true)
-    if (isSupabaseConfigured() && sessionId && user) {
-      await supabase
-        .from('study_sessions')
-        .update({
+    if (isApiConfigured() && sessionId && user) {
+      try {
+        await sessionsApi.update(sessionId, {
           ended_at: new Date().toISOString(),
           xp_earned: xpEarned,
           items_total: itemsTotal,
           items_correct: itemsCorrect,
         })
-        .eq('id', sessionId)
-      await supabase
-        .from('profiles')
-        .update({ total_xp: (user.total_xp || 0) + xpEarned })
-        .eq('id', user.id)
+      } catch {
+        // Non-fatal: session data may be incomplete
+      }
     }
   }
 

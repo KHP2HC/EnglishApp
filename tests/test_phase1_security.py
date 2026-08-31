@@ -126,16 +126,16 @@ class TestAuthentication:
     def test_missing_authorization_header_returns_401(self, client):
         """Endpoint requiring auth must reject requests without Authorization header."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 3},
         )
         assert resp.status_code == 401
 
     def test_malformed_authorization_header_returns_401(self, client):
         """Non-Bearer Authorization headers must be rejected."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 3},
             headers={"Authorization": "Basic abc123"},
         )
         assert resp.status_code == 401
@@ -144,8 +144,8 @@ class TestAuthentication:
         """Tokens signed with the wrong secret must be rejected."""
         bad_token = _make_jwt(secret="wrong-secret")
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 3},
             headers={"Authorization": f"Bearer {bad_token}"},
         )
         assert resp.status_code == 401
@@ -153,27 +153,27 @@ class TestAuthentication:
     def test_expired_jwt_returns_401(self, client, expired_token):
         """Expired tokens must be rejected."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 3},
             headers={"Authorization": f"Bearer {expired_token}"},
         )
         assert resp.status_code == 401
 
     def test_valid_jwt_passes_authentication(self, client, valid_token):
-        """Valid JWTs should pass authentication (may 404 if card doesn't exist)."""
+        """Valid JWTs should pass authentication (may 404/503 if card doesn't exist)."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 99999, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "nonexistent-card", "quality": 3},
             headers={"Authorization": f"Bearer {valid_token}"},
         )
-        # Should NOT be 401 — auth passed, just card not found.
+        # Should NOT be 401 — auth passed, just card not found or DB not configured.
         assert resp.status_code != 401
 
     def test_error_response_does_not_expose_jwt_internals(self, client):
         """Error messages must not contain JWT validation details."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 3},
             headers={"Authorization": "Bearer invalid.token.here"},
         )
         assert resp.status_code == 401
@@ -261,8 +261,8 @@ class TestInputValidation:
     def test_quality_out_of_range_returns_422(self, client, valid_token):
         """SRS quality must be 0-5."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 99},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 99},
             headers={"Authorization": f"Bearer {valid_token}"},
         )
         assert resp.status_code == 422
@@ -270,17 +270,17 @@ class TestInputValidation:
     def test_quality_negative_returns_422(self, client, valid_token):
         """Negative quality values must be rejected."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": -1},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": -1},
             headers={"Authorization": f"Bearer {valid_token}"},
         )
         assert resp.status_code == 422
 
-    def test_card_id_must_be_positive(self, client, valid_token):
-        """Card ID must be >= 1."""
+    def test_missing_card_id_returns_422(self, client, valid_token):
+        """Missing card_id must be rejected."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 0, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"quality": 3},
             headers={"Authorization": f"Bearer {valid_token}"},
         )
         assert resp.status_code == 422
@@ -331,8 +331,8 @@ class TestSecurity:
     def test_error_responses_are_safe(self, client):
         """Error responses must not expose stack traces or internals."""
         resp = client.post(
-            "/api/v1/vocab/rate",
-            json={"card_id": 1, "quality": 3},
+            "/api/v1/reviews/rate",
+            json={"card_id": "card-1", "quality": 3},
             headers={"Authorization": "Bearer invalid.token.here"},
         )
         text = resp.text.lower()

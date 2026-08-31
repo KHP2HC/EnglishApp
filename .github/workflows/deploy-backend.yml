@@ -1,0 +1,37 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api.py'
+      - 'routers/**'
+      - 'core/**'
+      - 'requirements.txt'
+      - 'Dockerfile'
+      - '.github/workflows/deploy-backend.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and push Docker image
+        run: |
+          echo "::notice::Backend deployment requires manual configuration."
+          echo "::notice::Build the Docker image:"
+          echo "::notice::  docker build -t englishcoach-api ."
+          echo "::notice::Run with environment variables:"
+          echo "::notice::  docker run -p 8000:8000 \\"
+          echo "::notice::    -e JWT_SECRET=\$JWT_SECRET \\"
+          echo "::notice::    -e SUPABASE_URL=\$SUPABASE_URL \\"
+          echo "::notice::    -e SUPABASE_ANON_KEY=\$SUPABASE_ANON_KEY \\"
+          echo "::notice::    -e SUPABASE_SERVICE_ROLE_KEY=\$SUPABASE_SERVICE_ROLE_KEY \\"
+          echo "::notice::    -e CORS_ORIGINS=\$FRONTEND_URL \\"
+          echo "::notice::    -e ENVIRONMENT=production \\"
+          echo "::notice::    englishcoach-api"
+          echo "::notice::"
+          echo "::notice::Deploy to: Render, Railway, Fly.io, or any Docker host"
+          echo "::notice::Health check: GET /api/v1/health → 200"

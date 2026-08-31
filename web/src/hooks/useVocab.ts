@@ -1,18 +1,19 @@
 /// <reference types="vite/client" />
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { supabase, type VocabCard, type VocabProgress } from '@/lib/supabase'
+import { reviewsApi, type DueCardsResponse } from '@/api/reviews'
+import type { VocabCard, VocabProgress } from '@/lib/supabase'
 import { sm2Update, type Quality } from '@/lib/srs'
-import { cacheSessionCards, queuePendingUpdate, getOfflineCards, isOnline } from '@/lib/offline'
-import { loadVocabData, seedToVocabCard, formatSynonym, type SeedVocabEntry } from '@/lib/seed-data'
+import { cacheSessionCards } from '@/lib/offline'
+import { loadVocabData, seedToVocabCard, formatSynonym } from '@/lib/seed-data'
 
-// ── Check if Supabase is configured ──────────────────────────────────
+// ── Check if API is configured ──────────────────────────────────
 
-function isSupabaseConfigured(): boolean {
-  const url = import.meta.env.VITE_SUPABASE_URL
+function isApiConfigured(): boolean {
+  const url = import.meta.env.VITE_API_BASE_URL
   return !!url && !url.includes('placeholder')
 }
 
-// ── Local SRS progress (IndexedDB-backed, no Supabase needed) ────────
+// ── Local SRS progress (fallback when API not configured) ────────
 
 const LOCAL_PROGRESS_KEY = 'ecp_vocab_progress'
 
@@ -46,42 +47,21 @@ export function useDueCards(userId: string | undefined) {
   return useQuery({
     queryKey: ['vocab', 'due', userId],
     queryFn: async () => {
-      // If Supabase is not configured, use local seed data
-      if (!isSupabaseConfigured() || !userId) {
+      // If API is not configured, use local seed data
+      if (!isApiConfigured() || !userId) {
         return await loadFromSeed()
       }
 
-      const today = new Date().toISOString().split('T')[0]
-
-      // Get progress rows that are due
-      const { data: progress, error: pErr } = await supabase
-        .from('vocab_progress')
-        .select('*, card:vocab_cards(*)')
-        .eq('user_id', userId)
-        .lte('next_review', today)
-        .limit(50)
-
-      if (pErr) throw pErr
-
-      // Get new cards (no progress yet)
-      const { data: newCards, error: nErr } = await supabase
-        .from('vocab_cards')
-        .select('*')
-        .limit(20)
-
-      if (nErr) throw nErr
-
-      const existingCardIds = new Set(progress?.map((p) => p.card_id) || [])
-      const freshCards = (newCards || []).filter((c) => !existingCardIds.has(c.id))
+      const data = await reviewsApi.getDue()
 
       // Cache for offline use
-      const allCards = [...(progress?.map((p) => p.card) || []), ...freshCards]
-      await cacheSessionCards(allCards.filter(Boolean) as VocabCard[])
+      const allCards = [
+        ...data.review_cards.map((p) => p.card).filter(Boolean),
+        ...data.new_cards,
+      ] as VocabCard[]
+      await cacheSessionCards(allCards)
 
-      return {
-        reviewCards: progress || [],
-        newCards: freshCards,
-      }
+      return data
     },
     staleTime: 5 * 60 * 1000,
   })
@@ -89,7 +69,7 @@ export function useDueCards(userId: string | undefined) {
 
 // ── Load from local seed data (no Supabase) ──────────────────────────
 
-async function loadFromSeed() {
+async function loadFromSeed(): Promise<DueCardsResponse> {
   const seedData = await loadVocabData()
   const today = new Date().toISOString().split('T')[0]
   const localProgress = getLocalProgress()
@@ -121,7 +101,7 @@ async function loadFromSeed() {
   const allCards = [...reviewCards.map((p) => p.card), ...newCards]
   await cacheSessionCards(allCards.filter(Boolean) as VocabCard[])
 
-  return { reviewCards, newCards }
+  return { review_cards: reviewCards, new_cards: newCards }
 }
 
 // ── Rate a card (SM-2 update) ────────────────────────────────────────
@@ -150,24 +130,8 @@ export function useRateCard(userId: string | undefined) {
         quality
       )
 
-      if (isSupabaseConfigured() && (await isOnline())) {
-        const { data, error } = await supabase
-          .from('vocab_progress')
-          .update({
-            interval_days: updated.interval_days,
-            easiness: updated.easiness,
-            repetitions: updated.repetitions,
-            next_review: updated.next_review,
-            last_quality: updated.last_quality,
-            times_seen: updated.times_seen,
-            times_correct: updated.times_correct,
-          })
-          .eq('id', progress.id)
-          .select()
-          .single()
-
-        if (error) throw error
-        return data
+      if (isApiConfigured()) {
+        return await reviewsApi.rate(progress.card_id, quality)
       } else {
         // Local mode: save to localStorage
         const cardId = progress.card_id
@@ -191,7 +155,7 @@ export function useStartCard(userId: string | undefined) {
 
   return useMutation({
     mutationFn: async (cardId: string) => {
-      if (!isSupabaseConfigured()) {
+      if (!isApiConfigured()) {
         // Local mode: create progress entry in localStorage
         const local = getLocalProgress()
         local[cardId] = {
@@ -208,21 +172,7 @@ export function useStartCard(userId: string | undefined) {
         return local[cardId]
       }
 
-      const { data, error } = await supabase
-        .from('vocab_progress')
-        .insert({
-          user_id: userId,
-          card_id: cardId,
-          interval_days: 1,
-          easiness: 2.5,
-          repetitions: 0,
-          next_review: new Date().toISOString().split('T')[0],
-        })
-        .select()
-        .single()
-
-      if (error) throw error
-      return data
+      return await reviewsApi.start(cardId)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['vocab', 'due'] })
@@ -235,7 +185,10 @@ export function useStartCard(userId: string | undefined) {
 export function useOfflineCards() {
   return useQuery({
     queryKey: ['vocab', 'offline'],
-    queryFn: getOfflineCards,
+    queryFn: async () => {
+      const { getOfflineCards } = await import('@/lib/offline')
+      return getOfflineCards()
+    },
     enabled: false, // manually triggered
   })
 }

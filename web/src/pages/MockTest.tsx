@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '@/lib/supabase'
+import { sessionsApi } from '@/api/sessions'
 import { useAuthStore } from '@/stores/auth.store'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Timer, Play, CheckCircle, ChevronRight, Volume2 } from 'lucide-react'
 import {
-  loadReadingTests, loadListeningTests, loadWritingTasks,
-  type ReadingTest, type ListeningTest, type WritingTask,
+  loadReadingTests, loadListeningTests, loadWritingTests,
+  type ReadingTest, type ListeningTest, type WritingTest, type WritingSubTask,
   type ReadingQuestion, type ListeningQuestion,
 } from '@/lib/seed-data'
 import { rawToReadingBand, rawToListeningBand, overallBand, bandLabel } from '@/lib/ielts-bands'
@@ -103,7 +103,7 @@ export function MockTest() {
   // Loaded test data
   const [readingTests, setReadingTests] = useState<ReadingTest[]>([])
   const [listeningTests, setListeningTests] = useState<ListeningTest[]>([])
-  const [writingTasks, setWritingTasks] = useState<WritingTask[]>([])
+  const [writingTasks, setWritingTasks] = useState<WritingSubTask[]>([])
   const [dataLoaded, setDataLoaded] = useState(false)
 
   // Results
@@ -118,11 +118,16 @@ export function MockTest() {
   // ── Load data ──────────────────────────────────────────────────────
 
   useEffect(() => {
-    Promise.all([loadReadingTests(), loadListeningTests(), loadWritingTasks()])
+    Promise.all([loadReadingTests(), loadListeningTests(), loadWritingTests()])
       .then(([rt, lt, wt]) => {
         setReadingTests(rt)
         setListeningTests(lt)
-        setWritingTasks(wt)
+        // Extract sub-tasks from writing tests
+        const subTasks: WritingSubTask[] = []
+        for (const t of wt) {
+          subTasks.push(t.task1, t.task2)
+        }
+        setWritingTasks(subTasks)
         setDataLoaded(true)
       })
       .catch(() => setDataLoaded(true))
@@ -170,7 +175,7 @@ export function MockTest() {
     }
   }
 
-  function computeResults() {
+  async function computeResults() {
     // Listening
     let listeningRaw = 0
     let listeningTotal = 0
@@ -220,19 +225,19 @@ export function MockTest() {
     if (user) {
       const totalCorrect = listeningRaw + readingRaw
       const totalQ = listeningTotal + readingTotal
-      supabase.from('study_sessions').insert({
-        user_id: user.id,
-        session_type: 'MOCK',
-        ended_at: new Date().toISOString(),
-        xp_earned: 50,
-        items_total: totalQ,
-        items_correct: totalCorrect,
-      }).then(() => {})
-      supabase
-        .from('profiles')
-        .update({ total_xp: (user.total_xp || 0) + 50 })
-        .eq('id', user.id)
-        .then(() => {})
+      try {
+        const session = await sessionsApi.start('MOCK')
+        if (session?.id) {
+          await sessionsApi.update(session.id, {
+            ended_at: new Date().toISOString(),
+            xp_earned: 50,
+            items_total: totalQ,
+            items_correct: totalCorrect,
+          })
+        }
+      } catch {
+        // Non-fatal: test results are still shown
+      }
     }
   }
 
@@ -603,7 +608,7 @@ function ReadingSection({
 function WritingSection({
   tasks, answers, setAnswers,
 }: {
-  tasks: WritingTask[]
+  tasks: WritingSubTask[]
   answers: Record<string, string>
   setAnswers: React.Dispatch<React.SetStateAction<Record<string, string>>>
 }) {

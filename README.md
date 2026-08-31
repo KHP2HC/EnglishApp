@@ -113,40 +113,67 @@ docker-compose up -d
 
 ## Environment Variables
 
-1. Copy `.env.example` to `.env` at the project root.
-2. Copy `web/.env.example` to `web/.env.local` for frontend variables.
+1. Copy `.env.example` to `.env` at the project root (backend).
+2. Copy `web/.env.example` to `web/.env.local` (frontend).
 3. **Never commit `.env` or `.env.local` files.**
 
-| Variable | Scope | Description |
-|----------|-------|-------------|
-| `API_PORT` | Backend | FastAPI port (default: 8000) |
-| `CORS_ORIGINS` | Backend | Comma-separated allowed CORS origins |
-| `VITE_SUPABASE_URL` | Frontend | Supabase project URL |
-| `VITE_SUPABASE_ANON_KEY` | Frontend | Supabase anonymous key |
-| `ANTHROPIC_API_KEY` | Supabase | Claude API key (set via dashboard) |
+### Backend Variables
+
+| Variable | Description |
+|----------|-------------|
+| `ENVIRONMENT` | `development` / `staging` / `production` |
+| `API_PORT` | FastAPI port (default: 8000) |
+| `CORS_ORIGINS` | Comma-separated allowed CORS origins |
+| `SUPABASE_URL` | Supabase project URL |
+| `SUPABASE_ANON_KEY` | Supabase anonymous key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key (⚠️ server-only) |
+| `JWT_SECRET` | Supabase JWT secret (for token validation) |
+| `JWT_ALGORITHM` | `HS256` (default) |
+| `JWT_AUDIENCE` | `authenticated` (default) |
+| `LOG_LEVEL` | `INFO` (default) |
+| `ANTHROPIC_API_KEY` | Optional — for AI writing feedback |
+
+### Frontend Variables
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_BASE_URL` | FastAPI backend URL |
+| `VITE_SUPABASE_URL` | Supabase project URL |
+| `VITE_SUPABASE_ANON_KEY` | Supabase anonymous key |
+
+⚠️ **Never put `SUPABASE_SERVICE_ROLE_KEY`, `JWT_SECRET`, or `ANTHROPIC_API_KEY` in frontend env vars.**
 
 ## Database
 
-### Desktop (SQLite)
+### Web (Supabase PostgreSQL) — Primary
+
+1. Create a Supabase project at [supabase.com](https://supabase.com)
+2. Run SQL migrations from `supabase/migrations/` (files 001-011) in order
+3. Seed vocabulary data using scripts in `data/seed/`
+4. Configure Supabase Auth redirect URLs
+
+See [docs/web-deployment.md](docs/web-deployment.md) for detailed instructions.
+
+### Desktop (SQLite) — Legacy
+
 - Auto-created on first run at `data.db`
 - Schema migrations run automatically on startup
 - Seed data (50,000+ vocabulary words) loaded on first run
 
-### Web (Supabase)
-1. Create a Supabase project at [supabase.com](https://supabase.com)
-2. Run SQL migrations from `web/supabase/migrations/`
-3. Set edge function secrets in Supabase dashboard
-
-See [docs/deployment.md](docs/deployment.md) for detailed instructions.
-
 ## Testing
 
 ```bash
-# Backend tests (35 tests)
+# Backend tests
 python -m pytest tests/ -v
+
+# Frontend tests
+cd web && npm test
 
 # Frontend lint
 cd web && npm run lint
+
+# Frontend build
+cd web && npm run build
 ```
 
 ## Build
@@ -166,12 +193,31 @@ Output is in `web/dist/`, deployable to Cloudflare Pages, Netlify, or Vercel.
 
 ## Deployment
 
-See [docs/deployment.md](docs/deployment.md) for full deployment instructions.
+See [docs/web-deployment.md](docs/web-deployment.md) for full deployment instructions.
 
-- **Desktop**: GitHub Releases (automated via GitHub Actions on version tags)
-- **Frontend**: Cloudflare Pages or similar static hosting
-- **Backend**: Docker container on any container platform
+- **Frontend**: Cloudflare Pages, Vercel, or Netlify (static hosting)
+- **Backend**: Render, Railway, Fly.io, or any Docker host
 - **Database**: Supabase managed PostgreSQL
+- **Auth**: Supabase Auth
+
+### Quick Deploy
+
+```bash
+# Backend (Docker)
+docker build -t englishcoach-api .
+docker run -p 8000:8000 \
+  -e JWT_SECRET=your-secret \
+  -e SUPABASE_URL=your-url \
+  -e SUPABASE_ANON_KEY=your-key \
+  -e SUPABASE_SERVICE_ROLE_KEY=your-key \
+  -e CORS_ORIGINS=https://your-frontend.pages.dev \
+  -e ENVIRONMENT=production \
+  englishcoach-api
+
+# Frontend
+cd web && npm run build
+# Deploy web/dist to your static host
+```
 
 ## Documentation
 
@@ -192,21 +238,42 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, branch naming, com
 
 ```
 EnglishApp/
-├── main.py                 # Desktop app entry point
-├── api.py                  # FastAPI backend
-├── app.py                  # CustomTkinter root app
-├── core/                   # Business logic (SRS, AI, planner, etc.)
+├── api.py                  # FastAPI backend entry point
+├── routers/                # Domain API routers
+│   ├── profile.py          # Profile CRUD
+│   ├── vocabulary.py       # Vocabulary list/search
+│   ├── reviews.py          # SRS reviews
+│   ├── study_sessions.py   # Study sessions
+│   ├── progress.py         # Progress stats
+│   ├── planner.py          # Study planner
+│   ├── errors.py           # Error journal
+│   └── writing.py          # Writing submissions
+├── core/                   # Business logic & infrastructure
+│   ├── config.py           # Configuration
+│   ├── security.py         # JWT validation
+│   ├── supabase_client.py  # Supabase client
+│   ├── web_schemas.py      # Pydantic models
+│   ├── srs_engine.py       # SM-2 algorithm
+│   └── ...
 ├── data/                   # Database, models, seed data
-├── ui/                     # Desktop UI (screens, components)
 ├── web/                    # Web frontend (React + TypeScript)
+│   └── src/
+│       ├── api/            # Typed API clients
+│       ├── components/     # React components
+│       ├── hooks/          # React Query hooks
+│       ├── pages/          # Route pages
+│       ├── stores/         # Zustand stores
+│       └── lib/            # Utilities
+├── supabase/               # Database migrations
+│   └── migrations/         # SQL migration files
 ├── tests/                  # Test suite
-├── assets/                 # Fonts, icons, audio
 ├── docs/                   # Documentation
 ├── .github/workflows/      # CI/CD pipelines
 ├── Dockerfile              # Backend container
 ├── docker-compose.yml      # Multi-service Docker config
 ├── requirements.txt        # Python dependencies
-├── .env.example            # Environment variable template
+├── .env.example            # Backend env template
+├── web/.env.example        # Frontend env template
 ├── LICENSE                 # MIT License
 └── CONTRIBUTING.md         # Contribution guidelines
 ```
