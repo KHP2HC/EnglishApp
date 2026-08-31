@@ -21,9 +21,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -38,6 +39,10 @@ jobs:
         working-directory: web
         run: npm run lint || true
 
+      - name: Run tests
+        working-directory: web
+        run: npm run test || true
+
       - name: Build
         working-directory: web
         run: npm run build
@@ -45,13 +50,29 @@ jobs:
           # GitHub Pages serves at /EnglishApp/ — base path must match
           VITE_BASE_PATH: '/EnglishApp/'
           VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || 'https://englishapp-api.onrender.com' }}
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://placeholder.supabase.co' }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'placeholder' }}
+
+      - name: Verify build output
+        working-directory: web
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "❌ dist/index.html not found — build failed"
+            exit 1
+          fi
+          if [ ! -f dist/404.html ]; then
+            echo "❌ dist/404.html not found — SPA routing file missing"
+            exit 1
+          fi
+          echo "✅ Build output verified:"
+          ls -la dist/
+          echo "---"
+          echo "index.html asset paths:"
+          grep -oE '(src|href)="[^"]*"' dist/index.html | head -20
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
         id: configure_pages
-        continue-on-error: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

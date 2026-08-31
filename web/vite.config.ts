@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
 // GitHub Pages serves at /EnglishApp/ — use VITE_BASE_PATH env var to override
-const base = process.env.VITE_BASE_PATH || '/'
+const base = process.env.VITE_BASE_PATH || '/EnglishApp/'
 
 export default defineConfig({
   base,
