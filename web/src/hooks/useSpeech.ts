@@ -158,6 +158,25 @@ export function useSpeech() {
   const voiceMapRef = useRef<Map<string, SpeechSynthesisVoice>>(new Map())
   const rateRef = useRef(0.85)
   const cancelledRef = useRef(false)
+  const voicesRef = useRef<SpeechSynthesisVoice[]>([])
+
+  // Load voices eagerly and keep cache in sync.  The Web Speech API populates
+  // getVoices() asynchronously — on first call it often returns [], so we must
+  // listen for the `voiceschanged` event and re-cache.
+  useEffect(() => {
+    if (!('speechSynthesis' in window)) return
+
+    const updateVoices = () => {
+      voicesRef.current = window.speechSynthesis.getVoices()
+    }
+
+    updateVoices()
+    window.speechSynthesis.addEventListener('voiceschanged', updateVoices)
+
+    return () => {
+      window.speechSynthesis.removeEventListener('voiceschanged', updateVoices)
+    }
+  }, [])
 
   const playNext = useCallback(() => {
     if (cancelledRef.current) return
@@ -178,7 +197,9 @@ export function useSpeech() {
     }
 
     utterance.onend = () => {
-      playNext()
+      // Small pause between segments so the conversation sounds natural
+      // and to avoid Chrome's known bug where rapid speak() calls are dropped.
+      setTimeout(() => playNext(), 250)
     }
     utterance.onerror = () => {
       setSpeaking(false)
@@ -219,7 +240,12 @@ export function useSpeech() {
       }
 
       // Multi-speaker conversation path
-      const availableVoices = window.speechSynthesis.getVoices()
+      // Use cached voices (getVoices() may return [] if called too early)
+      const availableVoices =
+        voicesRef.current.length > 0
+          ? voicesRef.current
+          : window.speechSynthesis.getVoices()
+
       voiceMapRef.current = mapSpeakersToVoices(speakers, availableVoices)
       queueRef.current = [...segments]
 
