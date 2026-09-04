@@ -1,25 +1,239 @@
 import { useState, useCallback, useRef, useEffect } from 'react'
 
+// ── Conversation Parsing ────────────────────────────────────────────
+
+interface SpeechSegment {
+  speaker: string
+  text: string
+}
+
+/**
+ * Parse a multi-speaker transcript into individual speech segments.
+ * Lines in the form "Name: dialogue" are split into speaker + text.
+ * Lines without a speaker prefix are attributed to "Narrator".
+ */
+function parseConversation(transcript: string): {
+  segments: SpeechSegment[]
+  speakers: string[]
+} {
+  const lines = transcript.split(/\r?\n/).map((l) => l.trim()).filter(Boolean)
+  const segments: SpeechSegment[] = []
+  const speakerSet = new Set<string>()
+
+  const speakerLineRe = /^([A-Za-z0-9\s'.&-]+):\s*(.*)$/
+
+  for (const line of lines) {
+    const match = line.match(speakerLineRe)
+    if (match) {
+      const speaker = match[1].trim()
+      const text = match[2].trim()
+      if (text) {
+        segments.push({ speaker, text })
+        speakerSet.add(speaker)
+      }
+    } else {
+      // No speaker prefix — treat as Narrator
+      segments.push({ speaker: 'Narrator', text: line })
+      speakerSet.add('Narrator')
+    }
+  }
+
+  return { segments, speakers: [...speakerSet] }
+}
+
+// ── Voice Gender Classification ──────────────────────────────────────
+
+type Gender = 'male' | 'female' | 'neutral'
+
+const MALE_NAME_HINTS = [
+  'james', 'john', 'tom', 'david', 'daniel', 'michael', 'robert',
+  'william', 'richard', 'joseph', 'charles', 'thomas', 'boy', 'man',
+  'mr', 'sir', 'guy',
+]
+
+const FEMALE_NAME_HINTS = [
+  'maria', 'sarah', 'mary', 'jane', 'elizabeth', 'susan', 'lisa',
+  'emma', 'olivia', 'sophia', 'anna', 'girl', 'woman', 'receptionist',
+  'mrs', 'ms', 'miss', 'lady',
+]
+
+/**
+ * Guess the gender of a speaker based on their name.
+ */
+function guessGender(name: string): Gender {
+  const lower = name.toLowerCase()
+  if (MALE_NAME_HINTS.some((h) => lower.includes(h))) return 'male'
+  if (FEMALE_NAME_HINTS.some((h) => lower.includes(h))) return 'female'
+  return 'neutral'
+}
+
+/**
+ * Classify a TTS voice as male or female based on its display name.
+ */
+function classifyVoiceGender(voiceName: string): Gender {
+  const lower = voiceName.toLowerCase()
+  const femaleHints = [
+    'samantha', 'zira', 'victoria', 'karen', 'moira', 'tessa', 'fiona',
+    'veena', 'amelie', 'anna', 'ellen', 'kyoko', 'yuna', 'woman',
+    'female', 'girl', 'serena', 'catherine', 'stephanie',
+  ]
+  const maleHints = [
+    'daniel', 'david', 'alex', 'fred', 'tom', 'oliver', 'arthur',
+    'rishi', 'james', 'man', 'male', 'boy', 'george', 'mark',
+  ]
+  if (femaleHints.some((h) => lower.includes(h))) return 'female'
+  if (maleHints.some((h) => lower.includes(h))) return 'male'
+  return 'neutral'
+}
+
+// ── Speaker → Voice Mapping ──────────────────────────────────────────
+
+/**
+ * Map each unique speaker to a distinct SpeechSynthesisVoice when possible.
+ * English voices are filtered and assigned by gender preference.
+ */
+function mapSpeakersToVoices(
+  speakers: string[],
+  availableVoices: SpeechSynthesisVoice[]
+): Map<string, SpeechSynthesisVoice> {
+  const englishVoices = availableVoices.filter((v) =>
+    v.lang.toLowerCase().startsWith('en')
+  )
+  const pool = englishVoices.length > 0 ? englishVoices : availableVoices
+
+  const maleVoices = pool.filter((v) => classifyVoiceGender(v.name) === 'male')
+  const femaleVoices = pool.filter((v) => classifyVoiceGender(v.name) === 'female')
+  const neutralVoices = pool.filter(
+    (v) => classifyVoiceGender(v.name) === 'neutral'
+  )
+
+  const assignment = new Map<string, SpeechSynthesisVoice>()
+  const usedVoices = new Set<SpeechSynthesisVoice>()
+
+  const pickFrom = (list: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined => {
+    return list.find((v) => !usedVoices.has(v)) ?? list[0]
+  }
+
+  // First pass: assign gender-matched voices
+  for (const speaker of speakers) {
+    const gender = guessGender(speaker)
+    let chosen: SpeechSynthesisVoice | undefined
+
+    if (gender === 'male' && maleVoices.length > 0) {
+      chosen = pickFrom(maleVoices)
+    } else if (gender === 'female' && femaleVoices.length > 0) {
+      chosen = pickFrom(femaleVoices)
+    }
+
+    if (chosen) {
+      assignment.set(speaker, chosen)
+      usedVoices.add(chosen)
+    }
+  }
+
+  // Second pass: fill in any speakers not yet assigned (neutral or fallback)
+  const fallbackPool = [
+    ...neutralVoices.filter((v) => !usedVoices.has(v)),
+    ...pool.filter((v) => !usedVoices.has(v)),
+  ]
+  let fallbackIdx = 0
+
+  for (const speaker of speakers) {
+    if (assignment.has(speaker)) continue
+    const chosen =
+      fallbackPool[fallbackIdx] ?? pool[fallbackIdx % pool.length]
+    fallbackIdx++
+    assignment.set(speaker, chosen)
+    usedVoices.add(chosen)
+  }
+
+  return assignment
+}
+
 // ── Speech Synthesis (TTS) ───────────────────────────────────────────
 
 export function useSpeech() {
   const [speaking, setSpeaking] = useState(false)
+  const queueRef = useRef<SpeechSegment[]>([])
+  const voiceMapRef = useRef<Map<string, SpeechSynthesisVoice>>(new Map())
+  const rateRef = useRef(0.85)
+  const cancelledRef = useRef(false)
 
-  const speak = useCallback((text: string, rate = 0.85) => {
-    if (!('speechSynthesis' in window)) return
-    window.speechSynthesis.cancel()
-    const utterance = new SpeechSynthesisUtterance(text)
+  const playNext = useCallback(() => {
+    if (cancelledRef.current) return
+
+    const next = queueRef.current.shift()
+    if (!next) {
+      setSpeaking(false)
+      return
+    }
+
+    const utterance = new SpeechSynthesisUtterance(next.text)
     utterance.lang = 'en-US'
-    utterance.rate = rate
-    utterance.onstart = () => setSpeaking(true)
-    utterance.onend = () => setSpeaking(false)
-    utterance.onerror = () => setSpeaking(false)
+    utterance.rate = rateRef.current
+
+    const voice = voiceMapRef.current.get(next.speaker)
+    if (voice) {
+      utterance.voice = voice
+    }
+
+    utterance.onend = () => {
+      playNext()
+    }
+    utterance.onerror = () => {
+      setSpeaking(false)
+    }
+
     window.speechSynthesis.speak(utterance)
   }, [])
 
+  const speak = useCallback(
+    (text: string, rate = 0.85) => {
+      if (!('speechSynthesis' in window)) return
+
+      // Stop any current playback and reset
+      window.speechSynthesis.cancel()
+      cancelledRef.current = false
+      queueRef.current = []
+      rateRef.current = rate
+
+      const { segments, speakers } = parseConversation(text)
+
+      // If there's only one segment with no real speaker, speak it directly
+      const hasMultipleSpeakers =
+        speakers.length > 1 ||
+        (speakers.length === 1 && speakers[0] !== 'Narrator') ||
+        segments.length > 1
+
+      if (!hasMultipleSpeakers) {
+        // Simple single-utterance path (preserves existing behaviour for words/phrases)
+        const utterance = new SpeechSynthesisUtterance(text)
+        utterance.lang = 'en-US'
+        utterance.rate = rate
+        utterance.onstart = () => setSpeaking(true)
+        utterance.onend = () => setSpeaking(false)
+        utterance.onerror = () => setSpeaking(false)
+        setSpeaking(true)
+        window.speechSynthesis.speak(utterance)
+        return
+      }
+
+      // Multi-speaker conversation path
+      const availableVoices = window.speechSynthesis.getVoices()
+      voiceMapRef.current = mapSpeakersToVoices(speakers, availableVoices)
+      queueRef.current = [...segments]
+
+      setSpeaking(true)
+      playNext()
+    },
+    [playNext]
+  )
+
   const stopSpeaking = useCallback(() => {
     if ('speechSynthesis' in window) {
+      cancelledRef.current = true
       window.speechSynthesis.cancel()
+      queueRef.current = []
       setSpeaking(false)
     }
   }, [])
