@@ -207,6 +207,7 @@ export function Writing() {
     if (!essay.trim()) return
     setLoading(true)
     setError(null)
+    setFeedbackSource(null)
     setFeedback((f) => ({ ...f, [task.id]: null as any }))
 
     try {
@@ -231,7 +232,11 @@ export function Writing() {
       const localFb = generateLocalFeedback(task.prompt, essay, minWords)
       setFeedback((f) => ({ ...f, [task.id]: localFb }))
       setFeedbackSource('local')
-      setError('API server unavailable — showing local analysis instead.')
+      setError(
+        err?.message?.includes('Network error')
+          ? 'API server unavailable — showing local analysis instead.'
+          : err?.message || 'API server unavailable — showing local analysis instead.'
+      )
     } finally {
       setLoading(false)
     }
@@ -349,13 +354,29 @@ export function Writing() {
           )}
 
           {/* Submit for AI feedback */}
-          <Button onClick={getFeedback} disabled={loading || !essay.trim()} className="w-full">
-            {loading ? (
-              <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Analyzing…</>
-            ) : (
-              <><Sparkles className="h-4 w-4 mr-2" /> Get AI Feedback</>
-            )}
-          </Button>
+          <div className="space-y-2">
+            <Button onClick={getFeedback} disabled={loading || !essay.trim()} className="w-full">
+              {loading ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Analyzing…</>
+              ) : (
+                <><Sparkles className="h-4 w-4 mr-2" /> Get AI Feedback</>
+              )}
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                if (!essay.trim()) return
+                const localFb = generateLocalFeedback(task.prompt, essay, minWords)
+                setFeedback((f) => ({ ...f, [task.id]: localFb }))
+                setFeedbackSource('local')
+                setError(null)
+              }}
+              disabled={!essay.trim() || loading}
+              className="w-full"
+            >
+              <AlertTriangle className="h-4 w-4 mr-2" /> Quick Local Analysis (no server needed)
+            </Button>
+          </div>
 
           {error && (
             <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3">
