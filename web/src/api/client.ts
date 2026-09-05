@@ -8,6 +8,7 @@
  * - Handle 429 (rate limit)
  * - Parse error responses
  * - Typed responses
+ * - Fast-fail when backend is unreachable (avoids long CORS hangs)
  */
 
 import { supabase } from '@/lib/supabase'
@@ -27,6 +28,35 @@ export class ApiError extends Error {
   }
 }
 
+// ── Backend health cache ──────────────────────────────
+
+let backendReachable: boolean | null = null
+let lastHealthCheck = 0
+const HEALTH_CHECK_INTERVAL = 30_000 // re-check at most every 30s
+const REQUEST_TIMEOUT = 4_000 // fail fast after 4s
+
+async function checkBackendHealth(): Promise<boolean> {
+  const now = Date.now()
+  if (backendReachable !== null && now - lastHealthCheck < HEALTH_CHECK_INTERVAL) {
+    return backendReachable
+  }
+
+  lastHealthCheck = now
+  try {
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT)
+    const resp = await fetch(`${API_BASE_URL}/api/v1/health`, {
+      method: 'GET',
+      signal: controller.signal,
+    })
+    clearTimeout(timer)
+    backendReachable = resp.ok
+  } catch {
+    backendReachable = false
+  }
+  return backendReachable
+}
+
 // ── Token management ──────────────────────────────────
 
 async function getAuthToken(): Promise<string | null> {
@@ -40,6 +70,12 @@ async function request<T>(
   path: string,
   options: RequestInit = {},
 ): Promise<T> {
+  // Fast-fail: if we know the backend is down, don't even try
+  const reachable = await checkBackendHealth()
+  if (!reachable) {
+    throw new ApiError(0, 'Backend is not reachable.')
+  }
+
   const token = await getAuthToken()
 
   const headers: Record<string, string> = {
@@ -55,8 +91,12 @@ async function request<T>(
 
   let response: Response
   try {
-    response = await fetch(url, { ...options, headers })
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT)
+    response = await fetch(url, { ...options, headers, signal: controller.signal })
+    clearTimeout(timer)
   } catch (err) {
+    backendReachable = false // mark as down so subsequent calls skip
     throw new ApiError(0, 'Network error — cannot reach the server.')
   }
 
@@ -112,6 +152,19 @@ export const api = {
       body: body ? JSON.stringify(body) : undefined,
     }),
   delete: <T>(path: string) => request<T>(path, { method: 'DELETE' }),
+}
+
+// ── Health management ─────────────────────────────────
+
+/** Reset the cached backend health so the next request re-checks. */
+export function resetBackendHealth() {
+  backendReachable = null
+  lastHealthCheck = 0
+}
+
+/** Returns true if the backend has been marked as reachable. */
+export function isBackendReachable(): boolean {
+  return backendReachable === true
 }
 
 export { API_BASE_URL }

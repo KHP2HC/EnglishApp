@@ -5,7 +5,7 @@
  * Direct Supabase CRUD is not allowed — only Supabase Auth operations.
  */
 
-export { api, ApiError, API_BASE_URL } from './client'
+export { api, ApiError, API_BASE_URL, resetBackendHealth, isBackendReachable } from './client'
 export { profileApi } from './profile'
 export { vocabularyApi } from './vocabulary'
 export type { VocabListResponse } from './vocabulary'
