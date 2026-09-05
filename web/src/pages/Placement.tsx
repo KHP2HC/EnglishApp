@@ -2,16 +2,20 @@ import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { CheckCircle2, XCircle, Brain, ArrowRight, RotateCcw } from 'lucide-react'
+import {
+  CheckCircle2, XCircle, Brain, ArrowRight, RotateCcw,
+  BookOpen, Headphones, PenLine, Mic, Languages, Loader2,
+} from 'lucide-react'
 import {
   initCATState,
   recordAnswer,
-  getQuestionForLevel,
   getEstimatedBand,
   getSkillBreakdown,
   isComplete,
+  buildAdaptiveTest,
   type CATState,
   type CATQuestion,
+  type CATSkill,
 } from '@/lib/cat'
 import { useAuthStore } from '@/stores/auth.store'
 import { profileApi } from '@/api/profile'
@@ -21,26 +25,56 @@ import { bandToCefr, generateLearningPath } from '@/lib/learningPath'
 
 const TOTAL_QUESTIONS = 20
 
+const SKILL_ICONS: Record<CATSkill, typeof BookOpen> = {
+  vocabulary: Languages,
+  grammar: BookOpen,
+  reading: BookOpen,
+  listening: Headphones,
+  writing: PenLine,
+}
+
+const SKILL_LABELS: Record<CATSkill, string> = {
+  vocabulary: 'Vocabulary',
+  grammar: 'Grammar',
+  reading: 'Reading',
+  listening: 'Listening',
+  writing: 'Writing',
+}
+
+const levelMap: Record<string, number> = {
+  A1: 2.0, A2: 3.0, B1: 4.5, B2: 5.5, C1: 7.0, C2: 8.5,
+}
+
 export function Placement() {
   const navigate = useNavigate()
-  const { user, refreshProfile } = useAuthStore()
+  const { user } = useAuthStore()
   const [state, setState] = useState<CATState>(() => initCATState())
   const [question, setQuestion] = useState<CATQuestion | null>(null)
   const [selected, setSelected] = useState<string | null>(null)
   const [showResult, setShowResult] = useState(false)
   const [finished, setFinished] = useState(false)
   const [saving, setSaving] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  const loadQuestion = useCallback((s: CATState) => {
-    const q = getQuestionForLevel(s.currentLevel)
-    setQuestion(q)
-    setSelected(null)
-    setShowResult(false)
-  }, [])
-
+  // Load the adaptive test on mount
   useEffect(() => {
-    loadQuestion(state)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    let cancelled = false
+    buildAdaptiveTest(TOTAL_QUESTIONS)
+      .then((questions) => {
+        if (cancelled) return
+        setState((prev) => ({ ...prev, questionQueue: questions }))
+        setQuestion(questions[0] || null)
+        setLoading(false)
+      })
+      .catch((err) => {
+        if (cancelled) return
+        console.error('Failed to load placement test:', err)
+        setError('Failed to load test questions. Please refresh the page.')
+        setLoading(false)
+      })
+    return () => { cancelled = true }
+  }, [])
 
   const handleAnswer = (answer: string) => {
     if (!question || showResult) return
@@ -56,7 +90,10 @@ export function Placement() {
       setFinished(true)
       return
     }
-    loadQuestion(state)
+    const nextQ = state.questionQueue[state.queueIndex] || null
+    setQuestion(nextQ)
+    setSelected(null)
+    setShowResult(false)
   }
 
   const handleFinish = async () => {
@@ -65,9 +102,6 @@ export function Placement() {
     const skillBreakdown = getSkillBreakdown(state)
     const skillBands: Record<string, number> = {}
     for (const s of skillBreakdown) {
-      const levelMap: Record<string, number> = {
-        A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6,
-      }
       skillBands[s.skill.toLowerCase()] = levelMap[s.level] || 3
     }
 
@@ -81,7 +115,6 @@ export function Placement() {
         skill_bands: skillBands,
         onboarded: true,
       })
-      // Save as a test result
       saveTestResult(localSession.userId, {
         id: `test-${Date.now()}`,
         examType: 'PLACEMENT',
@@ -109,11 +142,51 @@ export function Placement() {
     navigate('/app')
   }
 
-  const handleRestart = () => {
+  const handleRestart = async () => {
+    setLoading(true)
     const fresh = initCATState()
+    const questions = await buildAdaptiveTest(TOTAL_QUESTIONS)
+    fresh.questionQueue = questions
     setState(fresh)
+    setQuestion(questions[0] || null)
     setFinished(false)
-    loadQuestion(fresh)
+    setSelected(null)
+    setShowResult(false)
+    setLoading(false)
+  }
+
+  // ── Loading screen ──
+  if (loading) {
+    return (
+      <div className="max-w-2xl mx-auto space-y-6">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold font-heading flex items-center justify-center gap-2">
+            <Brain className="h-6 w-6 text-accent" /> Placement Test
+          </h1>
+        </div>
+        <Card>
+          <CardContent className="py-12 text-center">
+            <Loader2 className="h-8 w-8 text-accent animate-spin mx-auto mb-3" />
+            <p className="text-sm text-gray-400">Loading 20 adaptive questions across 5 skills…</p>
+            <p className="text-xs text-gray-500 mt-1">Vocabulary · Grammar · Reading · Listening · Writing</p>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
+  // ── Error screen ──
+  if (error) {
+    return (
+      <div className="max-w-2xl mx-auto space-y-6">
+        <Card>
+          <CardContent className="py-8 text-center">
+            <p className="text-sm text-error mb-4">{error}</p>
+            <Button onClick={() => window.location.reload()}>Retry</Button>
+          </CardContent>
+        </Card>
+      </div>
+    )
   }
 
   // ── Results screen ──
@@ -124,7 +197,6 @@ export function Placement() {
       ? Math.round((state.answeredCorrect / state.answeredTotal) * 100)
       : 0
 
-    // Compute skill bands from breakdown for the learning path gap analysis
     const skillBands: Record<string, number> = {}
     const skillLevelMap: Record<string, number> = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 }
     for (const s of breakdown) {
@@ -152,20 +224,27 @@ export function Placement() {
             <CardTitle className="text-base">Skill Breakdown</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {breakdown.map((s) => (
-              <div key={s.skill} className="flex items-center justify-between">
-                <span className="text-sm text-gray-300">{s.skill}</span>
-                <div className="flex items-center gap-3">
-                  <div className="w-32 h-2 rounded-full bg-surface-dark overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-accent"
-                      style={{ width: `${s.accuracy}%` }}
-                    />
+            {breakdown.map((s) => {
+              const skill = s.skill.toLowerCase() as CATSkill
+              const Icon = SKILL_ICONS[skill] || BookOpen
+              return (
+                <div key={s.skill} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-300 flex items-center gap-2">
+                    <Icon className="h-4 w-4 text-gray-400" />
+                    {s.skill}
+                  </span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-32 h-2 rounded-full bg-surface-dark overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-accent"
+                        style={{ width: `${s.accuracy}%` }}
+                      />
+                    </div>
+                    <span className="text-sm font-medium text-accent w-8 text-right">{s.level}</span>
                   </div>
-                  <span className="text-sm font-medium text-accent w-8 text-right">{s.level}</span>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </CardContent>
         </Card>
 
@@ -194,7 +273,6 @@ export function Placement() {
                   <span className="text-gray-400">~{path.totalWeeks} weeks</span>
                 </div>
 
-                {/* Phase overview */}
                 <div className="space-y-2">
                   {path.phases.map((phase, i) => (
                     <div key={phase.id} className="flex items-center gap-3 rounded-lg border border-border p-2">
@@ -242,6 +320,8 @@ export function Placement() {
 
   // ── Question screen ──
   const progress = (state.answeredTotal / TOTAL_QUESTIONS) * 100
+  const currentSkill = question?.skill || 'vocabulary'
+  const SkillIcon = SKILL_ICONS[currentSkill] || BookOpen
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -262,12 +342,27 @@ export function Placement() {
         />
       </div>
 
+      {/* Skill indicator */}
+      <div className="flex items-center justify-center gap-2">
+        <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent flex items-center gap-1.5">
+          <SkillIcon className="h-3.5 w-3.5" />
+          {SKILL_LABELS[currentSkill]}
+        </span>
+      </div>
+
       {question && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">{question.question}</CardTitle>
+            <CardTitle className="text-base whitespace-pre-line">{question.question}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
+            {/* Context (passage excerpt, transcript, etc.) */}
+            {question.context && (
+              <div className="rounded-lg bg-black/20 p-3 max-h-48 overflow-y-auto">
+                <p className="text-xs text-gray-400 whitespace-pre-line">{question.context}</p>
+              </div>
+            )}
+
             {question.options.map((opt) => {
               const isCorrect = opt === question.answer
               const isSelected = opt === selected
@@ -308,8 +403,4 @@ export function Placement() {
       </p>
     </div>
   )
-}
-
-const levelMap: Record<string, number> = {
-  A1: 2.0, A2: 3.0, B1: 4.5, B2: 5.5, C1: 7.0, C2: 8.5,
 }
