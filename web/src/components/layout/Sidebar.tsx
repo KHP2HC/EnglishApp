@@ -32,7 +32,15 @@ export function Sidebar() {
   const levelInfo = getLevel(user?.total_xp || 0)
 
   const handleSignOut = async () => {
-    await signOut()
+    try {
+      await signOut()
+    } catch (error) {
+      console.error('Sign out error:', error)
+    } finally {
+      // Force navigation to /auth immediately, replacing history so the
+      // browser Back button doesn't return to a protected route.
+      navigate('/auth', { replace: true })
+    }
   }
 
   return (

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/stores/auth.store'
 import { useSettingsStore } from '@/stores/settings.store'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -13,9 +14,20 @@ export function Settings() {
   const { user, signOut, refreshProfile } = useAuthStore()
   const { theme, setTheme, language, setLanguage } = useSettingsStore()
   const { permission, requestPermission } = useNotifications()
+  const navigate = useNavigate()
   const [name, setName] = useState(user?.name || '')
   const [avatar, setAvatar] = useState(user?.avatar_emoji || '🧑')
   const [saved, setSaved] = useState(false)
+
+  const handleSignOut = async () => {
+    try {
+      await signOut()
+    } catch (error) {
+      console.error('Sign out error:', error)
+    } finally {
+      navigate('/auth', { replace: true })
+    }
+  }
 
   if (!user) return <p>Loading…</p>
 
@@ -132,7 +144,7 @@ export function Settings() {
       </Card>
 
       {/* Sign out */}
-      <Button variant="destructive" className="w-full" onClick={signOut}>
+      <Button variant="destructive" className="w-full" onClick={handleSignOut}>
         Sign Out
       </Button>
     </div>

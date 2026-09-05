@@ -83,11 +83,13 @@ export function Placement() {
       })
       // Save as a test result
       saveTestResult(localSession.userId, {
+        id: `test-${Date.now()}`,
         examType: 'PLACEMENT',
         section: 'CAT',
         score: state.answeredCorrect,
         total: state.answeredTotal,
         band: bandScore,
+        takenAt: new Date().toISOString(),
         details: { estimatedLevel: band, skillBreakdown },
       })
     }
@@ -121,6 +123,13 @@ export function Placement() {
     const accuracy = state.answeredTotal > 0
       ? Math.round((state.answeredCorrect / state.answeredTotal) * 100)
       : 0
+
+    // Compute skill bands from breakdown for the learning path gap analysis
+    const skillBands: Record<string, number> = {}
+    const skillLevelMap: Record<string, number> = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 }
+    for (const s of breakdown) {
+      skillBands[s.skill.toLowerCase()] = skillLevelMap[s.level] || 3
+    }
 
     return (
       <div className="max-w-2xl mx-auto space-y-6">

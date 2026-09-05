@@ -26,14 +26,22 @@ function isSupabaseConfigured(): boolean {
 }
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { session, loading } = useAuthStore()
+  const { user, session, loading } = useAuthStore()
   const location = useLocation()
 
-  if (loading) return <div className="flex items-center justify-center h-screen text-gray-400">Loading…</div>
+  // Show loading screen while auth state is being determined.
+  if (loading) {
+    return <div className="flex items-center justify-center h-screen text-gray-400">Loading…</div>
+  }
 
-  // Check for either a Supabase session or a local session
+  // Check for either a Supabase session, a local session, or a populated
+  // user profile.  Using the store's `user` (in addition to getSession())
+  // makes the component reactive — when signOut clears the store, this
+  // re-renders and redirects immediately without waiting for a page reload.
   const hasLocalSession = !!getSession()
-  if (!session && !hasLocalSession) {
+  const isAuthenticated = !!session || hasLocalSession || !!user
+
+  if (!isAuthenticated) {
     return <Navigate to="/auth" state={{ from: location }} replace />
   }
 
