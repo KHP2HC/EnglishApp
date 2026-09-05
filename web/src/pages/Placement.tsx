@@ -43,6 +43,14 @@ const SKILL_LABELS: Record<CATSkill, string> = {
   writing: 'Writing',
 }
 
+const SKILL_HINTS: Record<CATSkill, string> = {
+  vocabulary: '📖 Choose the correct meaning of the word.',
+  grammar: '📝 Select the grammatically correct option.',
+  reading: '📄 Read the passage and answer the question.',
+  listening: '🎧 Listen to the audio and answer the question.',
+  writing: '✍️ Identify the correct writing approach.',
+}
+
 const levelMap: Record<string, number> = {
   A1: 2.0, A2: 3.0, B1: 4.5, B2: 5.5, C1: 7.0, C2: 8.5,
 }
@@ -356,12 +364,13 @@ export function Placement() {
         />
       </div>
 
-      {/* Skill indicator */}
-      <div className="flex items-center justify-center gap-2">
-        <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent flex items-center gap-1.5">
-          <SkillIcon className="h-3.5 w-3.5" />
-          {SKILL_LABELS[currentSkill]}
+      {/* Skill indicator — test type badge */}
+      <div className="flex flex-col items-center gap-1.5">
+        <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-accent/20 text-accent flex items-center gap-2">
+          <SkillIcon className="h-4 w-4" />
+          {SKILL_LABELS[currentSkill]} Test
         </span>
+        <p className="text-xs text-gray-500">{SKILL_HINTS[currentSkill]}</p>
       </div>
 
       {question && (
