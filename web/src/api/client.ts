@@ -32,29 +32,43 @@ export class ApiError extends Error {
 
 let backendReachable: boolean | null = null
 let lastHealthCheck = 0
+let healthCheckPromise: Promise<boolean> | null = null
 const HEALTH_CHECK_INTERVAL = 30_000 // re-check at most every 30s
 const REQUEST_TIMEOUT = 5_000 // fail fast after 5s
 
 async function checkBackendHealth(): Promise<boolean> {
   const now = Date.now()
+  // Return cached result if still fresh
   if (backendReachable !== null && now - lastHealthCheck < HEALTH_CHECK_INTERVAL) {
     return backendReachable
   }
-
-  lastHealthCheck = now
-  try {
-    const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT)
-    const resp = await fetch(`${API_BASE_URL}/api/v1/health`, {
-      method: 'GET',
-      signal: controller.signal,
-    })
-    clearTimeout(timer)
-    backendReachable = resp.ok
-  } catch {
-    backendReachable = false
+  // Deduplicate concurrent calls — share the same in-flight promise
+  if (healthCheckPromise) {
+    return healthCheckPromise
   }
-  return backendReachable
+
+  healthCheckPromise = (async () => {
+    lastHealthCheck = Date.now()
+    try {
+      const controller = new AbortController()
+      const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT)
+      const resp = await fetch(`${API_BASE_URL}/api/v1/health`, {
+        method: 'GET',
+        signal: controller.signal,
+      })
+      clearTimeout(timer)
+      backendReachable = resp.ok
+    } catch {
+      backendReachable = false
+    }
+    return backendReachable
+  })()
+
+  try {
+    return await healthCheckPromise
+  } finally {
+    healthCheckPromise = null
+  }
 }
 
 // ── Token management ──────────────────────────────────
