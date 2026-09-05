@@ -33,8 +33,7 @@ export class ApiError extends Error {
 let backendReachable: boolean | null = null
 let lastHealthCheck = 0
 const HEALTH_CHECK_INTERVAL = 30_000 // re-check at most every 30s
-const HEALTH_CHECK_TIMEOUT = 3_000 // fail fast after 3s
-const REQUEST_TIMEOUT = 8_000 // regular request timeout
+const REQUEST_TIMEOUT = 5_000 // fail fast after 5s
 
 async function checkBackendHealth(): Promise<boolean> {
   const now = Date.now()
@@ -44,18 +43,13 @@ async function checkBackendHealth(): Promise<boolean> {
 
   lastHealthCheck = now
   try {
-    // Use no-cors mode: if the server is up, we get an opaque response (type "opaque").
-    // If the server is down, fetch throws a TypeError.
     const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), HEALTH_CHECK_TIMEOUT)
+    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT)
     await fetch(`${API_BASE_URL}/api/v1/health`, {
       method: 'GET',
-      mode: 'no-cors',
       signal: controller.signal,
     })
     clearTimeout(timer)
-    // If we got here, the server responded (even if CORS would block actual API calls,
-    // the server itself is reachable). Mark as reachable so API calls proceed.
     backendReachable = true
   } catch {
     backendReachable = false
