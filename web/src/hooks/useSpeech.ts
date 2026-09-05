@@ -91,6 +91,7 @@ function classifyVoiceGender(voiceName: string): Gender {
 interface SpeakerVoicePlan {
   voice: SpeechSynthesisVoice
   pitch: number
+  rate: number
 }
 
 // Pitch values used to differentiate speakers that share the same voice.
@@ -98,22 +99,45 @@ interface SpeakerVoicePlan {
 const PITCH_STEPS = [1.0, 0.8, 1.2, 0.7, 1.3, 0.9, 1.1, 0.85, 1.15, 0.75]
 
 /**
- * Assign a distinct voice + pitch to every unique speaker.
+ * Check whether a voice is likely a high-quality / neural voice.
+ * Google and Microsoft voices on Chrome/Edge are neural TTS and sound
+ * far more natural than the basic system voices.
+ */
+function voiceQualityScore(voice: SpeechSynthesisVoice): number {
+  const n = voice.name.toLowerCase()
+  let score = 0
+  // Neural / premium voices
+  if (n.includes('google')) score += 100
+  if (n.includes('microsoft')) score += 80
+  if (n.includes('neural')) score += 60
+  if (n.includes('premium')) score += 40
+  if (n.includes('enhanced')) score += 30
+  if (n.includes('natural')) score += 50
+  // Prefer en-US and en-GB over other variants
+  if (voice.lang === 'en-US') score += 10
+  if (voice.lang === 'en-GB') score += 8
+  return score
+}
+
+/**
+ * Assign a distinct voice + pitch + rate to every unique speaker.
  *
  * Strategy:
- *  1. Filter for English voices (fall back to all voices if none).
- *  2. Sort so gender-matched voices come first for each speaker.
- *  3. Give each speaker a unique voice from the pool, cycling when
+ *  1. Filter for English voices, sorted by quality (neural first).
+ *  2. Give each speaker a unique voice from the pool, cycling when
  *     the pool is exhausted.  When two speakers must share a voice,
  *     assign different pitch values so they still sound distinct.
+ *  3. Give each speaker a slightly different base rate so the
+ *     conversation doesn't sound monotonous.
  */
 function mapSpeakersToVoices(
   speakers: string[],
   availableVoices: SpeechSynthesisVoice[]
 ): Map<string, SpeakerVoicePlan> {
-  const englishVoices = availableVoices.filter((v) =>
-    v.lang.toLowerCase().startsWith('en')
-  )
+  const englishVoices = availableVoices
+    .filter((v) => v.lang.toLowerCase().startsWith('en'))
+    .sort((a, b) => voiceQualityScore(b) - voiceQualityScore(a))
+
   const pool = englishVoices.length > 0 ? englishVoices : availableVoices
 
   // If we have no voices at all, return empty map (caller falls back to default)
@@ -121,16 +145,18 @@ function mapSpeakersToVoices(
 
   const assignment = new Map<string, SpeakerVoicePlan>()
   const usedVoices = new Set<SpeechSynthesisVoice>()
-
-  // Track how many speakers have been assigned each voice so we can
-  // give them different pitches when voices are reused.
   const voiceUseCount = new Map<SpeechSynthesisVoice, number>()
 
-  for (const speaker of speakers) {
+  // Slightly different base rates per speaker so they don't all sound
+  // the same speed — makes the conversation feel more natural.
+  const rateVariation = [0.9, 0.95, 0.85, 1.0, 0.88, 0.92, 0.97, 0.83]
+
+  for (let i = 0; i < speakers.length; i++) {
+    const speaker = speakers[i]
     const gender = guessGender(speaker)
 
     // Build a preference-ordered list of voices for this speaker:
-    // gender-matched first, then neutral, then the rest.
+    // unused first, then gender-matched, then the rest.
     const preferred = pool
       .map((v) => ({
         voice: v,
@@ -138,9 +164,7 @@ function mapSpeakersToVoices(
         used: usedVoices.has(v),
       }))
       .sort((a, b) => {
-        // Unused voices first
         if (a.used !== b.used) return a.used ? 1 : -1
-        // Then gender match
         const aMatch = a.gender === gender ? 0 : 1
         const bMatch = b.gender === gender ? 0 : 1
         if (aMatch !== bMatch) return aMatch - bMatch
@@ -150,8 +174,9 @@ function mapSpeakersToVoices(
     const chosen = preferred[0].voice
     const useIdx = voiceUseCount.get(chosen) ?? 0
     const pitch = PITCH_STEPS[useIdx % PITCH_STEPS.length]
+    const rate = rateVariation[i % rateVariation.length]
 
-    assignment.set(speaker, { voice: chosen, pitch })
+    assignment.set(speaker, { voice: chosen, pitch, rate })
     usedVoices.add(chosen)
     voiceUseCount.set(chosen, useIdx + 1)
   }
@@ -159,11 +184,50 @@ function mapSpeakersToVoices(
   return assignment
 }
 
+// ── Natural Speech: Clause Splitting ─────────────────────────────────
+
+/**
+ * Split a line of dialogue into smaller clauses that can be spoken
+ * with natural pauses between them.  This avoids the monotone sound
+ * of a single long utterance and makes the speech feel conversational.
+ *
+ * Splits on sentence-ending punctuation (. ! ?) and clause boundaries
+ * (; : —) while keeping short fragments together.
+ */
+function splitIntoClauses(text: string): string[] {
+  // Split on sentence/clause boundaries, keeping the delimiter
+  const raw = text.split(/(?<=[.!?;:])\s+|(?<=—)\s*/)
+  const clauses: string[] = []
+  let buffer = ''
+
+  for (const part of raw) {
+    const trimmed = part.trim()
+    if (!trimmed) continue
+
+    // If the part is very short (e.g. "Yes." or "Oh,"), merge with the
+    // next clause so we don't get choppy single-word utterances.
+    if (buffer) {
+      const combined = `${buffer} ${trimmed}`
+      if (combined.length < 60) {
+        buffer = combined
+        continue
+      }
+      clauses.push(buffer)
+      buffer = trimmed
+    } else {
+      buffer = trimmed
+    }
+  }
+  if (buffer) clauses.push(buffer)
+
+  return clauses.length > 0 ? clauses : [text]
+}
+
 // ── Speech Synthesis (TTS) ───────────────────────────────────────────
 
 export function useSpeech() {
   const [speaking, setSpeaking] = useState(false)
-  const queueRef = useRef<SpeechSegment[]>([])
+  const queueRef = useRef<{ speaker: string; text: string }[]>([])
   const voiceMapRef = useRef<Map<string, SpeakerVoicePlan>>(new Map())
   const rateRef = useRef(0.85)
   const cancelledRef = useRef(false)
@@ -198,18 +262,26 @@ export function useSpeech() {
 
     const utterance = new SpeechSynthesisUtterance(next.text)
     utterance.lang = 'en-US'
-    utterance.rate = rateRef.current
 
     const plan = voiceMapRef.current.get(next.speaker)
     if (plan) {
       utterance.voice = plan.voice
       utterance.pitch = plan.pitch
+      // Use the speaker's base rate, scaled by the caller's rate setting
+      utterance.rate = rateRef.current * plan.rate
+    } else {
+      utterance.rate = rateRef.current
     }
 
     utterance.onend = () => {
-      // Small pause between segments so the conversation sounds natural
-      // and to avoid Chrome's known bug where rapid speak() calls are dropped.
-      setTimeout(() => playNext(), 250)
+      if (cancelledRef.current) return
+
+      // Determine pause length: longer after sentence-ending punctuation,
+      // shorter after commas/clauses.  This creates a natural rhythm.
+      const endsSentence = /[.!?]$/.test(next.text.trim())
+      const pauseMs = endsSentence ? 500 : 200
+
+      setTimeout(() => playNext(), pauseMs)
     }
     utterance.onerror = () => {
       setSpeaking(false)
@@ -250,14 +322,11 @@ export function useSpeech() {
       }
 
       // Multi-speaker conversation path
-      // Use cached voices (getVoices() may return [] if called too early)
       let availableVoices =
         voicesRef.current.length > 0
           ? voicesRef.current
           : window.speechSynthesis.getVoices()
 
-      // If voices are still empty, trigger a synchronous fetch by calling
-      // getVoices() again after a brief tick — some browsers need this.
       if (availableVoices.length === 0) {
         window.speechSynthesis.getVoices()
         availableVoices = window.speechSynthesis.getVoices()
@@ -274,10 +343,20 @@ export function useSpeech() {
           speaker: name,
           voice: plan.voice.name,
           pitch: plan.pitch,
+          rate: plan.rate,
         }))
       )
 
-      queueRef.current = [...segments]
+      // Split each segment into natural clauses so the speech has
+      // pauses and intonation instead of sounding like a flat read.
+      const clauseQueue: { speaker: string; text: string }[] = []
+      for (const seg of segments) {
+        const clauses = splitIntoClauses(seg.text)
+        for (const clause of clauses) {
+          clauseQueue.push({ speaker: seg.speaker, text: clause })
+        }
+      }
+      queueRef.current = clauseQueue
 
       setSpeaking(true)
       playNext()
