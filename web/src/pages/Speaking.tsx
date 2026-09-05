@@ -349,25 +349,35 @@ export function Speaking() {
         </CardContent>
       </Card>
 
-      {/* IELTS Speaking Format Info */}
+      {/* Speaking Format Info */}
       <Card>
         <CardContent className="py-4 space-y-2">
-          <p className="text-sm font-medium text-gray-400">IELTS Speaking Test Format:</p>
+          <p className="text-sm font-medium text-gray-400">
+            {(user?.target_exam || 'IELTS') === 'VSTEP'
+              ? 'VSTEP Speaking Test Format:'
+              : 'IELTS Speaking Test Format:'}
+          </p>
           <div className="grid grid-cols-3 gap-2 text-xs">
             <div className="rounded-lg border border-border p-2">
               <p className="font-medium text-accent">Part 1</p>
-              <p className="text-gray-400">Introduction & Interview</p>
-              <p className="text-gray-500">4-5 min</p>
+              <p className="text-gray-400">
+                {user?.target_exam === 'VSTEP' ? 'Social Interaction' : 'Introduction & Interview'}
+              </p>
+              <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '4-5 min'}</p>
             </div>
             <div className="rounded-lg border border-border p-2">
               <p className="font-medium text-accent">Part 2</p>
-              <p className="text-gray-400">Long Turn (Cue Card)</p>
-              <p className="text-gray-500">3-4 min</p>
+              <p className="text-gray-400">
+                {user?.target_exam === 'VSTEP' ? 'Solution Discussion' : 'Long Turn (Cue Card)'}
+              </p>
+              <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '3-4 min'}</p>
             </div>
             <div className="rounded-lg border border-border p-2">
               <p className="font-medium text-accent">Part 3</p>
-              <p className="text-gray-400">Discussion</p>
-              <p className="text-gray-500">4-5 min</p>
+              <p className="text-gray-400">
+                {user?.target_exam === 'VSTEP' ? 'Topic Development' : 'Discussion'}
+              </p>
+              <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '4-5 min'}</p>
             </div>
           </div>
         </CardContent>
