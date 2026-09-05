@@ -64,11 +64,7 @@ async function checkBackendHealth(): Promise<boolean> {
     return backendReachable
   })()
 
-  try {
-    return await healthCheckPromise
-  } finally {
-    healthCheckPromise = null
-  }
+  return healthCheckPromise
 }
 
 // ── Token management ──────────────────────────────────
