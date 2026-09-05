@@ -62,7 +62,6 @@ export const useAuthStore = create<AuthState>()(
         signOutLocal()
         set({ user: null, session: null, loading: false })
       },
-      },
       onLocalAuth: async (userId: string, name: string, email: string) => {
         // Load or create local profile
         const profile = loadLocalProfile(userId, name, email)
