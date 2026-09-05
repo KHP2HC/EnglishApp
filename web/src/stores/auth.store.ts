@@ -61,8 +61,10 @@ export const useAuthStore = create<AuthState>()(
         }
         signOutLocal()
         set({ user: null, session: null })
-        // Redirect to login page
-        window.location.href = '/auth'
+        // Redirect to login page — use the app basename so it works on
+        // GitHub Pages subpaths (e.g. /EnglishApp/auth) and local dev.
+        const base = import.meta.env.BASE_URL || '/'
+        window.location.href = `${base}auth`
       },
       onLocalAuth: async (userId: string, name: string, email: string) => {
         // Load or create local profile
