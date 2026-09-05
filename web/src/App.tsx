@@ -51,10 +51,10 @@ export default function App() {
       return
     }
 
-    // If Supabase is not configured, use demo mode
+    // If Supabase is not configured, don't auto-login — let ProtectedRoute
+    // redirect to /auth so the user can create an account or sign in.
     if (!isSupabaseConfigured()) {
       setLoading(false)
-      refreshProfile()
       return
     }
 
@@ -80,14 +80,12 @@ export default function App() {
     return () => listener.subscription.unsubscribe()
   }, [])
 
-  // Check if any auth exists (local or Supabase)
-  const hasAuth = isSupabaseConfigured() || getSession()
-
+  // Auth pages are always accessible
   return (
     <Routes>
-      <Route path="/" element={hasAuth ? <Landing /> : <Navigate to="/app" replace />} />
-      <Route path="/auth" element={hasAuth ? <Auth /> : <Navigate to="/app" replace />} />
-      <Route path="/onboarding" element={hasAuth ? <Onboarding /> : <Navigate to="/app" replace />} />
+      <Route path="/" element={<Landing />} />
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/onboarding" element={<Onboarding />} />
       <Route
         path="/app"
         element={

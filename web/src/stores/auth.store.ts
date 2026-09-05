@@ -80,9 +80,10 @@ export const useAuthStore = create<AuthState>()(
           return
         }
 
-        // If Supabase is not configured, use demo mode
+        // If Supabase is not configured, don't set a demo user —
+        // the caller should redirect to /auth instead.
         if (!isSupabaseConfigured()) {
-          set({ user: DEMO_USER, loading: false })
+          set({ loading: false })
           return
         }
 
