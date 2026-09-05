@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Volume2, Check, X, Timer, RotateCcw, ChevronDown } from 'lucide-react'
 import { useSpeech } from '@/hooks/useSpeech'
-import { loadListeningTests, type ListeningTest } from '@/lib/seed-data'
+import { useAuthStore } from '@/stores/auth.store'
+import { loadExamListeningTests, type ListeningTest } from '@/lib/seed-data'
 import { rawToListeningBand, bandLabel } from '@/lib/ielts-bands'
 
 // ── Answer normalisation ─────────────────────────────────────────────
@@ -25,6 +26,7 @@ const aKey = (testId: string, qId: string) => `${testId}::${qId}`
 
 export function Listening() {
   const { speak, speaking } = useSpeech()
+  const { user } = useAuthStore()
   const [tests, setTests] = useState<ListeningTest[]>([])
   const [testIdx, setTestIdx] = useState(0)
   const [sectionIdx, setSectionIdx] = useState(0)
@@ -36,7 +38,7 @@ export function Listening() {
   const [audioPlayed, setAudioPlayed] = useState<Set<string>>(new Set())
 
   useEffect(() => {
-    loadListeningTests()
+    loadExamListeningTests(user?.target_exam || undefined)
       .then((data) => {
         setTests(data)
         setLoading(false)
@@ -45,7 +47,7 @@ export function Listening() {
         }
       })
       .catch(() => setLoading(false))
-  }, [])
+  }, [user?.target_exam])
 
   // Timer
   useEffect(() => {

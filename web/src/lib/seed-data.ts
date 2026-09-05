@@ -143,6 +143,10 @@ let readingCache: ReadingTest[] | null = null
 let listeningCache: ListeningTest[] | null = null
 let writingCache: WritingTest[] | null = null
 let speakingCache: SpeakingTest[] | null = null
+let vstepReadingCache: ReadingTest[] | null = null
+let vstepListeningCache: ListeningTest[] | null = null
+let vstepWritingCache: WritingTest[] | null = null
+let vstepSpeakingCache: SpeakingTest[] | null = null
 
 export async function loadVocabData(): Promise<SeedVocabEntry[]> {
   if (vocabCache) return vocabCache
@@ -224,6 +228,65 @@ export async function loadSpeakingTest(id?: string): Promise<SpeakingTest | null
   const tests = await loadSpeakingTests()
   if (!id) return tests[0] || null
   return tests.find((t) => t.id === id) || tests[0] || null
+}
+
+// ── VSTEP-specific loaders ──────────────────────────────────────────
+
+export async function loadVstepReadingTests(): Promise<ReadingTest[]> {
+  if (vstepReadingCache) return vstepReadingCache
+  const resp = await fetch(`${BASE}data/vstep_reading_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load VSTEP reading tests')
+  vstepReadingCache = await resp.json()
+  return vstepReadingCache!
+}
+
+export async function loadVstepListeningTests(): Promise<ListeningTest[]> {
+  if (vstepListeningCache) return vstepListeningCache
+  const resp = await fetch(`${BASE}data/vstep_listening_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load VSTEP listening tests')
+  vstepListeningCache = await resp.json()
+  return vstepListeningCache!
+}
+
+export async function loadVstepWritingTests(): Promise<WritingTest[]> {
+  if (vstepWritingCache) return vstepWritingCache
+  const resp = await fetch(`${BASE}data/vstep_writing_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load VSTEP writing tests')
+  vstepWritingCache = await resp.json()
+  return vstepWritingCache!
+}
+
+export async function loadVstepSpeakingTests(): Promise<SpeakingTest[]> {
+  if (vstepSpeakingCache) return vstepSpeakingCache
+  const resp = await fetch(`${BASE}data/vstep_speaking_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load VSTEP speaking tests')
+  vstepSpeakingCache = await resp.json()
+  return vstepSpeakingCache!
+}
+
+/**
+ * Load exam-specific test data for a given skill.
+ * For VSTEP, loads from vstep_*.json files.
+ * For other exams (IELTS, TOEIC, TOEFL), loads from the default files.
+ */
+export async function loadExamReadingTests(examType?: string): Promise<ReadingTest[]> {
+  if (examType === 'VSTEP') return loadVstepReadingTests()
+  return loadReadingTests()
+}
+
+export async function loadExamListeningTests(examType?: string): Promise<ListeningTest[]> {
+  if (examType === 'VSTEP') return loadVstepListeningTests()
+  return loadListeningTests()
+}
+
+export async function loadExamWritingTests(examType?: string): Promise<WritingTest[]> {
+  if (examType === 'VSTEP') return loadVstepWritingTests()
+  return loadWritingTests()
+}
+
+export async function loadExamSpeakingTests(examType?: string): Promise<SpeakingTest[]> {
+  if (examType === 'VSTEP') return loadVstepSpeakingTests()
+  return loadSpeakingTests()
 }
 
 // ── Converters ──────────────────────────────────────────────────────

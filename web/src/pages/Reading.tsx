@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Check, X, Timer, ChevronDown } from 'lucide-react'
-import { loadReadingTests, type ReadingTest } from '@/lib/seed-data'
+import { useAuthStore } from '@/stores/auth.store'
+import { loadExamReadingTests, type ReadingTest } from '@/lib/seed-data'
 import { rawToReadingBand, bandLabel } from '@/lib/ielts-bands'
 
 // ── Answer normalisation ─────────────────────────────────────────────
@@ -23,6 +24,7 @@ function checkAnswer(q: { answer: string | string[] }, userAnswer: string): bool
 const aKey = (testId: string, qId: string) => `${testId}::${qId}`
 
 export function Reading() {
+  const { user } = useAuthStore()
   const [tests, setTests] = useState<ReadingTest[]>([])
   const [testIdx, setTestIdx] = useState(0)
   const [passageIdx, setPassageIdx] = useState(0)
@@ -33,7 +35,7 @@ export function Reading() {
   const [timerActive, setTimerActive] = useState(false)
 
   useEffect(() => {
-    loadReadingTests()
+    loadExamReadingTests(user?.target_exam || undefined)
       .then((data) => {
         setTests(data)
         setLoading(false)
@@ -42,7 +44,7 @@ export function Reading() {
         }
       })
       .catch(() => setLoading(false))
-  }, [])
+  }, [user?.target_exam])
 
   // Timer
   useEffect(() => {

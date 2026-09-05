@@ -1,0 +1,172 @@
+[
+  {
+    "id": "vstep-writing-1",
+    "title": "VSTEP Writing Practice Test 1",
+    "task1": {
+      "id": "vstep-w1-t1",
+      "type": "task1",
+      "title": "Task 1: Letter/Email",
+      "instructions": "You should spend about 20 minutes on this task. Write at least 120 words.",
+      "prompt": "You recently moved to a new city and want to join a local sports club. Write a letter to the club manager. In your letter: - introduce yourself - explain why you want to join - ask about membership fees and schedule",
+      "min_words": 120,
+      "time_minutes": 20,
+      "band_descriptors": {
+        "task_achievement": "All parts of the task are addressed. Tone is appropriate.",
+        "coherence": "Ideas are logically organized with clear paragraphs.",
+        "lexical_resource": "Good range of vocabulary for the topic.",
+        "grammar": "Generally accurate with some attempts at complex structures."
+      }
+    },
+    "task2": {
+      "id": "vstep-w1-t2",
+      "type": "task2",
+      "title": "Task 2: Essay",
+      "instructions": "You should spend about 40 minutes on this task. Write at least 250 words.",
+      "prompt": "Some people believe that university education should be free for everyone. Others argue that students should pay for their education. Discuss both views and give your opinion.",
+      "min_words": 250,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "Both views are discussed and a clear opinion is given.",
+        "coherence": "Clear paragraphing with logical flow of ideas.",
+        "lexical_resource": "Wide range of vocabulary used accurately.",
+        "grammar": "Good control of grammar with complex sentences."
+      }
+    }
+  },
+  {
+    "id": "vstep-writing-2",
+    "title": "VSTEP Writing Practice Test 2",
+    "task1": {
+      "id": "vstep-w2-t1",
+      "type": "task1",
+      "title": "Task 1: Letter/Email",
+      "instructions": "You should spend about 20 minutes on this task. Write at least 120 words.",
+      "prompt": "You recently bought a product online but it arrived damaged. Write an email to the customer service department. In your email: - describe the product you ordered - explain the problem - say what you would like the company to do",
+      "min_words": 120,
+      "time_minutes": 20,
+      "band_descriptors": {
+        "task_achievement": "All bullet points are fully addressed. Tone is formal and polite.",
+        "coherence": "Information is logically sequenced with appropriate linking words.",
+        "lexical_resource": "Vocabulary is varied and appropriate for a complaint letter.",
+        "grammar": "Sentence structures are generally accurate with some variety."
+      }
+    },
+    "task2": {
+      "id": "vstep-w2-t2",
+      "type": "task2",
+      "title": "Task 2: Essay",
+      "instructions": "You should spend about 40 minutes on this task. Write at least 250 words.",
+      "prompt": "Environmental problems are too big to be solved by individual action. They can only be solved by governments and large corporations. To what extent do you agree or disagree?",
+      "min_words": 250,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "A clear position is taken and supported throughout the essay.",
+        "coherence": "Ideas are well-organized with clear introduction, body, and conclusion.",
+        "lexical_resource": "Environmental vocabulary is used accurately and appropriately.",
+        "grammar": "A mix of simple and complex sentence structures is used effectively."
+      }
+    }
+  },
+  {
+    "id": "vstep-writing-3",
+    "title": "VSTEP Writing Practice Test 3",
+    "task1": {
+      "id": "vstep-w3-t1",
+      "type": "task1",
+      "title": "Task 1: Letter/Email",
+      "instructions": "You should spend about 20 minutes on this task. Write at least 120 words.",
+      "prompt": "You would like to apply for a part-time job at a local bookstore. Write a letter to the bookstore owner. In your letter: - explain why you are interested in the job - describe your relevant skills and experience - mention your availability",
+      "min_words": 120,
+      "time_minutes": 20,
+      "band_descriptors": {
+        "task_achievement": "All parts of the task are covered. The tone is professional.",
+        "coherence": "Paragraphs are clear and logically connected.",
+        "lexical_resource": "Vocabulary related to work and skills is used effectively.",
+        "grammar": "Grammar is generally accurate with appropriate formal register."
+      }
+    },
+    "task2": {
+      "id": "vstep-w3-t2",
+      "type": "task2",
+      "title": "Task 2: Essay",
+      "instructions": "You should spend about 40 minutes on this task. Write at least 250 words.",
+      "prompt": "Technology has made communication easier than ever before, but some people argue it has reduced face-to-face interaction. Do the benefits of technology in communication outweigh the drawbacks?",
+      "min_words": 250,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "Both benefits and drawbacks are considered with a clear overall position.",
+        "coherence": "Logical structure with smooth transitions between paragraphs.",
+        "lexical_resource": "Technology-related vocabulary is used with precision.",
+        "grammar": "Complex structures such as conditionals and relative clauses are used."
+      }
+    }
+  },
+  {
+    "id": "vstep-writing-4",
+    "title": "VSTEP Writing Practice Test 4",
+    "task1": {
+      "id": "vstep-w4-t1",
+      "type": "task1",
+      "title": "Task 1: Letter/Email",
+      "instructions": "You should spend about 20 minutes on this task. Write at least 120 words.",
+      "prompt": "Your neighbor's dog has been making a lot of noise late at night. Write a polite letter to your neighbor. In your letter: - explain the problem - describe how it affects you - suggest a possible solution",
+      "min_words": 120,
+      "time_minutes": 20,
+      "band_descriptors": {
+        "task_achievement": "All bullet points are addressed. Tone is polite and constructive.",
+        "coherence": "Ideas flow logically with appropriate paragraphing.",
+        "lexical_resource": "Vocabulary is appropriate for a neighborhood communication.",
+        "grammar": "Sentence structures are varied and mostly accurate."
+      }
+    },
+    "task2": {
+      "id": "vstep-w4-t2",
+      "type": "task2",
+      "title": "Task 2: Essay",
+      "instructions": "You should spend about 40 minutes on this task. Write at least 250 words.",
+      "prompt": "In many countries, the gap between the rich and the poor is growing. What are the causes of this trend, and what measures could governments take to reduce inequality?",
+      "min_words": 250,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "Causes and solutions are clearly identified and developed.",
+        "coherence": "Problem-solution structure is clear and well-organized.",
+        "lexical_resource": "Social and economic vocabulary is used accurately.",
+        "grammar": "Modal verbs and complex structures are used for suggestions and analysis."
+      }
+    }
+  },
+  {
+    "id": "vstep-writing-5",
+    "title": "VSTEP Writing Practice Test 5",
+    "task1": {
+      "id": "vstep-w5-t1",
+      "type": "task1",
+      "title": "Task 1: Letter/Email",
+      "instructions": "You should spend about 20 minutes on this task. Write at least 120 words.",
+      "prompt": "You recently attended a health and fitness workshop and found it very useful. Write an email to a friend who could not attend. In your email: - describe what the workshop was about - share the most useful thing you learned - suggest that your friend attend the next one",
+      "min_words": 120,
+      "time_minutes": 20,
+      "band_descriptors": {
+        "task_achievement": "All parts of the task are covered. Tone is friendly and informal.",
+        "coherence": "Ideas are organized clearly with natural transitions.",
+        "lexical_resource": "Health and fitness vocabulary is used appropriately.",
+        "grammar": "Grammar is accurate with some informal structures suitable for a friend."
+      }
+    },
+    "task2": {
+      "id": "vstep-w5-t2",
+      "type": "task2",
+      "title": "Task 2: Essay",
+      "instructions": "You should spend about 40 minutes on this task. Write at least 250 words.",
+      "prompt": "Some people believe that a vegetarian diet is healthier than a diet that includes meat. Others think a balanced diet with meat is necessary for good health. Discuss both views and give your own opinion.",
+      "min_words": 250,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "Both dietary perspectives are discussed with a clear personal opinion.",
+        "coherence": "Well-structured essay with balanced paragraphing.",
+        "lexical_resource": "Health and nutrition vocabulary is used accurately.",
+        "grammar": "A range of grammatical structures is used with good control."
+      }
+    }
+  }
+]

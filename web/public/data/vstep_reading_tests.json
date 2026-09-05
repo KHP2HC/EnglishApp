@@ -1,0 +1,1823 @@
+[
+  {
+    "id": "vstep-reading-1",
+    "title": "VSTEP Reading Practice Test 1",
+    "time_minutes": 60,
+    "passages": [
+      {
+        "id": "vstep-r1-p1",
+        "number": 1,
+        "title": "The Rise of Online Learning",
+        "difficulty": "B1",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Online learning has transformed education in ways that few could have predicted just two decades ago. What began as a modest experiment in distance education has grown into a global phenomenon, with millions of students enrolled in courses offered by universities, companies, and independent platforms. The appeal is clear: learners can study at their own pace, choose from a vast array of subjects, and access materials from anywhere in the world.\n\nOne of the most significant advantages of online learning is flexibility. Traditional classrooms require students to be present at a specific time and place, which can be difficult for working adults, parents, or those living in remote areas. Online courses, by contrast, allow learners to watch lectures, complete assignments, and participate in discussions whenever it suits them. This has opened doors for people who might otherwise never have had the chance to pursue higher education.\n\nHowever, online learning is not without its critics. Some educators argue that the lack of face-to-face interaction diminishes the quality of learning. In a physical classroom, students can ask questions in real time, engage in spontaneous debates, and build relationships with peers and instructors. Online forums and video calls attempt to replicate this experience, but many feel that something essential is lost. Furthermore, self-discipline is crucial; without the structure of regular class meetings, some students struggle to stay motivated and fall behind.\n\nAnother concern is the digital divide. Not everyone has reliable internet access or the devices needed to participate in online courses. In developing countries, this gap is especially pronounced. A student in a rural village may have the desire and ability to learn but lack the infrastructure to do so. Efforts are being made to address this issue, including government programs that provide tablets and internet subsidies, but progress has been slow.\n\nDespite these challenges, the trajectory of online learning appears to be upward. Advances in technology, such as virtual reality and artificial intelligence, promise to make online education more immersive and personalized. Some universities now offer fully online degrees that carry the same weight as their on-campus equivalents. As the stigma around online education fades, more learners are likely to embrace it as a legitimate and practical path to knowledge and career advancement.",
+        "questions": [
+          {
+            "id": "vstep-r1-p1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Online learning is perfect and has no disadvantages",
+              "Online learning has grown significantly but still faces challenges",
+              "Traditional classrooms are better than online courses",
+              "Only developing countries benefit from online learning"
+            ],
+            "answer": "Online learning has grown significantly but still faces challenges",
+            "explanation": "The passage discusses both the growth and advantages of online learning as well as its challenges, including lack of interaction and the digital divide."
+          },
+          {
+            "id": "vstep-r1-p1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what is one of the most significant advantages of online learning?",
+            "options": [
+              "It is always free of charge",
+              "It requires no technology",
+              "Flexibility in time and place",
+              "It replaces all teachers with computers"
+            ],
+            "answer": "Flexibility in time and place",
+            "explanation": "The second paragraph states that flexibility is one of the most significant advantages, allowing learners to study at their own pace and schedule."
+          },
+          {
+            "id": "vstep-r1-p1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What concern do some educators raise about online learning?",
+            "options": [
+              "It is too expensive for universities",
+              "The lack of face-to-face interaction diminishes learning quality",
+              "There are too many subjects available",
+              "It makes students exercise too much"
+            ],
+            "answer": "The lack of face-to-face interaction diminishes learning quality",
+            "explanation": "The third paragraph states that some educators argue the lack of face-to-face interaction diminishes the quality of learning."
+          },
+          {
+            "id": "vstep-r1-p1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "The word 'pronounced' in paragraph 4 is closest in meaning to:",
+            "options": [
+              "hidden",
+              "obvious or noticeable",
+              "spoken aloud",
+              "reduced"
+            ],
+            "answer": "obvious or noticeable",
+            "explanation": "In the context 'this gap is especially pronounced,' the word means especially obvious or noticeable."
+          },
+          {
+            "id": "vstep-r1-p1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What does the passage say about the digital divide in developing countries?",
+            "options": [
+              "It has been completely solved",
+              "It is not a problem there",
+              "It is especially severe",
+              "It only affects elderly people"
+            ],
+            "answer": "It is especially severe",
+            "explanation": "Paragraph 4 states that in developing countries, the digital divide 'is especially pronounced,' meaning it is particularly severe."
+          },
+          {
+            "id": "vstep-r1-p1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "Why do some students struggle with online courses?",
+            "options": [
+              "The courses are too short",
+              "They lack self-discipline without regular class structure",
+              "The internet is too fast",
+              "There are no assignments to complete"
+            ],
+            "answer": "They lack self-discipline without regular class structure",
+            "explanation": "Paragraph 3 explains that without the structure of regular class meetings, some students struggle to stay motivated and fall behind."
+          },
+          {
+            "id": "vstep-r1-p1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward the future of online learning?",
+            "options": [
+              "Pessimistic and dismissive",
+              "Cautiously optimistic",
+              "Completely neutral",
+              "Angry and critical"
+            ],
+            "answer": "Cautiously optimistic",
+            "explanation": "The final paragraph acknowledges challenges but states that 'the trajectory of online learning appears to be upward,' showing cautious optimism."
+          },
+          {
+            "id": "vstep-r1-p1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What does the word 'stigma' in the last paragraph refer to?",
+            "options": [
+              "A type of online course",
+              "A negative label or shame associated with something",
+              "A technical term for internet speed",
+              "A government education policy"
+            ],
+            "answer": "A negative label or shame associated with something",
+            "explanation": "The passage says 'as the stigma around online education fades,' meaning the negative perception or shame associated with it is disappearing."
+          },
+          {
+            "id": "vstep-r1-p1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "Which technology is mentioned as promising to make online education more immersive?",
+            "options": [
+              "Virtual reality and artificial intelligence",
+              "Fax machines and telegraphs",
+              "Printed textbooks",
+              "Radio broadcasts"
+            ],
+            "answer": "Virtual reality and artificial intelligence",
+            "explanation": "The last paragraph mentions that advances in technology such as virtual reality and artificial intelligence promise to make online education more immersive and personalized."
+          },
+          {
+            "id": "vstep-r1-p1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Online learning will completely replace traditional classrooms soon",
+              "Online degrees are becoming more accepted by institutions",
+              "The digital divide has been fully resolved",
+              "All students prefer online learning over classroom learning"
+            ],
+            "answer": "Online degrees are becoming more accepted by institutions",
+            "explanation": "The passage states that some universities now offer fully online degrees that carry the same weight as on-campus equivalents, and the stigma is fading, implying growing acceptance."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r1-p2",
+        "number": 2,
+        "title": "The Hidden Cost of Fast Fashion",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "The fashion industry has undergone a dramatic transformation in the last two decades. What was once a seasonal business, with new collections released a few times a year, has become a relentless cycle of production and consumption known as 'fast fashion.' Brands now release new styles every week, encouraging consumers to buy more, wear items briefly, and discard them just as quickly. While this model has made clothing affordable and accessible, its hidden costs are becoming impossible to ignore.\n\nThe environmental impact of fast fashion is staggering. The industry is responsible for roughly ten percent of global carbon emissions, more than all international flights and maritime shipping combined. Producing a single cotton t-shirt requires approximately 2,700 liters of water, enough to meet one person's drinking needs for two and a half years. Furthermore, the dyes and chemicals used in textile manufacturing pollute rivers and streams in many manufacturing countries, devastating local ecosystems and the communities that depend on them.\n\nThe human cost is equally troubling. Garment workers in countries such as Bangladesh, Vietnam, and Cambodia often work long hours in unsafe conditions for wages that barely cover basic living expenses. The 2013 collapse of the Rana Plaza factory in Bangladesh, which killed over 1,100 people, brought international attention to the dangerous conditions under which much of the world's clothing is produced. Despite promises of reform, progress has been uneven, and many workers continue to face exploitation.\n\nConsumers in wealthy nations are increasingly aware of these issues, and a growing movement advocates for sustainable fashion. This includes buying fewer, higher-quality garments, supporting brands with transparent supply chains, and embracing second-hand clothing. Some governments have begun to regulate the industry, requiring companies to disclose their environmental impact and labor practices.\n\nHowever, sustainable fashion faces significant barriers. Ethically produced clothing is often expensive, putting it out of reach for many consumers. Fast fashion brands have also been accused of 'greenwashing' — making misleading claims about their environmental efforts to attract conscientious shoppers. Critics argue that without stricter regulation and a fundamental shift in consumer habits, the industry's harmful practices will continue largely unchecked.",
+        "questions": [
+          {
+            "id": "vstep-r1-p2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Fast fashion is the best way to produce affordable clothing",
+              "Fast fashion has significant environmental and human costs despite its affordability",
+              "Sustainable fashion has completely replaced fast fashion",
+              "The fashion industry has not changed in twenty years"
+            ],
+            "answer": "Fast fashion has significant environmental and human costs despite its affordability",
+            "explanation": "The passage discusses how fast fashion has made clothing affordable but at great environmental and human cost."
+          },
+          {
+            "id": "vstep-r1-p2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, how much of global carbon emissions is the fashion industry responsible for?",
+            "options": [
+              "About 1 percent",
+              "About 5 percent",
+              "About 10 percent",
+              "About 50 percent"
+            ],
+            "answer": "About 10 percent",
+            "explanation": "Paragraph 2 states that the industry is responsible for roughly ten percent of global carbon emissions."
+          },
+          {
+            "id": "vstep-r1-p2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The Rana Plaza factory collapse is mentioned to illustrate:",
+            "options": [
+              "The efficiency of fast fashion production",
+              "The dangerous working conditions in the garment industry",
+              "The benefits of sustainable fashion",
+              "The high cost of clothing production"
+            ],
+            "answer": "The dangerous working conditions in the garment industry",
+            "explanation": "Paragraph 3 mentions the Rana Plaza collapse, which killed over 1,100 people, to illustrate the dangerous conditions under which clothing is produced."
+          },
+          {
+            "id": "vstep-r1-p2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "The word 'staggering' in paragraph 2 is closest in meaning to:",
+            "options": [
+              "small and insignificant",
+              "shockingly large or overwhelming",
+              "slowly increasing",
+              "well-documented"
+            ],
+            "answer": "shockingly large or overwhelming",
+            "explanation": "In the context 'the environmental impact of fast fashion is staggering,' the word means shockingly large or overwhelming."
+          },
+          {
+            "id": "vstep-r1-p2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What does 'greenwashing' mean according to the passage?",
+            "options": [
+              "Using green dyes in textile manufacturing",
+              "Making misleading claims about environmental efforts",
+              "Recycling old clothing into new products",
+              "Growing cotton without pesticides"
+            ],
+            "answer": "Making misleading claims about environmental efforts",
+            "explanation": "Paragraph 5 defines greenwashing as making misleading claims about environmental efforts to attract conscientious shoppers."
+          },
+          {
+            "id": "vstep-r1-p2-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "How much water is needed to produce a single cotton t-shirt?",
+            "options": [
+              "270 liters",
+              "2,700 liters",
+              "27,000 liters",
+              "270,000 liters"
+            ],
+            "answer": "2,700 liters",
+            "explanation": "Paragraph 2 states that producing a single cotton t-shirt requires approximately 2,700 liters of water."
+          },
+          {
+            "id": "vstep-r1-p2-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's tone in this passage?",
+            "options": [
+              "Enthusiastic and supportive",
+              "Critical and concerned",
+              "Indifferent and neutral",
+              "Humorous and lighthearted"
+            ],
+            "answer": "Critical and concerned",
+            "explanation": "The author uses phrases like 'hidden costs,' 'staggering,' 'equally troubling,' and 'exploitation,' indicating a critical and concerned tone."
+          },
+          {
+            "id": "vstep-r1-p2-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What does the word 'relentless' in paragraph 1 suggest about the cycle of fast fashion?",
+            "options": [
+              "It is slow and careful",
+              "It is unstoppable and continuous",
+              "It is seasonal and planned",
+              "It is rare and occasional"
+            ],
+            "answer": "It is unstoppable and continuous",
+            "explanation": "The word 'relentless' means continuing without stopping, suggesting the cycle of production and consumption is continuous and intense."
+          },
+          {
+            "id": "vstep-r1-p2-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "According to the passage, what is one barrier to sustainable fashion?",
+            "options": [
+              "There are no sustainable brands available",
+              "Ethically produced clothing is often too expensive for many consumers",
+              "Governments have banned sustainable fashion",
+              "Consumers do not care about the environment"
+            ],
+            "answer": "Ethically produced clothing is often too expensive for many consumers",
+            "explanation": "Paragraph 5 states that ethically produced clothing is often expensive, putting it out of reach for many consumers."
+          },
+          {
+            "id": "vstep-r1-p2-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "The fast fashion industry will solve all its problems voluntarily",
+              "Stricter regulation and changes in consumer habits are needed to address the industry's problems",
+              "Sustainable fashion is already the dominant model",
+              "The Rana Plaza collapse had no lasting impact on the industry"
+            ],
+            "answer": "Stricter regulation and changes in consumer habits are needed to address the industry's problems",
+            "explanation": "The final paragraph argues that without stricter regulation and a fundamental shift in consumer habits, harmful practices will continue unchecked."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r1-p3",
+        "number": 3,
+        "title": "The Science of Sleep",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Sleep is one of the most fundamental biological processes, yet it remains one of the least understood. For decades, scientists have studied why humans and other animals need sleep, and while many questions persist, recent research has begun to unravel its mysteries. What is clear is that sleep is not merely a period of inactivity; it is a complex, active process essential for physical health, cognitive function, and emotional well-being.\n\nDuring sleep, the brain goes through distinct stages, each serving a specific purpose. The two main categories are rapid eye movement (REM) sleep and non-REM sleep. Non-REM sleep includes deep sleep stages during which the body repairs tissues, strengthens the immune system, and consolidates memories. REM sleep, characterized by rapid eye movements and vivid dreaming, appears to be crucial for processing emotions and integrating new information. A complete sleep cycle, moving through all stages, takes approximately ninety minutes and repeats several times throughout the night.\n\nThe consequences of sleep deprivation are well-documented. Short-term effects include impaired concentration, reduced reaction time, and mood disturbances. Chronic sleep deprivation has been linked to more serious conditions, including obesity, diabetes, cardiovascular disease, and weakened immune function. Studies have also shown that prolonged lack of sleep can have effects on the brain similar to those of alcohol intoxication, impairing judgment and coordination.\n\nOne of the most intriguing discoveries in recent years involves the glymphatic system, a network of channels in the brain that clears away waste products during sleep. Researchers found that during deep sleep, these channels expand, allowing cerebrospinal fluid to flush out toxic proteins that accumulate during waking hours. Among these proteins is amyloid-beta, which is associated with Alzheimer's disease. This finding suggests that poor sleep may be a risk factor for neurodegenerative diseases, not merely a symptom of them.\n\nDespite growing awareness of sleep's importance, modern life often works against healthy sleep habits. Artificial light, electronic devices, and demanding work schedules all contribute to a culture in which sleep is undervalued. Experts recommend that adults aim for seven to nine hours of sleep per night, but surveys consistently show that a significant portion of the population falls short of this target. As research continues to reveal the critical role sleep plays in health, there are calls for public health campaigns and workplace policies that prioritize rest.",
+        "questions": [
+          {
+            "id": "vstep-r1-p3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Sleep is a waste of time and should be minimized",
+              "Sleep is a complex, active process essential for health, and modern life undermines it",
+              "REM sleep is the only important stage of sleep",
+              "Sleep research has answered all major questions about sleep"
+            ],
+            "answer": "Sleep is a complex, active process essential for health, and modern life undermines it",
+            "explanation": "The passage describes sleep as an active, essential process, discusses its stages and health impacts, and notes that modern life undermines healthy sleep."
+          },
+          {
+            "id": "vstep-r1-p3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what happens during non-REM sleep?",
+            "options": [
+              "The brain processes emotions and dreams vividly",
+              "The body repairs tissues, strengthens the immune system, and consolidates memories",
+              "The brain produces amyloid-beta proteins",
+              "The body enters a state of paralysis"
+            ],
+            "answer": "The body repairs tissues, strengthens the immune system, and consolidates memories",
+            "explanation": "Paragraph 2 states that during non-REM sleep, the body repairs tissues, strengthens the immune system, and consolidates memories."
+          },
+          {
+            "id": "vstep-r1-p3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'unravel' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "create",
+              "understand or solve",
+              "ignore",
+              "complicate"
+            ],
+            "answer": "understand or solve",
+            "explanation": "In the context 'recent research has begun to unravel its mysteries,' the word means to understand or solve."
+          },
+          {
+            "id": "vstep-r1-p3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the glymphatic system?",
+            "options": [
+              "A type of sleep disorder",
+              "A network of channels in the brain that clears waste during sleep",
+              "A medical device used to monitor sleep",
+              "A hormone that regulates the sleep cycle"
+            ],
+            "answer": "A network of channels in the brain that clears waste during sleep",
+            "explanation": "Paragraph 4 describes the glymphatic system as a network of channels in the brain that clears away waste products during sleep."
+          },
+          {
+            "id": "vstep-r1-p3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "Which protein, associated with Alzheimer's disease, is cleared during deep sleep?",
+            "options": [
+              "Insulin",
+              "Amyloid-beta",
+              "Melatonin",
+              "Cortisol"
+            ],
+            "answer": "Amyloid-beta",
+            "explanation": "Paragraph 4 identifies amyloid-beta as the protein associated with Alzheimer's disease that is cleared during deep sleep."
+          },
+          {
+            "id": "vstep-r1-p3-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "According to the passage, how does sleep deprivation compare to alcohol intoxication?",
+            "options": [
+              "Sleep deprivation has no effect similar to alcohol",
+              "Prolonged lack of sleep can impair judgment and coordination similar to alcohol",
+              "Sleep deprivation is less dangerous than alcohol",
+              "Sleep deprivation counteracts the effects of alcohol"
+            ],
+            "answer": "Prolonged lack of sleep can impair judgment and coordination similar to alcohol",
+            "explanation": "Paragraph 3 states that prolonged lack of sleep can have effects on the brain similar to those of alcohol intoxication, impairing judgment and coordination."
+          },
+          {
+            "id": "vstep-r1-p3-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward modern sleep habits?",
+            "options": [
+              "Approving and supportive",
+              "Concerned and critical",
+              "Uninterested",
+              "Amused"
+            ],
+            "answer": "Concerned and critical",
+            "explanation": "The final paragraph expresses concern that modern life works against healthy sleep and that sleep is undervalued, showing a critical attitude."
+          },
+          {
+            "id": "vstep-r1-p3-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "How long does a complete sleep cycle take?",
+            "options": [
+              "30 minutes",
+              "60 minutes",
+              "90 minutes",
+              "120 minutes"
+            ],
+            "answer": "90 minutes",
+            "explanation": "Paragraph 2 states that a complete sleep cycle takes approximately ninety minutes and repeats several times throughout the night."
+          },
+          {
+            "id": "vstep-r1-p3-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'undervalued' in the last paragraph means:",
+            "options": [
+              "priced too high",
+              "not appreciated or considered important enough",
+              "measured incorrectly",
+              "forgotten completely"
+            ],
+            "answer": "not appreciated or considered important enough",
+            "explanation": "In the context 'sleep is undervalued,' the word means that sleep is not given the importance it deserves."
+          },
+          {
+            "id": "vstep-r1-p3-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Sleep research is no longer necessary",
+              "Improving sleep habits could help reduce the risk of certain diseases",
+              "Everyone already gets enough sleep",
+              "The glymphatic system works best during waking hours"
+            ],
+            "answer": "Improving sleep habits could help reduce the risk of certain diseases",
+            "explanation": "The passage links poor sleep to neurodegenerative diseases and other health conditions, implying that better sleep could reduce these risks."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r1-p4",
+        "number": 4,
+        "title": "The Ancient Silk Road",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "The Silk Road was not a single road but an extensive network of trade routes that connected the East and West for nearly fifteen centuries. Stretching from China through Central Asia, the Middle East, and into the Mediterranean, these routes facilitated the exchange of goods, ideas, religions, and technologies between civilizations that might otherwise have remained isolated. The Silk Road represents one of the most significant examples of cultural exchange in human history, and its legacy continues to influence the modern world.\n\nThe name 'Silk Road' was coined in the nineteenth century by a German geographer, Ferdinand von Richthofen, reflecting the importance of Chinese silk in the trade network. Silk was so prized in the Roman Empire that it was sometimes worth its weight in gold. But silk was far from the only commodity traded. Caravans carried spices from India, jade from Central Asia, glass from the Mediterranean, and porcelain from China. These goods traveled thousands of miles across deserts, mountains, and steppes, passing through oasis cities that grew wealthy from their role as trading hubs.\n\nThe Silk Road was also a conduit for the transmission of ideas and beliefs. Buddhism traveled from India along these routes, reaching China by the first century CE and profoundly shaping its culture and philosophy. Islam spread through Central Asia along the same paths. Scientific knowledge, including mathematics, astronomy, and medicine, flowed between East and West. The concept of paper, invented in China, reached the Islamic world and eventually Europe through these trade connections, fundamentally transforming how knowledge was recorded and disseminated.\n\nThe decline of the Silk Road was gradual, driven by several factors. The rise of maritime trade in the fifteenth century offered a faster and safer alternative to overland routes. Political instability along the route, including the expansion of the Ottoman Empire, disrupted traditional trading paths. By the sixteenth century, the great caravan routes had largely fallen into disuse, and the oasis cities that depended on them declined.\n\nIn recent years, the Silk Road has captured the imagination of policymakers and scholars alike. China's Belt and Road Initiative, launched in 2013, explicitly invokes the historical Silk Road as a model for modern infrastructure and trade connections. Whether this modern revival can replicate the cultural exchange that characterized the original Silk Road remains an open question. What is certain is that the original Silk Road demonstrated the transformative power of connection between distant civilizations, a lesson that remains relevant in an increasingly interconnected world.",
+        "questions": [
+          {
+            "id": "vstep-r1-p4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "The Silk Road was solely a trade route for silk",
+              "The Silk Road was a vast network facilitating trade, cultural exchange, and the spread of ideas between East and West",
+              "The Silk Road was a failure that had no lasting impact",
+              "The Silk Road was only important to China"
+            ],
+            "answer": "The Silk Road was a vast network facilitating trade, cultural exchange, and the spread of ideas between East and West",
+            "explanation": "The passage describes the Silk Road as a network that facilitated not only trade but also the exchange of ideas, religions, and technologies between civilizations."
+          },
+          {
+            "id": "vstep-r1-p4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Who coined the term 'Silk Road'?",
+            "options": [
+              "A Roman emperor",
+              "A Chinese emperor",
+              "Ferdinand von Richthofen",
+              "Marco Polo"
+            ],
+            "answer": "Ferdinand von Richthofen",
+            "explanation": "Paragraph 2 states that the name 'Silk Road' was coined in the nineteenth century by German geographer Ferdinand von Richthofen."
+          },
+          {
+            "id": "vstep-r1-p4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'conduit' in paragraph 3 is closest in meaning to:",
+            "options": [
+              "barrier",
+              "channel or pathway",
+              "destination",
+              "obstacle"
+            ],
+            "answer": "channel or pathway",
+            "explanation": "In the context 'the Silk Road was also a conduit for the transmission of ideas,' the word means a channel or pathway through which something is transmitted."
+          },
+          {
+            "id": "vstep-r1-p4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "According to the passage, which religion traveled from India to China along the Silk Road?",
+            "options": [
+              "Christianity",
+              "Islam",
+              "Buddhism",
+              "Hinduism"
+            ],
+            "answer": "Buddhism",
+            "explanation": "Paragraph 3 states that Buddhism traveled from India along these routes, reaching China by the first century CE."
+          },
+          {
+            "id": "vstep-r1-p4-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What contributed to the decline of the Silk Road?",
+            "options": [
+              "The invention of the internet",
+              "The rise of maritime trade and political instability",
+              "A shortage of silk",
+              "The collapse of the Chinese empire"
+            ],
+            "answer": "The rise of maritime trade and political instability",
+            "explanation": "Paragraph 4 cites the rise of maritime trade in the fifteenth century and political instability, including the expansion of the Ottoman Empire, as factors in the decline."
+          },
+          {
+            "id": "vstep-r1-p4-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'disuse' in paragraph 4 means:",
+            "options": [
+              "frequent use",
+              "no longer being used",
+              "improper use",
+              "overuse"
+            ],
+            "answer": "no longer being used",
+            "explanation": "In the context 'the great caravan routes had largely fallen into disuse,' the word means they were no longer being used."
+          },
+          {
+            "id": "vstep-r1-p4-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward the Belt and Road Initiative?",
+            "options": [
+              "Fully supportive and enthusiastic",
+              "Cautious and questioning whether it can replicate the original Silk Road's cultural exchange",
+              "Strongly opposed",
+              "Completely indifferent"
+            ],
+            "answer": "Cautious and questioning whether it can replicate the original Silk Road's cultural exchange",
+            "explanation": "The final paragraph asks 'whether this modern revival can replicate the cultural exchange,' showing a cautious, questioning attitude."
+          },
+          {
+            "id": "vstep-r1-p4-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "According to the passage, what invention from China reached the Islamic world and Europe through the Silk Road?",
+            "options": [
+              "Gunpowder",
+              "Paper",
+              "The compass",
+              "Printing press"
+            ],
+            "answer": "Paper",
+            "explanation": "Paragraph 3 specifically mentions that the concept of paper, invented in China, reached the Islamic world and eventually Europe through these trade connections."
+          },
+          {
+            "id": "vstep-r1-p4-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'transformative' in the last paragraph suggests that the Silk Road's legacy is:",
+            "options": [
+              "minor and insignificant",
+              "capable of producing significant change",
+              "temporary and fleeting",
+              "limited to ancient times"
+            ],
+            "answer": "capable of producing significant change",
+            "explanation": "The word 'transformative' means causing a major change, suggesting the Silk Road had a powerful and lasting impact on civilizations."
+          },
+          {
+            "id": "vstep-r1-p4-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "The Silk Road had no cultural impact beyond trade",
+              "Cultural exchange between civilizations can have profound and lasting effects",
+              "Maritime trade was less important than overland trade",
+              "The Ottoman Empire supported the Silk Road"
+            ],
+            "answer": "Cultural exchange between civilizations can have profound and lasting effects",
+            "explanation": "The passage emphasizes the transformative power of connection between civilizations and the lasting legacy of the Silk Road, implying that cultural exchange has profound effects."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vstep-reading-2",
+    "title": "VSTEP Reading Practice Test 2",
+    "time_minutes": 60,
+    "passages": [
+      {
+        "id": "vstep-r2-p1",
+        "number": 1,
+        "title": "Urban Farming: Growing Food in the City",
+        "difficulty": "B1",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "In cities around the world, a quiet revolution is taking place. Rooftops, vacant lots, and even underground tunnels are being transformed into productive farms. Urban farming, once considered a niche hobby, has grown into a movement with the potential to reshape how cities feed their residents. From community gardens in New York to high-tech vertical farms in Singapore, people are finding innovative ways to grow food where it was previously thought impossible.\n\nThe benefits of urban farming extend far beyond simply producing food. Community gardens bring neighbors together, creating social bonds in neighborhoods where people may otherwise have little interaction. They provide educational opportunities for children who have never seen where their food comes from. Green spaces in cities also help reduce the urban heat island effect, in which built-up areas become significantly warmer than surrounding rural areas. Additionally, growing food locally reduces the distance it must travel to reach consumers, cutting transportation emissions and ensuring fresher produce.\n\nVertical farming represents one of the most technologically advanced forms of urban agriculture. In these systems, crops are grown in stacked layers indoors, using artificial lighting and climate control. Proponents argue that vertical farms can produce significantly more food per square meter than traditional farms while using a fraction of the water. Some vertical farms even use hydroponic or aeroponic systems, which eliminate the need for soil altogether. While the technology is promising, the high energy costs of artificial lighting and climate control remain a significant challenge.\n\nNot everyone is convinced that urban farming can make a meaningful contribution to food security. Critics point out that the amount of food produced in cities is tiny compared to what is needed to feed urban populations. A city like Tokyo, with over thirty million residents, could never grow enough food within its boundaries to feed itself, regardless of how efficient urban farms become. Moreover, the land used for urban farming could potentially be used for housing, which is also in short supply in many cities.\n\nDespite these limitations, urban farming continues to grow. Governments and private investors are pouring money into research and development, and new technologies are making it increasingly viable. Whether or not urban farms ever feed entire cities, they are already changing how urban residents think about food, community, and the environment. In a world where most food is produced far from where it is consumed, the simple act of growing a tomato on a rooftop can be a powerful statement about self-reliance and sustainability.",
+        "questions": [
+          {
+            "id": "vstep-r2-p1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Urban farming is a passing trend with no real benefits",
+              "Urban farming is growing in popularity and offers social and environmental benefits, though it faces limitations",
+              "Vertical farming is the only viable form of urban agriculture",
+              "Cities should replace all parks with farms"
+            ],
+            "answer": "Urban farming is growing in popularity and offers social and environmental benefits, though it faces limitations",
+            "explanation": "The passage discusses the growth of urban farming, its benefits, and the criticisms and limitations it faces."
+          },
+          {
+            "id": "vstep-r2-p1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what is one social benefit of community gardens?",
+            "options": [
+              "They generate large profits",
+              "They bring neighbors together and create social bonds",
+              "They replace the need for supermarkets",
+              "They eliminate the need for water"
+            ],
+            "answer": "They bring neighbors together and create social bonds",
+            "explanation": "Paragraph 2 states that community gardens bring neighbors together, creating social bonds in neighborhoods."
+          },
+          {
+            "id": "vstep-r2-p1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'niche' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "mainstream",
+              "small and specialized",
+              "profitable",
+              "agricultural"
+            ],
+            "answer": "small and specialized",
+            "explanation": "In the context 'once considered a niche hobby,' the word means small, specialized, and not widely practiced."
+          },
+          {
+            "id": "vstep-r2-p1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the urban heat island effect?",
+            "options": [
+              "The warming of farms in rural areas",
+              "The phenomenon where built-up urban areas become warmer than surrounding rural areas",
+              "The use of heat lamps in vertical farms",
+              "The cooling effect of air conditioning in cities"
+            ],
+            "answer": "The phenomenon where built-up urban areas become warmer than surrounding rural areas",
+            "explanation": "Paragraph 2 defines the urban heat island effect as a phenomenon in which built-up areas become significantly warmer than surrounding rural areas."
+          },
+          {
+            "id": "vstep-r2-p1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is a significant challenge for vertical farming mentioned in the passage?",
+            "options": [
+              "Lack of available seeds",
+              "High energy costs of artificial lighting and climate control",
+              "Too much available land",
+              "Lack of consumer interest"
+            ],
+            "answer": "High energy costs of artificial lighting and climate control",
+            "explanation": "Paragraph 3 states that the high energy costs of artificial lighting and climate control remain a significant challenge for vertical farming."
+          },
+          {
+            "id": "vstep-r2-p1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What do critics say about urban farming's contribution to food security?",
+            "options": [
+              "It can fully feed all urban populations",
+              "The amount of food produced is tiny compared to what cities need",
+              "It produces more food than traditional farming",
+              "It has no environmental benefits"
+            ],
+            "answer": "The amount of food produced is tiny compared to what cities need",
+            "explanation": "Paragraph 4 states that critics point out the amount of food produced in cities is tiny compared to what is needed to feed urban populations."
+          },
+          {
+            "id": "vstep-r2-p1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward urban farming?",
+            "options": [
+              "Completely dismissive",
+              "Balanced, acknowledging both benefits and limitations",
+              "Overly enthusiastic without any criticism",
+              "Hostile and negative"
+            ],
+            "answer": "Balanced, acknowledging both benefits and limitations",
+            "explanation": "The author presents both the benefits and the criticisms of urban farming, showing a balanced perspective."
+          },
+          {
+            "id": "vstep-r2-p1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "The word 'viable' in the last paragraph means:",
+            "options": [
+              "impossible",
+              "capable of working successfully",
+              "expensive",
+              "traditional"
+            ],
+            "answer": "capable of working successfully",
+            "explanation": "In the context 'new technologies are making it increasingly viable,' the word means capable of working successfully or being feasible."
+          },
+          {
+            "id": "vstep-r2-p1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What does the passage suggest about hydroponic and aeroponic systems?",
+            "options": [
+              "They require large amounts of soil",
+              "They eliminate the need for soil altogether",
+              "They are only used in rural areas",
+              "They are too expensive for any farm"
+            ],
+            "answer": "They eliminate the need for soil altogether",
+            "explanation": "Paragraph 3 states that some vertical farms use hydroponic or aeroponic systems, which eliminate the need for soil altogether."
+          },
+          {
+            "id": "vstep-r2-p1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Urban farming will replace all traditional agriculture",
+              "Urban farming has value beyond just food production, including social and educational benefits",
+              "Cities like Tokyo can fully feed themselves through urban farming",
+              "Vertical farming uses more water than traditional farming"
+            ],
+            "answer": "Urban farming has value beyond just food production, including social and educational benefits",
+            "explanation": "The passage discusses social bonds, educational opportunities, and environmental benefits, suggesting urban farming's value extends beyond food production."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r2-p2",
+        "number": 2,
+        "title": "The Psychology of Social Media",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Social media has become so deeply embedded in daily life that it is easy to forget how recently it emerged. In less than two decades, platforms like Facebook, Instagram, and TikTok have transformed how people communicate, form relationships, and perceive themselves. While these platforms have undoubtedly brought people together in new ways, a growing body of research suggests that they may also be contributing to a range of psychological problems, particularly among young people.\n\nOne of the most widely discussed concerns is the link between social media use and anxiety and depression. Several studies have found correlations between heavy social media use and symptoms of anxiety, depression, and loneliness. The reasons are complex. Social media platforms present curated versions of other people's lives, filled with achievements, beautiful vacations, and happy moments. Constant exposure to these idealized images can lead to unfavorable social comparisons, making users feel that their own lives are inadequate by comparison. This effect is particularly pronounced among adolescents, who are especially sensitive to social evaluation.\n\nAnother concern is the addictive nature of social media. The design of these platforms often incorporates features borrowed from gambling, such as variable reward schedules. When a user posts content, they cannot predict how many likes or comments they will receive, creating a sense of anticipation that encourages repeated checking. Neuroscientists have shown that this pattern activates the same brain regions involved in other addictive behaviors. The result is a cycle in which users spend increasing amounts of time on these platforms, often at the expense of sleep, exercise, and face-to-face social interaction.\n\nCyberbullying represents another significant psychological risk. Unlike traditional bullying, which typically occurs in specific settings such as schools, cyberbullying can follow a victim everywhere, twenty-four hours a day. The relative anonymity of online interactions can also embolden aggressors, leading to more extreme behavior than might occur in person. Studies have linked cyberbullying to severe psychological outcomes, including depression, anxiety, and, in the most tragic cases, suicide.\n\nIt would be a mistake, however, to view social media as entirely harmful. These platforms can provide valuable social support, particularly for individuals who are isolated or belong to marginalized groups. They can facilitate political organizing, raise awareness of important issues, and connect people with shared interests across vast distances. The challenge, researchers argue, is not to abandon social media but to develop healthier relationships with it — setting boundaries on usage, being mindful of its effects, and designing platforms that prioritize user well-being over engagement metrics.",
+        "questions": [
+          {
+            "id": "vstep-r2-p2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Social media is entirely harmful and should be banned",
+              "Social media offers benefits but also poses significant psychological risks, especially for young people",
+              "Social media has no effect on mental health",
+              "Social media only causes cyberbullying"
+            ],
+            "answer": "Social media offers benefits but also poses significant psychological risks, especially for young people",
+            "explanation": "The passage discusses both the psychological risks of social media (anxiety, addiction, cyberbullying) and its benefits, arguing for a balanced approach."
+          },
+          {
+            "id": "vstep-r2-p2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, why can social media lead to unfavorable social comparisons?",
+            "options": [
+              "It shows unedited, realistic versions of people's lives",
+              "It presents curated, idealized versions of other people's lives",
+              "It forces users to post negative content",
+              "It only shows news articles"
+            ],
+            "answer": "It presents curated, idealized versions of other people's lives",
+            "explanation": "Paragraph 2 explains that social media presents curated versions of people's lives filled with achievements and happy moments, leading to unfavorable comparisons."
+          },
+          {
+            "id": "vstep-r2-p2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'curated' in paragraph 2 is closest in meaning to:",
+            "options": [
+              "random",
+              "carefully selected and presented",
+              "unfiltered",
+              "deleted"
+            ],
+            "answer": "carefully selected and presented",
+            "explanation": "In the context 'curated versions of other people's lives,' the word means carefully selected and presented to show the best aspects."
+          },
+          {
+            "id": "vstep-r2-p2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What feature borrowed from gambling do social media platforms use?",
+            "options": [
+              "Fixed reward schedules",
+              "Variable reward schedules",
+              "Card games",
+              "Slot machine graphics"
+            ],
+            "answer": "Variable reward schedules",
+            "explanation": "Paragraph 3 states that social media platforms incorporate features borrowed from gambling, such as variable reward schedules, where users cannot predict how many likes they will receive."
+          },
+          {
+            "id": "vstep-r2-p2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "How does cyberbullying differ from traditional bullying according to the passage?",
+            "options": [
+              "Cyberbullying only happens at school",
+              "Cyberbullying can follow a victim everywhere, twenty-four hours a day",
+              "Cyberbullying is less harmful than traditional bullying",
+              "Cyberbullying only affects adults"
+            ],
+            "answer": "Cyberbullying can follow a victim everywhere, twenty-four hours a day",
+            "explanation": "Paragraph 4 states that unlike traditional bullying, cyberbullying can follow a victim everywhere, twenty-four hours a day."
+          },
+          {
+            "id": "vstep-r2-p2-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'embolden' in paragraph 4 means:",
+            "options": [
+              "to discourage",
+              "to give someone the courage or confidence to do something",
+              "to frighten",
+              "to confuse"
+            ],
+            "answer": "to give someone the courage or confidence to do something",
+            "explanation": "In the context 'the relative anonymity can embolden aggressors,' the word means to give someone the courage or confidence to act, often in a negative way."
+          },
+          {
+            "id": "vstep-r2-p2-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward social media?",
+            "options": [
+              "Completely negative",
+              "Balanced, acknowledging both risks and benefits",
+              "Completely positive",
+              "Indifferent"
+            ],
+            "answer": "Balanced, acknowledging both risks and benefits",
+            "explanation": "The final paragraph acknowledges the benefits of social media and argues for developing healthier relationships with it rather than abandoning it entirely."
+          },
+          {
+            "id": "vstep-r2-p2-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "According to the passage, what brain regions are activated by social media's variable reward system?",
+            "options": [
+              "Regions involved in vision only",
+              "The same regions involved in other addictive behaviors",
+              "Regions involved in language processing",
+              "Regions involved in motor control"
+            ],
+            "answer": "The same regions involved in other addictive behaviors",
+            "explanation": "Paragraph 3 states that neuroscientists have shown this pattern activates the same brain regions involved in other addictive behaviors."
+          },
+          {
+            "id": "vstep-r2-p2-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What does the passage suggest as a solution to social media's negative effects?",
+            "options": [
+              "Completely banning all social media platforms",
+              "Setting boundaries on usage and designing platforms that prioritize user well-being",
+              "Ignoring the research on social media",
+              "Only allowing adults to use social media"
+            ],
+            "answer": "Setting boundaries on usage and designing platforms that prioritize user well-being",
+            "explanation": "The final paragraph suggests the challenge is to develop healthier relationships with social media by setting boundaries, being mindful of effects, and designing platforms that prioritize well-being."
+          },
+          {
+            "id": "vstep-r2-p2-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Social media affects all age groups equally",
+              "Adolescents may be particularly vulnerable to social media's psychological effects",
+              "Social media has no benefits whatsoever",
+              "Cyberbullying is less severe than traditional bullying"
+            ],
+            "answer": "Adolescents may be particularly vulnerable to social media's psychological effects",
+            "explanation": "Paragraph 2 states that the effect of unfavorable social comparisons is 'particularly pronounced among adolescents, who are especially sensitive to social evaluation.'"
+          }
+        ]
+      },
+      {
+        "id": "vstep-r2-p3",
+        "number": 3,
+        "title": "The Future of Artificial Intelligence in Healthcare",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Artificial intelligence is poised to revolutionize healthcare in ways that were unimaginable just a decade ago. From diagnosing diseases to discovering new drugs, AI technologies are being integrated into nearly every aspect of medicine. While the potential benefits are enormous, the rapid pace of development has raised pressing ethical, legal, and practical questions that society has yet to fully resolve.\n\nIn diagnostics, AI systems have demonstrated remarkable capabilities. Machine learning algorithms can analyze medical images — such as X-rays, MRI scans, and retinal photographs — with accuracy that rivals or exceeds that of experienced specialists. In some cases, these systems can detect subtle patterns that are invisible to the human eye, enabling earlier diagnosis of conditions like cancer and diabetic retinopathy. Proponents argue that AI could help address shortages of medical specialists in underserved regions, where access to expert diagnosis is often limited.\n\nDrug discovery is another area being transformed by AI. Traditionally, developing a new drug takes over a decade and costs billions of dollars, with a high failure rate. AI can accelerate this process by analyzing vast datasets to identify promising compounds, predict their effects, and optimize their molecular structures. Several AI-discovered drugs have already entered clinical trials, and some experts believe the technology could dramatically reduce both the time and cost of bringing new treatments to market.\n\nDespite these advances, significant challenges remain. One of the most contentious issues is the 'black box' problem: many AI systems, particularly those based on deep learning, arrive at their conclusions through processes that are not transparent or easily interpretable. A doctor can explain why they reached a diagnosis, but an AI system may not be able to articulate the reasoning behind its recommendation. This raises questions about accountability: if an AI system makes an incorrect diagnosis that leads to harm, who is responsible — the developer, the hospital, or the physician who relied on the system?\n\nPrivacy and bias present additional concerns. AI systems require large amounts of data to train effectively, and medical data is among the most sensitive personal information. Ensuring that this data is protected from breaches and misuse is paramount. Furthermore, if training data is not representative of diverse populations, AI systems may produce biased results, performing well for some demographic groups while failing others. Studies have already documented cases where medical AI systems performed less accurately for women and racial minorities, raising concerns about the potential to exacerbate existing health disparities.\n\nThe path forward requires collaboration among technologists, healthcare professionals, regulators, and patients. Striking the right balance between innovation and safety will be critical. AI has the potential to democratize access to high-quality healthcare, but only if its deployment is guided by thoughtful regulation, rigorous testing, and an unwavering commitment to equity.",
+        "questions": [
+          {
+            "id": "vstep-r2-p3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "AI will completely replace doctors in the near future",
+              "AI has great potential to transform healthcare but faces significant ethical and practical challenges",
+              "AI in healthcare is too dangerous to be used",
+              "AI has already solved all problems in medical diagnosis"
+            ],
+            "answer": "AI has great potential to transform healthcare but faces significant ethical and practical challenges",
+            "explanation": "The passage discusses AI's potential in diagnostics and drug discovery while also highlighting challenges like the black box problem, privacy, and bias."
+          },
+          {
+            "id": "vstep-r2-p3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what can AI systems do with medical images?",
+            "options": [
+              "Only store them for future reference",
+              "Analyze them with accuracy that rivals or exceeds experienced specialists",
+              "Destroy them for privacy",
+              "Only analyze images of healthy patients"
+            ],
+            "answer": "Analyze them with accuracy that rivals or exceeds experienced specialists",
+            "explanation": "Paragraph 2 states that machine learning algorithms can analyze medical images with accuracy that rivals or exceeds that of experienced specialists."
+          },
+          {
+            "id": "vstep-r2-p3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'poised' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "reluctant",
+              "ready or positioned to do something",
+              "unable",
+              "forced"
+            ],
+            "answer": "ready or positioned to do something",
+            "explanation": "In the context 'AI is poised to revolutionize healthcare,' the word means ready or positioned to take action."
+          },
+          {
+            "id": "vstep-r2-p3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the 'black box' problem in AI?",
+            "options": [
+              "AI systems are physically stored in black boxes",
+              "AI systems arrive at conclusions through processes that are not transparent or easily interpretable",
+              "AI systems cannot store data",
+              "AI systems are too expensive"
+            ],
+            "answer": "AI systems arrive at conclusions through processes that are not transparent or easily interpretable",
+            "explanation": "Paragraph 4 explains that the 'black box' problem refers to AI systems arriving at conclusions through processes that are not transparent or easily interpretable."
+          },
+          {
+            "id": "vstep-r2-p3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "According to the passage, how can AI accelerate drug discovery?",
+            "options": [
+              "By replacing all human researchers",
+              "By analyzing vast datasets to identify promising compounds and predict their effects",
+              "By skipping clinical trials entirely",
+              "By manufacturing drugs automatically"
+            ],
+            "answer": "By analyzing vast datasets to identify promising compounds and predict their effects",
+            "explanation": "Paragraph 3 states that AI can accelerate drug discovery by analyzing vast datasets to identify promising compounds, predict their effects, and optimize molecular structures."
+          },
+          {
+            "id": "vstep-r2-p3-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'contentious' in paragraph 4 means:",
+            "options": [
+              "easily agreed upon",
+              "causing disagreement or controversy",
+              "unimportant",
+              "secret"
+            ],
+            "answer": "causing disagreement or controversy",
+            "explanation": "In the context 'one of the most contentious issues,' the word means causing disagreement or controversy."
+          },
+          {
+            "id": "vstep-r2-p3-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What concern does the passage raise about AI and demographic groups?",
+            "options": [
+              "AI works equally well for all groups",
+              "AI may produce biased results, performing less accurately for women and racial minorities",
+              "AI only works for elderly patients",
+              "AI cannot process data from different countries"
+            ],
+            "answer": "AI may produce biased results, performing less accurately for women and racial minorities",
+            "explanation": "Paragraph 5 states that if training data is not representative, AI systems may produce biased results, and studies have documented cases where medical AI performed less accurately for women and racial minorities."
+          },
+          {
+            "id": "vstep-r2-p3-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is the author's attitude toward AI in healthcare?",
+            "options": [
+              "Completely enthusiastic without reservations",
+              "Cautiously optimistic, emphasizing the need for regulation and equity",
+              "Completely opposed",
+              "Indifferent"
+            ],
+            "answer": "Cautiously optimistic, emphasizing the need for regulation and equity",
+            "explanation": "The final paragraph acknowledges AI's potential to democratize healthcare but stresses the need for thoughtful regulation, rigorous testing, and commitment to equity."
+          },
+          {
+            "id": "vstep-r2-p3-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'exacerbate' in paragraph 5 is closest in meaning to:",
+            "options": [
+              "improve",
+              "make worse",
+              "ignore",
+              "solve"
+            ],
+            "answer": "make worse",
+            "explanation": "In the context 'exacerbate existing health disparities,' the word means to make the disparities worse."
+          },
+          {
+            "id": "vstep-r2-p3-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "AI in healthcare requires no regulation",
+              "The success of AI in healthcare depends on how well it is regulated and how equitably it is deployed",
+              "AI will eliminate all health disparities automatically",
+              "The black box problem has already been solved"
+            ],
+            "answer": "The success of AI in healthcare depends on how well it is regulated and how equitably it is deployed",
+            "explanation": "The passage emphasizes the need for collaboration, regulation, and equity, implying that AI's success depends on these factors."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r2-p4",
+        "number": 4,
+        "title": "The Cultural Significance of Traditional Festivals",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Traditional festivals are among the most vibrant expressions of cultural identity. Across the world, communities mark the changing of seasons, religious observances, and historical events with elaborate celebrations that have been passed down through generations. These festivals serve not only as occasions for joy and gathering but also as living repositories of cultural knowledge, values, and traditions.\n\nIn many cultures, festivals are closely tied to the agricultural calendar. The Mid-Autumn Festival in East Asia, celebrated during the harvest moon, is a time for families to reunite and give thanks for a bountiful harvest. Similarly, Thanksgiving in North America has its roots in harvest celebrations, though it has evolved to become a broader expression of gratitude. These connections to the land and its cycles remind communities of their dependence on nature, even in an increasingly urbanized world.\n\nReligious festivals often carry deep spiritual significance. Diwali, the Hindu festival of lights, symbolizes the triumph of light over darkness and good over evil. During the five-day celebration, families light oil lamps, exchange gifts, and decorate their homes with intricate patterns called rangoli. Easter, central to the Christian faith, commemorates the resurrection of Jesus and is preceded by a period of fasting and reflection. For observant Muslims, Ramadan involves a month of fasting from dawn to sunset, culminating in the festive celebration of Eid al-Fitr. These festivals provide structure to the spiritual lives of billions of people and reinforce shared values within their communities.\n\nBeyond their religious and agricultural significance, festivals play a crucial role in preserving cultural heritage. Many traditional crafts, music, dance forms, and culinary practices are kept alive primarily through festival traditions. In a rapidly globalizing world, where cultural homogenization threatens local traditions, festivals offer a counterforce — a deliberate assertion of cultural distinctiveness. They provide an opportunity for older generations to pass on knowledge and customs to younger members of the community, ensuring that traditions do not disappear.\n\nHowever, traditional festivals are not static; they evolve over time. In many places, festivals have been adapted to contemporary contexts, incorporating new elements while retaining their core meaning. Some festivals that began as religious observances have become largely secular cultural events. Others have been revitalized as tourist attractions, raising questions about the commercialization of cultural traditions. The challenge for communities is to balance preservation with adaptation, ensuring that festivals remain meaningful to new generations while retaining their cultural authenticity.",
+        "questions": [
+          {
+            "id": "vstep-r2-p4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Traditional festivals are outdated and should be abandoned",
+              "Traditional festivals are important expressions of cultural identity that evolve while preserving heritage",
+              "All festivals are purely religious events",
+              "Festivals are only important for tourism"
+            ],
+            "answer": "Traditional festivals are important expressions of cultural identity that evolve while preserving heritage",
+            "explanation": "The passage discusses how festivals express cultural identity, preserve heritage, and evolve over time while retaining their core meaning."
+          },
+          {
+            "id": "vstep-r2-p4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what does the Mid-Autumn Festival celebrate?",
+            "options": [
+              "The beginning of spring",
+              "The harvest moon and a bountiful harvest",
+              "A military victory",
+              "A religious prophet's birthday"
+            ],
+            "answer": "The harvest moon and a bountiful harvest",
+            "explanation": "Paragraph 2 states that the Mid-Autumn Festival is celebrated during the harvest moon and is a time for families to reunite and give thanks for a bountiful harvest."
+          },
+          {
+            "id": "vstep-r2-p4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What does Diwali symbolize?",
+            "options": [
+              "The end of winter",
+              "The triumph of light over darkness and good over evil",
+              "A good harvest",
+              "A new year"
+            ],
+            "answer": "The triumph of light over darkness and good over evil",
+            "explanation": "Paragraph 3 states that Diwali, the Hindu festival of lights, symbolizes the triumph of light over darkness and good over evil."
+          },
+          {
+            "id": "vstep-r2-p4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "The word 'repositories' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "containers or storehouses",
+              "celebrations",
+              "obstacles",
+              "performances"
+            ],
+            "answer": "containers or storehouses",
+            "explanation": "In the context 'living repositories of cultural knowledge,' the word means places where knowledge and traditions are stored and preserved."
+          },
+          {
+            "id": "vstep-r2-p4-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "According to the passage, how do festivals help preserve cultural heritage?",
+            "options": [
+              "By replacing old traditions with new ones",
+              "By keeping traditional crafts, music, dance, and culinary practices alive",
+              "By discouraging younger generations from participating",
+              "By making all festivals the same"
+            ],
+            "answer": "By keeping traditional crafts, music, dance, and culinary practices alive",
+            "explanation": "Paragraph 4 states that many traditional crafts, music, dance forms, and culinary practices are kept alive primarily through festival traditions."
+          },
+          {
+            "id": "vstep-r2-p4-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'homogenization' in paragraph 4 means:",
+            "options": [
+              "making things diverse and varied",
+              "making things uniform or similar",
+              "making things disappear",
+              "making things traditional"
+            ],
+            "answer": "making things uniform or similar",
+            "explanation": "In the context 'cultural homogenization threatens local traditions,' the word means the process of making cultures uniform or similar, erasing local distinctiveness."
+          },
+          {
+            "id": "vstep-r2-p4-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What challenge does the passage identify regarding traditional festivals?",
+            "options": [
+              "Festivals cannot change under any circumstances",
+              "Balancing preservation with adaptation while retaining cultural authenticity",
+              "Festivals are too expensive to maintain",
+              "Young people have no interest in festivals"
+            ],
+            "answer": "Balancing preservation with adaptation while retaining cultural authenticity",
+            "explanation": "The final paragraph states that the challenge for communities is to balance preservation with adaptation, ensuring festivals remain meaningful while retaining cultural authenticity."
+          },
+          {
+            "id": "vstep-r2-p4-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is the author's attitude toward the commercialization of festivals?",
+            "options": [
+              "Fully supportive",
+              "Cautious, noting it raises questions about cultural traditions",
+              "Completely opposed",
+              "Indifferent"
+            ],
+            "answer": "Cautious, noting it raises questions about cultural traditions",
+            "explanation": "The final paragraph mentions that some festivals have been revitalized as tourist attractions, 'raising questions about the commercialization of cultural traditions,' showing a cautious attitude."
+          },
+          {
+            "id": "vstep-r2-p4-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'secular' in the last paragraph means:",
+            "options": [
+              "religious",
+              "not connected to religion",
+              "traditional",
+              "commercial"
+            ],
+            "answer": "not connected to religion",
+            "explanation": "In the context 'some festivals that began as religious observances have become largely secular cultural events,' the word means not connected to or not religious in nature."
+          },
+          {
+            "id": "vstep-r2-p4-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Festivals that do not evolve will eventually disappear",
+              "All festivals must remain exactly as they were centuries ago",
+              "Religious festivals cannot be enjoyed by non-religious people",
+              "Tourism has no effect on traditional festivals"
+            ],
+            "answer": "Festivals that do not evolve will eventually disappear",
+            "explanation": "The passage emphasizes that festivals evolve over time and that the challenge is balancing preservation with adaptation, implying that festivals that cannot adapt may lose their relevance."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vstep-reading-3",
+    "title": "VSTEP Reading Practice Test 3",
+    "time_minutes": 60,
+    "passages": [
+      {
+        "id": "vstep-r3-p1",
+        "number": 1,
+        "title": "The Decline of Biodiversity",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Biodiversity — the variety of life on Earth — is declining at a rate unprecedented in human history. Scientists estimate that species are going extinct at hundreds of times the natural background rate, and some warn that we are entering the sixth mass extinction event in Earth's history. Unlike previous mass extinctions, which were caused by natural catastrophes, the current crisis is driven almost entirely by human activity. Understanding the causes and consequences of biodiversity loss is essential for developing effective strategies to address it.\n\nHabitat destruction is the single greatest threat to biodiversity. As human populations grow, forests are cleared for agriculture, wetlands are drained for development, and grasslands are converted to farmland. When natural habitats are destroyed, the species that depend on them have nowhere to go. This is particularly devastating for specialized species that require specific conditions to survive. The destruction of tropical rainforests, which contain roughly half of the world's species despite covering only a small fraction of its surface, is especially alarming.\n\nClimate change is an increasingly significant driver of biodiversity loss. Rising temperatures alter the conditions to which species have adapted over millions of years. Some species can migrate to more suitable habitats, but many cannot move quickly enough or have nowhere to go. Polar species, for instance, are losing their habitat as Arctic ice melts, while mountain species are being pushed to higher elevations until they run out of room. Ocean acidification, caused by the absorption of excess carbon dioxide, threatens marine ecosystems, particularly coral reefs, which support roughly a quarter of all marine species.\n\nPollution, overfishing, and the introduction of invasive species also contribute significantly to biodiversity loss. Chemical pollutants contaminate waterways and soil, harming both aquatic and terrestrial species. Overfishing has depleted fish populations to the point where many commercial species are at risk of collapse. Invasive species, introduced either intentionally or accidentally by humans, can outcompete native species and disrupt entire ecosystems. The combined effect of these pressures has pushed many ecosystems to the brink of collapse.\n\nThe consequences of biodiversity loss extend far beyond the disappearance of individual species. Ecosystems with high biodiversity are more resilient, better able to recover from disturbances, and more productive. They provide essential services that humans depend on, including clean water, pollination of crops, and regulation of the climate. The loss of biodiversity undermines these services, threatening food security, water quality, and human health. Addressing the crisis will require coordinated action at local, national, and international levels, including habitat protection, sustainable resource management, and aggressive efforts to combat climate change.",
+        "questions": [
+          {
+            "id": "vstep-r3-p1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Biodiversity loss is a natural process that cannot be stopped",
+              "Human activity is driving unprecedented biodiversity loss with serious consequences for ecosystems and humanity",
+              "Climate change is the only cause of biodiversity loss",
+              "Biodiversity loss only affects wild animals"
+            ],
+            "answer": "Human activity is driving unprecedented biodiversity loss with serious consequences for ecosystems and humanity",
+            "explanation": "The passage discusses how human activities like habitat destruction, climate change, and pollution are driving biodiversity loss and its consequences for ecosystems and human well-being."
+          },
+          {
+            "id": "vstep-r3-p1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what is the single greatest threat to biodiversity?",
+            "options": [
+              "Climate change",
+              "Habitat destruction",
+              "Pollution",
+              "Invasive species"
+            ],
+            "answer": "Habitat destruction",
+            "explanation": "Paragraph 2 states that habitat destruction is the single greatest threat to biodiversity."
+          },
+          {
+            "id": "vstep-r3-p1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'unprecedented' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "normal and expected",
+              "never done or known before",
+              "minor",
+              "reversible"
+            ],
+            "answer": "never done or known before",
+            "explanation": "In the context 'declining at a rate unprecedented in human history,' the word means never before seen or known."
+          },
+          {
+            "id": "vstep-r3-p1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Why are tropical rainforests particularly important for biodiversity?",
+            "options": [
+              "They cover most of Earth's surface",
+              "They contain roughly half of the world's species despite covering a small fraction of its surface",
+              "They are not affected by human activity",
+              "They have no species living in them"
+            ],
+            "answer": "They contain roughly half of the world's species despite covering a small fraction of its surface",
+            "explanation": "Paragraph 2 states that tropical rainforests contain roughly half of the world's species despite covering only a small fraction of Earth's surface."
+          },
+          {
+            "id": "vstep-r3-p1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "How does climate change affect polar species according to the passage?",
+            "options": [
+              "It helps them thrive",
+              "They are losing their habitat as Arctic ice melts",
+              "They can easily migrate to new habitats",
+              "It has no effect on them"
+            ],
+            "answer": "They are losing their habitat as Arctic ice melts",
+            "explanation": "Paragraph 3 states that polar species are losing their habitat as Arctic ice melts."
+          },
+          {
+            "id": "vstep-r3-p1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'resilient' in the last paragraph means:",
+            "options": [
+              "fragile and easily broken",
+              "able to recover quickly from difficulties",
+              "large and powerful",
+              "old and established"
+            ],
+            "answer": "able to recover quickly from difficulties",
+            "explanation": "In the context 'ecosystems with high biodiversity are more resilient, better able to recover from disturbances,' the word means able to recover quickly."
+          },
+          {
+            "id": "vstep-r3-p1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward the biodiversity crisis?",
+            "options": [
+              "Optimistic that it will resolve itself",
+              "Urgent and concerned, calling for coordinated action",
+              "Indifferent",
+              "Hopeful that technology alone will solve it"
+            ],
+            "answer": "Urgent and concerned, calling for coordinated action",
+            "explanation": "The final paragraph emphasizes the serious consequences of biodiversity loss and calls for coordinated action at local, national, and international levels."
+          },
+          {
+            "id": "vstep-r3-p1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What percentage of marine species do coral reefs support?",
+            "options": [
+              "About 5 percent",
+              "About 10 percent",
+              "About 25 percent",
+              "About 50 percent"
+            ],
+            "answer": "About 25 percent",
+            "explanation": "Paragraph 3 states that coral reefs support roughly a quarter of all marine species."
+          },
+          {
+            "id": "vstep-r3-p1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'outcompete' in paragraph 4 means:",
+            "options": [
+              "to cooperate with",
+              "to compete more successfully than others",
+              "to avoid competition",
+              "to destroy directly"
+            ],
+            "answer": "to compete more successfully than others",
+            "explanation": "In the context 'invasive species can outcompete native species,' the word means to compete more successfully, depriving native species of resources."
+          },
+          {
+            "id": "vstep-r3-p1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Biodiversity loss only affects wild ecosystems, not humans",
+              "Protecting biodiversity is essential for human well-being because ecosystems provide critical services",
+              "The current mass extinction is caused by natural disasters",
+              "Overfishing has no long-term consequences"
+            ],
+            "answer": "Protecting biodiversity is essential for human well-being because ecosystems provide critical services",
+            "explanation": "The passage states that ecosystems provide essential services humans depend on, including clean water, pollination, and climate regulation, implying biodiversity protection is essential for human well-being."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r3-p2",
+        "number": 2,
+        "title": "The Evolution of Human Language",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "Language is arguably the most distinctive feature of the human species. No other animal possesses a communication system that approaches the complexity, flexibility, and expressive power of human language. Yet despite its centrality to human experience, the origins and evolution of language remain among the most puzzling questions in science. Unlike bones and tools, language leaves no direct fossil record, forcing researchers to rely on indirect evidence and informed speculation.\n\nThe question of when language first emerged is a matter of intense debate. Some researchers argue that language appeared relatively suddenly, perhaps fifty thousand to one hundred thousand years ago, coinciding with a burst of cultural innovation known as the Upper Paleolithic Revolution. During this period, humans began producing sophisticated tools, creating art, and burying their dead with ritual objects. Proponents of this view argue that such complex behavior would have been impossible without advanced language. Others contend that language developed gradually over hundreds of thousands of years, pointing to evidence of earlier symbolic behavior and the anatomical changes in the vocal tract that may have enabled speech.\n\nThe relationship between language and thought is another area of ongoing investigation. The Sapir-Whorf hypothesis, proposed in the early twentieth century, suggests that the language we speak shapes the way we think. In its strong form, this hypothesis claims that language determines thought, making certain concepts impossible to express or even conceive in some languages. While this strong version has been largely discredited, a weaker version — that language influences thought in certain domains — has garnered experimental support. Studies have shown, for example, that the way a language categorizes colors can affect how quickly speakers distinguish between shades.\n\nThe evolution of writing systems represents another milestone in the history of human communication. Spoken language is thought to be at least one hundred thousand years old, but writing emerged only about five thousand years ago in Mesopotamia. The earliest writing systems, such as cuneiform and Egyptian hieroglyphs, began as pictographic representations but gradually developed into more abstract symbols representing sounds and concepts. The invention of the alphabet, in which symbols represent individual sounds, was a particularly revolutionary development, making literacy far more accessible than systems requiring thousands of characters.\n\nIn the modern era, language continues to evolve at a remarkable pace. New technologies, global migration, and the internet are driving the creation of new words, the blending of languages, and the emergence of entirely new forms of communication. At the same time, many of the world's approximately seven thousand languages are endangered, with some linguists predicting that half may disappear within this century. Each language that vanishes takes with it a unique way of perceiving and describing the world, making the preservation of linguistic diversity not just a cultural concern but a loss of human cognitive heritage.",
+        "questions": [
+          {
+            "id": "vstep-r3-p2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "Human language appeared suddenly and has not changed since",
+              "The origins and evolution of human language remain mysterious, and language continues to evolve today",
+              "Writing was invented before spoken language",
+              "All languages will eventually merge into one"
+            ],
+            "answer": "The origins and evolution of human language remain mysterious, and language continues to evolve today",
+            "explanation": "The passage discusses the debate over language origins, the relationship between language and thought, the development of writing, and the ongoing evolution and endangerment of languages."
+          },
+          {
+            "id": "vstep-r3-p2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Why is it difficult to determine when language first emerged?",
+            "options": [
+              "Language is not important enough to study",
+              "Language leaves no direct fossil record",
+              "All evidence has been destroyed",
+              "Scientists are not interested in the question"
+            ],
+            "answer": "Language leaves no direct fossil record",
+            "explanation": "Paragraph 1 states that unlike bones and tools, language leaves no direct fossil record, forcing researchers to rely on indirect evidence."
+          },
+          {
+            "id": "vstep-r3-p2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'puzzling' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "simple",
+              "confusing or difficult to understand",
+              "unimportant",
+              "well-known"
+            ],
+            "answer": "confusing or difficult to understand",
+            "explanation": "In the context 'the most puzzling questions in science,' the word means difficult to understand or solve."
+          },
+          {
+            "id": "vstep-r3-p2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the Sapir-Whorf hypothesis?",
+            "options": [
+              "The idea that all languages will eventually merge",
+              "The idea that the language we speak shapes the way we think",
+              "The theory that language was invented by one person",
+              "The belief that writing came before speech"
+            ],
+            "answer": "The idea that the language we speak shapes the way we think",
+            "explanation": "Paragraph 3 states that the Sapir-Whorf hypothesis suggests that the language we speak shapes the way we think."
+          },
+          {
+            "id": "vstep-r3-p2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "According to the passage, what happened during the Upper Paleolithic Revolution?",
+            "options": [
+              "Humans stopped using language",
+              "Humans began producing sophisticated tools, creating art, and burying their dead with ritual objects",
+              "Writing systems were invented",
+              "The first cities were built"
+            ],
+            "answer": "Humans began producing sophisticated tools, creating art, and burying their dead with ritual objects",
+            "explanation": "Paragraph 2 describes the Upper Paleolithic Revolution as a period when humans began producing sophisticated tools, creating art, and burying their dead with ritual objects."
+          },
+          {
+            "id": "vstep-r3-p2-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'discredited' in paragraph 3 means:",
+            "options": [
+              "proven true",
+              "shown to be false or unreliable",
+              "made popular",
+              "forgotten"
+            ],
+            "answer": "shown to be false or unreliable",
+            "explanation": "In the context 'the strong version has been largely discredited,' the word means shown to be false or no longer accepted as valid."
+          },
+          {
+            "id": "vstep-r3-p2-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What was revolutionary about the invention of the alphabet?",
+            "options": [
+              "It required thousands of characters",
+              "It made literacy more accessible by using symbols for individual sounds",
+              "It was the first form of communication",
+              "It could only be used by priests"
+            ],
+            "answer": "It made literacy more accessible by using symbols for individual sounds",
+            "explanation": "Paragraph 4 states that the invention of the alphabet, in which symbols represent individual sounds, was revolutionary because it made literacy far more accessible."
+          },
+          {
+            "id": "vstep-r3-p2-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is the author's attitude toward the loss of endangered languages?",
+            "options": [
+              "Indifferent",
+              "Concerned, viewing it as a loss of human cognitive heritage",
+              "Positive, seeing it as progress",
+              "Amused"
+            ],
+            "answer": "Concerned, viewing it as a loss of human cognitive heritage",
+            "explanation": "The final paragraph states that each vanishing language takes with it a unique way of perceiving the world, making language preservation 'not just a cultural concern but a loss of human cognitive heritage.'"
+          },
+          {
+            "id": "vstep-r3-p2-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'vanishes' in the last paragraph is closest in meaning to:",
+            "options": [
+              "appears",
+              "disappears completely",
+              "changes form",
+              "grows stronger"
+            ],
+            "answer": "disappears completely",
+            "explanation": "In the context 'each language that vanishes takes with it a unique way of perceiving the world,' the word means disappears or ceases to exist."
+          },
+          {
+            "id": "vstep-r3-p2-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "The strong form of the Sapir-Whorf hypothesis is widely accepted today",
+              "Language may have developed gradually over a long period rather than suddenly",
+              "Writing systems appeared at the same time as spoken language",
+              "Linguistic diversity is increasing worldwide"
+            ],
+            "answer": "Language may have developed gradually over a long period rather than suddenly",
+            "explanation": "Paragraph 2 presents the view that language developed gradually over hundreds of thousands of years, and the passage presents this as a credible alternative to the sudden emergence theory."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r3-p3",
+        "number": 3,
+        "title": "The Economics of Happiness",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "For decades, economists and policymakers have used Gross Domestic Product (GDP) as the primary measure of a nation's progress. GDP — the total value of goods and services produced within a country — is widely regarded as the most important indicator of economic health. However, a growing movement argues that GDP is an inadequate and potentially misleading measure of national well-being. These critics point out that GDP measures economic activity but says nothing about whether that activity actually improves people's lives.\n\nThe limitations of GDP as a measure of well-being are numerous. GDP counts all economic activity as positive, regardless of its nature. Cleaning up after a natural disaster, treating pollution-related illnesses, and building prisons all add to GDP, yet few would argue that these activities reflect a thriving society. Conversely, unpaid work — such as childcare, housework, and volunteering — contributes enormously to well-being but is entirely excluded from GDP calculations. A parent who stays home to raise children performs valuable work, but because no money changes hands, it is invisible to economic statistics.\n\nResearch on happiness and well-being has revealed a paradox that further challenges the supremacy of GDP. Known as the Easterlin Paradox, it describes the finding that beyond a certain level of economic development, increases in income do not correspond to increases in reported happiness. People in wealthy nations are not dramatically happier than people in moderately wealthy nations, even though their incomes are significantly higher. Within countries, the relationship between income and happiness is stronger at lower income levels, where basic needs are unmet, but weakens as people become more affluent.\n\nSeveral alternative measures have been proposed to complement or replace GDP. The Genuine Progress Indicator (GPI) adjusts for income inequality, environmental degradation, and the value of household work. Bhutan famously adopted Gross National Happiness as its primary measure of progress, incorporating factors such as psychological well-being, health, education, and environmental conservation. The United Nations' Human Development Index combines life expectancy, education, and per capita income to provide a broader picture of national well-being.\n\nDespite these alternatives, GDP remains dominant in policy discussions, partly because it is relatively simple to calculate and compare across countries. Transitioning to a more comprehensive measure would require international consensus and significant methodological work. Nevertheless, the growing recognition that economic growth alone does not guarantee well-being is prompting a reevaluation of how we measure progress. As one economist put it, we measure what we value, and we come to value what we measure. The question is whether we are measuring the right things.",
+        "questions": [
+          {
+            "id": "vstep-r3-p3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "GDP is the perfect measure of national well-being",
+              "GDP is an inadequate measure of well-being, and alternative measures are needed",
+              "Happiness cannot be measured at all",
+              "Economic growth always leads to happiness"
+            ],
+            "answer": "GDP is an inadequate measure of well-being, and alternative measures are needed",
+            "explanation": "The passage argues that GDP measures economic activity but not well-being, discusses its limitations, and presents alternative measures."
+          },
+          {
+            "id": "vstep-r3-p3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what is one limitation of GDP?",
+            "options": [
+              "It is too difficult to calculate",
+              "It counts all economic activity as positive, regardless of its nature",
+              "It only measures happiness",
+              "It excludes all commercial activity"
+            ],
+            "answer": "It counts all economic activity as positive, regardless of its nature",
+            "explanation": "Paragraph 2 states that GDP counts all economic activity as positive, regardless of its nature, including cleaning up disasters and building prisons."
+          },
+          {
+            "id": "vstep-r3-p3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What is the Easterlin Paradox?",
+            "options": [
+              "The finding that poor countries are happier than rich countries",
+              "The finding that beyond a certain level of development, increases in income do not correspond to increases in happiness",
+              "The idea that GDP is the best measure of happiness",
+              "The theory that money cannot buy any happiness"
+            ],
+            "answer": "The finding that beyond a certain level of development, increases in income do not correspond to increases in happiness",
+            "explanation": "Paragraph 3 describes the Easterlin Paradox as the finding that beyond a certain level of economic development, increases in income do not correspond to increases in reported happiness."
+          },
+          {
+            "id": "vstep-r3-p3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "The word 'supremacy' in paragraph 3 is closest in meaning to:",
+            "options": [
+              "weakness",
+              "dominance or superior position",
+              "accuracy",
+              "failure"
+            ],
+            "answer": "dominance or superior position",
+            "explanation": "In the context 'challenges the supremacy of GDP,' the word means the dominant or superior position that GDP holds as a measure of progress."
+          },
+          {
+            "id": "vstep-r3-p3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What does the Genuine Progress Indicator (GPI) adjust for?",
+            "options": [
+              "Only GDP growth",
+              "Income inequality, environmental degradation, and the value of household work",
+              "Military spending only",
+              "Stock market performance"
+            ],
+            "answer": "Income inequality, environmental degradation, and the value of household work",
+            "explanation": "Paragraph 4 states that the GPI adjusts for income inequality, environmental degradation, and the value of household work."
+          },
+          {
+            "id": "vstep-r3-p3-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What measure did Bhutan adopt as its primary indicator of progress?",
+            "options": [
+              "Gross Domestic Product",
+              "Gross National Happiness",
+              "The Human Development Index",
+              "The Genuine Progress Indicator"
+            ],
+            "answer": "Gross National Happiness",
+            "explanation": "Paragraph 4 states that Bhutan famously adopted Gross National Happiness as its primary measure of progress."
+          },
+          {
+            "id": "vstep-r3-p3-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward GDP?",
+            "options": [
+              "Fully supportive",
+              "Critical, arguing it is inadequate and potentially misleading",
+              "Completely dismissive",
+              "Indifferent"
+            ],
+            "answer": "Critical, arguing it is inadequate and potentially misleading",
+            "explanation": "The passage presents GDP as 'an inadequate and potentially misleading measure of national well-being' and discusses its many limitations."
+          },
+          {
+            "id": "vstep-r3-p3-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "The word 'affluent' in paragraph 3 means:",
+            "options": [
+              "poor",
+              "wealthy",
+              "happy",
+              "educated"
+            ],
+            "answer": "wealthy",
+            "explanation": "In the context 'the relationship weakens as people become more affluent,' the word means wealthy or having a great deal of money."
+          },
+          {
+            "id": "vstep-r3-p3-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "Why does GDP remain dominant in policy discussions despite its limitations?",
+            "options": [
+              "It is the only possible measure",
+              "It is relatively simple to calculate and compare across countries",
+              "No alternatives have been proposed",
+              "All economists agree it is the best measure"
+            ],
+            "answer": "It is relatively simple to calculate and compare across countries",
+            "explanation": "Paragraph 5 states that GDP remains dominant partly because it is relatively simple to calculate and compare across countries."
+          },
+          {
+            "id": "vstep-r3-p3-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "Economic growth and well-being are the same thing",
+              "What a society chooses to measure reflects what it values, and this should be reconsidered",
+              "The Easterlin Paradox has been disproven",
+              "Bhutan's approach has been adopted worldwide"
+            ],
+            "answer": "What a society chooses to measure reflects what it values, and this should be reconsidered",
+            "explanation": "The final paragraph states 'we measure what we value, and we come to value what we measure,' implying that measurement choices reflect values and should be reconsidered."
+          }
+        ]
+      },
+      {
+        "id": "vstep-r3-p4",
+        "number": 4,
+        "title": "The Renaissance: A Rebirth of Art and Ideas",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions that follow.",
+        "text": "The Renaissance, spanning roughly from the fourteenth to the seventeenth century, was one of the most transformative periods in Western civilization. The word 'renaissance' means 'rebirth,' and it refers to a revival of interest in the classical learning and values of ancient Greece and Rome. Beginning in Italy, particularly in the city-states of Florence, Venice, and Rome, the Renaissance spread across Europe, leaving an indelible mark on art, science, literature, and philosophy.\n\nThe roots of the Renaissance lie in several converging developments. Following the Crusades, trade between Europe and the East increased dramatically, bringing not only wealth but also new ideas and knowledge. The fall of Constantinople in 1453 led Greek scholars to flee to Italy, bringing with them ancient manuscripts and a deep knowledge of classical Greek civilization. The invention of the printing press by Johannes Gutenberg around 1440 revolutionized the dissemination of knowledge, making books affordable and accessible to a far wider audience than ever before.\n\nIn art, the Renaissance produced an unprecedented flowering of creativity. Artists such as Leonardo da Vinci, Michelangelo, and Raphael created works that combined technical mastery with profound humanistic themes. The development of linear perspective, pioneered by the architect Brunelleschi, allowed artists to create the illusion of depth on a flat surface, revolutionizing painting. Artists also began to study human anatomy in detail, leading to more realistic depictions of the human body. The Renaissance ideal of the artist as a creative genius, rather than a mere craftsman, elevated the status of art and those who practiced it.\n\nThe intellectual movement known as humanism was central to the Renaissance. Humanists emphasized the study of classical texts and the development of individual potential. They argued that education should encompass not just theology but also literature, history, and philosophy — the humanities. This represented a significant shift from the medieval focus on religious doctrine. Humanism also promoted the idea that individuals could shape their own destinies through reason and effort, a notion that would later underpin the Enlightenment and modern Western thought.\n\nThe legacy of the Renaissance extends far beyond the art and literature of the period. It laid the groundwork for the Scientific Revolution, challenging the authority of the Church in matters of natural philosophy and encouraging empirical observation. The emphasis on individual achievement and human potential helped shape modern conceptions of selfhood and personal freedom. While the Renaissance was not, as once believed, a complete break with the medieval past, it nonetheless marked a profound shift in how Europeans understood themselves and their place in the world — a shift whose effects continue to resonate today.",
+        "questions": [
+          {
+            "id": "vstep-r3-p4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main idea of the passage?",
+            "options": [
+              "The Renaissance was a minor period with little lasting impact",
+              "The Renaissance was a transformative period that revived classical learning and profoundly shaped Western civilization",
+              "The Renaissance was solely an artistic movement",
+              "The Renaissance occurred only in Italy"
+            ],
+            "answer": "The Renaissance was a transformative period that revived classical learning and profoundly shaped Western civilization",
+            "explanation": "The passage describes the Renaissance as a transformative period that revived classical learning, produced great art, promoted humanism, and laid the groundwork for modern Western thought."
+          },
+          {
+            "id": "vstep-r3-p4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what event brought Greek scholars to Italy?",
+            "options": [
+              "The invention of the printing press",
+              "The fall of Constantinople in 1453",
+              "The Crusades",
+              "The French Revolution"
+            ],
+            "answer": "The fall of Constantinople in 1453",
+            "explanation": "Paragraph 2 states that the fall of Constantinople in 1453 led Greek scholars to flee to Italy, bringing ancient manuscripts and knowledge of classical Greek civilization."
+          },
+          {
+            "id": "vstep-r3-p4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The word 'indelible' in paragraph 1 is closest in meaning to:",
+            "options": [
+              "temporary",
+              "permanent or impossible to remove",
+              "minor",
+              "invisible"
+            ],
+            "answer": "permanent or impossible to remove",
+            "explanation": "In the context 'leaving an indelible mark on art, science, literature, and philosophy,' the word means permanent or impossible to erase."
+          },
+          {
+            "id": "vstep-r3-p4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What did the development of linear perspective allow artists to do?",
+            "options": [
+              "Paint faster",
+              "Create the illusion of depth on a flat surface",
+              "Use fewer colors",
+              "Avoid studying anatomy"
+            ],
+            "answer": "Create the illusion of depth on a flat surface",
+            "explanation": "Paragraph 3 states that the development of linear perspective, pioneered by Brunelleschi, allowed artists to create the illusion of depth on a flat surface."
+          },
+          {
+            "id": "vstep-r3-p4-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What was central to the intellectual movement of the Renaissance?",
+            "options": [
+              "Scholasticism",
+              "Humanism",
+              "Feudalism",
+              "Monasticism"
+            ],
+            "answer": "Humanism",
+            "explanation": "Paragraph 4 states that the intellectual movement known as humanism was central to the Renaissance."
+          },
+          {
+            "id": "vstep-r3-p4-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The word 'encompass' in paragraph 4 means:",
+            "options": [
+              "exclude",
+              "include or cover",
+              "replace",
+              "ignore"
+            ],
+            "answer": "include or cover",
+            "explanation": "In the context 'education should encompass not just theology but also literature, history, and philosophy,' the word means to include or cover a range of subjects."
+          },
+          {
+            "id": "vstep-r3-p4-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the author's attitude toward the Renaissance?",
+            "options": [
+              "Dismissive of its importance",
+              "Appreciative of its profound and lasting impact",
+              "Critical of its achievements",
+              "Indifferent"
+            ],
+            "answer": "Appreciative of its profound and lasting impact",
+            "explanation": "The passage describes the Renaissance in positive terms, emphasizing its transformative nature and lasting legacy, showing appreciation for its impact."
+          },
+          {
+            "id": "vstep-r3-p4-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "According to the passage, what did the Renaissance lay the groundwork for?",
+            "options": [
+              "The Industrial Revolution only",
+              "The Scientific Revolution",
+              "The Dark Ages",
+              "The feudal system"
+            ],
+            "answer": "The Scientific Revolution",
+            "explanation": "Paragraph 5 states that the Renaissance laid the groundwork for the Scientific Revolution by challenging Church authority and encouraging empirical observation."
+          },
+          {
+            "id": "vstep-r3-p4-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The word 'underpin' in paragraph 4 is closest in meaning to:",
+            "options": [
+              "undermine",
+              "support or form the basis for",
+              "contradict",
+              "replace"
+            ],
+            "answer": "support or form the basis for",
+            "explanation": "In the context 'a notion that would later underpin the Enlightenment,' the word means to support or form the foundation for something."
+          },
+          {
+            "id": "vstep-r3-p4-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "It can be inferred from the passage that:",
+            "options": [
+              "The Renaissance was a complete break with the medieval past",
+              "The Renaissance, while not a complete break with the past, marked a significant shift in European thought",
+              "The printing press had no effect on the Renaissance",
+              "Humanism rejected all classical learning"
+            ],
+            "answer": "The Renaissance, while not a complete break with the past, marked a significant shift in European thought",
+            "explanation": "The final paragraph states that 'the Renaissance was not, as once believed, a complete break with the medieval past,' but it 'marked a profound shift in how Europeans understood themselves.'"
+          }
+        ]
+      }
+    ]
+  }
+]

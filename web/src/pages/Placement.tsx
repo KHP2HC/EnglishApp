@@ -73,7 +73,7 @@ export function Placement() {
   // Load the adaptive test on mount
   useEffect(() => {
     let cancelled = false
-    buildAdaptiveTest(TOTAL_QUESTIONS)
+    buildAdaptiveTest(TOTAL_QUESTIONS, user?.target_exam || undefined)
       .then((questions) => {
         if (cancelled) return
         setState((prev) => ({ ...prev, questionQueue: questions }))
@@ -167,7 +167,7 @@ export function Placement() {
   const handleRestart = async () => {
     setLoading(true)
     const fresh = initCATState()
-    const questions = await buildAdaptiveTest(TOTAL_QUESTIONS)
+    const questions = await buildAdaptiveTest(TOTAL_QUESTIONS, user?.target_exam || undefined)
     fresh.questionQueue = questions
     setState(fresh)
     setQuestion(questions[0] || null)

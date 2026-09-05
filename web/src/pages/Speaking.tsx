@@ -3,10 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Mic, Volume2, AlertCircle, Clock, ChevronDown, RotateCcw, CheckCircle2, XCircle } from 'lucide-react'
 import { useSpeechRecognition } from '@/hooks/useSpeech'
-import { loadSpeakingTests, type SpeakingTest } from '@/lib/seed-data'
+import { useAuthStore } from '@/stores/auth.store'
+import { loadExamSpeakingTests, type SpeakingTest } from '@/lib/seed-data'
 
 export function Speaking() {
   const { speak, stopSpeaking, startListening, stopListening, listening, transcript, isSupported, scorePronunciation } = useSpeechRecognition()
+  const { user } = useAuthStore()
   const [tests, setTests] = useState<SpeakingTest[]>([])
   const [testIdx, setTestIdx] = useState(0)
   const [partIdx, setPartIdx] = useState(0)
@@ -22,13 +24,13 @@ export function Speaking() {
   const recordIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
-    loadSpeakingTests()
+    loadExamSpeakingTests(user?.target_exam || undefined)
       .then((data) => {
         setTests(data)
         setLoading(false)
       })
       .catch(() => setLoading(false))
-  }, [])
+  }, [user?.target_exam])
 
   // Countdown timer
   useEffect(() => {

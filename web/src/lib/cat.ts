@@ -5,6 +5,9 @@ import {
   loadReadingTests,
   loadListeningTests,
   loadWritingTests,
+  loadVstepReadingTests,
+  loadVstepListeningTests,
+  loadVstepWritingTests,
   type SeedVocabEntry,
   type SeedQuestion,
   type ReadingTest,
@@ -306,6 +309,7 @@ function buildWritingQuestions(tests: WritingTest[]): CATQuestion[] {
 // ── Question Pool Loader ─────────────────────────────────────────────
 
 let poolCache: CATQuestion[] | null = null
+let vstepPoolCache: CATQuestion[] | null = null
 
 /**
  * Load and build the full question pool from all seed data files.
@@ -340,12 +344,55 @@ export async function loadQuestionPool(): Promise<CATQuestion[]> {
 }
 
 /**
+ * Load and build a VSTEP-specific question pool from VSTEP seed data files.
+ * Uses vstep_reading_tests.json, vstep_listening_tests.json, vstep_writing_tests.json.
+ * Vocabulary and grammar questions are shared (exam-agnostic).
+ */
+export async function loadVstepQuestionPool(): Promise<CATQuestion[]> {
+  if (vstepPoolCache) return vstepPoolCache
+
+  const [vocab, bank, reading, listening, writing] = await Promise.all([
+    loadVocabData(),
+    loadQuestionBank(),
+    loadVstepReadingTests(),
+    loadVstepListeningTests(),
+    loadVstepWritingTests(),
+  ])
+
+  const pool: CATQuestion[] = [
+    ...buildVocabQuestions(vocab),
+    ...buildGrammarQuestions(bank),
+    ...buildReadingQuestions(reading),
+    ...buildListeningQuestions(listening),
+    ...buildWritingQuestions(writing),
+  ]
+
+  vstepPoolCache = pool
+  return vstepPoolCache
+}
+
+/**
+ * Load the appropriate question pool based on exam type.
+ * VSTEP uses dedicated VSTEP data files; all other exams use the default IELTS-style pool.
+ */
+export async function loadExamQuestionPool(examType?: string): Promise<CATQuestion[]> {
+  if (examType === 'VSTEP') return loadVstepQuestionPool()
+  return loadQuestionPool()
+}
+
+/**
  * Build a 20-question adaptive test from the pool.
  * The test covers all 5 skills, with questions that start at B1 and
  * adapt up/down based on accuracy.
+ *
+ * @param totalQuestions Number of questions (default 20)
+ * @param examType Optional exam type ('IELTS', 'VSTEP', etc.) to select the right data
  */
-export async function buildAdaptiveTest(totalQuestions = 20): Promise<CATQuestion[]> {
-  const pool = await loadQuestionPool()
+export async function buildAdaptiveTest(
+  totalQuestions = 20,
+  examType?: string,
+): Promise<CATQuestion[]> {
+  const pool = await loadExamQuestionPool(examType)
 
   // Group by skill
   const bySkill: Record<string, CATQuestion[]> = {}

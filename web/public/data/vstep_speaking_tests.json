@@ -1,0 +1,187 @@
+[
+  {
+    "id": "vstep-speaking-1",
+    "title": "VSTEP Speaking Practice Test 1",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Social Interaction",
+        "instructions": "The examiner will ask you questions about yourself and general topics. Answer fully.",
+        "timeMinutes": 4,
+        "questions": [
+          "Can you tell me about your hometown?",
+          "What do you like most about where you live?",
+          "How has your hometown changed in recent years?",
+          "What do people in your hometown usually do for entertainment?"
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Solution Discussion",
+        "instructions": "You will be given a situation with three possible solutions. Choose the best solution and explain why. You have 1 minute to prepare and 3 minutes to speak.",
+        "timeMinutes": 4,
+        "questions": [
+          "Your university is facing budget cuts and must reduce spending. Which of these solutions do you think is best? A) Increase tuition fees B) Reduce library and lab hours C) Cut sports and arts programs. Choose one and explain why it is the best solution."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Topic Development",
+        "instructions": "You will speak about a given topic for 2-3 minutes. You may use the prompts below to help you. The examiner may ask follow-up questions.",
+        "timeMinutes": 4,
+        "questions": [
+          "Topic: The importance of learning a foreign language. You should say: why learning a foreign language is important, how it can benefit your career, and whether you think it should be compulsory in schools.",
+          "Do you think technology has made learning languages easier or harder?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vstep-speaking-2",
+    "title": "VSTEP Speaking Practice Test 2",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Social Interaction",
+        "instructions": "The examiner will ask you questions about yourself and general topics. Answer fully.",
+        "timeMinutes": 4,
+        "questions": [
+          "What do you usually do in your free time?",
+          "Do you prefer spending your free time alone or with friends? Why?",
+          "Has the way you spend your free time changed since you were a child?",
+          "What new hobby would you like to try in the future?"
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Solution Discussion",
+        "instructions": "You will be given a situation with three possible solutions. Choose the best solution and explain why. You have 1 minute to prepare and 3 minutes to speak.",
+        "timeMinutes": 4,
+        "questions": [
+          "Your city has a serious air pollution problem. Which of these solutions do you think is best? A) Ban private cars from the city center B) Plant more trees and build parks C) Offer subsidies for electric vehicles. Choose one and explain why it is the best solution."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Topic Development",
+        "instructions": "You will speak about a given topic for 2-3 minutes. You may use the prompts below to help you. The examiner may ask follow-up questions.",
+        "timeMinutes": 4,
+        "questions": [
+          "Topic: The impact of social media on society. You should say: how social media has changed the way people communicate, the positive effects it has had, and the negative consequences it may cause.",
+          "Do you think social media platforms should be more strictly regulated?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vstep-speaking-3",
+    "title": "VSTEP Speaking Practice Test 3",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Social Interaction",
+        "instructions": "The examiner will ask you questions about yourself and general topics. Answer fully.",
+        "timeMinutes": 4,
+        "questions": [
+          "Do you enjoy reading? What kind of books do you like?",
+          "Do you prefer reading physical books or e-books? Why?",
+          "How often do you read for pleasure?",
+          "Is there a book that has had a big influence on you?"
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Solution Discussion",
+        "instructions": "You will be given a situation with three possible solutions. Choose the best solution and explain why. You have 1 minute to prepare and 3 minutes to speak.",
+        "timeMinutes": 4,
+        "questions": [
+          "Your company wants to improve employee health and reduce stress. Which of these solutions do you think is best? A) Provide a free gym membership for all employees B) Offer flexible working hours and remote work options C) Organize weekly team-building and wellness workshops. Choose one and explain why it is the best solution."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Topic Development",
+        "instructions": "You will speak about a given topic for 2-3 minutes. You may use the prompts below to help you. The examiner may ask follow-up questions.",
+        "timeMinutes": 4,
+        "questions": [
+          "Topic: The role of technology in education. You should say: how technology has changed classrooms, the advantages of using technology in learning, and whether you think technology could ever replace teachers.",
+          "What are the disadvantages of relying too much on technology in education?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vstep-speaking-4",
+    "title": "VSTEP Speaking Practice Test 4",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Social Interaction",
+        "instructions": "The examiner will ask you questions about yourself and general topics. Answer fully.",
+        "timeMinutes": 4,
+        "questions": [
+          "What is your favorite type of food?",
+          "Do you prefer cooking at home or eating out? Why?",
+          "How important is a healthy diet to you?",
+          "Is there a traditional dish from your country that you would recommend to a visitor?"
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Solution Discussion",
+        "instructions": "You will be given a situation with three possible solutions. Choose the best solution and explain why. You have 1 minute to prepare and 3 minutes to speak.",
+        "timeMinutes": 4,
+        "questions": [
+          "Traffic congestion in your city is getting worse every year. Which of these solutions do you think is best? A) Build more roads and highways B) Expand and improve public transportation C) Charge a congestion fee for driving during peak hours. Choose one and explain why it is the best solution."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Topic Development",
+        "instructions": "You will speak about a given topic for 2-3 minutes. You may use the prompts below to help you. The examiner may ask follow-up questions.",
+        "timeMinutes": 4,
+        "questions": [
+          "Topic: The importance of physical exercise for health. You should say: why regular exercise is important, how it affects mental as well as physical health, and what people can do to stay active in a busy lifestyle.",
+          "Do you think schools should require students to participate in daily physical education?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vstep-speaking-5",
+    "title": "VSTEP Speaking Practice Test 5",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Social Interaction",
+        "instructions": "The examiner will ask you questions about yourself and general topics. Answer fully.",
+        "timeMinutes": 4,
+        "questions": [
+          "Do you like traveling? What was your most memorable trip?",
+          "Do you prefer traveling alone or with others? Why?",
+          "What kind of places do you most enjoy visiting?",
+          "How has travel changed in your country over the past decade?"
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Solution Discussion",
+        "instructions": "You will be given a situation with three possible solutions. Choose the best solution and explain why. You have 1 minute to prepare and 3 minutes to speak.",
+        "timeMinutes": 4,
+        "questions": [
+          "Many young people in your country are struggling to find jobs after graduation. Which of these solutions do you think is best? A) The government should create more public sector jobs B) Universities should offer more practical, career-focused training C) Companies should receive tax incentives to hire recent graduates. Choose one and explain why it is the best solution."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Topic Development",
+        "instructions": "You will speak about a given topic for 2-3 minutes. You may use the prompts below to help you. The examiner may ask follow-up questions.",
+        "timeMinutes": 4,
+        "questions": [
+          "Topic: The effects of globalization on local culture. You should say: what globalization means to you, how it has affected traditions and local businesses, and whether you think globalization is ultimately positive or negative for your country.",
+          "Do you think local traditions will eventually disappear because of globalization?"
+        ]
+      }
+    ]
+  }
+]

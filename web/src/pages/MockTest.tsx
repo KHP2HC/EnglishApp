@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Timer, Play, CheckCircle, ChevronRight, Volume2 } from 'lucide-react'
 import {
-  loadReadingTests, loadListeningTests, loadWritingTests,
+  loadExamReadingTests, loadExamListeningTests, loadExamWritingTests,
   type ReadingTest, type ListeningTest, type WritingTest, type WritingSubTask,
   type ReadingQuestion, type ListeningQuestion,
 } from '@/lib/seed-data'
@@ -118,7 +118,11 @@ export function MockTest() {
   // ── Load data ──────────────────────────────────────────────────────
 
   useEffect(() => {
-    Promise.all([loadReadingTests(), loadListeningTests(), loadWritingTests()])
+    Promise.all([
+      loadExamReadingTests(examType),
+      loadExamListeningTests(examType),
+      loadExamWritingTests(examType),
+    ])
       .then(([rt, lt, wt]) => {
         setReadingTests(rt)
         setListeningTests(lt)

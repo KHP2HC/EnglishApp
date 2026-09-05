@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Loader2, Sparkles, Timer, ChevronDown, CheckCircle2, AlertTriangle } from 'lucide-react'
-import { loadWritingTests, type WritingTest, type WritingSubTask } from '@/lib/seed-data'
+import { loadExamWritingTests, type WritingTest, type WritingSubTask } from '@/lib/seed-data'
 import { writingApi } from '@/api/writing'
 
 interface AIFeedback {
@@ -148,7 +148,7 @@ export function Writing() {
   }
 
   useEffect(() => {
-    loadWritingTests()
+    loadExamWritingTests(user?.target_exam || undefined)
       .then((data) => {
         setTests(data)
         setDataLoading(false)
@@ -157,7 +157,7 @@ export function Writing() {
         }
       })
       .catch(() => setDataLoading(false))
-  }, [])
+  }, [user?.target_exam])
 
   // Timer
   useEffect(() => {
