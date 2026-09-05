@@ -45,12 +45,12 @@ async function checkBackendHealth(): Promise<boolean> {
   try {
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT)
-    await fetch(`${API_BASE_URL}/api/v1/health`, {
+    const resp = await fetch(`${API_BASE_URL}/api/v1/health`, {
       method: 'GET',
       signal: controller.signal,
     })
     clearTimeout(timer)
-    backendReachable = true
+    backendReachable = resp.ok
   } catch {
     backendReachable = false
   }
