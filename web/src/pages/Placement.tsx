@@ -5,7 +5,9 @@ import { Button } from '@/components/ui/button'
 import {
   CheckCircle2, XCircle, Brain, ArrowRight, RotateCcw,
   BookOpen, Headphones, PenLine, Mic, Languages, Loader2,
+  Volume2, Eye,
 } from 'lucide-react'
+import { useSpeech } from '@/hooks/useSpeech'
 import {
   initCATState,
   recordAnswer,
@@ -48,6 +50,7 @@ const levelMap: Record<string, number> = {
 export function Placement() {
   const navigate = useNavigate()
   const { user } = useAuthStore()
+  const { speak, stopSpeaking, speaking } = useSpeech()
   const [state, setState] = useState<CATState>(() => initCATState())
   const [question, setQuestion] = useState<CATQuestion | null>(null)
   const [selected, setSelected] = useState<string | null>(null)
@@ -56,6 +59,8 @@ export function Placement() {
   const [saving, setSaving] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [audioPlayed, setAudioPlayed] = useState(false)
+  const [showTranscript, setShowTranscript] = useState(false)
 
   // Load the adaptive test on mount
   useEffect(() => {
@@ -86,6 +91,7 @@ export function Placement() {
   }
 
   const handleNext = () => {
+    stopSpeaking()
     if (isComplete(state, TOTAL_QUESTIONS)) {
       setFinished(true)
       return
@@ -94,6 +100,14 @@ export function Placement() {
     setQuestion(nextQ)
     setSelected(null)
     setShowResult(false)
+    setAudioPlayed(false)
+    setShowTranscript(false)
+  }
+
+  const handlePlayAudio = () => {
+    if (!question?.context) return
+    speak(question.context, 0.9)
+    setAudioPlayed(true)
   }
 
   const handleFinish = async () => {
@@ -356,8 +370,45 @@ export function Placement() {
             <CardTitle className="text-base whitespace-pre-line">{question.question}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {/* Context (passage excerpt, transcript, etc.) */}
-            {question.context && (
+            {/* Context: for listening questions, play audio instead of showing transcript */}
+            {question.context && currentSkill === 'listening' && (
+              <div className="rounded-lg bg-black/20 p-4 space-y-3">
+                <div className="flex items-center gap-3">
+                  <Button
+                    size="sm"
+                    variant={audioPlayed ? 'outline' : 'default'}
+                    onClick={handlePlayAudio}
+                    disabled={speaking}
+                  >
+                    <Volume2 className="h-4 w-4 mr-2" />
+                    {speaking ? 'Playing…' : audioPlayed ? 'Replay Audio' : 'Play Audio'}
+                  </Button>
+                  {audioPlayed && !showTranscript && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setShowTranscript(true)}
+                    >
+                      <Eye className="h-4 w-4 mr-2" />
+                      Show Transcript
+                    </Button>
+                  )}
+                </div>
+                {showTranscript && (
+                  <div className="rounded-lg bg-black/30 p-3 max-h-48 overflow-y-auto">
+                    <p className="text-xs text-gray-400 whitespace-pre-line">{question.context}</p>
+                  </div>
+                )}
+                {!audioPlayed && (
+                  <p className="text-xs text-gray-500">
+                    🔊 Listen to the audio, then answer the question.
+                  </p>
+                )}
+              </div>
+            )}
+
+            {/* Context: for reading questions, show the passage */}
+            {question.context && currentSkill !== 'listening' && (
               <div className="rounded-lg bg-black/20 p-3 max-h-48 overflow-y-auto">
                 <p className="text-xs text-gray-400 whitespace-pre-line">{question.context}</p>
               </div>
