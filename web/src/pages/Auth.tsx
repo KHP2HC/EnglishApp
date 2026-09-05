@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useAuthStore } from '@/stores/auth.store'
+import { signUp, signIn, hasAnyAccount } from '@/lib/localAuth'
 
 export function Auth() {
   const navigate = useNavigate()
-  const [mode, setMode] = useState<'signin' | 'signup'>('signup')
+  const { onLocalAuth } = useAuthStore()
+  const [mode, setMode] = useState<'signin' | 'signup'>(() =>
+    hasAnyAccount() ? 'signin' : 'signup'
+  )
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -21,12 +26,12 @@ export function Auth() {
 
     try {
       if (mode === 'signup') {
-        const { error } = await supabase.auth.signUp({ email, password })
-        if (error) throw error
+        const account = await signUp(email, password, name || undefined)
+        await onLocalAuth(account.id, account.name, account.email)
         navigate('/onboarding')
       } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password })
-        if (error) throw error
+        const account = await signIn(email, password)
+        await onLocalAuth(account.id, account.name, account.email)
         navigate('/app')
       }
     } catch (err: any) {
@@ -36,10 +41,6 @@ export function Auth() {
     }
   }
 
-  const handleGoogle = async () => {
-    await supabase.auth.signInWithOAuth({ provider: 'google' })
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-bg-dark px-4">
       <Card className="w-full max-w-md">
@@ -47,22 +48,26 @@ export function Auth() {
           <CardTitle className="text-center">
             {mode === 'signup' ? 'Create your account' : 'Welcome back'}
           </CardTitle>
+          <p className="text-center text-xs text-gray-400 mt-1">
+            {mode === 'signup'
+              ? 'Sign up to track your learning progress'
+              : 'Sign in to continue your learning journey'}
+          </p>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Button variant="outline" className="w-full" onClick={handleGoogle}>
-            Continue with Google
-          </Button>
-
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
-            </div>
-            <div className="relative flex justify-center text-xs">
-              <span className="bg-surface-dark px-2 text-gray-400">or</span>
-            </div>
-          </div>
-
           <form onSubmit={handleSubmit} className="space-y-3">
+            {mode === 'signup' && (
+              <div className="space-y-1">
+                <Label htmlFor="name">Name (optional)</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+            )}
             <div className="space-y-1">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -79,7 +84,7 @@ export function Auth() {
               <Input
                 id="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="At least 6 characters"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -87,7 +92,7 @@ export function Auth() {
             </div>
             {error && <p className="text-sm text-error">{error}</p>}
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Loading…' : mode === 'signup' ? 'Sign up' : 'Sign in'}
+              {loading ? 'Loading…' : mode === 'signup' ? 'Create Account' : 'Sign In'}
             </Button>
           </form>
 
@@ -103,6 +108,10 @@ export function Auth() {
 
           <p className="text-center text-xs text-gray-500">
             <Link to="/" className="hover:underline">← Back to home</Link>
+          </p>
+
+          <p className="text-center text-xs text-gray-600">
+            🔒 Your account and progress are stored securely on this device.
           </p>
         </CardContent>
       </Card>

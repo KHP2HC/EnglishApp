@@ -15,6 +15,9 @@ import {
 } from '@/lib/cat'
 import { useAuthStore } from '@/stores/auth.store'
 import { profileApi } from '@/api/profile'
+import { updateLocalProfile, saveTestResult } from '@/lib/userStorage'
+import { getSession } from '@/lib/localAuth'
+import { bandToCefr, generateLearningPath } from '@/lib/learningPath'
 
 const TOTAL_QUESTIONS = 20
 
@@ -68,15 +71,35 @@ export function Placement() {
       skillBands[s.skill.toLowerCase()] = levelMap[s.level] || 3
     }
 
+    const bandScore = levelMap[band] || 4.5
+
+    // Save to local storage
+    const localSession = getSession()
+    if (localSession) {
+      updateLocalProfile(localSession.userId, {
+        current_band: bandScore,
+        skill_bands: skillBands,
+        onboarded: true,
+      })
+      // Save as a test result
+      saveTestResult(localSession.userId, {
+        examType: 'PLACEMENT',
+        section: 'CAT',
+        score: state.answeredCorrect,
+        total: state.answeredTotal,
+        band: bandScore,
+        details: { estimatedLevel: band, skillBreakdown },
+      })
+    }
+
+    // Also try API (non-fatal)
     try {
       await profileApi.update({
-        current_band: levelMap[band] || 4.5,
+        current_band: bandScore,
         skill_bands: skillBands,
-        placement_done: true,
       } as any)
-      await refreshProfile()
     } catch {
-      // API may be unavailable — still show results
+      // API may be unavailable
     } finally {
       setSaving(false)
     }
@@ -137,12 +160,71 @@ export function Placement() {
           </CardContent>
         </Card>
 
+        {/* Learning Path Summary */}
+        {(() => {
+          const targetExam = user?.target_exam || 'IELTS'
+          const targetScore = user?.target_score || 6.5
+          const targetCefr = bandToCefr(targetScore, targetExam)
+          const path = generateLearningPath(band, targetCefr, targetExam, skillBands)
+
+          return (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">📊 Your Learning Path</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="rounded-lg bg-black/20 p-3">
+                  <p className="text-sm text-gray-300">
+                    <span className="font-medium text-accent">{path.gapAnalysis.recommendation}</span>
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-400">Current: <span className="font-bold text-white">{band}</span></span>
+                  <span className="text-gray-400">Target: <span className="font-bold text-accent">{targetCefr}</span></span>
+                  <span className="text-gray-400">~{path.totalWeeks} weeks</span>
+                </div>
+
+                {/* Phase overview */}
+                <div className="space-y-2">
+                  {path.phases.map((phase, i) => (
+                    <div key={phase.id} className="flex items-center gap-3 rounded-lg border border-border p-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/20 text-accent text-sm font-bold">
+                        {i + 1}
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium">{phase.name}</p>
+                        <p className="text-xs text-gray-400">
+                          → {phase.targetBand} · {phase.weeksEstimated} weeks · {phase.focusSkills.join(', ')}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {path.gapAnalysis.skillsToImprove.length > 0 && (
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 mb-1">Priority skills to improve:</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {path.gapAnalysis.skillsToImprove.map((s) => (
+                        <span key={s.skill} className="px-2 py-0.5 rounded text-xs bg-warning/20 text-warning">
+                          {s.skill} ({s.current}→{s.target})
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )
+        })()}
+
         <div className="flex gap-3">
           <Button variant="outline" className="flex-1" onClick={handleRestart}>
             <RotateCcw className="h-4 w-4 mr-2" /> Retake Test
           </Button>
           <Button className="flex-1" onClick={handleFinish} disabled={saving}>
-            {saving ? 'Saving…' : <>View Study Plan <ArrowRight className="h-4 w-4 ml-2" /></>}
+            {saving ? 'Saving…' : <>Start Learning <ArrowRight className="h-4 w-4 ml-2" /></>}
           </Button>
         </div>
       </div>

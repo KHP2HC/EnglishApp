@@ -2,6 +2,8 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { supabase, type Profile } from '@/lib/supabase'
 import { profileApi } from '@/api/profile'
+import { getSession, getCurrentAccount, signOutLocal } from '@/lib/localAuth'
+import { loadLocalProfile, saveLocalProfile } from '@/lib/userStorage'
 
 function isApiConfigured(): boolean {
   const url = import.meta.env.VITE_API_BASE_URL
@@ -13,7 +15,7 @@ function isSupabaseConfigured(): boolean {
   return !!url && !url.includes('placeholder')
 }
 
-// Demo user used when Supabase is not configured
+// Demo user used when no auth is configured
 const DEMO_USER: Profile = {
   id: 'demo-user',
   name: 'Learner',
@@ -41,6 +43,7 @@ interface AuthState {
   setLoading: (loading: boolean) => void
   signOut: () => Promise<void>
   refreshProfile: () => Promise<void>
+  onLocalAuth: (userId: string, name: string, email: string) => Promise<void>
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -56,17 +59,35 @@ export const useAuthStore = create<AuthState>()(
         if (isSupabaseConfigured()) {
           await supabase.auth.signOut()
         }
+        signOutLocal()
         set({ user: null, session: null })
       },
+      onLocalAuth: async (userId: string, name: string, email: string) => {
+        // Load or create local profile
+        const profile = loadLocalProfile(userId, name, email)
+        set({ user: profile, session: { user: { id: userId, email } } })
+      },
       refreshProfile: async () => {
+        // Check for local session first
+        const localSession = getSession()
+        const localAccount = getCurrentAccount()
+
+        if (localSession && localAccount) {
+          const profile = loadLocalProfile(localAccount.id, localAccount.name, localAccount.email)
+          set({ user: profile, loading: false })
+          return
+        }
+
+        // If Supabase is not configured, use demo mode
         if (!isSupabaseConfigured()) {
           set({ user: DEMO_USER, loading: false })
           return
         }
+
         const session = get().session
         if (!session?.user?.id) return
 
-        // Use API client for profile data — no direct Supabase CRUD
+        // Use API client for profile data
         if (isApiConfigured()) {
           try {
             const profile = await profileApi.get()
@@ -79,7 +100,7 @@ export const useAuthStore = create<AuthState>()(
           }
         }
 
-        // Fallback: use session user data (no direct table access)
+        // Fallback: use session user data
         set({
           user: {
             id: session.user.id,

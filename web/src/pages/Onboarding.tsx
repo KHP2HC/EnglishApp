@@ -10,6 +10,8 @@ import { Slider } from '@/components/ui/slider'
 import { Card } from '@/components/ui/card'
 import { daysUntil } from '@/lib/utils'
 import { profileApi } from '@/api/profile'
+import { updateLocalProfile } from '@/lib/userStorage'
+import { getSession } from '@/lib/localAuth'
 
 const EMOJIS = ['🧑', '👩', '👨', '🧑‍🎓', '👩‍🎓', '👨‍🎓', '🧑‍💼', '👩‍💼', '👨‍💼', '🌟', '🔥', '💎', '🎯', '🏆', '🚀', '📚', '🧠', '💡', '✨', '🌈']
 
@@ -63,18 +65,27 @@ export function Onboarding() {
       flatFreeTime[day] = Object.values(freeTime[day]).reduce((s, v) => s + v, 0)
     }
 
+    const updates = {
+      name,
+      avatar_emoji: avatar,
+      target_exam: exam,
+      target_score: score,
+      exam_date: examDate,
+      free_time: flatFreeTime,
+      onboarded: true,
+    }
+
+    // Save to local storage
+    const localSession = getSession()
+    if (localSession) {
+      updateLocalProfile(localSession.userId, updates)
+    }
+
+    // Also try API (non-fatal if it fails)
     try {
-      await profileApi.update({
-        name,
-        avatar_emoji: avatar,
-        target_exam: exam,
-        target_score: score,
-        exam_date: examDate,
-        free_time: flatFreeTime,
-        onboarded: true,
-      })
+      await profileApi.update(updates)
     } catch {
-      // Non-fatal in demo mode
+      // Non-fatal — local storage is the source of truth
     }
 
     await refreshProfile()
