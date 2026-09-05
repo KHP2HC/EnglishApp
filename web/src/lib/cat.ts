@@ -8,6 +8,9 @@ import {
   loadVstepReadingTests,
   loadVstepListeningTests,
   loadVstepWritingTests,
+  loadToeicReadingTests,
+  loadToeicListeningTests,
+  loadToeicWritingTests,
   type SeedVocabEntry,
   type SeedQuestion,
   type ReadingTest,
@@ -310,6 +313,7 @@ function buildWritingQuestions(tests: WritingTest[]): CATQuestion[] {
 
 let poolCache: CATQuestion[] | null = null
 let vstepPoolCache: CATQuestion[] | null = null
+let toeicPoolCache: CATQuestion[] | null = null
 
 /**
  * Load and build the full question pool from all seed data files.
@@ -372,11 +376,42 @@ export async function loadVstepQuestionPool(): Promise<CATQuestion[]> {
 }
 
 /**
+ * Load and build a TOEIC-specific question pool from TOEIC seed data files.
+ * Uses toeic_reading_tests.json, toeic_listening_tests.json, toeic_writing_tests.json.
+ * Vocabulary and grammar questions are shared (exam-agnostic).
+ */
+export async function loadToeicQuestionPool(): Promise<CATQuestion[]> {
+  if (toeicPoolCache) return toeicPoolCache
+
+  const [vocab, bank, reading, listening, writing] = await Promise.all([
+    loadVocabData(),
+    loadQuestionBank(),
+    loadToeicReadingTests(),
+    loadToeicListeningTests(),
+    loadToeicWritingTests(),
+  ])
+
+  const pool: CATQuestion[] = [
+    ...buildVocabQuestions(vocab),
+    ...buildGrammarQuestions(bank),
+    ...buildReadingQuestions(reading),
+    ...buildListeningQuestions(listening),
+    ...buildWritingQuestions(writing),
+  ]
+
+  toeicPoolCache = pool
+  return toeicPoolCache
+}
+
+/**
  * Load the appropriate question pool based on exam type.
- * VSTEP uses dedicated VSTEP data files; all other exams use the default IELTS-style pool.
+ * - VSTEP → VSTEP data files
+ * - TOEIC → TOEIC data files
+ * - IELTS/TOEFL → default data files
  */
 export async function loadExamQuestionPool(examType?: string): Promise<CATQuestion[]> {
   if (examType === 'VSTEP') return loadVstepQuestionPool()
+  if (examType === 'TOEIC') return loadToeicQuestionPool()
   return loadQuestionPool()
 }
 

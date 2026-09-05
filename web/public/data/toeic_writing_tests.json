@@ -1,0 +1,172 @@
+[
+  {
+    "id": "toeic-writing-1",
+    "title": "TOEIC Writing Practice Test 1",
+    "task1": {
+      "id": "toeic-w1-t1",
+      "type": "task1",
+      "title": "Task 1: Write a Sentence from a Picture",
+      "instructions": "For each picture, write one sentence that describes what you see. You have 8 minutes total for 5 pictures.",
+      "prompt": "Picture 1: A businesswoman is presenting a chart to colleagues in a meeting room. Picture 2: Two people are shaking hands in front of an office building. Picture 3: A chef is preparing food in a restaurant kitchen. Picture 4: A group of students are studying in a library. Picture 5: A delivery person is carrying packages up to an apartment.",
+      "min_words": 5,
+      "time_minutes": 8,
+      "band_descriptors": {
+        "task_achievement": "Sentences accurately describe the pictures with appropriate detail.",
+        "coherence": "Sentences are grammatically correct and clearly structured.",
+        "lexical_resource": "Vocabulary is appropriate for describing visual scenes.",
+        "grammar": "Correct sentence structure with subject, verb, and object."
+      }
+    },
+    "task2": {
+      "id": "toeic-w1-t2",
+      "type": "task2",
+      "title": "Task 2 & 3: Written Response + Opinion Essay",
+      "instructions": "Task 2: Respond to two written requests (50-75 words each, 10 min each). Task 3: Write an opinion essay (300+ words, 30 min).",
+      "prompt": "Task 2a: You received this email from a customer: 'I ordered a laptop 2 weeks ago and haven't received it. The order number is #45821. Can you check the status?' Write a reply explaining the delay and providing a new delivery date.\n\nTask 2b: Your company is organizing a team-building event. Write an email to your colleagues inviting them and describing the activities planned.\n\nTask 3: Some companies allow employees to work from home, while others require them to work in the office. Do you think companies should allow remote work? Support your opinion with reasons and examples.",
+      "min_words": 300,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "All tasks are addressed with appropriate detail and tone.",
+        "coherence": "Ideas are well-organized with clear paragraphs and transitions.",
+        "lexical_resource": "Wide range of business and general vocabulary.",
+        "grammar": "Good control of grammar with varied sentence structures."
+      }
+    }
+  },
+  {
+    "id": "toeic-writing-2",
+    "title": "TOEIC Writing Practice Test 2",
+    "task1": {
+      "id": "toeic-w2-t1",
+      "type": "task1",
+      "title": "Task 1: Write a Sentence from a Picture",
+      "instructions": "For each picture, write one sentence that describes what you see. You have 8 minutes total for 5 pictures.",
+      "prompt": "Picture 1: A receptionist is answering a phone at the front desk of a hotel. Picture 2: A construction worker in a hard hat is directing traffic around a work site. Picture 3: A pharmacist is handing a bag of medication to a patient at a pharmacy counter. Picture 4: An IT technician is repairing a server in a data center. Picture 5: A flight attendant is demonstrating the use of a life vest on an airplane.",
+      "min_words": 5,
+      "time_minutes": 8,
+      "band_descriptors": {
+        "task_achievement": "Sentences accurately describe the pictures with appropriate detail.",
+        "coherence": "Sentences are grammatically correct and clearly structured.",
+        "lexical_resource": "Vocabulary is appropriate for describing visual scenes.",
+        "grammar": "Correct sentence structure with subject, verb, and object."
+      }
+    },
+    "task2": {
+      "id": "toeic-w2-t2",
+      "type": "task2",
+      "title": "Task 2 & 3: Written Response + Opinion Essay",
+      "instructions": "Task 2: Respond to two written requests (50-75 words each, 10 min each). Task 3: Write an opinion essay (300+ words, 30 min).",
+      "prompt": "Task 2a: You received this email from a colleague: 'I'm planning a business trip to Tokyo next month and need to know what documents I should prepare. Can you help?' Write a reply listing the required documents and offering additional travel advice.\n\nTask 2b: A new employee has asked you about the company dress code. Write an email explaining the dress code policy and giving suggestions for appropriate attire.\n\nTask 3: Many companies now use social media to screen job applicants. Do you think employers should be allowed to check candidates' social media profiles before hiring? Support your opinion with reasons and examples.",
+      "min_words": 300,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "All tasks are addressed with appropriate detail and tone.",
+        "coherence": "Ideas are well-organized with clear paragraphs and transitions.",
+        "lexical_resource": "Wide range of business and general vocabulary.",
+        "grammar": "Good control of grammar with varied sentence structures."
+      }
+    }
+  },
+  {
+    "id": "toeic-writing-3",
+    "title": "TOEIC Writing Practice Test 3",
+    "task1": {
+      "id": "toeic-w3-t1",
+      "type": "task1",
+      "title": "Task 1: Write a Sentence from a Picture",
+      "instructions": "For each picture, write one sentence that describes what you see. You have 8 minutes total for 5 pictures.",
+      "prompt": "Picture 1: A mechanic is inspecting a car engine in an auto repair shop. Picture 2: A teacher is writing equations on a chalkboard while students take notes. Picture 3: A barista is making coffee at a café counter with a line of customers waiting. Picture 4: A nurse is checking a patient's blood pressure in a clinic room. Picture 5: A landscaper is mowing a lawn in front of a large office building.",
+      "min_words": 5,
+      "time_minutes": 8,
+      "band_descriptors": {
+        "task_achievement": "Sentences accurately describe the pictures with appropriate detail.",
+        "coherence": "Sentences are grammatically correct and clearly structured.",
+        "lexical_resource": "Vocabulary is appropriate for describing visual scenes.",
+        "grammar": "Correct sentence structure with subject, verb, and object."
+      }
+    },
+    "task2": {
+      "id": "toeic-w3-t2",
+      "type": "task2",
+      "title": "Task 2 & 3: Written Response + Opinion Essay",
+      "instructions": "Task 2: Respond to two written requests (50-75 words each, 10 min each). Task 3: Write an opinion essay (300+ words, 30 min).",
+      "prompt": "Task 2a: You received this message from a hotel guest: 'I'd like to extend my stay by two nights. My current reservation is under the name John Davis, room 412. Is that possible?' Write a reply confirming the extension and mentioning any additional charges.\n\nTask 2b: Your department is launching a new product. Write an email to the marketing team requesting their help with a promotional campaign and outlining the product's key features.\n\nTask 3: Some people believe that internships should be paid, while others argue that the experience itself is valuable enough. Do you think unpaid internships should be banned? Support your opinion with reasons and examples.",
+      "min_words": 300,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "All tasks are addressed with appropriate detail and tone.",
+        "coherence": "Ideas are well-organized with clear paragraphs and transitions.",
+        "lexical_resource": "Wide range of business and general vocabulary.",
+        "grammar": "Good control of grammar with varied sentence structures."
+      }
+    }
+  },
+  {
+    "id": "toeic-writing-4",
+    "title": "TOEIC Writing Practice Test 4",
+    "task1": {
+      "id": "toeic-w4-t1",
+      "type": "task1",
+      "title": "Task 1: Write a Sentence from a Picture",
+      "instructions": "For each picture, write one sentence that describes what you see. You have 8 minutes total for 5 pictures.",
+      "prompt": "Picture 1: A bank teller is counting cash at a counter while a customer waits. Picture 2: A photographer is taking pictures of a product on a table in a studio. Picture 3: A security guard is monitoring screens in a control room. Picture 4: A gardener is planting flowers in a public park. Picture 5: A salesperson is showing a smartphone to a customer in an electronics store.",
+      "min_words": 5,
+      "time_minutes": 8,
+      "band_descriptors": {
+        "task_achievement": "Sentences accurately describe the pictures with appropriate detail.",
+        "coherence": "Sentences are grammatically correct and clearly structured.",
+        "lexical_resource": "Vocabulary is appropriate for describing visual scenes.",
+        "grammar": "Correct sentence structure with subject, verb, and object."
+      }
+    },
+    "task2": {
+      "id": "toeic-w4-t2",
+      "type": "task2",
+      "title": "Task 2 & 3: Written Response + Opinion Essay",
+      "instructions": "Task 2: Respond to two written requests (50-75 words each, 10 min each). Task 3: Write an opinion essay (300+ words, 30 min).",
+      "prompt": "Task 2a: You received this email from a supplier: 'We will be unable to deliver your order of office supplies on the scheduled date due to a logistics issue. We apologize for the inconvenience.' Write a reply asking for a revised delivery date and suggesting an alternative solution.\n\nTask 2b: A coworker is transferring to another branch and has asked you for advice on settling into a new city. Write an email with tips on finding housing and getting to know the area.\n\nTask 3: Some companies have implemented a four-day workweek, while others maintain the traditional five-day schedule. Do you think a shorter workweek would benefit both employees and employers? Support your opinion with reasons and examples.",
+      "min_words": 300,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "All tasks are addressed with appropriate detail and tone.",
+        "coherence": "Ideas are well-organized with clear paragraphs and transitions.",
+        "lexical_resource": "Wide range of business and general vocabulary.",
+        "grammar": "Good control of grammar with varied sentence structures."
+      }
+    }
+  },
+  {
+    "id": "toeic-writing-5",
+    "title": "TOEIC Writing Practice Test 5",
+    "task1": {
+      "id": "toeic-w5-t1",
+      "type": "task1",
+      "title": "Task 1: Write a Sentence from a Picture",
+      "instructions": "For each picture, write one sentence that describes what you see. You have 8 minutes total for 5 pictures.",
+      "prompt": "Picture 1: A warehouse worker is scanning boxes on shelves with a handheld device. Picture 2: A dentist is examining a patient's teeth in a dental clinic. Picture 3: A pilot and copilot are reviewing a checklist in an airplane cockpit. Picture 4: A personal trainer is guiding a client through an exercise at a gym. Picture 5: A cashier is bagging groceries at a supermarket checkout counter.",
+      "min_words": 5,
+      "time_minutes": 8,
+      "band_descriptors": {
+        "task_achievement": "Sentences accurately describe the pictures with appropriate detail.",
+        "coherence": "Sentences are grammatically correct and clearly structured.",
+        "lexical_resource": "Vocabulary is appropriate for describing visual scenes.",
+        "grammar": "Correct sentence structure with subject, verb, and object."
+      }
+    },
+    "task2": {
+      "id": "toeic-w5-t2",
+      "type": "task2",
+      "title": "Task 2 & 3: Written Response + Opinion Essay",
+      "instructions": "Task 2: Respond to two written requests (50-75 words each, 10 min each). Task 3: Write an opinion essay (300+ words, 30 min).",
+      "prompt": "Task 2a: You received this email from a client: 'I attended your company's product demo last week and I'm interested in purchasing the enterprise plan. Could you send me a price quote and details about the onboarding process?' Write a reply with the requested information and a call to action.\n\nTask 2b: Your manager has asked you to write a brief report about a recent conference you attended. Write an email summarizing the key takeaways and suggesting how the team could benefit from what you learned.\n\nTask 3: Artificial intelligence is increasingly being used in the workplace to automate tasks. Do you think AI will create more jobs than it eliminates, or the opposite? Support your opinion with reasons and examples.",
+      "min_words": 300,
+      "time_minutes": 40,
+      "band_descriptors": {
+        "task_achievement": "All tasks are addressed with appropriate detail and tone.",
+        "coherence": "Ideas are well-organized with clear paragraphs and transitions.",
+        "lexical_resource": "Wide range of business and general vocabulary.",
+        "grammar": "Good control of grammar with varied sentence structures."
+      }
+    }
+  }
+]

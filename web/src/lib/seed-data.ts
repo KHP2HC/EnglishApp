@@ -147,6 +147,10 @@ let vstepReadingCache: ReadingTest[] | null = null
 let vstepListeningCache: ListeningTest[] | null = null
 let vstepWritingCache: WritingTest[] | null = null
 let vstepSpeakingCache: SpeakingTest[] | null = null
+let toeicReadingCache: ReadingTest[] | null = null
+let toeicListeningCache: ListeningTest[] | null = null
+let toeicWritingCache: WritingTest[] | null = null
+let toeicSpeakingCache: SpeakingTest[] | null = null
 
 export async function loadVocabData(): Promise<SeedVocabEntry[]> {
   if (vocabCache) return vocabCache
@@ -264,28 +268,67 @@ export async function loadVstepSpeakingTests(): Promise<SpeakingTest[]> {
   return vstepSpeakingCache!
 }
 
+// ── TOEIC-specific loaders ─────────────────────────────────────────
+
+export async function loadToeicReadingTests(): Promise<ReadingTest[]> {
+  if (toeicReadingCache) return toeicReadingCache
+  const resp = await fetch(`${BASE}data/toeic_reading_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load TOEIC reading tests')
+  toeicReadingCache = await resp.json()
+  return toeicReadingCache!
+}
+
+export async function loadToeicListeningTests(): Promise<ListeningTest[]> {
+  if (toeicListeningCache) return toeicListeningCache
+  const resp = await fetch(`${BASE}data/toeic_listening_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load TOEIC listening tests')
+  toeicListeningCache = await resp.json()
+  return toeicListeningCache!
+}
+
+export async function loadToeicWritingTests(): Promise<WritingTest[]> {
+  if (toeicWritingCache) return toeicWritingCache
+  const resp = await fetch(`${BASE}data/toeic_writing_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load TOEIC writing tests')
+  toeicWritingCache = await resp.json()
+  return toeicWritingCache!
+}
+
+export async function loadToeicSpeakingTests(): Promise<SpeakingTest[]> {
+  if (toeicSpeakingCache) return toeicSpeakingCache
+  const resp = await fetch(`${BASE}data/toeic_speaking_tests.json`)
+  if (!resp.ok) throw new Error('Failed to load TOEIC speaking tests')
+  toeicSpeakingCache = await resp.json()
+  return toeicSpeakingCache!
+}
+
 /**
  * Load exam-specific test data for a given skill.
- * For VSTEP, loads from vstep_*.json files.
- * For other exams (IELTS, TOEIC, TOEFL), loads from the default files.
+ * - VSTEP → vstep_*.json
+ * - TOEIC → toeic_*.json
+ * - IELTS/TOEFL → default *.json
  */
 export async function loadExamReadingTests(examType?: string): Promise<ReadingTest[]> {
   if (examType === 'VSTEP') return loadVstepReadingTests()
+  if (examType === 'TOEIC') return loadToeicReadingTests()
   return loadReadingTests()
 }
 
 export async function loadExamListeningTests(examType?: string): Promise<ListeningTest[]> {
   if (examType === 'VSTEP') return loadVstepListeningTests()
+  if (examType === 'TOEIC') return loadToeicListeningTests()
   return loadListeningTests()
 }
 
 export async function loadExamWritingTests(examType?: string): Promise<WritingTest[]> {
   if (examType === 'VSTEP') return loadVstepWritingTests()
+  if (examType === 'TOEIC') return loadToeicWritingTests()
   return loadWritingTests()
 }
 
 export async function loadExamSpeakingTests(examType?: string): Promise<SpeakingTest[]> {
   if (examType === 'VSTEP') return loadVstepSpeakingTests()
+  if (examType === 'TOEIC') return loadToeicSpeakingTests()
   return loadSpeakingTests()
 }
 

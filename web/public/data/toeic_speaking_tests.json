@@ -1,0 +1,287 @@
+[
+  {
+    "id": "toeic-speaking-1",
+    "title": "TOEIC Speaking Practice Test 1",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Read Aloud",
+        "instructions": "You will read two texts aloud. You have 45 seconds to prepare and 45 seconds to read each text.",
+        "timeMinutes": 3,
+        "questions": [
+          "Welcome to the annual technology conference. Today's keynote speaker, Dr. Sarah Mitchell, will present her research on artificial intelligence in healthcare. The presentation will begin in the main auditorium at 10:00 AM. Please find your seats and silence your mobile devices.",
+          "Attention passengers: The 3:45 PM express train to Boston has been delayed by approximately 20 minutes due to track maintenance. We apologize for the inconvenience. Updated departure time is 4:05 PM from Platform 3. Please check the departure board for further updates."
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Describe a Photo",
+        "instructions": "You will describe two photographs. You have 45 seconds to prepare and 45 seconds to speak for each photo.",
+        "timeMinutes": 3,
+        "questions": [
+          "Describe this photo: A busy office environment where several employees are working at computers. One person is standing at a whiteboard giving a presentation to colleagues seated around a table.",
+          "Describe this photo: An outdoor market with colorful fruit and vegetable stalls. A vendor is handing a bag of apples to a customer while other shoppers browse the displays."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Respond to Questions",
+        "instructions": "You will answer three questions about a topic. You have 5 seconds to prepare and 15-30 seconds to respond to each.",
+        "timeMinutes": 3,
+        "questions": [
+          "Imagine you are calling a restaurant to make a reservation. The host asks: 'How many people are in your party?'",
+          "The host then asks: 'What time would you like to dine with us this evening?'",
+          "Finally, the host asks: 'Do you have any special dietary requirements we should know about?'"
+        ]
+      },
+      {
+        "part": 4,
+        "title": "Part 4: Respond Using Information",
+        "instructions": "You will be given information to read. Then answer three questions using that information. You have 30 seconds to read, then 15 seconds to respond to each question.",
+        "timeMinutes": 3,
+        "questions": [
+          "Information: The City Library offers free computer classes every Saturday. Beginner classes run from 9 AM to 11 AM. Intermediate classes are from 1 PM to 3 PM. Registration is required and can be done online or in person. Class size is limited to 15 students. Question: What time do the beginner computer classes start?",
+          "Using the same information: How can someone register for the classes?",
+          "Using the same information: What is the maximum number of students per class?"
+        ]
+      },
+      {
+        "part": 5,
+        "title": "Part 5: Express an Opinion",
+        "instructions": "You will be asked a question. You have 15 seconds to prepare and 60 seconds to express your opinion.",
+        "timeMinutes": 2,
+        "questions": [
+          "Some people prefer to work independently, while others prefer to work in a team. Which do you prefer and why? Include specific reasons and examples to support your opinion."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toeic-speaking-2",
+    "title": "TOEIC Speaking Practice Test 2",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Read Aloud",
+        "instructions": "You will read two texts aloud. You have 45 seconds to prepare and 45 seconds to read each text.",
+        "timeMinutes": 3,
+        "questions": [
+          "Thank you for choosing Skyline Airlines. Our flight to Los Angeles will take approximately 5 hours and 30 minutes. We will be cruising at an altitude of 35,000 feet. For your safety, please keep your seatbelt fastened while seated. In-flight entertainment and refreshments will be available shortly after takeoff.",
+          "The Human Resources department is pleased to announce the launch of our new employee wellness program. Starting next month, all full-time staff members are eligible for a complimentary gym membership. Additionally, weekly yoga sessions will be held in the recreation room every Wednesday at noon. Sign up at the HR office."
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Describe a Photo",
+        "instructions": "You will describe two photographs. You have 45 seconds to prepare and 45 seconds to speak for each photo.",
+        "timeMinutes": 3,
+        "questions": [
+          "Describe this photo: A modern airport terminal with travelers pulling suitcases toward the departure gates. A large electronic board displays flight schedules, and airport staff in uniform are assisting passengers at a help desk.",
+          "Describe this photo: A restaurant kitchen where a team of chefs in white aprons is preparing meals. One chef is chopping vegetables while another is stirring a large pot on the stove. Plates of food are lined up on the counter ready to be served."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Respond to Questions",
+        "instructions": "You will answer three questions about a topic. You have 5 seconds to prepare and 15-30 seconds to respond to each.",
+        "timeMinutes": 3,
+        "questions": [
+          "Imagine you are at a car rental desk. The agent asks: 'What size vehicle would you like to rent today?'",
+          "The agent then asks: 'How many days will you be needing the car?'",
+          "Finally, the agent asks: 'Would you like to add insurance coverage to your rental?'"
+        ]
+      },
+      {
+        "part": 4,
+        "title": "Part 4: Respond Using Information",
+        "instructions": "You will be given information to read. Then answer three questions using that information. You have 30 seconds to read, then 15 seconds to respond to each question.",
+        "timeMinutes": 3,
+        "questions": [
+          "Information: The Riverside Fitness Center offers three membership plans. The Basic plan costs $30 per month and includes gym access. The Premium plan costs $50 per month and includes gym access plus group classes. The VIP plan costs $80 per month and includes everything plus a personal trainer. All plans require a one-year commitment. Question: How much does the Premium plan cost per month?",
+          "Using the same information: What is included in the Basic plan?",
+          "Using the same information: Which plan includes a personal trainer?"
+        ]
+      },
+      {
+        "part": 5,
+        "title": "Part 5: Express an Opinion",
+        "instructions": "You will be asked a question. You have 15 seconds to prepare and 60 seconds to express your opinion.",
+        "timeMinutes": 2,
+        "questions": [
+          "Some people think that face-to-face communication is more effective than digital communication in the workplace. Do you agree or disagree? Give specific reasons and examples to support your opinion."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toeic-speaking-3",
+    "title": "TOEIC Speaking Practice Test 3",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Read Aloud",
+        "instructions": "You will read two texts aloud. You have 45 seconds to prepare and 45 seconds to read each text.",
+        "timeMinutes": 3,
+        "questions": [
+          "Good morning, everyone. Welcome to today's safety training session. Our agenda covers three important topics: fire evacuation procedures, first aid basics, and emergency contact protocols. The session will last approximately two hours, including a short break. Please collect your training materials from the table near the entrance before we begin.",
+          "This is a reminder that the annual company picnic will take place on Saturday, June 15th, at Centennial Park. The event starts at 11 AM and ends at 4 PM. Employees are welcome to bring their families. Lunch will be provided, but please sign up at the front desk by Wednesday so we can plan accordingly."
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Describe a Photo",
+        "instructions": "You will describe two photographs. You have 45 seconds to prepare and 45 seconds to speak for each photo.",
+        "timeMinutes": 3,
+        "questions": [
+          "Describe this photo: A construction site where workers in orange safety vests and hard hats are building a structure. A crane is lifting steel beams, and cement mixers are parked nearby. The building appears to be several stories tall.",
+          "Describe this photo: A hotel lobby with marble floors and a large chandelier. A receptionist is checking in a guest at the front desk while a bellhop carries luggage toward the elevator. Potted plants and comfortable seating areas are visible in the background."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Respond to Questions",
+        "instructions": "You will answer three questions about a topic. You have 5 seconds to prepare and 15-30 seconds to respond to each.",
+        "timeMinutes": 3,
+        "questions": [
+          "Imagine you are checking into a hotel. The receptionist asks: 'Do you have a reservation with us?'",
+          "The receptionist then asks: 'Would you prefer a room with a city view or a garden view?'",
+          "Finally, the receptionist asks: 'Would you like a wake-up call in the morning?'"
+        ]
+      },
+      {
+        "part": 4,
+        "title": "Part 4: Respond Using Information",
+        "instructions": "You will be given information to read. Then answer three questions using that information. You have 30 seconds to read, then 15 seconds to respond to each question.",
+        "timeMinutes": 3,
+        "questions": [
+          "Information: The Downtown Business Center offers conference rooms for rent. Room A seats 10 people and costs $50 per hour. Room B seats 25 people and costs $100 per hour. Room C seats 50 people and costs $200 per hour. All rooms come with a projector and Wi-Fi. Catering is available for an additional $15 per person. Question: How much does Room B cost per hour?",
+          "Using the same information: What equipment is included with every conference room?",
+          "Using the same information: How much extra does catering cost per person?"
+        ]
+      },
+      {
+        "part": 5,
+        "title": "Part 5: Express an Opinion",
+        "instructions": "You will be asked a question. You have 15 seconds to prepare and 60 seconds to express your opinion.",
+        "timeMinutes": 2,
+        "questions": [
+          "Some companies encourage employees to continue their education by offering tuition reimbursement programs. Do you think employers should pay for their employees' education? Give specific reasons and examples to support your opinion."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toeic-speaking-4",
+    "title": "TOEIC Speaking Practice Test 4",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Read Aloud",
+        "instructions": "You will read two texts aloud. You have 45 seconds to prepare and 45 seconds to read each text.",
+        "timeMinutes": 3,
+        "questions": [
+          "Attention all shoppers: Our annual summer sale begins this Friday at 9 AM. Enjoy discounts of up to 50 percent on selected items throughout the store. Members of our loyalty program receive an additional 10 percent off all purchases. Visit our website or ask a store associate for a complete list of sale items and exclusions.",
+          "The Greenfield Community Center is proud to host the annual job fair on March 12th. Over thirty local companies will be present, representing industries such as healthcare, technology, finance, and hospitality. Job seekers should bring multiple copies of their resume. Professional attire is recommended. Admission is free and open to the public."
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Describe a Photo",
+        "instructions": "You will describe two photographs. You have 45 seconds to prepare and 45 seconds to speak for each photo.",
+        "timeMinutes": 3,
+        "questions": [
+          "Describe this photo: A pharmacy interior where a pharmacist in a white coat is consulting with a customer at the counter. Shelves of medicine and health products line the walls behind them. A few other customers are waiting in line.",
+          "Describe this photo: A train station platform where passengers are boarding a sleek modern train. A conductor in uniform is checking tickets near the entrance. Luggage racks are visible, and an electronic sign above displays the destination and departure time."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Respond to Questions",
+        "instructions": "You will answer three questions about a topic. You have 5 seconds to prepare and 15-30 seconds to respond to each.",
+        "timeMinutes": 3,
+        "questions": [
+          "Imagine you are calling a clinic to schedule a doctor's appointment. The receptionist asks: 'What seems to be the reason for your visit?'",
+          "The receptionist then asks: 'Would you prefer a morning or afternoon appointment?'",
+          "Finally, the receptionist asks: 'Is this your first time visiting our clinic?'"
+        ]
+      },
+      {
+        "part": 4,
+        "title": "Part 4: Respond Using Information",
+        "instructions": "You will be given information to read. Then answer three questions using that information. You have 30 seconds to read, then 15 seconds to respond to each question.",
+        "timeMinutes": 3,
+        "questions": [
+          "Information: The Lakeside Hotel offers several room types. Standard rooms are $120 per night and include a complimentary breakfast. Deluxe rooms are $180 per night and include breakfast and free parking. Suites are $300 per night and include breakfast, parking, and access to the spa. Check-in is at 3 PM and check-out is at 11 AM. Question: What is included with a Deluxe room?",
+          "Using the same information: How much does a Standard room cost per night?",
+          "Using the same information: What time is check-out?"
+        ]
+      },
+      {
+        "part": 5,
+        "title": "Part 5: Express an Opinion",
+        "instructions": "You will be asked a question. You have 15 seconds to prepare and 60 seconds to express your opinion.",
+        "timeMinutes": 2,
+        "questions": [
+          "Some people believe that performance bonuses are the best way to motivate employees, while others think recognition and praise are more effective. Which do you think is more important for employee motivation? Give specific reasons and examples to support your opinion."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toeic-speaking-5",
+    "title": "TOEIC Speaking Practice Test 5",
+    "parts": [
+      {
+        "part": 1,
+        "title": "Part 1: Read Aloud",
+        "instructions": "You will read two texts aloud. You have 45 seconds to prepare and 45 seconds to read each text.",
+        "timeMinutes": 3,
+        "questions": [
+          "Welcome to the Grandview Hotel. Our check-in time is 3 PM and check-out is at 11 AM. We offer complimentary breakfast in the dining hall from 6:30 to 9:30 every morning. The fitness center and swimming pool are open from 6 AM to 10 PM. For room service, please dial 0 from your room phone. We hope you enjoy your stay.",
+          "This is an important announcement for all students. Registration for the spring semester begins on November 1st and closes on November 20th. Students must meet with their academic advisors before registering. A late fee of $50 will be charged for registrations submitted after the deadline. Please visit the registrar's office or the student portal for more information."
+        ]
+      },
+      {
+        "part": 2,
+        "title": "Part 2: Describe a Photo",
+        "instructions": "You will describe two photographs. You have 45 seconds to prepare and 45 seconds to speak for each photo.",
+        "timeMinutes": 3,
+        "questions": [
+          "Describe this photo: A supermarket aisle stocked with various products on both sides. A shopper is pushing a cart while reading a shopping list. A store employee in a uniform is restocking shelves with canned goods. Price tags and promotional signs are visible throughout the aisle.",
+          "Describe this photo: A bank interior where a customer is sitting across from a bank officer at a desk. The officer is pointing to a document on the table while explaining something. Other customers are waiting in chairs along the wall, and ATM machines are visible in the background."
+        ]
+      },
+      {
+        "part": 3,
+        "title": "Part 3: Respond to Questions",
+        "instructions": "You will answer three questions about a topic. You have 5 seconds to prepare and 15-30 seconds to respond to each.",
+        "timeMinutes": 3,
+        "questions": [
+          "Imagine you are at a bookstore. The store clerk asks: 'Are you looking for a specific book or genre today?'",
+          "The clerk then asks: 'Would you like a recommendation based on your interests?'",
+          "Finally, the clerk asks: 'Would you like to join our book club membership program?'"
+        ]
+      },
+      {
+        "part": 4,
+        "title": "Part 4: Respond Using Information",
+        "instructions": "You will be given information to read. Then answer three questions using that information. You have 30 seconds to read, then 15 seconds to respond to each question.",
+        "timeMinutes": 3,
+        "questions": [
+          "Information: The Metro Bus Service operates from 5 AM to midnight on weekdays. Buses run every 15 minutes during peak hours (7-9 AM and 5-7 PM) and every 30 minutes during off-peak hours. A single ride costs $2. A day pass costs $5 and a monthly pass costs $60. Seniors and students receive a 50 percent discount on all fares. Question: How often do buses run during peak hours?",
+          "Using the same information: How much does a monthly pass cost?",
+          "Using the same information: What discount do students receive?"
+        ]
+      },
+      {
+        "part": 5,
+        "title": "Part 5: Express an Opinion",
+        "instructions": "You will be asked a question. You have 15 seconds to prepare and 60 seconds to express your opinion.",
+        "timeMinutes": 2,
+        "questions": [
+          "Some people believe that learning a second language is essential for career success in today's global economy, while others think it is not necessary. Do you think being bilingual gives people an advantage in the workplace? Give specific reasons and examples to support your opinion."
+        ]
+      }
+    ]
+  }
+]

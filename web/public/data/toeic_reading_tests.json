@@ -1,0 +1,3113 @@
+[
+  {
+    "id": "toeic-reading-1",
+    "title": "TOEIC Reading Practice Test 1",
+    "time_minutes": 75,
+    "passages": [
+      {
+        "id": "toeic-r1-p1",
+        "number": 1,
+        "title": "Part 5: Incomplete Sentences",
+        "difficulty": "B1",
+        "instructions": "Choose the word or phrase that best completes the sentence.",
+        "text": "",
+        "questions": [
+          {
+            "id": "toeic-r1-p1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "The marketing team ___ the new advertising campaign last Friday.",
+            "options": ["launched", "launching", "launch", "launches"],
+            "answer": "launched",
+            "explanation": "The past tense 'launched' is needed because the action happened 'last Friday'."
+          },
+          {
+            "id": "toeic-r1-p1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Please submit your expense reports ___ the end of the month.",
+            "options": ["by", "at", "in", "on"],
+            "answer": "by",
+            "explanation": "'By' indicates a deadline — the reports must be submitted no later than the end of the month."
+          },
+          {
+            "id": "toeic-r1-p1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The company announced the ___ of a new software system.",
+            "options": ["develop", "development", "developing", "developer"],
+            "answer": "development",
+            "explanation": "The noun 'development' is needed as the object of the verb 'announced'."
+          },
+          {
+            "id": "toeic-r1-p1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "___ the weather was bad, the outdoor event was postponed.",
+            "options": ["Because", "Although", "Despite", "However"],
+            "answer": "Because",
+            "explanation": "'Because' introduces a cause — the event was postponed due to bad weather."
+          },
+          {
+            "id": "toeic-r1-p1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "Ms. Tanaka ___ with the client for over three years.",
+            "options": ["is working", "has been working", "works", "worked"],
+            "answer": "has been working",
+            "explanation": "Present perfect continuous 'has been working' describes an action that started in the past and continues to the present, indicated by 'for over three years'."
+          },
+          {
+            "id": "toeic-r1-p1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The new printer is ___ than the old one.",
+            "options": ["efficient", "more efficient", "most efficient", "efficiency"],
+            "answer": "more efficient",
+            "explanation": "The comparative form 'more efficient' is needed because two things are being compared, indicated by 'than'."
+          },
+          {
+            "id": "toeic-r1-p1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "There has been a ___ increase in sales this quarter.",
+            "options": ["signify", "significantly", "significant", "significance"],
+            "answer": "significant",
+            "explanation": "The adjective 'significant' modifies the noun 'increase'."
+          },
+          {
+            "id": "toeic-r1-p1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "All documents must ___ by the department head before publication.",
+            "options": ["approve", "be approved", "approving", "approved"],
+            "answer": "be approved",
+            "explanation": "Passive voice 'be approved' is needed — documents are approved by someone, not doing the approving."
+          },
+          {
+            "id": "toeic-r1-p1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "We look forward to ___ you at the annual conference.",
+            "options": ["meet", "meeting", "met", "meets"],
+            "answer": "meeting",
+            "explanation": "After the phrase 'look forward to', a gerund (-ing form) is required: 'meeting'."
+          },
+          {
+            "id": "toeic-r1-p1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "The conference room is ___ for up to fifty people.",
+            "options": ["availability", "availably", "available", "avail"],
+            "answer": "available",
+            "explanation": "The adjective 'available' describes the conference room's capacity."
+          },
+          {
+            "id": "toeic-r1-p1-q11",
+            "number": 11,
+            "type": "mcq",
+            "text": "Mr. Lee is responsible ___ managing the IT department.",
+            "options": ["for", "of", "in", "to"],
+            "answer": "for",
+            "explanation": "The correct preposition after 'responsible' is 'for'."
+          },
+          {
+            "id": "toeic-r1-p1-q12",
+            "number": 12,
+            "type": "mcq",
+            "text": "Employees ___ wash their hands before returning to work.",
+            "options": ["should", "might", "could", "would"],
+            "answer": "should",
+            "explanation": "'Should' expresses a recommendation or obligation, appropriate for a hygiene requirement."
+          },
+          {
+            "id": "toeic-r1-p1-q13",
+            "number": 13,
+            "type": "mcq",
+            "text": "The committee will ___ a decision by next Wednesday.",
+            "options": ["do", "make", "take", "have"],
+            "answer": "make",
+            "explanation": "The correct collocation is 'make a decision', not 'do' or 'take' a decision."
+          },
+          {
+            "id": "toeic-r1-p1-q14",
+            "number": 14,
+            "type": "mcq",
+            "text": "The candidate ___ resume impressed the hiring manager was offered the position.",
+            "options": ["who", "whose", "which", "that"],
+            "answer": "whose",
+            "explanation": "'Whose' shows possession — the resume belongs to the candidate."
+          },
+          {
+            "id": "toeic-r1-p1-q15",
+            "number": 15,
+            "type": "mcq",
+            "text": "The report was ___ by the senior analyst.",
+            "options": ["write", "wrote", "written", "writing"],
+            "answer": "written",
+            "explanation": "The past participle 'written' is used in the passive voice construction 'was written'."
+          },
+          {
+            "id": "toeic-r1-p1-q16",
+            "number": 16,
+            "type": "mcq",
+            "text": "The store is ___ offering a 20% discount on all electronics.",
+            "options": ["current", "currently", "currency", "currant"],
+            "answer": "currently",
+            "explanation": "The adverb 'currently' modifies the verb 'is offering', meaning 'at the present time'."
+          },
+          {
+            "id": "toeic-r1-p1-q17",
+            "number": 17,
+            "type": "mcq",
+            "text": "If we had more time, we ___ the project thoroughly.",
+            "options": ["will complete", "would complete", "would have completed", "completed"],
+            "answer": "would complete",
+            "explanation": "In a second conditional (present unreal), 'would + base verb' is used: 'would complete'."
+          },
+          {
+            "id": "toeic-r1-p1-q18",
+            "number": 18,
+            "type": "mcq",
+            "text": "The first item on the ___ is the budget review.",
+            "options": ["agenda", "schedule", "calendar", "timetable"],
+            "answer": "agenda",
+            "explanation": "'Agenda' refers to a list of items to be discussed at a meeting."
+          },
+          {
+            "id": "toeic-r1-p1-q19",
+            "number": 19,
+            "type": "mcq",
+            "text": "The number of applicants for the position ___ increased significantly.",
+            "options": ["have", "has", "are", "were"],
+            "answer": "has",
+            "explanation": "'The number of' takes a singular verb, so 'has' is correct."
+          },
+          {
+            "id": "toeic-r1-p1-q20",
+            "number": 20,
+            "type": "mcq",
+            "text": "The training session will take place ___ Tuesday morning.",
+            "options": ["in", "on", "at", "by"],
+            "answer": "on",
+            "explanation": "'On' is used with specific days: 'on Tuesday morning'."
+          },
+          {
+            "id": "toeic-r1-p1-q21",
+            "number": 21,
+            "type": "mcq",
+            "text": "Hard work and dedication are essential to ___ in this industry.",
+            "options": ["success", "succeed", "successful", "successfully"],
+            "answer": "succeed",
+            "explanation": "The base verb 'succeed' is needed after 'to' in the infinitive."
+          },
+          {
+            "id": "toeic-r1-p1-q22",
+            "number": 22,
+            "type": "mcq",
+            "text": "___ the high cost, the company decided to proceed with the project.",
+            "options": ["Although", "Despite", "Because", "However"],
+            "answer": "Despite",
+            "explanation": "'Despite' is followed by a noun phrase ('the high cost'), not a full clause."
+          },
+          {
+            "id": "toeic-r1-p1-q23",
+            "number": 23,
+            "type": "mcq",
+            "text": "The client decided to ___ our offer due to pricing concerns.",
+            "options": ["turn down", "turn in", "turn out", "turn over"],
+            "answer": "turn down",
+            "explanation": "The phrasal verb 'turn down' means to reject or refuse an offer."
+          },
+          {
+            "id": "toeic-r1-p1-q24",
+            "number": 24,
+            "type": "mcq",
+            "text": "The new policy ___ take effect starting January 1st.",
+            "options": ["will", "has", "was", "did"],
+            "answer": "will",
+            "explanation": "Future tense 'will' is used for a future event: 'will take effect'."
+          },
+          {
+            "id": "toeic-r1-p1-q25",
+            "number": 25,
+            "type": "mcq",
+            "text": "A valid driver's license is a ___ for this position.",
+            "options": ["require", "requirement", "required", "requiring"],
+            "answer": "requirement",
+            "explanation": "The noun 'requirement' is needed as the complement: 'a requirement for this position'."
+          },
+          {
+            "id": "toeic-r1-p1-q26",
+            "number": 26,
+            "type": "mcq",
+            "text": "The manager ___ department won the award will give a speech.",
+            "options": ["who", "whose", "which", "where"],
+            "answer": "whose",
+            "explanation": "'Whose' shows possession — the department belongs to the manager."
+          },
+          {
+            "id": "toeic-r1-p1-q27",
+            "number": 27,
+            "type": "mcq",
+            "text": "The company made a ___ contribution to the local charity.",
+            "options": ["substance", "substantially", "substantial", "substantiate"],
+            "answer": "substantial",
+            "explanation": "The adjective 'substantial' modifies the noun 'contribution'."
+          },
+          {
+            "id": "toeic-r1-p1-q28",
+            "number": 28,
+            "type": "mcq",
+            "text": "All packages must ___ to the correct address before noon.",
+            "options": ["deliver", "be delivered", "delivering", "delivered"],
+            "answer": "be delivered",
+            "explanation": "Passive voice 'be delivered' is needed — packages are delivered (by someone)."
+          },
+          {
+            "id": "toeic-r1-p1-q29",
+            "number": 29,
+            "type": "mcq",
+            "text": "The proposal was submitted ___ the deadline.",
+            "options": ["before", "among", "between", "during"],
+            "answer": "before",
+            "explanation": "'Before' indicates the proposal was submitted earlier than the deadline."
+          },
+          {
+            "id": "toeic-r1-p1-q30",
+            "number": 30,
+            "type": "mcq",
+            "text": "She is one of the most ___ managers in the company.",
+            "options": ["experience", "experiencing", "experienced", "experiences"],
+            "answer": "experienced",
+            "explanation": "The adjective 'experienced' describes the noun 'managers'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p2-t1",
+        "number": 2,
+        "title": "Part 6: Text Completion — Text 1",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "Dear Mr. Thompson,\n\nWe are pleased to inform you that your application for the position of Senior Financial Analyst has been ___(1)___. Your first day will be Monday, October 3rd. Please report to the Human Resources department at 9:00 AM. You will need to bring two forms of identification and your signed employment ____(2)____. If you have any questions before your start date, please do not ____(3)____ to contact me directly. We look forward to ____(4)____ you to our team.\n\nSincerely,\nKaren Mitchell\nHR Director",
+        "questions": [
+          {
+            "id": "toeic-r1-p2-t1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["approved", "approving", "approval", "approves"],
+            "answer": "approved",
+            "explanation": "Passive voice 'has been approved' — the application was approved by the company."
+          },
+          {
+            "id": "toeic-r1-p2-t1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["agree", "agreement", "agreed", "agreeing"],
+            "answer": "agreement",
+            "explanation": "The noun 'agreement' is needed — 'employment agreement' is a common collocation."
+          },
+          {
+            "id": "toeic-r1-p2-t1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["hesitate", "hesitating", "hesitation", "hesitates"],
+            "answer": "hesitate",
+            "explanation": "The base verb 'hesitate' follows 'do not' in the imperative: 'do not hesitate to contact me'."
+          },
+          {
+            "id": "toeic-r1-p2-t1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["welcome", "welcoming", "welcomed", "welcomes"],
+            "answer": "welcoming",
+            "explanation": "After 'look forward to', a gerund is required: 'welcoming'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p2-t2",
+        "number": 3,
+        "title": "Part 6: Text Completion — Text 2",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "NOTICE TO ALL EMPLOYEES\n\nBeginning next month, the company will implement a new policy regarding remote work. Employees who wish to work from home must submit a formal request to their supervisor at least one week ___(1)___. Requests will be reviewed and approved based on job responsibilities and department needs. Please note that remote work is not ___(2)___ for all positions. Employees who are approved for remote work must be available during regular business ____(3)____ and must maintain the same level of productivity. Failure to comply with these guidelines may result in the ____(4)____ of remote work privileges.\n\nThank you for your cooperation.\nHuman Resources Department",
+        "questions": [
+          {
+            "id": "toeic-r1-p2-t2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["in advance", "advance", "advanced", "advancing"],
+            "answer": "in advance",
+            "explanation": "The phrase 'in advance' means beforehand: 'at least one week in advance'."
+          },
+          {
+            "id": "toeic-r1-p2-t2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["availability", "available", "avail", "availing"],
+            "answer": "available",
+            "explanation": "The adjective 'available' is needed: 'not available for all positions'."
+          },
+          {
+            "id": "toeic-r1-p2-t2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["hours", "hourly", "hour", "hours'"],
+            "answer": "hours",
+            "explanation": "The plural noun 'hours' is needed: 'regular business hours' is a standard phrase."
+          },
+          {
+            "id": "toeic-r1-p2-t2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["revocation", "revoking", "revoke", "revoked"],
+            "answer": "revocation",
+            "explanation": "The noun 'revocation' is needed after 'the': 'the revocation of remote work privileges'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p2-t3",
+        "number": 4,
+        "title": "Part 6: Text Completion — Text 3",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "Dear Customer,\n\nThank you for your recent purchase from our online store. Your order has been ___(1)___ and will be shipped within two business days. You can track your package using the tracking number ____(2)____ in this email. Please note that delivery times may vary depending on your ____(3)____. If you are not completely satisfied with your purchase, you may return it within 30 days for a full ____(4)____. Should you have any questions, our customer service team is available 24 hours a day.\n\nBest regards,\nOnline Store Team",
+        "questions": [
+          {
+            "id": "toeic-r1-p2-t3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["processed", "processing", "process", "processes"],
+            "answer": "processed",
+            "explanation": "Passive voice 'has been processed' — the order was processed by the store."
+          },
+          {
+            "id": "toeic-r1-p2-t3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["provided", "providing", "provide", "provides"],
+            "answer": "provided",
+            "explanation": "The past participle 'provided' functions as an adjective: 'the tracking number provided in this email'."
+          },
+          {
+            "id": "toeic-r1-p2-t3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["locate", "location", "located", "locating"],
+            "answer": "location",
+            "explanation": "The noun 'location' is needed: 'depending on your location'."
+          },
+          {
+            "id": "toeic-r1-p2-t3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["refund", "refunding", "refunded", "refunds"],
+            "answer": "refund",
+            "explanation": "The noun 'refund' is needed: 'a full refund' is a common collocation."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p2-t4",
+        "number": 5,
+        "title": "Part 6: Text Completion — Text 4",
+        "difficulty": "C1",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "MEMORANDUM\n\nTo: All Department Heads\nFrom: Vice President of Operations\nDate: November 15\n\nSubject: Annual Budget Planning\n\nAs we approach the end of the fiscal year, it is time to begin ___(1)___ for the upcoming budget cycle. Each department head is required to submit a detailed budget proposal by December 1st. Proposals should include a ___(2)___ of anticipated expenses, including personnel costs, equipment purchases, and operational expenditures. Please ensure that all requests are ____(3)____ by adequate justification. Departments that fail to meet the submission deadline may face budget ____(4)____ in the next fiscal year.\n\nIf you need assistance, the finance team will hold consultation sessions every Friday afternoon.",
+        "questions": [
+          {
+            "id": "toeic-r1-p2-t4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["prepare", "preparing", "preparation", "prepared"],
+            "answer": "preparing",
+            "explanation": "After 'begin', a gerund is required: 'begin preparing'."
+          },
+          {
+            "id": "toeic-r1-p2-t4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["breakdown", "breaking", "breaks", "broke"],
+            "answer": "breakdown",
+            "explanation": "The noun 'breakdown' means a detailed itemized list: 'a breakdown of anticipated expenses'."
+          },
+          {
+            "id": "toeic-r1-p2-t4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["supported", "supporting", "support", "supports"],
+            "answer": "supported",
+            "explanation": "The past participle 'supported' is used in passive voice: 'are supported by adequate justification'."
+          },
+          {
+            "id": "toeic-r1-p2-t4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["reductions", "reducing", "reduce", "reduced"],
+            "answer": "reductions",
+            "explanation": "The plural noun 'reductions' is needed: 'budget reductions' means cuts to the budget."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-s1",
+        "number": 6,
+        "title": "Part 7: Reading Comprehension — Single Passage 1",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "NOTICE: LIBRARY RENOVATION\n\nThe Central City Library will undergo a major renovation starting March 1st. During the renovation period, the main reading room and reference section will be closed to the public. However, the children's library on the ground floor will remain open with reduced hours: Monday through Friday, 10:00 AM to 4:00 PM.\n\nBorrowed materials can be returned to the drop box located at the side entrance. The library's online catalog and e-book services will continue to be available 24 hours a day. Patrons who have reserved study rooms for March should contact the library to reschedule or request a refund.\n\nThe renovation is expected to take approximately four months. The library apologizes for any inconvenience and appreciates the community's patience. For more information, please visit our website at www.centralcitylibrary.org or call 555-0192 during business hours.\n\nA grand reopening event is planned for July, featuring author talks, children's activities, and a book sale. Free refreshments will be provided to all visitors on reopening day.",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-s1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main purpose of the notice?",
+            "options": ["To announce a library renovation and its effects on services", "To advertise a book sale", "To recruit new library staff", "To announce new library membership fees"],
+            "answer": "To announce a library renovation and its effects on services",
+            "explanation": "The notice informs the public about the upcoming renovation and how it will affect library services."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Which section of the library will remain open during the renovation?",
+            "options": ["The main reading room", "The reference section", "The children's library", "The study rooms"],
+            "answer": "The children's library",
+            "explanation": "The notice states that the children's library on the ground floor will remain open with reduced hours."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What are the reduced hours for the children's library?",
+            "options": ["9:00 AM to 5:00 PM", "10:00 AM to 4:00 PM", "8:00 AM to 6:00 PM", "11:00 AM to 3:00 PM"],
+            "answer": "10:00 AM to 4:00 PM",
+            "explanation": "The notice specifies Monday through Friday, 10:00 AM to 4:00 PM."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "How can patrons return borrowed materials during the renovation?",
+            "options": ["By mailing them to the library", "By using the drop box at the side entrance", "By returning them to the main desk", "By returning them to any branch"],
+            "answer": "By using the drop box at the side entrance",
+            "explanation": "The notice states that borrowed materials can be returned to the drop box at the side entrance."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What service will remain available 24 hours a day?",
+            "options": ["The reference desk", "The study rooms", "The online catalog and e-book services", "The children's library"],
+            "answer": "The online catalog and e-book services",
+            "explanation": "The notice states that the online catalog and e-book services will continue to be available 24 hours a day."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What should patrons who reserved study rooms do?",
+            "options": ["Show up as scheduled", "Contact the library to reschedule or request a refund", "Use the children's library instead", "Cancel their membership"],
+            "answer": "Contact the library to reschedule or request a refund",
+            "explanation": "The notice instructs patrons with study room reservations to contact the library to reschedule or request a refund."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "How long is the renovation expected to take?",
+            "options": ["Two months", "Three months", "Four months", "Six months"],
+            "answer": "Four months",
+            "explanation": "The notice states the renovation is expected to take approximately four months."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is planned for the grand reopening event?",
+            "options": ["A fundraising dinner", "Author talks, children's activities, and a book sale", "A formal gala", "A job fair"],
+            "answer": "Author talks, children's activities, and a book sale",
+            "explanation": "The notice mentions author talks, children's activities, and a book sale for the reopening event."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What will be provided to visitors on reopening day?",
+            "options": ["Free library cards", "Free refreshments", "Free books", "Free parking"],
+            "answer": "Free refreshments",
+            "explanation": "The notice states that free refreshments will be provided to all visitors on reopening day."
+          },
+          {
+            "id": "toeic-r1-p3-s1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "How can people get more information about the renovation?",
+            "options": ["By visiting the library in person only", "By visiting the website or calling during business hours", "By sending a letter", "By emailing the city council"],
+            "answer": "By visiting the website or calling during business hours",
+            "explanation": "The notice provides a website URL and a phone number (555-0192) for more information."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-s2",
+        "number": 7,
+        "title": "Part 7: Reading Comprehension — Single Passage 2",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "HELP WANTED: ASSISTANT RESTAURANT MANAGER\n\nSunrise Café, a busy downtown restaurant, is seeking an energetic and experienced Assistant Restaurant Manager to join our team. This is a full-time position with competitive pay and excellent benefits.\n\nResponsibilities include:\n- Assisting the General Manager with daily operations\n- Supervising front-of-house staff (servers, hosts, and bartenders)\n- Managing inventory and placing supply orders\n- Ensuring compliance with health and safety regulations\n- Handling customer complaints and resolving issues\n\nQualifications:\n- Minimum 3 years of experience in restaurant management\n- Strong leadership and communication skills\n- Ability to work flexible hours, including weekends and holidays\n- Food safety certification (or willingness to obtain within 60 days)\n- Proficiency with point-of-sale (POS) systems\n\nWe offer:\n- Health, dental, and vision insurance\n- Paid time off and sick leave\n- 401(k) retirement plan with company match\n- Free meals during shifts\n- Opportunities for advancement\n\nTo apply, please send your resume and cover letter to hiring@sunrisecafe.com or apply in person at 142 Market Street between 2:00 PM and 4:00 PM, Tuesday through Friday. Applications will be accepted until the position is filled.",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-s2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What type of business is hiring?",
+            "options": ["A hotel", "A restaurant", "A catering company", "A grocery store"],
+            "answer": "A restaurant",
+            "explanation": "The advertisement is for Sunrise Café, a downtown restaurant."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What is the minimum experience required for the position?",
+            "options": ["1 year", "2 years", "3 years", "5 years"],
+            "answer": "3 years",
+            "explanation": "The qualifications state a minimum of 3 years of experience in restaurant management."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Which of the following is NOT listed as a responsibility?",
+            "options": ["Supervising front-of-house staff", "Managing inventory", "Cooking meals", "Handling customer complaints"],
+            "answer": "Cooking meals",
+            "explanation": "Cooking meals is not mentioned among the responsibilities; the others are all listed."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What certification is required?",
+            "options": ["First aid certification", "Food safety certification", "Management certification", "No certification is needed"],
+            "answer": "Food safety certification",
+            "explanation": "The qualifications list food safety certification (or willingness to obtain within 60 days)."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "Which benefit is NOT offered?",
+            "options": ["Health insurance", "Free meals during shifts", "Company car", "401(k) retirement plan"],
+            "answer": "Company car",
+            "explanation": "A company car is not mentioned among the benefits offered."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "How can applicants apply?",
+            "options": ["By phone only", "By email or in person", "By mail only", "Through a job website only"],
+            "answer": "By email or in person",
+            "explanation": "Applicants can send a resume to hiring@sunrisecafe.com or apply in person at 142 Market Street."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "When can applicants apply in person?",
+            "options": ["Monday through Friday, 9:00 AM to 5:00 PM", "Tuesday through Friday, 2:00 PM to 4:00 PM", "Weekends only", "Any time during business hours"],
+            "answer": "Tuesday through Friday, 2:00 PM to 4:00 PM",
+            "explanation": "The advertisement specifies in-person applications between 2:00 PM and 4:00 PM, Tuesday through Friday."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is the deadline for applications?",
+            "options": ["March 31st", "Until the position is filled", "Within 60 days", "No deadline is mentioned"],
+            "answer": "Until the position is filled",
+            "explanation": "The advertisement states that applications will be accepted until the position is filled."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What skill is required related to technology?",
+            "options": ["Web design", "Proficiency with point-of-sale (POS) systems", "Social media marketing", "Data analysis"],
+            "answer": "Proficiency with point-of-sale (POS) systems",
+            "explanation": "The qualifications list proficiency with point-of-sale (POS) systems."
+          },
+          {
+            "id": "toeic-r1-p3-s2-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "What does the position require regarding work hours?",
+            "options": ["Only weekday shifts", "Flexible hours including weekends and holidays", "Only night shifts", "Fixed 9-to-5 schedule"],
+            "answer": "Flexible hours including weekends and holidays",
+            "explanation": "The qualifications state the ability to work flexible hours, including weekends and holidays."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-s3",
+        "number": 8,
+        "title": "Part 7: Reading Comprehension — Single Passage 3",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "The rise of remote work has fundamentally transformed the way businesses operate. Before 2020, only a small percentage of employees worked from home regularly. Today, hybrid work models — where employees split their time between the office and home — have become the norm at many companies.\n\nProponents of remote work argue that it increases productivity, reduces overhead costs, and improves employee satisfaction. Studies have shown that remote workers often report higher levels of focus and fewer interruptions compared to their office-based counterparts. Additionally, companies can save significantly on real estate, utilities, and office supplies.\n\nHowever, remote work is not without its critics. Some managers struggle with monitoring performance and maintaining team cohesion. There are also concerns about employee burnout, as the boundary between work and personal life becomes blurred. Younger employees, in particular, may miss out on mentorship opportunities that naturally occur in an office setting.\n\nTo address these challenges, many organizations have adopted hybrid models. A common approach is to require employees to be in the office two or three days a week for collaboration, while allowing remote work on other days. This model attempts to balance the benefits of flexibility with the advantages of in-person interaction.\n\nLooking forward, experts predict that the trend toward flexible work arrangements will continue. Companies that embrace this shift are likely to have a competitive edge in attracting and retaining talent. Those that resist may find themselves at a disadvantage in an increasingly globalized and digital economy.",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-s3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main topic of the passage?",
+            "options": ["The history of office buildings", "The transformation of work through remote and hybrid models", "How to start a business from home", "The cost of office supplies"],
+            "answer": "The transformation of work through remote and hybrid models",
+            "explanation": "The passage discusses how remote work has changed business operations and the rise of hybrid models."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "According to the passage, what do studies show about remote workers?",
+            "options": ["They are less productive", "They report higher levels of focus", "They take more sick days", "They earn less money"],
+            "answer": "They report higher levels of focus",
+            "explanation": "The passage states that remote workers often report higher levels of focus and fewer interruptions."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What is mentioned as a cost saving for companies with remote work?",
+            "options": ["Lower salaries", "Reduced real estate costs", "Cheaper technology", "Lower taxes"],
+            "answer": "Reduced real estate costs",
+            "explanation": "The passage mentions that companies can save on real estate, utilities, and office supplies."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What concern do critics raise about remote work?",
+            "options": ["It is too expensive", "Employee burnout due to blurred work-life boundaries", "It reduces company revenue", "It is illegal in some countries"],
+            "answer": "Employee burnout due to blurred work-life boundaries",
+            "explanation": "The passage mentions concerns about employee burnout as the boundary between work and personal life becomes blurred."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "Which group may miss out on mentorship opportunities?",
+            "options": ["Senior managers", "Younger employees", "Remote IT staff", "Part-time workers"],
+            "answer": "Younger employees",
+            "explanation": "The passage states that younger employees may miss out on mentorship opportunities that naturally occur in an office setting."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What is a common hybrid work approach?",
+            "options": ["Working entirely from home", "Being in the office two or three days a week", "Working only on weekends", "Working from a different country"],
+            "answer": "Being in the office two or three days a week",
+            "explanation": "The passage describes requiring employees to be in the office two or three days a week for collaboration."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What do experts predict about flexible work arrangements?",
+            "options": ["They will disappear soon", "The trend will continue", "They will be banned", "They will only apply to tech companies"],
+            "answer": "The trend will continue",
+            "explanation": "The passage states that experts predict the trend toward flexible work arrangements will continue."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What advantage do companies embracing flexible work have?",
+            "options": ["Lower employee turnover", "A competitive edge in attracting and retaining talent", "Higher profits immediately", "Better government relations"],
+            "answer": "A competitive edge in attracting and retaining talent",
+            "explanation": "The passage states that companies embracing this shift are likely to have a competitive edge in attracting and retaining talent."
+          },
+          {
+            "id": "toeic-r1-p3-s3-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What problem do some managers face with remote work?",
+            "options": ["Difficulty monitoring performance and maintaining team cohesion", "Too many applications to review", "Increased travel costs", "Lack of office space"],
+            "answer": "Difficulty monitoring performance and maintaining team cohesion",
+            "explanation": "The passage mentions that some managers struggle with monitoring performance and maintaining team cohesion."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-d1",
+        "number": 9,
+        "title": "Part 7: Reading Comprehension — Double Passage 1 (Email + Schedule)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: EMAIL ---\n\nFrom: jennifer.park@meridian.com\nTo: all-staff@meridian.com\nSubject: Updated Training Schedule\nDate: June 10\n\nDear Colleagues,\n\nPlease note that the professional development training sessions originally scheduled for June 20-21 have been rescheduled to June 27-28. This change was necessary because our guest speaker, Dr. Robert Kim, had a scheduling conflict. The sessions will still take place in Conference Room B from 9:00 AM to 4:00 PM each day.\n\nLunch will be provided both days. If you have dietary restrictions, please inform the HR department by June 23 so we can make appropriate arrangements.\n\nPlease update your calendars accordingly.\n\nBest regards,\nJennifer Park\nTraining Coordinator\n\n--- PASSAGE 2: TRAINING SCHEDULE ---\n\nMERIDIAN INC. — PROFESSIONAL DEVELOPMENT TRAINING\nJune 27-28 | Conference Room B\n\nDay 1 (June 27):\n9:00 AM - 10:30 AM  Opening Keynote: Future of Leadership — Dr. Robert Kim\n10:45 AM - 12:00 PM  Workshop: Effective Communication Strategies\n12:00 PM - 1:00 PM  Lunch (catered)\n1:00 PM - 3:00 PM  Panel Discussion: Industry Trends\n3:15 PM - 4:00 PM  Q&A Session\n\nDay 2 (June 28):\n9:00 AM - 10:30 AM  Workshop: Project Management Essentials\n10:45 AM - 12:00 PM  Group Activity: Team Building\n12:00 PM - 1:00 PM  Lunch (catered)\n1:00 PM - 3:00 PM  Workshop: Data-Driven Decision Making\n3:15 PM - 4:00 PM  Closing Remarks & Certificates",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-d1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Why were the training sessions rescheduled?",
+            "options": ["The conference room was unavailable", "The guest speaker had a scheduling conflict", "Too few employees registered", "The company was closed"],
+            "answer": "The guest speaker had a scheduling conflict",
+            "explanation": "The email states the change was necessary because Dr. Robert Kim had a scheduling conflict."
+          },
+          {
+            "id": "toeic-r1-p3-d1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What are the new dates for the training?",
+            "options": ["June 20-21", "June 23-24", "June 27-28", "July 1-2"],
+            "answer": "June 27-28",
+            "explanation": "The email states the sessions have been rescheduled to June 27-28."
+          },
+          {
+            "id": "toeic-r1-p3-d1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "By when should employees with dietary restrictions inform HR?",
+            "options": ["June 10", "June 20", "June 23", "June 27"],
+            "answer": "June 23",
+            "explanation": "The email asks employees to inform HR by June 23 for dietary arrangements."
+          },
+          {
+            "id": "toeic-r1-p3-d1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "According to the schedule, what is the first session on Day 1?",
+            "options": ["Workshop: Effective Communication Strategies", "Opening Keynote: Future of Leadership", "Panel Discussion: Industry Trends", "Q&A Session"],
+            "answer": "Opening Keynote: Future of Leadership",
+            "explanation": "The schedule shows the Opening Keynote by Dr. Robert Kim at 9:00 AM on Day 1."
+          },
+          {
+            "id": "toeic-r1-p3-d1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What happens at the end of Day 2?",
+            "options": ["A panel discussion", "Closing remarks and certificates", "A team building activity", "A Q&A session"],
+            "answer": "Closing remarks and certificates",
+            "explanation": "The schedule shows Closing Remarks & Certificates from 3:15 PM to 4:00 PM on Day 2."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-d2",
+        "number": 10,
+        "title": "Part 7: Reading Comprehension — Double Passage 2 (Advertisement + Review)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: ADVERTISEMENT ---\n\nINTRODUCING THE SMARTDESK PRO\n\nThe ultimate standing desk for the modern professional.\n\nFeatures:\n- Electric height adjustment (28\" to 48\")\n- Memory presets for 4 height settings\n- Built-in USB charging ports (4 ports)\n- Anti-collision safety sensor\n- Bamboo desktop (eco-friendly)\n- Weight capacity: 300 lbs\n- Available in 3 colors: Natural, Charcoal, White\n\nPrice: $549 (Free shipping)\n\n30-day money-back guarantee. 5-year warranty on the motor.\n\nOrder now at www.smartdeskpro.com or call 1-800-555-0143.\n\n--- PASSAGE 2: CUSTOMER REVIEW ---\n\nReview by Marcus T. — Verified Buyer\n★★★★☆ (4/5 stars)\n\nI purchased the SmartDesk Pro three months ago and have been using it daily. The electric adjustment is smooth and quiet, and the memory presets are very convenient — I switch between sitting and standing several times a day. The USB ports are a nice touch for charging my phone and tablet.\n\nHowever, there are a few drawbacks. The assembly took about two hours and the instructions were somewhat unclear. Also, the desk is quite heavy, so you'll need two people to move it. The bamboo surface looks great but scratches more easily than I expected.\n\nOverall, I'm satisfied with the purchase. The anti-collision sensor works well — it stopped once when I left a book under it. For the price, it's a solid choice, though I wish the warranty covered the entire desk, not just the motor.",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-d2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the height range of the SmartDesk Pro?",
+            "options": ["24\" to 40\"", "28\" to 48\"", "30\" to 50\"", "26\" to 46\""],
+            "answer": "28\" to 48\"",
+            "explanation": "The advertisement states the electric height adjustment range is 28\" to 48\"."
+          },
+          {
+            "id": "toeic-r1-p3-d2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How many height presets can be saved?",
+            "options": ["2", "3", "4", "5"],
+            "answer": "4",
+            "explanation": "The advertisement lists memory presets for 4 height settings."
+          },
+          {
+            "id": "toeic-r1-p3-d2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What rating did the reviewer give the desk?",
+            "options": ["5 out of 5 stars", "4 out of 5 stars", "3 out of 5 stars", "2 out of 5 stars"],
+            "answer": "4 out of 5 stars",
+            "explanation": "The reviewer gave the desk 4 out of 5 stars (★★★★☆)."
+          },
+          {
+            "id": "toeic-r1-p3-d2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What drawback did the reviewer mention about assembly?",
+            "options": ["It required professional installation", "The instructions were unclear and it took two hours", "Parts were missing", "No tools were included"],
+            "answer": "The instructions were unclear and it took two hours",
+            "explanation": "The reviewer stated that assembly took about two hours and the instructions were somewhat unclear."
+          },
+          {
+            "id": "toeic-r1-p3-d2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What does the reviewer wish was different about the warranty?",
+            "options": ["It should be longer than 5 years", "It should cover the entire desk, not just the motor", "It should include free repairs", "It should cover shipping costs"],
+            "answer": "It should cover the entire desk, not just the motor",
+            "explanation": "The reviewer states: 'I wish the warranty covered the entire desk, not just the motor.'"
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-d3",
+        "number": 11,
+        "title": "Part 7: Reading Comprehension — Double Passage 3 (Memo + Form)",
+        "difficulty": "C1",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: MEMO ---\n\nMEMORANDUM\nTo: All Sales Representatives\nFrom: Regional Sales Director\nDate: September 5\nSubject: New Expense Reporting System\n\nEffective October 1, all expense reports must be submitted through the new online portal, ExpenseFlow. Paper forms will no longer be accepted. Each representative must create an account at expenseflow.com/company before September 25.\n\nUnder the new system, receipts must be uploaded as digital copies (scans or photos). Reports must be submitted within 14 days of incurring an expense. Expenses older than 30 days will require additional approval from your direct supervisor.\n\nThe finance department will hold two training sessions: September 20 at 10:00 AM and September 22 at 2:00 PM. Attendance is mandatory for all sales representatives. If you cannot attend either session, you must notify your supervisor immediately.\n\n--- PASSAGE 2: EXPENSE REPORT FORM (SAMPLE) ---\n\nEXPENSEFLOW — EXPENSE REPORT\nEmployee Name: _______________\nDepartment: Sales\nReport Period: _______________\n\nDate | Category | Description | Amount | Receipt Attached?\n10/03 | Meals | Client lunch | $45.50 | Yes\n10/05 | Travel | Taxi to airport | $28.00 | Yes\n10/05 | Lodging | Hotel (1 night) | $165.00 | Yes\n10/06 | Meals | Dinner with client | $72.00 | Yes\n\nTotal: $310.50\n\nStatus: Pending Approval\nSubmitted: October 7",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-d3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "When will the new expense reporting system take effect?",
+            "options": ["September 1", "September 25", "October 1", "October 7"],
+            "answer": "October 1",
+            "explanation": "The memo states the new system is effective October 1."
+          },
+          {
+            "id": "toeic-r1-p3-d3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What must employees do before September 25?",
+            "options": ["Submit all old expense reports", "Create an account at expenseflow.com/company", "Attend a training session", "Notify their supervisor"],
+            "answer": "Create an account at expenseflow.com/company",
+            "explanation": "The memo states each representative must create an account before September 25."
+          },
+          {
+            "id": "toeic-r1-p3-d3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What happens to expenses older than 30 days?",
+            "options": ["They are automatically rejected", "They require additional approval from the direct supervisor", "They cannot be submitted", "They are reduced by 50%"],
+            "answer": "They require additional approval from the direct supervisor",
+            "explanation": "The memo states that expenses older than 30 days will require additional approval from the direct supervisor."
+          },
+          {
+            "id": "toeic-r1-p3-d3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "According to the sample form, what is the total amount of expenses?",
+            "options": ["$285.50", "$310.50", "$345.50", "$400.00"],
+            "answer": "$310.50",
+            "explanation": "The sample form shows a total of $310.50 ($45.50 + $28.00 + $165.00 + $72.00)."
+          },
+          {
+            "id": "toeic-r1-p3-d3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is the status of the sample expense report?",
+            "options": ["Approved", "Rejected", "Pending Approval", "Submitted for Reimbursement"],
+            "answer": "Pending Approval",
+            "explanation": "The sample form shows the status as 'Pending Approval'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-d4",
+        "number": 12,
+        "title": "Part 7: Reading Comprehension — Double Passage 4 (Article + Letter)",
+        "difficulty": "C1",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: ARTICLE ---\n\nGREEN ENERGY ON THE RISE IN MANUFACTURING\n\nBy Sarah Williams, Industry Reporter\n\nMore manufacturing companies are turning to renewable energy to power their facilities, according to a recent industry report. Solar panel installations at factories increased by 35% last year, while wind energy contracts grew by 22%.\n\nThe shift is driven by both environmental concerns and economic factors. Government tax incentives have made renewable energy more affordable, and many companies see long-term cost savings. Henderson Manufacturing, for example, installed solar panels on its main factory roof and reported a 40% reduction in energy costs within the first year.\n\nHowever, challenges remain. The initial investment can be substantial, and not all facilities are suitable for solar or wind installations. Companies in regions with limited sunlight or wind resources may see slower returns on investment. Despite these challenges, industry analysts predict that over 60% of manufacturers will use some form of renewable energy within five years.\n\n--- PASSAGE 2: LETTER TO SHAREHOLDERS ---\n\nDear Shareholders,\n\nI am pleased to report that Henderson Manufacturing has completed the second phase of our green energy initiative. In addition to the solar panels installed last year, we have now contracted with WindPower Inc. to supply wind energy for our Texas facility beginning next January.\n\nThis expansion is expected to reduce our overall energy costs by an additional 15%, bringing our total energy savings to approximately 55%. We are also exploring battery storage solutions to address the intermittency of renewable sources.\n\nWhile the upfront costs have been significant — $2.3 million to date — we project that the investment will pay for itself within four years. We remain committed to reducing our carbon footprint while maintaining profitability.\n\nSincerely,\nDavid Henderson\nCEO, Henderson Manufacturing",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-d4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "According to the article, how much did solar panel installations at factories increase?",
+            "options": ["22%", "35%", "40%", "60%"],
+            "answer": "35%",
+            "explanation": "The article states that solar panel installations at factories increased by 35% last year."
+          },
+          {
+            "id": "toeic-r1-p3-d4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What reduction in energy costs did Henderson Manufacturing report after installing solar panels?",
+            "options": ["15%", "22%", "40%", "55%"],
+            "answer": "40%",
+            "explanation": "The article states that Henderson Manufacturing reported a 40% reduction in energy costs within the first year."
+          },
+          {
+            "id": "toeic-r1-p3-d4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "According to the letter, what additional energy source is Henderson Manufacturing adding?",
+            "options": ["Hydroelectric power", "Wind energy from WindPower Inc.", "Geothermal energy", "Biomass energy"],
+            "answer": "Wind energy from WindPower Inc.",
+            "explanation": "The letter states the company has contracted with WindPower Inc. to supply wind energy for the Texas facility."
+          },
+          {
+            "id": "toeic-r1-p3-d4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the total projected energy savings after the wind energy contract?",
+            "options": ["15%", "40%", "55%", "60%"],
+            "answer": "55%",
+            "explanation": "The letter states the additional 15% savings will bring the total to approximately 55%."
+          },
+          {
+            "id": "toeic-r1-p3-d4-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "How much has Henderson Manufacturing invested in green energy to date?",
+            "options": ["$1.5 million", "$2.3 million", "$3.5 million", "$4.0 million"],
+            "answer": "$2.3 million",
+            "explanation": "The letter states the upfront costs have been $2.3 million to date."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r1-p3-d5",
+        "number": 13,
+        "title": "Part 7: Reading Comprehension — Double Passage 5 (Notice + Email)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: NOTICE ---\n\nPARKING GARAGE MAINTENANCE NOTICE\n\nPlease be advised that the underground parking garage at Building C will undergo maintenance work from November 10 through November 14. During this period:\n\n- Levels 1 and 2 will be closed on November 10-11\n- Levels 3 and 4 will be closed on November 12-13\n- All levels will be open on November 14, but some spaces may be restricted\n\nAlternative parking is available at the outdoor lot on the east side of the building. Shuttle service between the outdoor lot and the main entrance will run every 15 minutes from 6:00 AM to 8:00 PM.\n\nWe apologize for the inconvenience. If you have questions, contact the Facilities Office at extension 4500.\n\n--- PASSAGE 2: EMAIL ---\n\nFrom: facilities@company.com\nTo: building-c-tenants@company.com\nSubject: RE: Parking Garage Maintenance\nDate: November 8\n\nDear Building C Tenants,\n\nThank you for your patience regarding the upcoming parking garage maintenance. We have received several questions and would like to provide clarification:\n\n1. Monthly parking pass holders will not be charged for the days the garage is partially or fully closed.\n\n2. The outdoor lot has 200 additional spaces, which should be sufficient. However, we encourage carpooling during this period.\n\n3. The shuttle service will also stop at the cafeteria entrance for your convenience.\n\n4. If you have accessibility needs and require closer parking, please contact us by November 9 to make special arrangements.\n\nThank you for your understanding.\n\nFacilities Office",
+        "questions": [
+          {
+            "id": "toeic-r1-p3-d5-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Which levels will be closed on November 10-11?",
+            "options": ["Levels 1 and 2", "Levels 3 and 4", "All levels", "No levels"],
+            "answer": "Levels 1 and 2",
+            "explanation": "The notice states Levels 1 and 2 will be closed on November 10-11."
+          },
+          {
+            "id": "toeic-r1-p3-d5-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How often does the shuttle service run?",
+            "options": ["Every 10 minutes", "Every 15 minutes", "Every 20 minutes", "Every 30 minutes"],
+            "answer": "Every 15 minutes",
+            "explanation": "The notice states the shuttle runs every 15 minutes from 6:00 AM to 8:00 PM."
+          },
+          {
+            "id": "toeic-r1-p3-d5-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "According to the email, what happens to monthly parking pass holders?",
+            "options": ["They will be charged double", "They will not be charged for days the garage is closed", "They must park elsewhere permanently", "They will receive a refund"],
+            "answer": "They will not be charged for days the garage is closed",
+            "explanation": "The email states monthly parking pass holders will not be charged for the days the garage is partially or fully closed."
+          },
+          {
+            "id": "toeic-r1-p3-d5-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "How many additional spaces are available in the outdoor lot?",
+            "options": ["100", "150", "200", "250"],
+            "answer": "200",
+            "explanation": "The email states the outdoor lot has 200 additional spaces."
+          },
+          {
+            "id": "toeic-r1-p3-d5-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "By when should tenants with accessibility needs contact the Facilities Office?",
+            "options": ["November 8", "November 9", "November 10", "November 14"],
+            "answer": "November 9",
+            "explanation": "The email asks tenants with accessibility needs to contact the office by November 9."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toeic-reading-2",
+    "title": "TOEIC Reading Practice Test 2",
+    "time_minutes": 75,
+    "passages": [
+      {
+        "id": "toeic-r2-p1",
+        "number": 1,
+        "title": "Part 5: Incomplete Sentences",
+        "difficulty": "B1",
+        "instructions": "Choose the word or phrase that best completes the sentence.",
+        "text": "",
+        "questions": [
+          {
+            "id": "toeic-r2-p1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "The annual report ___ to all shareholders last week.",
+            "options": ["was sent", "sent", "sending", "sends"],
+            "answer": "was sent",
+            "explanation": "Passive voice 'was sent' is needed — the report was sent by someone, and 'last week' indicates past tense."
+          },
+          {
+            "id": "toeic-r2-p1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "The hotel offers complimentary breakfast ___ all guests.",
+            "options": ["to", "for", "with", "by"],
+            "answer": "to",
+            "explanation": "The verb 'offers' takes the preposition 'to' when indicating the recipient: 'offers breakfast to all guests'."
+          },
+          {
+            "id": "toeic-r2-p1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The board of directors will make an ___ at the next meeting.",
+            "options": ["announce", "announcement", "announcing", "announced"],
+            "answer": "announcement",
+            "explanation": "The noun 'announcement' is needed after the article 'an'."
+          },
+          {
+            "id": "toeic-r2-p1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "___ the rain, the outdoor concert was canceled.",
+            "options": ["Because of", "Because", "Although", "Despite"],
+            "answer": "Because of",
+            "explanation": "'Because of' is followed by a noun ('the rain') to show cause."
+          },
+          {
+            "id": "toeic-r2-p1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "By the time the technician arrived, the machine ___ for three hours.",
+            "options": ["has been broken", "had been broken", "was broken", "is broken"],
+            "answer": "had been broken",
+            "explanation": "Past perfect continuous 'had been broken' describes a state that started before another past action."
+          },
+          {
+            "id": "toeic-r2-p1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "This is the ___ challenging project the team has ever undertaken.",
+            "options": ["more", "most", "much", "many"],
+            "answer": "most",
+            "explanation": "The superlative 'most' is used with 'the' when comparing more than two things."
+          },
+          {
+            "id": "toeic-r2-p1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "The supplier guaranteed ___ delivery within 48 hours.",
+            "options": ["prompt", "promptly", "promptness", "prompting"],
+            "answer": "prompt",
+            "explanation": "The adjective 'prompt' modifies the noun 'delivery'."
+          },
+          {
+            "id": "toeic-r2-p1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "The new software ___ to be compatible with older operating systems.",
+            "options": ["designs", "is designed", "designing", "designed"],
+            "answer": "is designed",
+            "explanation": "Passive voice 'is designed' — the software is designed (by someone) to be compatible."
+          },
+          {
+            "id": "toeic-r2-p1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The manager insisted ___ reviewing every proposal personally.",
+            "options": ["in", "on", "at", "for"],
+            "answer": "on",
+            "explanation": "The verb 'insist' takes the preposition 'on' when followed by a gerund: 'insisted on reviewing'."
+          },
+          {
+            "id": "toeic-r2-p1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "The conference was ___ attended by over 500 industry professionals.",
+            "options": ["success", "successful", "successfully", "succeed"],
+            "answer": "successfully",
+            "explanation": "The adverb 'successfully' modifies the verb 'attended'."
+          },
+          {
+            "id": "toeic-r2-p1-q11",
+            "number": 11,
+            "type": "mcq",
+            "text": "All employees are entitled ___ a 30-minute break each day.",
+            "options": ["to", "for", "with", "at"],
+            "answer": "to",
+            "explanation": "The adjective 'entitled' is followed by the preposition 'to'."
+          },
+          {
+            "id": "toeic-r2-p1-q12",
+            "number": 12,
+            "type": "mcq",
+            "text": "You ___ submit the application by Friday to be considered for the position.",
+            "options": ["must", "might", "could", "would"],
+            "answer": "must",
+            "explanation": "'Must' expresses necessity — the application must be submitted by Friday to be considered."
+          },
+          {
+            "id": "toeic-r2-p1-q13",
+            "number": 13,
+            "type": "mcq",
+            "text": "The company decided to ___ its operations to three new countries.",
+            "options": ["expand", "expansion", "expanding", "expanded"],
+            "answer": "expand",
+            "explanation": "The base verb 'expand' is needed after 'to' in the infinitive: 'to expand'."
+          },
+          {
+            "id": "toeic-r2-p1-q14",
+            "number": 14,
+            "type": "mcq",
+            "text": "The building ___ roof was damaged in the storm is being repaired.",
+            "options": ["who", "whose", "which", "that"],
+            "answer": "whose",
+            "explanation": "'Whose' shows possession — the roof belongs to the building."
+          },
+          {
+            "id": "toeic-r2-p1-q15",
+            "number": 15,
+            "type": "mcq",
+            "text": "The proposal was ___ by the steering committee after a thorough review.",
+            "options": ["accept", "accepted", "accepting", "accepts"],
+            "answer": "accepted",
+            "explanation": "The past participle 'accepted' is used in the passive voice: 'was accepted'."
+          },
+          {
+            "id": "toeic-r2-p1-q16",
+            "number": 16,
+            "type": "mcq",
+            "text": "The data shows a steady ___ in customer satisfaction over the past year.",
+            "options": ["improve", "improvement", "improving", "improved"],
+            "answer": "improvement",
+            "explanation": "The noun 'improvement' is needed as the object: 'a steady improvement'."
+          },
+          {
+            "id": "toeic-r2-p1-q17",
+            "number": 17,
+            "type": "mcq",
+            "text": "If I ___ about the meeting earlier, I would have attended.",
+            "options": ["knew", "had known", "know", "would know"],
+            "answer": "had known",
+            "explanation": "In a third conditional (past unreal), the if-clause uses past perfect: 'had known'."
+          },
+          {
+            "id": "toeic-r2-p1-q18",
+            "number": 18,
+            "type": "mcq",
+            "text": "The CEO will ___ the new strategy at the annual meeting.",
+            "options": ["present", "presentation", "presenting", "presented"],
+            "answer": "present",
+            "explanation": "The base verb 'present' follows the modal 'will': 'will present'."
+          },
+          {
+            "id": "toeic-r2-p1-q19",
+            "number": 19,
+            "type": "mcq",
+            "text": "Neither the manager nor the employees ___ aware of the policy change.",
+            "options": ["was", "were", "is", "be"],
+            "answer": "were",
+            "explanation": "With 'neither...nor', the verb agrees with the nearer subject ('employees'), which is plural: 'were'."
+          },
+          {
+            "id": "toeic-r2-p1-q20",
+            "number": 20,
+            "type": "mcq",
+            "text": "The flight is scheduled to depart ___ 6:45 PM.",
+            "options": ["in", "on", "at", "by"],
+            "answer": "at",
+            "explanation": "'At' is used with specific clock times: 'at 6:45 PM'."
+          },
+          {
+            "id": "toeic-r2-p1-q21",
+            "number": 21,
+            "type": "mcq",
+            "text": "The company's profits have ___ significantly since last quarter.",
+            "options": ["increase", "increasing", "increased", "increases"],
+            "answer": "increased",
+            "explanation": "Present perfect 'have increased' is used with 'since' to show a change from a past time to now."
+          },
+          {
+            "id": "toeic-r2-p1-q22",
+            "number": 22,
+            "type": "mcq",
+            "text": "___ having a tight budget, the team delivered an excellent product.",
+            "options": ["Although", "Despite", "Because", "However"],
+            "answer": "Despite",
+            "explanation": "'Despite' is followed by a gerund phrase: 'Despite having a tight budget'."
+          },
+          {
+            "id": "toeic-r2-p1-q23",
+            "number": 23,
+            "type": "mcq",
+            "text": "The meeting has been ___ until next Monday.",
+            "options": ["put off", "put on", "put up", "put away"],
+            "answer": "put off",
+            "explanation": "The phrasal verb 'put off' means to postpone: 'put off until next Monday'."
+          },
+          {
+            "id": "toeic-r2-p1-q24",
+            "number": 24,
+            "type": "mcq",
+            "text": "The new branch office ___ open by the end of this year.",
+            "options": ["will be", "has", "was", "does"],
+            "answer": "will be",
+            "explanation": "Future passive 'will be' is used for a future event: 'will be open by the end of this year'."
+          },
+          {
+            "id": "toeic-r2-p1-q25",
+            "number": 25,
+            "type": "mcq",
+            "text": "It is ___ to submit all required documents with your application.",
+            "options": ["essential", "essence", "essentially", "essences"],
+            "answer": "essential",
+            "explanation": "The adjective 'essential' follows 'is' as a subject complement."
+          },
+          {
+            "id": "toeic-r2-p1-q26",
+            "number": 26,
+            "type": "mcq",
+            "text": "The scientist ___ research was published in the journal received an award.",
+            "options": ["who", "whose", "which", "whom"],
+            "answer": "whose",
+            "explanation": "'Whose' shows possession — the research belongs to the scientist."
+          },
+          {
+            "id": "toeic-r2-p1-q27",
+            "number": 27,
+            "type": "mcq",
+            "text": "The restaurant is known for its ___ variety of vegetarian dishes.",
+            "options": ["extensive", "extend", "extension", "extending"],
+            "answer": "extensive",
+            "explanation": "The adjective 'extensive' modifies the noun 'variety'."
+          },
+          {
+            "id": "toeic-r2-p1-q28",
+            "number": 28,
+            "type": "mcq",
+            "text": "The contract must ___ by both parties before it becomes valid.",
+            "options": ["sign", "be signed", "signing", "signed"],
+            "answer": "be signed",
+            "explanation": "Passive voice 'be signed' — the contract must be signed by both parties."
+          },
+          {
+            "id": "toeic-r2-p1-q29",
+            "number": 29,
+            "type": "mcq",
+            "text": "The training program is designed to improve employees' ___ skills.",
+            "options": ["communication", "communicate", "communicating", "communicative"],
+            "answer": "communication",
+            "explanation": "The noun 'communication' modifies the noun 'skills': 'communication skills'."
+          },
+          {
+            "id": "toeic-r2-p1-q30",
+            "number": 30,
+            "type": "mcq",
+            "text": "The results of the survey were ___ surprising.",
+            "options": ["surprise", "surprised", "surprisingly", "surprising"],
+            "answer": "surprisingly",
+            "explanation": "The adverb 'surprisingly' modifies the adjective 'surprising': 'surprisingly surprising' would be redundant; here 'surprisingly' modifies the whole clause."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p2-t1",
+        "number": 2,
+        "title": "Part 6: Text Completion — Text 1",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "Dear Ms. Garcia,\n\nThank you for your interest in the Marketing Specialist position at Apex Industries. We would like to ___(1)___ you for an interview next week. The interview will take place at our main office on Wednesday, July 12th, at 2:00 PM. Please plan to arrive 15 minutes early to complete a ____(2)____ form. You will meet with our hiring manager, Mr. David Chen, and the marketing team. The interview is expected to last approximately ____(3)____. If you need to reschedule, please contact us at least 24 hours in ____(4)____.\n\nWe look forward to meeting you.\n\nBest regards,\nLinda Park\nHR Coordinator",
+        "questions": [
+          {
+            "id": "toeic-r2-p2-t1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["invite", "inviting", "invitation", "invited"],
+            "answer": "invite",
+            "explanation": "The base verb 'invite' follows 'to' in the infinitive: 'to invite you for an interview'."
+          },
+          {
+            "id": "toeic-r2-p2-t1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["register", "registration", "registered", "registering"],
+            "answer": "registration",
+            "explanation": "The noun 'registration' modifies 'form': 'a registration form'."
+          },
+          {
+            "id": "toeic-r2-p2-t1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["one hour", "one-hour", "one hours", "one-hours"],
+            "answer": "one hour",
+            "explanation": "The noun phrase 'one hour' is needed after 'approximately': 'approximately one hour'."
+          },
+          {
+            "id": "toeic-r2-p2-t1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["advance", "advanced", "advancing", "advances"],
+            "answer": "advance",
+            "explanation": "The phrase 'in advance' means beforehand: 'at least 24 hours in advance'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p2-t2",
+        "number": 3,
+        "title": "Part 6: Text Completion — Text 2",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "ANNOUNCEMENT: NEW EMPLOYEE WELLNESS PROGRAM\n\nWe are excited to announce the launch of our new Employee Wellness Program, which will ___(1)___ on January 1st. The program is designed to promote physical and mental well-being among all staff members. ___(2)___ of the program include free gym memberships, monthly health screenings, and access to online counseling services. Employees who participate in at least three wellness activities per quarter will receive a $200 bonus. To sign up, please visit the HR portal and complete the ____(3)____ form by December 15th. If you have any questions about the program, please ____(4)____ the wellness coordinator at extension 3200.",
+        "questions": [
+          {
+            "id": "toeic-r2-p2-t2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["begin", "beginning", "began", "begun"],
+            "answer": "begin",
+            "explanation": "The base verb 'begin' follows 'will': 'will begin on January 1st'."
+          },
+          {
+            "id": "toeic-r2-p2-t2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["Feature", "Features", "Featured", "Featuring"],
+            "answer": "Features",
+            "explanation": "The plural noun 'Features' is the subject of the sentence: 'Features of the program include...'"
+          },
+          {
+            "id": "toeic-r2-p2-t2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["enroll", "enrollment", "enrolled", "enrolling"],
+            "answer": "enrollment",
+            "explanation": "The noun 'enrollment' modifies 'form': 'the enrollment form'."
+          },
+          {
+            "id": "toeic-r2-p2-t2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["contact", "contacting", "contacted", "contacts"],
+            "answer": "contact",
+            "explanation": "The base verb 'contact' follows 'please': 'please contact the wellness coordinator'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p2-t3",
+        "number": 4,
+        "title": "Part 6: Text Completion — Text 3",
+        "difficulty": "C1",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "Dear Valued Customer,\n\nWe are writing to inform you of an important change to our return policy, effective March 1st. Under the new policy, customers will have 60 days to return items, ___(1)___ from the previous 90-day window. All returns must be accompanied by the original receipt and must be in ___(2)___ condition. Refunds will be processed within 5-7 business days and will be credited to the ___(3)____ payment method. Please note that clearance items are non-returnable under the new policy. We believe this change will allow us to maintain competitive prices while continuing to provide ___(4)____ customer service. If you have any questions, please visit our customer service desk or call 1-800-555-0188.",
+        "questions": [
+          {
+            "id": "toeic-r2-p2-t3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["down", "downward", "reduced", "reducing"],
+            "answer": "down",
+            "explanation": "'Down from' is the correct phrase: 'down from the previous 90-day window' means reduced from 90 days."
+          },
+          {
+            "id": "toeic-r2-p2-t3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["origin", "original", "originally", "originate"],
+            "answer": "original",
+            "explanation": "The adjective 'original' modifies 'condition': 'in original condition'."
+          },
+          {
+            "id": "toeic-r2-p2-t3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["origin", "original", "originally", "originate"],
+            "answer": "original",
+            "explanation": "The adjective 'original' modifies 'payment method': 'the original payment method'."
+          },
+          {
+            "id": "toeic-r2-p2-t3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["excellence", "excellent", "excellently", "excel"],
+            "answer": "excellent",
+            "explanation": "The adjective 'excellent' modifies 'customer service': 'excellent customer service'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p2-t4",
+        "number": 5,
+        "title": "Part 6: Text Completion — Text 4",
+        "difficulty": "C1",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "INTERNAL MEMO\n\nTo: All Project Managers\nFrom: Project Management Office (PMO)\nDate: August 20\nSubject: Updated Project Reporting Requirements\n\nEffective September 1, all project managers must submit weekly progress reports using the new template ___(1)___ on the company intranet. Reports should include a summary of completed tasks, upcoming milestones, and any risks or ___(2)___ that may affect the project timeline. Each report must be reviewed and ___(3)____ by the project sponsor before submission. Failure to submit reports on time may result in delayed funding disbursements. The PMO will conduct a training session on the new format on August 28 at 10:00 AM in Room 305. Attendance is ___(4)____ for all project managers.",
+        "questions": [
+          {
+            "id": "toeic-r2-p2-t4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["available", "availability", "availably", "avail"],
+            "answer": "available",
+            "explanation": "The adjective 'available' describes the template: 'the new template available on the company intranet'."
+          },
+          {
+            "id": "toeic-r2-p2-t4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["issue", "issues", "issuing", "issued"],
+            "answer": "issues",
+            "explanation": "The plural noun 'issues' parallels 'risks': 'risks or issues that may affect the project timeline'."
+          },
+          {
+            "id": "toeic-r2-p2-t4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["approve", "approved", "approving", "approves"],
+            "answer": "approved",
+            "explanation": "The past participle 'approved' is used in passive voice: 'reviewed and approved by the project sponsor'."
+          },
+          {
+            "id": "toeic-r2-p2-t4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["compulsory", "compulsorily", "compulsion", "compulsories"],
+            "answer": "compulsory",
+            "explanation": "The adjective 'compulsory' means mandatory: 'Attendance is compulsory'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-s1",
+        "number": 6,
+        "title": "Part 7: Reading Comprehension — Single Passage 1",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "GUIDED TOUR: CITY HISTORY MUSEUM\n\nDiscover the rich history of our city at the City History Museum! Our expert-led guided tours offer a fascinating journey through time, from the founding of the city to the present day.\n\nTour Schedule:\n- Monday to Friday: 10:00 AM, 1:00 PM, 3:00 PM\n- Saturday and Sunday: 11:00 AM, 1:00 PM, 2:30 PM, 4:00 PM\n\nTour Duration: Approximately 90 minutes\n\nAdmission:\n- Adults: $15\n- Seniors (65+): $12\n- Students (with ID): $10\n- Children under 12: Free\n- Family Package (2 adults + 3 children): $40\n\nGroup Rates (10 or more people): 20% discount\n\nThe museum features permanent exhibits on early settlement, industrial growth, and cultural diversity. Special temporary exhibits rotate every three months. Currently on display: 'The Railroad Era: How Trains Transformed the City.'\n\nThe museum is fully accessible to visitors with mobility needs. Wheelchairs are available at no charge. Audio guides in English, Spanish, and Mandarin are provided free of charge.\n\nThe museum café serves light meals and refreshments. The gift shop offers locally made crafts, books, and souvenirs.\n\nFor group bookings or special arrangements, please call 555-0177 at least 48 hours in advance. No reservations are needed for individuals or small groups.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-s1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "How long is the guided tour?",
+            "options": ["60 minutes", "90 minutes", "120 minutes", "45 minutes"],
+            "answer": "90 minutes",
+            "explanation": "The tour duration is listed as approximately 90 minutes."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How much does a senior pay for admission?",
+            "options": ["$10", "$12", "$15", "$40"],
+            "answer": "$12",
+            "explanation": "The admission for seniors (65+) is $12."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "How often do special temporary exhibits change?",
+            "options": ["Every month", "Every three months", "Every six months", "Every year"],
+            "answer": "Every three months",
+            "explanation": "The passage states that special temporary exhibits rotate every three months."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the current special exhibit about?",
+            "options": ["Early settlement", "Cultural diversity", "The Railroad Era", "Industrial growth"],
+            "answer": "The Railroad Era",
+            "explanation": "The current special exhibit is 'The Railroad Era: How Trains Transformed the City.'"
+          },
+          {
+            "id": "toeic-r2-p3-s1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "Which languages are available for audio guides?",
+            "options": ["English and French", "English, Spanish, and Mandarin", "English and German", "English, Spanish, and French"],
+            "answer": "English, Spanish, and Mandarin",
+            "explanation": "Audio guides are available in English, Spanish, and Mandarin."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What is the discount for groups of 10 or more?",
+            "options": ["10%", "15%", "20%", "25%"],
+            "answer": "20%",
+            "explanation": "Group rates for 10 or more people offer a 20% discount."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "How much does the Family Package cost?",
+            "options": ["$30", "$40", "$50", "$60"],
+            "answer": "$40",
+            "explanation": "The Family Package (2 adults + 3 children) costs $40."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is available at no charge?",
+            "options": ["Audio guides only", "Wheelchairs and audio guides", "Admission for students", "Museum café meals"],
+            "answer": "Wheelchairs and audio guides",
+            "explanation": "Both wheelchairs and audio guides are available at no charge."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "When should groups call to make special arrangements?",
+            "options": ["At least 24 hours in advance", "At least 48 hours in advance", "At least one week in advance", "No advance notice needed"],
+            "answer": "At least 48 hours in advance",
+            "explanation": "The passage states that group bookings should call at least 48 hours in advance."
+          },
+          {
+            "id": "toeic-r2-p3-s1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "How many tour times are available on weekends?",
+            "options": ["2", "3", "4", "5"],
+            "answer": "4",
+            "explanation": "On Saturday and Sunday, there are 4 tour times: 11:00 AM, 1:00 PM, 2:30 PM, and 4:00 PM."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-s2",
+        "number": 7,
+        "title": "Part 7: Reading Comprehension — Single Passage 2",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "EMAIL: SUPPLY ORDER CONFIRMATION\n\nFrom: orders@officesupplies.com\nTo: purchasing@brighttech.com\nSubject: Order Confirmation #88472\nDate: May 14\n\nDear Valued Customer,\n\nThank you for your order. This email confirms that we have received and processed your purchase. Below is a summary of your order:\n\nOrder Number: 88472\nOrder Date: May 14\nDelivery Address: BrightTech Solutions, 789 Innovation Drive, Suite 200, Tech City, CA 94000\n\nItems Ordered:\n1. Ergonomic Office Chair (Model EC-500) — 12 units @ $189.00 = $2,268.00\n2. Adjustable Standing Desk (Model SD-300) — 8 units @ $349.00 = $2,792.00\n3. Desk Lamp (LED, Black) — 15 units @ $34.50 = $517.50\n4. Filing Cabinet (4-drawer, Gray) — 6 units @ $145.00 = $870.00\n\nSubtotal: $6,447.50\nShipping: Free (orders over $500)\nTax (8.5%): $548.04\nTotal: $6,995.54\n\nEstimated Delivery: May 18-20\n\nPayment Method: Corporate Account (Net 30)\n\nIf you need to make changes to your order, please contact us within 24 hours. After 24 hours, the order enters our fulfillment process and changes cannot be guaranteed. To track your shipment, use the tracking link that will be emailed once your order ships.\n\nFor questions about this order, call 1-800-555-0166 or email support@officesupplies.com.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-s2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the order number?",
+            "options": ["88427", "88472", "84872", "88742"],
+            "answer": "88472",
+            "explanation": "The order number is listed as 88472."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How many ergonomic chairs were ordered?",
+            "options": ["8", "10", "12", "15"],
+            "answer": "12",
+            "explanation": "The order lists 12 units of Ergonomic Office Chair (Model EC-500)."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What is the subtotal of the order?",
+            "options": ["$5,447.50", "$6,447.50", "$6,995.54", "$548.04"],
+            "answer": "$6,447.50",
+            "explanation": "The subtotal before shipping and tax is $6,447.50."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Why is shipping free?",
+            "options": ["It is a first-time customer discount", "Orders over $500 qualify for free shipping", "The company has a shipping contract", "All orders have free shipping"],
+            "answer": "Orders over $500 qualify for free shipping",
+            "explanation": "The email states 'Shipping: Free (orders over $500)'."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is the estimated delivery date range?",
+            "options": ["May 14-16", "May 16-18", "May 18-20", "May 20-22"],
+            "answer": "May 18-20",
+            "explanation": "The estimated delivery is listed as May 18-20."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What payment method was used?",
+            "options": ["Credit card", "Corporate Account (Net 30)", "Bank transfer", "Check"],
+            "answer": "Corporate Account (Net 30)",
+            "explanation": "The payment method is listed as Corporate Account (Net 30)."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "How long does the customer have to make changes to the order?",
+            "options": ["12 hours", "24 hours", "48 hours", "72 hours"],
+            "answer": "24 hours",
+            "explanation": "The email states changes must be made within 24 hours before the order enters fulfillment."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What is the tax rate applied to the order?",
+            "options": ["7.5%", "8.0%", "8.5%", "9.0%"],
+            "answer": "8.5%",
+            "explanation": "The tax is listed as 8.5% ($548.04)."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "Which item had the highest unit price?",
+            "options": ["Ergonomic Office Chair", "Adjustable Standing Desk", "Desk Lamp", "Filing Cabinet"],
+            "answer": "Adjustable Standing Desk",
+            "explanation": "The Standing Desk costs $349.00 per unit, the highest unit price."
+          },
+          {
+            "id": "toeic-r2-p3-s2-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "How can the customer track the shipment?",
+            "options": ["By calling customer service", "By using a tracking link emailed when the order ships", "By visiting the store", "By checking their account online"],
+            "answer": "By using a tracking link emailed when the order ships",
+            "explanation": "The email states a tracking link will be emailed once the order ships."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-s3",
+        "number": 8,
+        "title": "Part 7: Reading Comprehension — Single Passage 3",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "The concept of corporate social responsibility (CSR) has evolved significantly over the past few decades. Once viewed as merely a public relations exercise, CSR is now a core business strategy for many organizations. Companies are increasingly expected to demonstrate their commitment to environmental sustainability, ethical labor practices, and community engagement.\n\nOne of the most visible aspects of modern CSR is environmental sustainability. Many corporations have set ambitious targets for reducing carbon emissions, minimizing waste, and transitioning to renewable energy. Some have gone further by redesigning their supply chains to reduce environmental impact at every stage, from raw material sourcing to product disposal.\n\nEthical labor practices represent another critical dimension. Consumers and investors alike scrutinize how companies treat their workers, both directly employed and those in their supply chains. Issues such as fair wages, safe working conditions, and the elimination of child labor have become central to corporate reputation. Companies that fail to address these issues risk not only reputational damage but also legal consequences, as governments tighten regulations around supply chain transparency.\n\nCommunity engagement, the third pillar of CSR, takes many forms. Some companies donate a percentage of profits to local charities, while others encourage employees to volunteer during work hours. Still others invest in educational programs or infrastructure in the communities where they operate. The most effective CSR programs are those that align with a company's core competencies — for example, a technology company funding coding classes in underserved schools.\n\nCritics argue that some CSR initiatives are little more than 'greenwashing' — superficial efforts designed to improve public image without meaningful change. However, research suggests that genuine CSR programs can enhance brand loyalty, attract top talent, and even improve financial performance. As stakeholder expectations continue to rise, CSR is likely to become even more integral to business success.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-s3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "How has CSR changed over the past few decades?",
+            "options": ["It has become less important", "It has evolved from a PR exercise to a core business strategy", "It has been replaced by government regulation", "It has focused only on profits"],
+            "answer": "It has evolved from a PR exercise to a core business strategy",
+            "explanation": "The passage states CSR was once viewed as a PR exercise but is now a core business strategy."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What is the most visible aspect of modern CSR?",
+            "options": ["Community engagement", "Ethical labor practices", "Environmental sustainability", "Financial donations"],
+            "answer": "Environmental sustainability",
+            "explanation": "The passage states that environmental sustainability is the most visible aspect of modern CSR."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What do consumers and investors scrutinize regarding labor practices?",
+            "options": ["Employee hobbies", "Fair wages, safe conditions, and elimination of child labor", "Number of employees", "Employee education levels"],
+            "answer": "Fair wages, safe conditions, and elimination of child labor",
+            "explanation": "The passage mentions fair wages, safe working conditions, and the elimination of child labor as key issues."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What risk do companies face if they ignore ethical labor practices?",
+            "options": ["Only reputational damage", "Reputational damage and legal consequences", "Only legal consequences", "No significant risk"],
+            "answer": "Reputational damage and legal consequences",
+            "explanation": "The passage states companies risk both reputational damage and legal consequences as governments tighten regulations."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is the third pillar of CSR?",
+            "options": ["Environmental sustainability", "Ethical labor practices", "Community engagement", "Financial performance"],
+            "answer": "Community engagement",
+            "explanation": "The passage identifies community engagement as the third pillar of CSR."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What makes CSR programs most effective?",
+            "options": ["Large financial donations", "Alignment with a company's core competencies", "Media coverage", "Government mandates"],
+            "answer": "Alignment with a company's core competencies",
+            "explanation": "The passage states the most effective CSR programs align with a company's core competencies."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What do critics call superficial CSR efforts?",
+            "options": ["Whitewashing", "Greenwashing", "Bluewashing", "Pinkwashing"],
+            "answer": "Greenwashing",
+            "explanation": "The passage uses the term 'greenwashing' to describe superficial CSR efforts designed to improve public image."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What does research suggest about genuine CSR programs?",
+            "options": ["They reduce profits", "They can enhance brand loyalty and improve financial performance", "They have no effect on business", "They only help with public relations"],
+            "answer": "They can enhance brand loyalty and improve financial performance",
+            "explanation": "The passage states that genuine CSR programs can enhance brand loyalty, attract top talent, and improve financial performance."
+          },
+          {
+            "id": "toeic-r2-p3-s3-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What example is given of effective CSR aligned with core competencies?",
+            "options": ["A food company donating meals", "A technology company funding coding classes", "A clothing company planting trees", "A bank offering free checking accounts"],
+            "answer": "A technology company funding coding classes",
+            "explanation": "The passage gives the example of a technology company funding coding classes in underserved schools."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-d1",
+        "number": 9,
+        "title": "Part 7: Reading Comprehension — Double Passage 1 (Email + Reply)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: EMAIL ---\n\nFrom: thomas.lee@horizon.com\nTo: support@techrepair.com\nSubject: Laptop Repair Request\nDate: April 3\n\nDear TechRepair Support,\n\nI am writing to request a repair for my company laptop. The laptop is a Dell Latitude 5420, serial number DL5420-887654. The screen has been flickering for the past three days, and this morning it went completely black. I can still hear the fan running, so I believe the computer itself is working, but the display is not functioning.\n\nThis laptop is essential for my work, so I would appreciate a quick turnaround. Could you please let me know your earliest available appointment? I am available to drop it off any weekday morning before 10:00 AM.\n\nThank you,\nThomas Lee\nAccounting Department, Horizon Inc.\n\n--- PASSAGE 2: REPLY EMAIL ---\n\nFrom: support@techrepair.com\nTo: thomas.lee@horizon.com\nSubject: RE: Laptop Repair Request\nDate: April 3\n\nDear Mr. Lee,\n\nThank you for contacting TechRepair. We have received your repair request for the Dell Latitude 5420 (serial: DL5420-887654).\n\nWe have an appointment available tomorrow, April 4, at 9:00 AM at our downtown service center (45 Tech Boulevard). Please bring the laptop and its power adapter. The initial diagnostic fee is $50, which will be applied toward the total repair cost if you proceed with the repair.\n\nBased on your description, the issue is likely a faulty display panel or a loose display cable. If it is the cable, the repair typically takes 1-2 hours and costs approximately $80. If the panel needs replacement, it may take 2-3 business days and cost around $250-$350, depending on the panel model.\n\nWe will provide a detailed estimate after the diagnostic. If you need a loaner laptop during the repair, we have limited units available for $15/day.\n\nPlease confirm your appointment by replying to this email.\n\nBest regards,\nTechRepair Support Team",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-d1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the problem with Thomas Lee's laptop?",
+            "options": ["The keyboard is broken", "The screen is flickering and went black", "The fan is not working", "The battery is dead"],
+            "answer": "The screen is flickering and went black",
+            "explanation": "Thomas describes the screen flickering for three days and then going completely black."
+          },
+          {
+            "id": "toeic-r2-p3-d1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "When is the earliest available appointment?",
+            "options": ["April 3 at 9:00 AM", "April 4 at 9:00 AM", "April 5 at 10:00 AM", "April 6 at 9:00 AM"],
+            "answer": "April 4 at 9:00 AM",
+            "explanation": "TechRepair offers an appointment on April 4 at 9:00 AM."
+          },
+          {
+            "id": "toeic-r2-p3-d1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What is the diagnostic fee?",
+            "options": ["$15", "$50", "$80", "$250"],
+            "answer": "$50",
+            "explanation": "The initial diagnostic fee is $50, which will be applied toward the total repair cost."
+          },
+          {
+            "id": "toeic-r2-p3-d1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "If the display cable is the issue, how long will the repair take?",
+            "options": ["30 minutes", "1-2 hours", "2-3 business days", "1 week"],
+            "answer": "1-2 hours",
+            "explanation": "TechRepair states that a cable repair typically takes 1-2 hours and costs approximately $80."
+          },
+          {
+            "id": "toeic-r2-p3-d1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "How much does a loaner laptop cost per day?",
+            "options": ["$10/day", "$15/day", "$20/day", "$25/day"],
+            "answer": "$15/day",
+            "explanation": "TechRepair offers loaner laptops for $15/day, subject to availability."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-d2",
+        "number": 10,
+        "title": "Part 7: Reading Comprehension — Double Passage 2 (Notice + Schedule)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: NOTICE ---\n\nSWIMMING POOL CLOSURE AND SUMMER SCHEDULE\n\nThe community swimming pool will be closed for annual maintenance from May 25 to May 31. During this time, the pool will be repainted, and the filtration system will be upgraded.\n\nSummer Schedule (effective June 1):\n- Lap Swimming: Monday-Friday 6:00-8:00 AM, 12:00-1:00 PM\n- Open Swim: Monday-Friday 3:00-7:00 PM\n- Weekend Open Swim: Saturday-Sunday 10:00 AM-6:00 PM\n- Swimming Lessons: Saturday 8:00-10:00 AM (beginner), 10:00 AM-12:00 PM (intermediate)\n- Water Aerobics: Tuesday & Thursday 9:00-10:00 AM\n\nPool Passes:\n- Daily: $8 (adults), $5 (children)\n- Monthly: $60 (adults), $40 (children)\n- Season Pass (June-August): $150 (adults), $100 (children)\n- Family Season Pass: $400 (up to 4 family members)\n\n--- PASSAGE 2: SWIMMING LESSON REGISTRATION ---\n\nSUMMER SWIMMING LESSONS — REGISTRATION DETAILS\n\nRegistration Opens: May 15\nRegistration Deadline: May 24\n\nClass Size: Maximum 10 students per class\nCost: $120 per session (8 lessons)\n\nBeginner (ages 5-10): Saturdays, 8:00-10:00 AM, June 3 - July 22\nIntermediate (ages 8-14): Saturdays, 10:00 AM-12:00 PM, June 3 - July 22\n\nRequirements:\n- All participants must be able to swim at least 10 meters unassisted\n- Swim caps and goggles are required (available for purchase at the pool office)\n- A signed waiver from a parent or guardian is mandatory\n\nTo register, visit the Community Center front desk or register online at www.communitypool.org/lessons. Payment is due at the time of registration. No refunds will be issued after the first lesson.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-d2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "How long will the pool be closed for maintenance?",
+            "options": ["3 days", "5 days", "7 days", "10 days"],
+            "answer": "7 days",
+            "explanation": "The pool will be closed from May 25 to May 31, which is 7 days."
+          },
+          {
+            "id": "toeic-r2-p3-d2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What are the lap swimming hours on weekdays?",
+            "options": ["6:00-8:00 AM and 12:00-1:00 PM", "3:00-7:00 PM", "10:00 AM-6:00 PM", "8:00-10:00 AM"],
+            "answer": "6:00-8:00 AM and 12:00-1:00 PM",
+            "explanation": "The schedule lists Lap Swimming on Monday-Friday at 6:00-8:00 AM and 12:00-1:00 PM."
+          },
+          {
+            "id": "toeic-r2-p3-d2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "How much does a family season pass cost?",
+            "options": ["$150", "$250", "$400", "$500"],
+            "answer": "$400",
+            "explanation": "The Family Season Pass costs $400 for up to 4 family members."
+          },
+          {
+            "id": "toeic-r2-p3-d2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the maximum class size for swimming lessons?",
+            "options": ["5 students", "8 students", "10 students", "15 students"],
+            "answer": "10 students",
+            "explanation": "The registration details state a maximum of 10 students per class."
+          },
+          {
+            "id": "toeic-r2-p3-d2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is required for all swimming lesson participants?",
+            "options": ["Their own towel", "Ability to swim 10 meters unassisted, swim caps, goggles, and a signed waiver", "A doctor's note", "Previous swimming experience"],
+            "answer": "Ability to swim 10 meters unassisted, swim caps, goggles, and a signed waiver",
+            "explanation": "The requirements list all of these: ability to swim 10 meters, swim caps and goggles, and a signed waiver."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-d3",
+        "number": 11,
+        "title": "Part 7: Reading Comprehension — Double Passage 3 (Article + Email)",
+        "difficulty": "C1",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: ARTICLE ---\n\nTHE GROWTH OF E-COMMERCE IN RURAL AREAS\n\nBy Michael Chang, Business Correspondent\n\nE-commerce has transformed retail in urban centers for years, but its impact on rural communities has been slower to materialize. That is now changing rapidly, thanks to improved internet infrastructure and innovative delivery solutions.\n\nAccording to a recent study by the Rural Business Institute, online shopping in rural areas grew by 45% last year, compared to 18% in urban areas. The growth has been driven by several factors: expanded broadband access, the rise of mobile shopping apps, and partnerships between major retailers and local delivery services.\n\nFor rural consumers, e-commerce offers access to products that were previously unavailable or required long drives to obtain. Farmers can now order specialized equipment online, and rural households have access to a wider range of groceries, clothing, and household goods. The convenience factor is significant — what once required a two-hour round trip can now be accomplished with a few clicks.\n\nHowever, challenges persist. Delivery times remain longer in rural areas, and shipping costs can be higher. Some rural post offices have struggled with the increased volume of packages. Additionally, local brick-and-mortar stores face increased competition, which has led to closures in some small towns.\n\n--- PASSAGE 2: EMAIL ---\n\nFrom: info@ruralbusiness.org\nTo: subscribers@ruralbusiness.org\nSubject: New Program: Rural E-Commerce Support Initiative\nDate: March 8\n\nDear Subscriber,\n\nFollowing the success of our recent study on rural e-commerce growth, the Rural Business Institute is launching a new support program for small businesses in rural areas.\n\nThe Rural E-Commerce Support Initiative will provide:\n1. Free training workshops on setting up online stores (4 sessions, starting April 15)\n2. One-on-one consultations with e-commerce specialists\n3. Subsidized shipping rates through partner carriers (up to 30% discount)\n4. Access to a shared warehouse facility for inventory storage\n\nThe program is open to businesses located in communities with a population under 25,000. Applications are due by March 30. Space is limited to 50 businesses, and selection will be based on business viability and community impact.\n\nTo apply, visit www.ruralbusiness.org/apply or call 555-0199. There is no fee to participate in the program.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-d3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "How much did online shopping grow in rural areas last year?",
+            "options": ["18%", "30%", "45%", "50%"],
+            "answer": "45%",
+            "explanation": "The article states online shopping in rural areas grew by 45% last year."
+          },
+          {
+            "id": "toeic-r2-p3-d3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What is one challenge of e-commerce in rural areas mentioned in the article?",
+            "options": ["Lack of internet access", "Longer delivery times and higher shipping costs", "Too many local stores", "No mobile apps available"],
+            "answer": "Longer delivery times and higher shipping costs",
+            "explanation": "The article mentions that delivery times remain longer and shipping costs can be higher in rural areas."
+          },
+          {
+            "id": "toeic-r2-p3-d3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What does the Rural E-Commerce Support Initiative offer?",
+            "options": ["Free products", "Training workshops, consultations, subsidized shipping, and warehouse access", "Cash grants only", "Free internet service"],
+            "answer": "Training workshops, consultations, subsidized shipping, and warehouse access",
+            "explanation": "The email lists all four benefits: training workshops, one-on-one consultations, subsidized shipping rates, and shared warehouse access."
+          },
+          {
+            "id": "toeic-r2-p3-d3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the population requirement for businesses to qualify?",
+            "options": ["Under 10,000", "Under 25,000", "Under 50,000", "Under 100,000"],
+            "answer": "Under 25,000",
+            "explanation": "The email states the program is open to businesses in communities with a population under 25,000."
+          },
+          {
+            "id": "toeic-r2-p3-d3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "How many businesses can participate in the program?",
+            "options": ["25", "50", "100", "Unlimited"],
+            "answer": "50",
+            "explanation": "The email states space is limited to 50 businesses."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-d4",
+        "number": 12,
+        "title": "Part 7: Reading Comprehension — Double Passage 4 (Memo + Form)",
+        "difficulty": "C1",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: MEMO ---\n\nMEMORANDUM\nTo: All Department Heads\nFrom: Chief Financial Officer\nDate: February 10\nSubject: Mid-Year Budget Review\n\nAs we approach the mid-point of the fiscal year, I am requesting that each department head prepare a mid-year budget review report. This report should include:\n\n1. Actual expenditures to date versus budgeted amounts\n2. Explanation of any variances exceeding 10%\n3. Revised projections for the remainder of the fiscal year\n4. Any anticipated one-time expenses in the second half\n\nReports are due by February 25. Please use the standard budget review template, which has been updated and is available on the finance department portal. If your department's spending is more than 15% over budget, you will be required to attend a meeting with the CFO to discuss corrective measures.\n\nDepartments that are significantly under budget (more than 20% below projections) should also provide an explanation, as this may indicate delayed projects or unspent allocations that could be reallocated.\n\n--- PASSAGE 2: BUDGET REVIEW SUMMARY (SAMPLE) ---\n\nDEPARTMENT: Information Technology\nPREPARED BY: Jennifer Walsh, IT Director\nDATE: February 22\n\nBudget Category | Budgeted | Actual | Variance\nPersonnel | $450,000 | $435,000 | -$15,000 (-3.3%)\nSoftware Licenses | $120,000 | $138,000 | +$18,000 (+15.0%)\nHardware | $200,000 | $145,000 | -$55,000 (-27.5%)\nTraining | $50,000 | $12,000 | -$38,000 (-76.0%)\nTotal | $820,000 | $730,000 | -$90,000 (-11.0%)\n\nNotes: The software license variance is due to the purchase of additional cybersecurity software not included in the original budget. Hardware spending is below budget because the server upgrade project has been delayed to Q3. Training was reduced due to staff shortages limiting availability for training sessions.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-d4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What must departments with variances exceeding 10% do?",
+            "options": ["Nothing", "Provide an explanation of the variance", "Reduce their budget", "Attend a mandatory meeting"],
+            "answer": "Provide an explanation of the variance",
+            "explanation": "The memo requires an explanation of any variances exceeding 10%."
+          },
+          {
+            "id": "toeic-r2-p3-d4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "When are the mid-year budget review reports due?",
+            "options": ["February 10", "February 22", "February 25", "February 28"],
+            "answer": "February 25",
+            "explanation": "The memo states reports are due by February 25."
+          },
+          {
+            "id": "toeic-r2-p3-d4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What happens if a department's spending is more than 15% over budget?",
+            "options": ["The budget is frozen", "A meeting with the CFO is required", "The department is dissolved", "Nothing happens"],
+            "answer": "A meeting with the CFO is required",
+            "explanation": "The memo states departments more than 15% over budget must attend a meeting with the CFO."
+          },
+          {
+            "id": "toeic-r2-p3-d4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "According to the sample report, what is the total budget variance?",
+            "options": ["-$15,000", "-$55,000", "-$90,000", "+$18,000"],
+            "answer": "-$90,000",
+            "explanation": "The sample report shows a total variance of -$90,000 (-11.0%)."
+          },
+          {
+            "id": "toeic-r2-p3-d4-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "Why is the IT department's hardware spending below budget?",
+            "options": ["They bought cheaper equipment", "The server upgrade project has been delayed to Q3", "They received a discount", "They canceled the project"],
+            "answer": "The server upgrade project has been delayed to Q3",
+            "explanation": "The notes explain that hardware spending is below budget because the server upgrade project has been delayed to Q3."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r2-p3-d5",
+        "number": 13,
+        "title": "Part 7: Reading Comprehension — Double Passage 5 (Notice + Email)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: NOTICE ---\n\nBUILDING ACCESS SYSTEM UPGRADE\n\nPlease be informed that the building access card system will be upgraded over the weekend of September 16-17. All employees will receive new access cards on Friday, September 15.\n\nImportant:\n- Old access cards will be deactivated on Monday, September 18 at 7:00 AM\n- New cards must be activated before first use by scanning them at the kiosk in the main lobby\n- Temporary access codes will be available at the security desk for those who forget to activate their cards\n- Visitors will need to sign in at the security desk during the transition period (September 18-22)\n\nIf you will be away on September 15, please arrange for a colleague to collect your new card, or contact Security to have it held at the front desk.\n\n--- PASSAGE 2: EMAIL ---\n\nFrom: security@building.com\nTo: all-tenants@building.com\nSubject: Access Card Activation Instructions\nDate: September 14\n\nDear Tenants,\n\nPlease follow these steps to activate your new access card:\n\n1. Collect your new card from your department administrator on September 15.\n2. Go to the activation kiosk in the main lobby.\n3. Tap your new card on the kiosk reader.\n4. Enter your employee ID number on the touchscreen.\n5. Wait for the confirmation message: 'Card Activated Successfully.'\n6. Test the card at the nearest entrance.\n\nIf you receive an error message, please note the error code and visit the security desk for assistance. Common error codes:\n- E01: Card not recognized (visit security desk for replacement)\n- E02: Employee ID not found (verify your ID with HR)\n- E03: System temporarily unavailable (try again in 10 minutes)\n\nThe activation kiosk will be available 24 hours a day starting September 15. If you have any issues, call the security desk at extension 9100.",
+        "questions": [
+          {
+            "id": "toeic-r2-p3-d5-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "When will old access cards be deactivated?",
+            "options": ["September 15", "September 16", "September 18 at 7:00 AM", "September 22"],
+            "answer": "September 18 at 7:00 AM",
+            "explanation": "The notice states old access cards will be deactivated on Monday, September 18 at 7:00 AM."
+          },
+          {
+            "id": "toeic-r2-p3-d5-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What must employees do before first using their new card?",
+            "options": ["Sign a form", "Activate it at the kiosk in the main lobby", "Call security", "Wait 24 hours"],
+            "answer": "Activate it at the kiosk in the main lobby",
+            "explanation": "The notice states new cards must be activated by scanning them at the kiosk in the main lobby."
+          },
+          {
+            "id": "toeic-r2-p3-d5-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What should you do if you receive error code E02?",
+            "options": ["Visit the security desk for a replacement", "Verify your employee ID with HR", "Try again in 10 minutes", "Use a temporary access code"],
+            "answer": "Verify your employee ID with HR",
+            "explanation": "The email states E02 means 'Employee ID not found' and you should verify your ID with HR."
+          },
+          {
+            "id": "toeic-r2-p3-d5-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "How long will the activation kiosk be available?",
+            "options": ["During business hours only", "24 hours a day starting September 15", "Only on September 15", "Only on weekdays"],
+            "answer": "24 hours a day starting September 15",
+            "explanation": "The email states the activation kiosk will be available 24 hours a day starting September 15."
+          },
+          {
+            "id": "toeic-r2-p3-d5-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What should employees do if they will be away on September 15?",
+            "options": ["They cannot get a new card", "Arrange for a colleague to collect it or contact Security to hold it", "They must return to the building", "They will receive it by mail"],
+            "answer": "Arrange for a colleague to collect it or contact Security to hold it",
+            "explanation": "The notice states employees who are away should arrange for a colleague to collect their card or contact Security to have it held at the front desk."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toeic-reading-3",
+    "title": "TOEIC Reading Practice Test 3",
+    "time_minutes": 75,
+    "passages": [
+      {
+        "id": "toeic-r3-p1",
+        "number": 1,
+        "title": "Part 5: Incomplete Sentences",
+        "difficulty": "B1",
+        "instructions": "Choose the word or phrase that best completes the sentence.",
+        "text": "",
+        "questions": [
+          {
+            "id": "toeic-r3-p1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "The contract was signed ___ both parties on December 1st.",
+            "options": ["by", "with", "from", "at"],
+            "answer": "by",
+            "explanation": "'By' is used in passive voice to indicate the agent: 'was signed by both parties'."
+          },
+          {
+            "id": "toeic-r3-p1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "The company has decided to invest ___ renewable energy projects.",
+            "options": ["on", "in", "at", "for"],
+            "answer": "in",
+            "explanation": "The verb 'invest' takes the preposition 'in': 'invest in renewable energy projects'."
+          },
+          {
+            "id": "toeic-r3-p1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "The applicant's ___ for the position was impressive.",
+            "options": ["qualify", "qualification", "qualified", "qualifying"],
+            "answer": "qualification",
+            "explanation": "The noun 'qualification' is needed as the subject: 'The applicant's qualification... was impressive.'"
+          },
+          {
+            "id": "toeic-r3-p1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "___ the weather forecast predicts rain, the event will proceed as planned.",
+            "options": ["Because", "Although", "Despite", "However"],
+            "answer": "Although",
+            "explanation": "'Although' introduces a concession — the event will proceed despite the rain forecast."
+          },
+          {
+            "id": "toeic-r3-p1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "The team ___ on the project for six months before the client approved it.",
+            "options": ["has worked", "had been working", "works", "is working"],
+            "answer": "had been working",
+            "explanation": "Past perfect continuous 'had been working' describes an action that was ongoing before another past event."
+          },
+          {
+            "id": "toeic-r3-p1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "The new policy applies to ___ employees, regardless of their position.",
+            "options": ["all", "both", "either", "neither"],
+            "answer": "all",
+            "explanation": "'All' is used for more than two items: 'all employees, regardless of their position'."
+          },
+          {
+            "id": "toeic-r3-p1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "The speaker gave a ___ presentation that captivated the audience.",
+            "options": ["compelling", "compel", "compulsion", "compulsively"],
+            "answer": "compelling",
+            "explanation": "The adjective 'compelling' modifies the noun 'presentation'."
+          },
+          {
+            "id": "toeic-r3-p1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "The documents need ___ before they can be filed.",
+            "options": ["organize", "to be organized", "organizing", "organized"],
+            "answer": "to be organized",
+            "explanation": "After 'need', the passive infinitive 'to be organized' is used: 'need to be organized'."
+          },
+          {
+            "id": "toeic-r3-p1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "The board recommended that the proposal ___ further review.",
+            "options": ["undergo", "undergoes", "underwent", "undergoing"],
+            "answer": "undergo",
+            "explanation": "After 'recommend that', the subjunctive (base form) is used: 'undergo'."
+          },
+          {
+            "id": "toeic-r3-p1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "The factory operates ___ 24 hours a day, seven days a week.",
+            "options": ["continuous", "continuously", "continuity", "continue"],
+            "answer": "continuously",
+            "explanation": "The adverb 'continuously' modifies the verb 'operates'."
+          },
+          {
+            "id": "toeic-r3-p1-q11",
+            "number": 11,
+            "type": "mcq",
+            "text": "Please ensure that all equipment is returned ___ good condition.",
+            "options": ["in", "on", "at", "by"],
+            "answer": "in",
+            "explanation": "The phrase 'in good condition' uses the preposition 'in'."
+          },
+          {
+            "id": "toeic-r3-p1-q12",
+            "number": 12,
+            "type": "mcq",
+            "text": "Employees ___ wear their ID badges at all times while in the building.",
+            "options": ["must", "might", "could", "would"],
+            "answer": "must",
+            "explanation": "'Must' expresses obligation: employees are required to wear ID badges."
+          },
+          {
+            "id": "toeic-r3-p1-q13",
+            "number": 13,
+            "type": "mcq",
+            "text": "The company plans to ___ its customer base by entering new markets.",
+            "options": ["broaden", "broad", "breadth", "broadly"],
+            "answer": "broaden",
+            "explanation": "The verb 'broaden' means to expand: 'to broaden its customer base'."
+          },
+          {
+            "id": "toeic-r3-p1-q14",
+            "number": 14,
+            "type": "mcq",
+            "text": "The consultant ___ advice was sought by the management team submitted a detailed report.",
+            "options": ["who", "whose", "which", "whom"],
+            "answer": "whose",
+            "explanation": "'Whose' shows possession — the advice belongs to the consultant."
+          },
+          {
+            "id": "toeic-r3-p1-q15",
+            "number": 15,
+            "type": "mcq",
+            "text": "The new regulations will be ___ starting next month.",
+            "options": ["implement", "implemented", "implementing", "implements"],
+            "answer": "implemented",
+            "explanation": "The past participle 'implemented' is used in passive voice: 'will be implemented'."
+          },
+          {
+            "id": "toeic-r3-p1-q16",
+            "number": 16,
+            "type": "mcq",
+            "text": "The survey results were ___ analyzed by the research team.",
+            "options": ["care", "careful", "carefully", "carefulness"],
+            "answer": "carefully",
+            "explanation": "The adverb 'carefully' modifies the verb 'analyzed'."
+          },
+          {
+            "id": "toeic-r3-p1-q17",
+            "number": 17,
+            "type": "mcq",
+            "text": "If the budget ___ approved, construction will begin in March.",
+            "options": ["is", "was", "would be", "had been"],
+            "answer": "is",
+            "explanation": "In a first conditional, the if-clause uses present simple: 'If the budget is approved'."
+          },
+          {
+            "id": "toeic-r3-p1-q18",
+            "number": 18,
+            "type": "mcq",
+            "text": "The HR department is ___ for recruiting and onboarding new staff.",
+            "options": ["response", "responsible", "responsibility", "responsibly"],
+            "answer": "responsible",
+            "explanation": "The adjective 'responsible' follows 'is': 'is responsible for'."
+          },
+          {
+            "id": "toeic-r3-p1-q19",
+            "number": 19,
+            "type": "mcq",
+            "text": "Each of the participants ___ a certificate upon completion.",
+            "options": ["receive", "receives", "receiving", "received"],
+            "answer": "receives",
+            "explanation": "'Each of' takes a singular verb: 'Each of the participants receives'."
+          },
+          {
+            "id": "toeic-r3-p1-q20",
+            "number": 20,
+            "type": "mcq",
+            "text": "The deadline for submissions has been extended ___ Friday.",
+            "options": ["until", "by", "in", "on"],
+            "answer": "until",
+            "explanation": "'Until' indicates the action can continue up to that time: 'extended until Friday'."
+          },
+          {
+            "id": "toeic-r3-p1-q21",
+            "number": 21,
+            "type": "mcq",
+            "text": "The marketing campaign resulted ___ a 25% increase in sales.",
+            "options": ["to", "in", "for", "with"],
+            "answer": "in",
+            "explanation": "The verb 'result' takes the preposition 'in': 'resulted in a 25% increase'."
+          },
+          {
+            "id": "toeic-r3-p1-q22",
+            "number": 22,
+            "type": "mcq",
+            "text": "___ the initial cost, the new system will save money in the long run.",
+            "options": ["Although", "Despite", "Because", "However"],
+            "answer": "Despite",
+            "explanation": "'Despite' is followed by a noun phrase: 'Despite the initial cost'."
+          },
+          {
+            "id": "toeic-r3-p1-q23",
+            "number": 23,
+            "type": "mcq",
+            "text": "The meeting was ___ because not enough members were present.",
+            "options": ["called off", "called on", "called up", "called for"],
+            "answer": "called off",
+            "explanation": "The phrasal verb 'called off' means canceled: 'the meeting was called off'."
+          },
+          {
+            "id": "toeic-r3-p1-q24",
+            "number": 24,
+            "type": "mcq",
+            "text": "The updated schedule ___ be posted on the company website by tomorrow.",
+            "options": ["will", "has", "was", "does"],
+            "answer": "will",
+            "explanation": "Future tense 'will' is used: 'will be posted by tomorrow'."
+          },
+          {
+            "id": "toeic-r3-p1-q25",
+            "number": 25,
+            "type": "mcq",
+            "text": "It is important to maintain a ___ attitude in the workplace.",
+            "options": ["profession", "professional", "professionally", "professions"],
+            "answer": "professional",
+            "explanation": "The adjective 'professional' modifies the noun 'attitude'."
+          },
+          {
+            "id": "toeic-r3-p1-q26",
+            "number": 26,
+            "type": "mcq",
+            "text": "The department ___ budget was cut had to reduce its staff.",
+            "options": ["who", "whose", "which", "that"],
+            "answer": "whose",
+            "explanation": "'Whose' shows possession — the budget belongs to the department."
+          },
+          {
+            "id": "toeic-r3-p1-q27",
+            "number": 27,
+            "type": "mcq",
+            "text": "The company offers a ___ range of professional development courses.",
+            "options": ["wide", "widely", "width", "widen"],
+            "answer": "wide",
+            "explanation": "The adjective 'wide' modifies the noun 'range': 'a wide range'."
+          },
+          {
+            "id": "toeic-r3-p1-q28",
+            "number": 28,
+            "type": "mcq",
+            "text": "All visitors must ___ at the reception desk upon arrival.",
+            "options": ["sign in", "signing in", "signed in", "signs in"],
+            "answer": "sign in",
+            "explanation": "The base verb 'sign in' follows the modal 'must': 'must sign in'."
+          },
+          {
+            "id": "toeic-r3-p1-q29",
+            "number": 29,
+            "type": "mcq",
+            "text": "The project was completed ahead ___ schedule.",
+            "options": ["of", "for", "with", "in"],
+            "answer": "of",
+            "explanation": "The phrase 'ahead of' means before: 'ahead of schedule'."
+          },
+          {
+            "id": "toeic-r3-p1-q30",
+            "number": 30,
+            "type": "mcq",
+            "text": "The new manager is known for her ___ approach to problem-solving.",
+            "options": ["innovate", "innovation", "innovative", "innovatively"],
+            "answer": "innovative",
+            "explanation": "The adjective 'innovative' modifies the noun 'approach'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p2-t1",
+        "number": 2,
+        "title": "Part 6: Text Completion — Text 1",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "Dear Mr. Anderson,\n\nWe are writing to confirm your reservation at the Grand View Hotel for the dates of August 10 through August 14. Your reservation number is GV-44782. We have ___(1)___ a deluxe room with a city view on the 12th floor. Breakfast is ___(2)___ in your room rate and will be served in the main dining room from 6:30 AM to 10:00 AM. Check-in is at 3:00 PM, and check-out is at 11:00 AM. If you need to ____(3)____ your stay, please contact us at least 48 hours in advance. We look forward to providing you with an ____(4)____ experience.\n\nSincerely,\nReservations Team\nGrand View Hotel",
+        "questions": [
+          {
+            "id": "toeic-r3-p2-t1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["reserve", "reserved", "reserving", "reservation"],
+            "answer": "reserved",
+            "explanation": "The past participle 'reserved' is used in present perfect: 'have reserved a deluxe room'."
+          },
+          {
+            "id": "toeic-r3-p2-t1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["include", "included", "including", "includes"],
+            "answer": "included",
+            "explanation": "The past participle 'included' functions as an adjective: 'Breakfast is included in your room rate'."
+          },
+          {
+            "id": "toeic-r3-p2-t1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["extend", "extended", "extending", "extension"],
+            "answer": "extend",
+            "explanation": "The base verb 'extend' follows 'need to': 'need to extend your stay'."
+          },
+          {
+            "id": "toeic-r3-p2-t1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["enjoy", "enjoyable", "enjoyment", "enjoying"],
+            "answer": "enjoyable",
+            "explanation": "The adjective 'enjoyable' modifies the noun 'experience': 'an enjoyable experience'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p2-t2",
+        "number": 3,
+        "title": "Part 6: Text Completion — Text 2",
+        "difficulty": "B2",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "NOTICE: ANNUAL HEALTH SCREENING\n\nAll employees are reminded that the annual health screening will take place on October 15 in the company clinic on the third floor. The screening is ___(1)___ for all full-time employees and optional for part-time staff. The screening includes a physical examination, blood test, and vision check. Employees should fast for at least 8 hours ___(2)___ the screening. Appointments are scheduled in 30-minute ____(3)____ between 8:00 AM and 4:00 PM. To select your preferred time, please sign up at the HR office by October 8. Results will be ___(4)____ to each employee within two weeks of the screening.",
+        "questions": [
+          {
+            "id": "toeic-r3-p2-t2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["compulsory", "compulsorily", "compulsion", "compulsories"],
+            "answer": "compulsory",
+            "explanation": "The adjective 'compulsory' means mandatory: 'compulsory for all full-time employees'."
+          },
+          {
+            "id": "toeic-r3-p2-t2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["before", "after", "during", "since"],
+            "answer": "before",
+            "explanation": "'Before' indicates the fasting should happen prior to the screening: 'fast for at least 8 hours before the screening'."
+          },
+          {
+            "id": "toeic-r3-p2-t2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["interval", "intervals", "interval's", "intervals'"],
+            "answer": "intervals",
+            "explanation": "The plural noun 'intervals' is needed: '30-minute intervals' means time slots."
+          },
+          {
+            "id": "toeic-r3-p2-t2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["send", "sent", "sending", "sends"],
+            "answer": "sent",
+            "explanation": "The past participle 'sent' is used in passive voice: 'will be sent to each employee'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p2-t3",
+        "number": 4,
+        "title": "Part 6: Text Completion — Text 3",
+        "difficulty": "C1",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "Dear Colleagues,\n\nI am pleased to announce that our company has been awarded the Industry Excellence Award for the third ___(1)___ year. This achievement reflects the hard work and dedication of every team member. The award ceremony will take place on December 5 at the Grand Convention Center. All employees are ___(2)___ to attend. The company will provide transportation via shuttle buses departing from the main office at 5:30 PM. Please RSVP by November 28 so that we can finalize the seating ____(3)____. Dress code for the event is formal. I would like to take this opportunity to thank each of you for your continued ____(4)____ to excellence.\n\nBest regards,\nRobert Kim\nChief Executive Officer",
+        "questions": [
+          {
+            "id": "toeic-r3-p2-t3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["consecutive", "consecutively", "consecution", "consecutives"],
+            "answer": "consecutive",
+            "explanation": "The adjective 'consecutive' modifies 'year': 'the third consecutive year' means three years in a row."
+          },
+          {
+            "id": "toeic-r3-p2-t3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["encourage", "encouraged", "encouraging", "encouragement"],
+            "answer": "encouraged",
+            "explanation": "The past participle 'encouraged' is used in passive voice: 'are encouraged to attend'."
+          },
+          {
+            "id": "toeic-r3-p2-t3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["arrange", "arrangement", "arrangements", "arranging"],
+            "answer": "arrangements",
+            "explanation": "The plural noun 'arrangements' is needed: 'seating arrangements' refers to the organization of seats."
+          },
+          {
+            "id": "toeic-r3-p2-t3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["commit", "commitment", "committed", "committing"],
+            "answer": "commitment",
+            "explanation": "The noun 'commitment' is needed: 'your continued commitment to excellence'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p2-t4",
+        "number": 5,
+        "title": "Part 6: Text Completion — Text 4",
+        "difficulty": "C1",
+        "instructions": "Read the text and choose the best word or phrase for each blank.",
+        "text": "INVESTMENT OPPORTUNITY: GREEN TECH STARTUP\n\nEcoFuture Inc., a startup specializing in clean energy technology, is currently seeking investors for its Series B funding round. The company has ___(1)___ a new solar panel technology that is 30% more efficient than current market leaders. The funding will be used to ___(2)___ production capacity and expand into European markets. Investors who participate in this round will receive preferred shares with a ___(3)___ return rate of 12% over five years. The minimum investment is $50,000. All interested parties should submit an expression of interest by January 20. A detailed prospectus will be ___(4)____ to qualified investors upon request.\n\nFor more information, contact invest@ecofuture.com.",
+        "questions": [
+          {
+            "id": "toeic-r3-p2-t4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Blank (1):",
+            "options": ["develop", "developed", "developing", "development"],
+            "answer": "developed",
+            "explanation": "The past participle 'developed' is used in present perfect: 'has developed a new solar panel technology'."
+          },
+          {
+            "id": "toeic-r3-p2-t4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Blank (2):",
+            "options": ["scale", "scaling", "scaled", "scales"],
+            "answer": "scale",
+            "explanation": "The base verb 'scale' follows 'to' in the infinitive: 'to scale production capacity'."
+          },
+          {
+            "id": "toeic-r3-p2-t4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Blank (3):",
+            "options": ["project", "projected", "projection", "projects"],
+            "answer": "projected",
+            "explanation": "The adjective 'projected' modifies 'return rate': 'a projected return rate of 12%' means an estimated/forecasted return."
+          },
+          {
+            "id": "toeic-r3-p2-t4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "Blank (4):",
+            "options": ["provide", "provided", "providing", "provides"],
+            "answer": "provided",
+            "explanation": "The past participle 'provided' is used in passive voice: 'will be provided to qualified investors'."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-s1",
+        "number": 6,
+        "title": "Part 7: Reading Comprehension — Single Passage 1",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "FITNESS CENTER MEMBERSHIP OPTIONS\n\nWelcome to CityFit Fitness Center! We offer a variety of membership options to suit your fitness goals and schedule.\n\nBasic Membership — $35/month\n- Access to gym equipment and locker rooms\n- Access during staffed hours (6:00 AM - 9:00 PM)\n- 1 free fitness assessment\n\nPremium Membership — $55/month\n- 24/7 gym access\n- Unlimited group fitness classes (yoga, spin, HIIT, pilates)\n- Access to sauna and steam room\n- 1 free personal training session per month\n- Guest passes (2 per month)\n\nElite Membership — $85/month\n- All Premium benefits\n- 4 personal training sessions per month\n- Nutrition consultation (quarterly)\n- Access to all branch locations nationwide\n- Priority class booking\n- Free towel service\n\nAdditional Services:\n- Personal training (additional sessions): $50/hour\n- Group classes (drop-in, non-members): $15/class\n- Day pass: $20\n- 10-class punch card: $120\n\nAll memberships require a one-time registration fee of $25. Annual memberships receive a 10% discount. Corporate rates are available for companies with 10+ employees — contact us for details.\n\nFree 3-day trial available for new members! Visit www.cityfit.com/trial or call 555-0155.",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-s1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "How much does the Basic Membership cost per month?",
+            "options": ["$25", "$35", "$55", "$85"],
+            "answer": "$35",
+            "explanation": "The Basic Membership costs $35/month."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "Which membership offers 24/7 gym access?",
+            "options": ["Basic", "Premium", "Elite", "All memberships"],
+            "answer": "Premium",
+            "explanation": "The Premium Membership includes 24/7 gym access. (Elite also includes it as it has all Premium benefits.)"
+          },
+          {
+            "id": "toeic-r3-p3-s1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "How many personal training sessions are included in the Elite Membership per month?",
+            "options": ["1", "2", "4", "Unlimited"],
+            "answer": "4",
+            "explanation": "The Elite Membership includes 4 personal training sessions per month."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the cost of a day pass?",
+            "options": ["$15", "$20", "$25", "$35"],
+            "answer": "$20",
+            "explanation": "A day pass costs $20 for non-members."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What discount do annual memberships receive?",
+            "options": ["5%", "10%", "15%", "20%"],
+            "answer": "10%",
+            "explanation": "Annual memberships receive a 10% discount."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What is the one-time registration fee for all memberships?",
+            "options": ["$15", "$20", "$25", "$50"],
+            "answer": "$25",
+            "explanation": "All memberships require a one-time registration fee of $25."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "Which membership includes access to all branch locations nationwide?",
+            "options": ["Basic", "Premium", "Elite", "None"],
+            "answer": "Elite",
+            "explanation": "The Elite Membership includes access to all branch locations nationwide."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "How much does an additional personal training session cost per hour?",
+            "options": ["$35", "$50", "$55", "$85"],
+            "answer": "$50",
+            "explanation": "Additional personal training sessions cost $50/hour."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What is available for new members?",
+            "options": ["A free month", "A free 3-day trial", "A free personal training session", "A free nutrition consultation"],
+            "answer": "A free 3-day trial",
+            "explanation": "A free 3-day trial is available for new members."
+          },
+          {
+            "id": "toeic-r3-p3-s1-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "What is the cost of a 10-class punch card?",
+            "options": ["$100", "$120", "$150", "$200"],
+            "answer": "$120",
+            "explanation": "A 10-class punch card costs $120."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-s2",
+        "number": 7,
+        "title": "Part 7: Reading Comprehension — Single Passage 2",
+        "difficulty": "B2",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "EMAIL: CONFERENCE REGISTRATION CONFIRMATION\n\nFrom: registration@techconf.com\nTo: maria.santos@datacorp.com\nSubject: Confirmation: TechConf 2025 Registration\nDate: July 20\n\nDear Ms. Santos,\n\nYour registration for TechConf 2025 has been confirmed. Below are your registration details:\n\nRegistration ID: TC2025-3398\nName: Maria Santos\nCompany: DataCorp Inc.\nConference Dates: September 12-14, 2025\nVenue: Metro Convention Center, 500 Expo Way, Downtown\n\nRegistration Type: Full Conference Pass — $895\nIncluded in your pass:\n- Access to all keynote presentations\n- Access to all breakout sessions (40+ sessions)\n- Exhibition hall access\n- Networking lunch (all 3 days)\n- Conference materials and swag bag\n- Post-conference video recordings\n\nPre-Conference Workshops (optional, additional fee):\n- Workshop A: Cloud Architecture — September 11, $200\n- Workshop B: AI & Machine Learning — September 11, $250\n- Workshop C: Cybersecurity Essentials — September 11, $200\n\nYou have registered for: Workshop B (AI & Machine Learning)\n\nTotal Charged: $1,145 ($895 + $250)\nPayment Method: Credit Card (Visa ending in 4521)\n\nCheck-in: September 11 at 3:00 PM (workshop) or September 12 at 7:30 AM (conference)\n\nCancellation Policy: Full refund if canceled by August 12. 50% refund if canceled between August 13 and August 30. No refund after August 30. Substitutions are allowed at no charge.\n\nHotel: A block of rooms has been reserved at the Metro Hotel at a discounted rate of $159/night. Book by August 15 using the code TECH25.\n\nFor questions, email registration@techconf.com or call 555-0144.",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-s2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is Maria Santos's registration ID?",
+            "options": ["TC2025-3389", "TC2025-3398", "TC2025-3893", "TC2025-8339"],
+            "answer": "TC2025-3398",
+            "explanation": "The registration ID is listed as TC2025-3398."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How many days does the conference last?",
+            "options": ["2 days", "3 days", "4 days", "5 days"],
+            "answer": "3 days",
+            "explanation": "The conference dates are September 12-14, which is 3 days."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Which workshop did Maria register for?",
+            "options": ["Workshop A: Cloud Architecture", "Workshop B: AI & Machine Learning", "Workshop C: Cybersecurity Essentials", "None"],
+            "answer": "Workshop B: AI & Machine Learning",
+            "explanation": "The email states Maria registered for Workshop B (AI & Machine Learning)."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the total amount charged?",
+            "options": ["$895", "$1,095", "$1,145", "$1,250"],
+            "answer": "$1,145",
+            "explanation": "The total charged is $1,145 ($895 for the conference + $250 for Workshop B)."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is included in the Full Conference Pass?",
+            "options": ["Only keynote presentations", "Keynotes, breakout sessions, exhibition, lunch, materials, and video recordings", "Only workshop access", "Only networking events"],
+            "answer": "Keynotes, breakout sessions, exhibition, lunch, materials, and video recordings",
+            "explanation": "The email lists all included items: keynotes, breakout sessions, exhibition hall, networking lunch, conference materials, and post-conference recordings."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What is the cancellation policy for a full refund?",
+            "options": ["Cancel by August 1", "Cancel by August 12", "Cancel by August 30", "No refunds available"],
+            "answer": "Cancel by August 12",
+            "explanation": "A full refund is available if canceled by August 12."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What is the discounted hotel rate?",
+            "options": ["$129/night", "$149/night", "$159/night", "$179/night"],
+            "answer": "$159/night",
+            "explanation": "The discounted hotel rate at the Metro Hotel is $159/night using the code TECH25."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "By when must the hotel be booked to get the discount?",
+            "options": ["August 1", "August 12", "August 15", "August 30"],
+            "answer": "August 15",
+            "explanation": "The hotel must be booked by August 15 using the code TECH25."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "When can conference attendees check in?",
+            "options": ["September 11 at 3:00 PM or September 12 at 7:30 AM", "September 12 at 9:00 AM only", "September 11 at 9:00 AM", "Anytime during the conference"],
+            "answer": "September 11 at 3:00 PM or September 12 at 7:30 AM",
+            "explanation": "Check-in is available on September 11 at 3:00 PM (for workshop) or September 12 at 7:30 AM (for conference)."
+          },
+          {
+            "id": "toeic-r3-p3-s2-q10",
+            "number": 10,
+            "type": "mcq",
+            "text": "What happens if cancellation is made between August 13 and August 30?",
+            "options": ["Full refund", "50% refund", "No refund", "25% refund"],
+            "answer": "50% refund",
+            "explanation": "A 50% refund is given if canceled between August 13 and August 30."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-s3",
+        "number": 8,
+        "title": "Part 7: Reading Comprehension — Single Passage 3",
+        "difficulty": "C1",
+        "instructions": "Read the passage and answer the questions.",
+        "text": "Artificial intelligence is reshaping the financial services industry in ways that were unimaginable just a decade ago. From automated trading algorithms to chatbots that handle customer inquiries, AI technologies are being deployed across every segment of the financial sector.\n\nOne of the most significant applications of AI in finance is in fraud detection. Traditional fraud detection systems relied on rule-based algorithms that flagged suspicious transactions based on predefined criteria. AI-powered systems, by contrast, can analyze vast amounts of data in real time, identify patterns that human analysts might miss, and adapt to new types of fraud as they emerge. Major banks report that AI has reduced false positives — legitimate transactions incorrectly flagged as fraudulent — by up to 50%, saving both money and customer goodwill.\n\nAnother area where AI is making inroads is in credit scoring. Conventional credit scoring models use a limited set of data points, such as payment history and debt-to-income ratios. AI models can incorporate a much wider range of variables, including utility payments, rental history, and even social media behavior. Proponents argue this leads to more accurate assessments, particularly for individuals with limited credit history. Critics, however, raise concerns about privacy and the potential for algorithmic bias.\n\nRobo-advisors represent yet another AI application. These automated platforms provide investment advice and portfolio management at a fraction of the cost of traditional financial advisors. While they have democratized access to investment management, some financial experts caution that robo-advisors may not perform well during periods of market volatility, when human judgment and experience are most valuable.\n\nDespite these advances, the integration of AI in finance faces regulatory hurdles. Governments and regulatory bodies are still grappling with how to oversee AI-driven financial services. Questions about accountability, transparency, and consumer protection remain unresolved. As AI continues to evolve, the financial industry will need to balance innovation with responsibility.",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-s3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What is the main topic of the passage?",
+            "options": ["The history of banking", "How AI is transforming the financial services industry", "How to invest in AI companies", "The dangers of online banking"],
+            "answer": "How AI is transforming the financial services industry",
+            "explanation": "The passage discusses various ways AI is being applied across the financial sector."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How much have AI systems reduced false positives in fraud detection?",
+            "options": ["Up to 30%", "Up to 40%", "Up to 50%", "Up to 60%"],
+            "answer": "Up to 50%",
+            "explanation": "The passage states that major banks report AI has reduced false positives by up to 50%."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What advantage do AI credit scoring models have over conventional ones?",
+            "options": ["They are faster to compute", "They can incorporate a wider range of variables", "They are cheaper to implement", "They are always more accurate"],
+            "answer": "They can incorporate a wider range of variables",
+            "explanation": "The passage states AI models can incorporate a much wider range of variables, including utility payments, rental history, and social media behavior."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What concern do critics raise about AI credit scoring?",
+            "options": ["It is too expensive", "Privacy and potential algorithmic bias", "It is too slow", "It favors large banks"],
+            "answer": "Privacy and potential algorithmic bias",
+            "explanation": "Critics raise concerns about privacy and the potential for algorithmic bias."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What do robo-advisors provide?",
+            "options": ["Only tax advice", "Investment advice and portfolio management at lower cost", "Banking services", "Insurance recommendations"],
+            "answer": "Investment advice and portfolio management at lower cost",
+            "explanation": "The passage states robo-advisors provide investment advice and portfolio management at a fraction of the cost of traditional advisors."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q6",
+            "number": 6,
+            "type": "mcq",
+            "text": "What limitation of robo-advisors is mentioned?",
+            "options": ["They are too expensive", "They may not perform well during market volatility", "They cannot manage large portfolios", "They are illegal in most countries"],
+            "answer": "They may not perform well during market volatility",
+            "explanation": "The passage states experts caution that robo-advisors may not perform well during periods of market volatility."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q7",
+            "number": 7,
+            "type": "mcq",
+            "text": "What regulatory challenges does AI in finance face?",
+            "options": ["No regulations exist", "Questions about accountability, transparency, and consumer protection", "AI is banned in finance", "Only international regulations apply"],
+            "answer": "Questions about accountability, transparency, and consumer protection",
+            "explanation": "The passage states that questions about accountability, transparency, and consumer protection remain unresolved."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q8",
+            "number": 8,
+            "type": "mcq",
+            "text": "What did traditional fraud detection systems rely on?",
+            "options": ["AI algorithms", "Rule-based algorithms with predefined criteria", "Human judgment only", "Random screening"],
+            "answer": "Rule-based algorithms with predefined criteria",
+            "explanation": "The passage states traditional systems relied on rule-based algorithms that flagged suspicious transactions based on predefined criteria."
+          },
+          {
+            "id": "toeic-r3-p3-s3-q9",
+            "number": 9,
+            "type": "mcq",
+            "text": "What does the passage suggest about the future of AI in finance?",
+            "options": ["AI will replace all human workers", "The industry must balance innovation with responsibility", "AI will be banned", "AI will have no significant impact"],
+            "answer": "The industry must balance innovation with responsibility",
+            "explanation": "The passage concludes that the financial industry will need to balance innovation with responsibility."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-d1",
+        "number": 9,
+        "title": "Part 7: Reading Comprehension — Double Passage 1 (Email + Notice)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: EMAIL ---\n\nFrom: sarah.miller@company.com\nTo: it-support@company.com\nSubject: Urgent: Computer Issue\nDate: March 3, 9:15 AM\n\nDear IT Support,\n\nI am experiencing a serious problem with my work computer. When I turned it on this morning, the screen displayed an error message saying 'Operating System Not Found.' I have tried restarting several times, but the same message appears each time.\n\nI have important files on the desktop that I need for a client presentation at 2:00 PM today. Is there any way to recover these files? Also, can someone from IT come to my office (Room 412) to look at the computer? I have a backup laptop, but it does not have the latest versions of the files.\n\nThis is very urgent. Please respond as soon as possible.\n\nSarah Miller\nSales Department\n\n--- PASSAGE 2: IT SUPPORT RESPONSE ---\n\nIT SUPPORT TICKET #5521\nDate: March 3\nSubmitted by: Sarah Miller, Sales Dept.\nIssue: 'Operating System Not Found' error\nPriority: High\nStatus: In Progress\n\nResponse from IT Support (March 3, 9:45 AM):\n\nDear Ms. Miller,\n\nWe have received your ticket and assigned it high priority. A technician will be at your office by 10:30 AM.\n\nRegarding your files: The 'Operating System Not Found' error typically indicates a hard drive issue, not necessarily data loss. In most cases, we can recover files from the drive. However, please do not attempt to restart the computer again, as this may worsen the problem.\n\nIn the meantime, we can provide you with a loaner laptop pre-loaded with standard software. If you have your files backed up on the network drive or cloud storage, you can access them from the loaner. Our technician will also attempt to recover files from your desktop.\n\nWe will keep you updated on the status of your computer.\n\nIT Support Team",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-d1-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What error message is Sarah seeing on her computer?",
+            "options": ["File Not Found", "Operating System Not Found", "Disk Full", "Network Error"],
+            "answer": "Operating System Not Found",
+            "explanation": "Sarah's email states the screen displays 'Operating System Not Found.'"
+          },
+          {
+            "id": "toeic-r3-p3-d1-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "When is Sarah's client presentation?",
+            "options": ["10:30 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
+            "answer": "2:00 PM",
+            "explanation": "Sarah states she needs the files for a client presentation at 2:00 PM today."
+          },
+          {
+            "id": "toeic-r3-p3-d1-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "When will the technician arrive at Sarah's office?",
+            "options": ["By 9:45 AM", "By 10:00 AM", "By 10:30 AM", "By 11:00 AM"],
+            "answer": "By 10:30 AM",
+            "explanation": "IT Support states a technician will be at her office by 10:30 AM."
+          },
+          {
+            "id": "toeic-r3-p3-d1-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What does IT Support advise Sarah NOT to do?",
+            "options": ["Use the loaner laptop", "Restart the computer again", "Call the client", "Leave her office"],
+            "answer": "Restart the computer again",
+            "explanation": "IT Support advises Sarah not to attempt to restart the computer again, as this may worsen the problem."
+          },
+          {
+            "id": "toeic-r3-p3-d1-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What does the 'Operating System Not Found' error typically indicate?",
+            "options": ["Data loss", "A hard drive issue", "A virus", "A network problem"],
+            "answer": "A hard drive issue",
+            "explanation": "IT Support states the error typically indicates a hard drive issue, not necessarily data loss."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-d2",
+        "number": 10,
+        "title": "Part 7: Reading Comprehension — Double Passage 2 (Advertisement + Email)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: ADVERTISEMENT ---\n\nPROFESSIONAL COOKING CLASSES AT CULINARY INSTITUTE\n\nUnlock your culinary potential at the Metro Culinary Institute! Our professional cooking classes are designed for aspiring chefs and home cooks alike.\n\nCourse Offerings:\n1. Fundamentals of French Cuisine — 6 weeks, $480\n   Tuesdays 6:00-9:00 PM, starts October 3\n   Learn classic techniques: sauces, pastry, and more\n\n2. Italian Cooking Masterclass — 4 weeks, $350\n   Wednesdays 6:00-9:00 PM, starts October 4\n   Pasta making, risotto, and regional specialties\n\n3. Asian Fusion — 5 weeks, $400\n   Thursdays 6:00-9:00 PM, starts October 5\n   Combine flavors from Japan, Korea, and Thailand\n\n4. Pastry & Desserts — 8 weeks, $600\n   Saturdays 10:00 AM-1:00 PM, starts October 7\n   Cakes, tarts, breads, and plated desserts\n\nAll courses include ingredients, use of professional equipment, and a recipe booklet. Classes are limited to 12 students. A certificate of completion is awarded at the end of each course.\n\nEarly bird discount: Register by September 15 and save 15%.\n\nCall 555-0177 or visit www.metroculinary.com.\n\n--- PASSAGE 2: EMAIL ---\n\nFrom: info@metroculinary.com\nTo: james.wilson@email.com\nSubject: Your Registration Confirmation\nDate: September 12\n\nDear Mr. Wilson,\n\nThank you for registering for the Italian Cooking Masterclass. Your registration has been confirmed.\n\nCourse: Italian Cooking Masterclass\nStart Date: October 4\nSchedule: Wednesdays, 6:00-9:00 PM, for 4 weeks\nRoom: Kitchen Lab 3\nInstructor: Chef Marco Rossi\n\nAmount Charged: $297.50 (early bird discount applied)\nPayment Method: Credit Card (Mastercard ending in 8821)\n\nWhat to bring:\n- Comfortable closed-toe shoes\n- Apron (provided if you don't have one)\n- Container for taking food home\n\nPlease arrive 15 minutes early on the first day for orientation. If you need to miss a class, please notify us in advance. Make-up sessions are not guaranteed but may be arranged based on availability.\n\nWe look forward to cooking with you!\n\nMetro Culinary Institute",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-d2-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "How much does the Italian Cooking Masterclass cost without the discount?",
+            "options": ["$297.50", "$350", "$400", "$480"],
+            "answer": "$350",
+            "explanation": "The advertisement lists the Italian Cooking Masterclass at $350 for 4 weeks."
+          },
+          {
+            "id": "toeic-r3-p3-d2-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "How much was James Wilson charged?",
+            "options": ["$297.50", "$350", "$400", "$480"],
+            "answer": "$297.50",
+            "explanation": "The email confirms James was charged $297.50 with the early bird discount applied."
+          },
+          {
+            "id": "toeic-r3-p3-d2-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Who is the instructor for the Italian Cooking Masterclass?",
+            "options": ["Chef Marco Rossi", "Chef James Wilson", "Chef Sarah Miller", "Not specified"],
+            "answer": "Chef Marco Rossi",
+            "explanation": "The email states the instructor is Chef Marco Rossi."
+          },
+          {
+            "id": "toeic-r3-p3-d2-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What should students bring to the class?",
+            "options": ["Their own ingredients", "Comfortable closed-toe shoes and a container for food", "A chef's knife set", "Nothing — everything is provided"],
+            "answer": "Comfortable closed-toe shoes and a container for food",
+            "explanation": "The email lists comfortable closed-toe shoes, an apron (provided if needed), and a container for taking food home."
+          },
+          {
+            "id": "toeic-r3-p3-d2-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is the maximum number of students per class?",
+            "options": ["8", "10", "12", "15"],
+            "answer": "12",
+            "explanation": "The advertisement states classes are limited to 12 students."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-d3",
+        "number": 11,
+        "title": "Part 7: Reading Comprehension — Double Passage 3 (Article + Memo)",
+        "difficulty": "C1",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: ARTICLE ---\n\nTHE SHIFT TOWARD SUSTAINABLE PACKAGING\n\nBy Laura Bennett, Environmental Correspondent\n\nConsumer goods companies are facing increasing pressure to adopt sustainable packaging solutions. With growing awareness of plastic pollution and its environmental impact, both regulators and consumers are demanding change.\n\nSeveral major brands have already made significant commitments. Unilever has pledged to make all packaging recyclable, reusable, or compostable by 2025. Procter & Gamble has introduced refillable product lines, and Nestlé has invested heavily in biodegradable materials. These initiatives reflect a broader industry trend toward circular packaging — systems where materials are reused rather than discarded.\n\nThe transition, however, is not without challenges. Sustainable packaging materials are often more expensive than conventional plastics. Biodegradable alternatives may require specific composting conditions that are not widely available. Additionally, some eco-friendly materials have shorter shelf lives or may not provide the same level of product protection.\n\nDespite these obstacles, the market for sustainable packaging is growing rapidly. According to industry analysts, the global market is expected to reach $412 billion by 2027, up from $289 billion in 2022. Government regulations, particularly in Europe, are accelerating this growth by mandating reductions in single-use plastics.\n\nConsumers play a crucial role in this transition. Studies show that 73% of consumers are willing to pay more for products with sustainable packaging. However, there remains a gap between intention and action — many consumers say they prefer eco-friendly options but do not consistently choose them at the point of purchase.\n\n--- PASSAGE 2: MEMO ---\n\nMEMORANDUM\nTo: Product Development Team\nFrom: VP of Sustainability\nDate: June 18\nSubject: New Packaging Initiative\n\nFollowing the industry trends outlined in the attached article, our company is launching a comprehensive packaging redesign initiative. The goal is to transition 80% of our product line to sustainable packaging within three years.\n\nPhase 1 (Year 1): Audit current packaging materials and identify the top 10 products for priority redesign. Budget: $500,000.\n\nPhase 2 (Year 2): Develop and test new packaging prototypes. Conduct consumer testing to ensure product quality is maintained. Budget: $750,000.\n\nPhase 3 (Year 3): Roll out new packaging across all priority products and begin transition of remaining products. Budget: $1,200,000.\n\nKey requirements for new packaging:\n- Must be recyclable or compostable\n- Must maintain product shelf life\n- Must not increase retail price by more than 5%\n- Must be sourced from suppliers with verified sustainability certifications\n\nThe Product Development Team will lead this initiative, with support from Marketing and Supply Chain departments. A project kickoff meeting is scheduled for July 1 at 10:00 AM in the main conference room.",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-d3-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What has Unilever pledged regarding packaging?",
+            "options": ["To eliminate all packaging", "To make all packaging recyclable, reusable, or compostable by 2025", "To use only glass containers", "To reduce packaging by 50%"],
+            "answer": "To make all packaging recyclable, reusable, or compostable by 2025",
+            "explanation": "The article states Unilever has pledged to make all packaging recyclable, reusable, or compostable by 2025."
+          },
+          {
+            "id": "toeic-r3-p3-d3-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What is the expected global market size for sustainable packaging by 2027?",
+            "options": ["$289 billion", "$350 billion", "$412 billion", "$500 billion"],
+            "answer": "$412 billion",
+            "explanation": "The article states the global market is expected to reach $412 billion by 2027."
+          },
+          {
+            "id": "toeic-r3-p3-d3-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What percentage of consumers are willing to pay more for sustainable packaging?",
+            "options": ["53%", "63%", "73%", "83%"],
+            "answer": "73%",
+            "explanation": "The article states that 73% of consumers are willing to pay more for products with sustainable packaging."
+          },
+          {
+            "id": "toeic-r3-p3-d3-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What is the company's goal for the packaging initiative?",
+            "options": ["To transition 50% of products in 2 years", "To transition 80% of products in 3 years", "To transition 100% of products in 5 years", "To transition 60% of products in 1 year"],
+            "answer": "To transition 80% of products in 3 years",
+            "explanation": "The memo states the goal is to transition 80% of the product line to sustainable packaging within three years."
+          },
+          {
+            "id": "toeic-r3-p3-d3-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is the budget for Phase 2 of the initiative?",
+            "options": ["$500,000", "$750,000", "$1,200,000", "$2,450,000"],
+            "answer": "$750,000",
+            "explanation": "The memo states Phase 2 has a budget of $750,000 for developing and testing new packaging prototypes."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-d4",
+        "number": 12,
+        "title": "Part 7: Reading Comprehension — Double Passage 4 (Notice + Email)",
+        "difficulty": "B2",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: NOTICE ---\n\nOFFICE RELOCATION NOTICE\n\nPlease be advised that the Accounting and Finance departments will be relocating to the newly renovated 8th floor of the East Wing. The move is scheduled for the weekend of November 18-19.\n\nNew Office Layout:\n- Accounting: Suites 801-805\n- Finance: Suites 806-810\n- Shared conference room: Room 815\n- Break room: Room 820\n\nDuring the move:\n- IT will disconnect and reconnect all equipment. Please leave computers, monitors, and phones at your current workstation.\n- Personal items should be taken home on Friday, November 17.\n- Boxes for packing desk items will be distributed on Wednesday, November 15.\n- The departments will be fully operational at the new location by Monday, November 20.\n\nUpdated phone extensions will be distributed on November 20. In the interim, calls will be forwarded to mobile phones.\n\n--- PASSAGE 2: EMAIL ---\n\nFrom: facilities@company.com\nTo: accounting-finance@company.com\nSubject: Moving Day Instructions\nDate: November 14\n\nDear Colleagues,\n\nAs we prepare for the upcoming move, please follow these instructions:\n\n1. Label all boxes with your name, current room number, and new room number. Labels will be provided with the boxes.\n\n2. Pack all non-essential desk items by Thursday, November 16. Essential items needed for Friday work should remain on your desk.\n\n3. Back up all computer files to the network drive by November 16. IT will not be responsible for data lost during the move.\n\n4. Clear all food and perishable items from your desk and the break room refrigerator.\n\n5. If you have plants, take them home on Friday. The moving company will not transport plants.\n\n6. On Monday, November 20, report directly to the 8th floor. A floor plan will be posted near the elevators to help you locate your new workstation.\n\n7. A welcome breakfast will be served in Room 820 (break room) at 8:30 AM on November 20.\n\nIf you have any questions, please contact the Facilities Office at extension 3300.",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-d4-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "Where are the Accounting and Finance departments relocating to?",
+            "options": ["The 5th floor of the West Wing", "The 8th floor of the East Wing", "The 3rd floor of the North Wing", "A new building"],
+            "answer": "The 8th floor of the East Wing",
+            "explanation": "The notice states the departments are relocating to the newly renovated 8th floor of the East Wing."
+          },
+          {
+            "id": "toeic-r3-p3-d4-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "When will the departments be fully operational at the new location?",
+            "options": ["Friday, November 17", "Saturday, November 18", "Sunday, November 19", "Monday, November 20"],
+            "answer": "Monday, November 20",
+            "explanation": "The notice states the departments will be fully operational at the new location by Monday, November 20."
+          },
+          {
+            "id": "toeic-r3-p3-d4-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "What should employees do with their computer files before the move?",
+            "options": ["Print all files", "Back up to the network drive by November 16", "Email files to themselves", "Nothing — IT handles everything"],
+            "answer": "Back up to the network drive by November 16",
+            "explanation": "The email instructs employees to back up all computer files to the network drive by November 16."
+          },
+          {
+            "id": "toeic-r3-p3-d4-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "What will NOT be transported by the moving company?",
+            "options": ["Computers", "Monitors", "Plants", "Boxes"],
+            "answer": "Plants",
+            "explanation": "The email states the moving company will not transport plants — employees should take them home on Friday."
+          },
+          {
+            "id": "toeic-r3-p3-d4-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What is scheduled for 8:30 AM on November 20?",
+            "options": ["A staff meeting", "A welcome breakfast in Room 820", "An orientation session", "A training workshop"],
+            "answer": "A welcome breakfast in Room 820",
+            "explanation": "The email states a welcome breakfast will be served in Room 820 (break room) at 8:30 AM on November 20."
+          }
+        ]
+      },
+      {
+        "id": "toeic-r3-p3-d5",
+        "number": 13,
+        "title": "Part 7: Reading Comprehension — Double Passage 5 (Form + Email)",
+        "difficulty": "C1",
+        "instructions": "Read the two passages and answer the questions.",
+        "text": "--- PASSAGE 1: CUSTOMER FEEDBACK FORM ---\n\nPRODUCT FEEDBACK SURVEY\nProduct: AeroClean Air Purifier (Model AC-700)\nDate of Purchase: July 15\nCustomer: Robert Chen\n\nOverall Rating: ★★★☆☆ (3/5)\n\nPerformance: The air purifier works well in small rooms (up to 200 sq ft). It effectively reduces dust and allergens. However, it struggles in larger spaces. I placed it in my living room (450 sq ft) and noticed minimal improvement.\n\nNoise Level: On the lowest setting, it is very quiet. On the highest setting, it is quite loud — too loud to watch TV comfortably. A medium setting works well for daily use.\n\nFilter Replacement: The filter needs replacing every 6 months. Replacement filters cost $45 each, which seems expensive for a product in this price range. The indicator light that signals filter replacement is helpful.\n\nDesign: The design is sleek and modern. It fits well in most decors. The touch controls are responsive.\n\nValue for Money: At $199, it is reasonably priced for a small-room purifier but overpriced for larger spaces. I would recommend it for bedrooms or small offices.\n\n--- PASSAGE 2: EMAIL ---\n\nFrom: support@aeroclean.com\nTo: robert.chen@email.com\nSubject: Thank You for Your Feedback\nDate: August 2\n\nDear Mr. Chen,\n\nThank you for taking the time to share your feedback on the AeroClean AC-700. We value all customer input and use it to improve our products.\n\nRegarding your concerns:\n\n1. Room Size: The AC-700 is designed for rooms up to 250 sq ft. For larger spaces like your living room, we recommend our AC-1200 model, which covers up to 600 sq ft and costs $299.\n\n2. Noise Level: We acknowledge that the highest setting is loud. Our engineering team is working on a quieter motor for the next generation. In the meantime, the medium setting provides a good balance of performance and noise.\n\n3. Filter Cost: We offer a subscription plan that reduces filter costs by 20%. With the subscription, filters are delivered automatically every 6 months at $36 each instead of $45.\n\nAs a thank you for your feedback, we would like to offer you a $25 credit toward your next filter purchase. Use code FEEDBACK25 at checkout on our website.\n\nWe hope you continue to enjoy your AeroClean purifier.\n\nBest regards,\nAeroClean Customer Support",
+        "questions": [
+          {
+            "id": "toeic-r3-p3-d5-q1",
+            "number": 1,
+            "type": "mcq",
+            "text": "What overall rating did Robert give the air purifier?",
+            "options": ["5 out of 5 stars", "4 out of 5 stars", "3 out of 5 stars", "2 out of 5 stars"],
+            "answer": "3 out of 5 stars",
+            "explanation": "Robert rated the product 3 out of 5 stars (★★★☆☆)."
+          },
+          {
+            "id": "toeic-r3-p3-d5-q2",
+            "number": 2,
+            "type": "mcq",
+            "text": "What is the maximum room size the AC-700 is designed for?",
+            "options": ["200 sq ft", "250 sq ft", "450 sq ft", "600 sq ft"],
+            "answer": "250 sq ft",
+            "explanation": "The email states the AC-700 is designed for rooms up to 250 sq ft."
+          },
+          {
+            "id": "toeic-r3-p3-d5-q3",
+            "number": 3,
+            "type": "mcq",
+            "text": "Which model does AeroClean recommend for larger spaces?",
+            "options": ["AC-500", "AC-700", "AC-1000", "AC-1200"],
+            "answer": "AC-1200",
+            "explanation": "The email recommends the AC-1200 model for larger spaces, covering up to 600 sq ft."
+          },
+          {
+            "id": "toeic-r3-p3-d5-q4",
+            "number": 4,
+            "type": "mcq",
+            "text": "How much does a filter cost with the subscription plan?",
+            "options": ["$25", "$36", "$45", "$50"],
+            "answer": "$36",
+            "explanation": "The email states the subscription plan reduces filter costs to $36 each (from $45)."
+          },
+          {
+            "id": "toeic-r3-p3-d5-q5",
+            "number": 5,
+            "type": "mcq",
+            "text": "What discount code did AeroClean provide to Robert?",
+            "options": ["CREDIT25", "FEEDBACK25", "FILTER25", "DISCOUNT25"],
+            "answer": "FEEDBACK25",
+            "explanation": "The email provides the code FEEDBACK25 for a $25 credit toward the next filter purchase."
+          }
+        ]
+      }
+    ]
+  }
+]

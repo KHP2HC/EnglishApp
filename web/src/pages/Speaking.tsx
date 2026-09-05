@@ -353,33 +353,66 @@ export function Speaking() {
       <Card>
         <CardContent className="py-4 space-y-2">
           <p className="text-sm font-medium text-gray-400">
-            {(user?.target_exam || 'IELTS') === 'VSTEP'
-              ? 'VSTEP Speaking Test Format:'
-              : 'IELTS Speaking Test Format:'}
+            {(() => {
+              const exam = user?.target_exam || 'IELTS'
+              if (exam === 'VSTEP') return 'VSTEP Speaking Test Format:'
+              if (exam === 'TOEIC') return 'TOEIC Speaking Test Format:'
+              return 'IELTS Speaking Test Format:'
+            })()}
           </p>
-          <div className="grid grid-cols-3 gap-2 text-xs">
-            <div className="rounded-lg border border-border p-2">
-              <p className="font-medium text-accent">Part 1</p>
-              <p className="text-gray-400">
-                {user?.target_exam === 'VSTEP' ? 'Social Interaction' : 'Introduction & Interview'}
-              </p>
-              <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '4-5 min'}</p>
+          {user?.target_exam === 'TOEIC' ? (
+            <div className="grid grid-cols-5 gap-2 text-xs">
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 1</p>
+                <p className="text-gray-400">Read Aloud</p>
+                <p className="text-gray-500">45s × 2</p>
+              </div>
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 2</p>
+                <p className="text-gray-400">Describe a Photo</p>
+                <p className="text-gray-500">45s × 2</p>
+              </div>
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 3</p>
+                <p className="text-gray-400">Respond to Questions</p>
+                <p className="text-gray-500">15-30s × 3</p>
+              </div>
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 4</p>
+                <p className="text-gray-400">Use Provided Info</p>
+                <p className="text-gray-500">15s × 3</p>
+              </div>
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 5</p>
+                <p className="text-gray-400">Express an Opinion</p>
+                <p className="text-gray-500">60s</p>
+              </div>
             </div>
-            <div className="rounded-lg border border-border p-2">
-              <p className="font-medium text-accent">Part 2</p>
-              <p className="text-gray-400">
-                {user?.target_exam === 'VSTEP' ? 'Solution Discussion' : 'Long Turn (Cue Card)'}
-              </p>
-              <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '3-4 min'}</p>
+          ) : (
+            <div className="grid grid-cols-3 gap-2 text-xs">
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 1</p>
+                <p className="text-gray-400">
+                  {user?.target_exam === 'VSTEP' ? 'Social Interaction' : 'Introduction & Interview'}
+                </p>
+                <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '4-5 min'}</p>
+              </div>
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 2</p>
+                <p className="text-gray-400">
+                  {user?.target_exam === 'VSTEP' ? 'Solution Discussion' : 'Long Turn (Cue Card)'}
+                </p>
+                <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '3-4 min'}</p>
+              </div>
+              <div className="rounded-lg border border-border p-2">
+                <p className="font-medium text-accent">Part 3</p>
+                <p className="text-gray-400">
+                  {user?.target_exam === 'VSTEP' ? 'Topic Development' : 'Discussion'}
+                </p>
+                <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '4-5 min'}</p>
+              </div>
             </div>
-            <div className="rounded-lg border border-border p-2">
-              <p className="font-medium text-accent">Part 3</p>
-              <p className="text-gray-400">
-                {user?.target_exam === 'VSTEP' ? 'Topic Development' : 'Discussion'}
-              </p>
-              <p className="text-gray-500">{user?.target_exam === 'VSTEP' ? '4 min' : '4-5 min'}</p>
-            </div>
-          </div>
+          )}
         </CardContent>
       </Card>
     </div>
