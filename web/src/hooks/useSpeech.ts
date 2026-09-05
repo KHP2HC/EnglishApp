@@ -88,63 +88,72 @@ function classifyVoiceGender(voiceName: string): Gender {
 
 // ── Speaker → Voice Mapping ──────────────────────────────────────────
 
+interface SpeakerVoicePlan {
+  voice: SpeechSynthesisVoice
+  pitch: number
+}
+
+// Pitch values used to differentiate speakers that share the same voice.
+// Spans a natural-sounding range (0.7 = deep, 1.3 = higher).
+const PITCH_STEPS = [1.0, 0.8, 1.2, 0.7, 1.3, 0.9, 1.1, 0.85, 1.15, 0.75]
+
 /**
- * Map each unique speaker to a distinct SpeechSynthesisVoice when possible.
- * English voices are filtered and assigned by gender preference.
+ * Assign a distinct voice + pitch to every unique speaker.
+ *
+ * Strategy:
+ *  1. Filter for English voices (fall back to all voices if none).
+ *  2. Sort so gender-matched voices come first for each speaker.
+ *  3. Give each speaker a unique voice from the pool, cycling when
+ *     the pool is exhausted.  When two speakers must share a voice,
+ *     assign different pitch values so they still sound distinct.
  */
 function mapSpeakersToVoices(
   speakers: string[],
   availableVoices: SpeechSynthesisVoice[]
-): Map<string, SpeechSynthesisVoice> {
+): Map<string, SpeakerVoicePlan> {
   const englishVoices = availableVoices.filter((v) =>
     v.lang.toLowerCase().startsWith('en')
   )
   const pool = englishVoices.length > 0 ? englishVoices : availableVoices
 
-  const maleVoices = pool.filter((v) => classifyVoiceGender(v.name) === 'male')
-  const femaleVoices = pool.filter((v) => classifyVoiceGender(v.name) === 'female')
-  const neutralVoices = pool.filter(
-    (v) => classifyVoiceGender(v.name) === 'neutral'
-  )
+  // If we have no voices at all, return empty map (caller falls back to default)
+  if (pool.length === 0) return new Map()
 
-  const assignment = new Map<string, SpeechSynthesisVoice>()
+  const assignment = new Map<string, SpeakerVoicePlan>()
   const usedVoices = new Set<SpeechSynthesisVoice>()
 
-  const pickFrom = (list: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined => {
-    return list.find((v) => !usedVoices.has(v)) ?? list[0]
-  }
+  // Track how many speakers have been assigned each voice so we can
+  // give them different pitches when voices are reused.
+  const voiceUseCount = new Map<SpeechSynthesisVoice, number>()
 
-  // First pass: assign gender-matched voices
   for (const speaker of speakers) {
     const gender = guessGender(speaker)
-    let chosen: SpeechSynthesisVoice | undefined
 
-    if (gender === 'male' && maleVoices.length > 0) {
-      chosen = pickFrom(maleVoices)
-    } else if (gender === 'female' && femaleVoices.length > 0) {
-      chosen = pickFrom(femaleVoices)
-    }
+    // Build a preference-ordered list of voices for this speaker:
+    // gender-matched first, then neutral, then the rest.
+    const preferred = pool
+      .map((v) => ({
+        voice: v,
+        gender: classifyVoiceGender(v.name),
+        used: usedVoices.has(v),
+      }))
+      .sort((a, b) => {
+        // Unused voices first
+        if (a.used !== b.used) return a.used ? 1 : -1
+        // Then gender match
+        const aMatch = a.gender === gender ? 0 : 1
+        const bMatch = b.gender === gender ? 0 : 1
+        if (aMatch !== bMatch) return aMatch - bMatch
+        return 0
+      })
 
-    if (chosen) {
-      assignment.set(speaker, chosen)
-      usedVoices.add(chosen)
-    }
-  }
+    const chosen = preferred[0].voice
+    const useIdx = voiceUseCount.get(chosen) ?? 0
+    const pitch = PITCH_STEPS[useIdx % PITCH_STEPS.length]
 
-  // Second pass: fill in any speakers not yet assigned (neutral or fallback)
-  const fallbackPool = [
-    ...neutralVoices.filter((v) => !usedVoices.has(v)),
-    ...pool.filter((v) => !usedVoices.has(v)),
-  ]
-  let fallbackIdx = 0
-
-  for (const speaker of speakers) {
-    if (assignment.has(speaker)) continue
-    const chosen =
-      fallbackPool[fallbackIdx] ?? pool[fallbackIdx % pool.length]
-    fallbackIdx++
-    assignment.set(speaker, chosen)
+    assignment.set(speaker, { voice: chosen, pitch })
     usedVoices.add(chosen)
+    voiceUseCount.set(chosen, useIdx + 1)
   }
 
   return assignment
@@ -155,7 +164,7 @@ function mapSpeakersToVoices(
 export function useSpeech() {
   const [speaking, setSpeaking] = useState(false)
   const queueRef = useRef<SpeechSegment[]>([])
-  const voiceMapRef = useRef<Map<string, SpeechSynthesisVoice>>(new Map())
+  const voiceMapRef = useRef<Map<string, SpeakerVoicePlan>>(new Map())
   const rateRef = useRef(0.85)
   const cancelledRef = useRef(false)
   const voicesRef = useRef<SpeechSynthesisVoice[]>([])
@@ -191,9 +200,10 @@ export function useSpeech() {
     utterance.lang = 'en-US'
     utterance.rate = rateRef.current
 
-    const voice = voiceMapRef.current.get(next.speaker)
-    if (voice) {
-      utterance.voice = voice
+    const plan = voiceMapRef.current.get(next.speaker)
+    if (plan) {
+      utterance.voice = plan.voice
+      utterance.pitch = plan.pitch
     }
 
     utterance.onend = () => {
@@ -241,12 +251,32 @@ export function useSpeech() {
 
       // Multi-speaker conversation path
       // Use cached voices (getVoices() may return [] if called too early)
-      const availableVoices =
+      let availableVoices =
         voicesRef.current.length > 0
           ? voicesRef.current
           : window.speechSynthesis.getVoices()
 
+      // If voices are still empty, trigger a synchronous fetch by calling
+      // getVoices() again after a brief tick — some browsers need this.
+      if (availableVoices.length === 0) {
+        window.speechSynthesis.getVoices()
+        availableVoices = window.speechSynthesis.getVoices()
+      }
+
       voiceMapRef.current = mapSpeakersToVoices(speakers, availableVoices)
+
+      // Debug: log the assignment so we can verify distinct voices
+      console.log(
+        '[useSpeech] Multi-speaker playback:',
+        speakers.length,
+        'speakers →',
+        [...voiceMapRef.current.entries()].map(([name, plan]) => ({
+          speaker: name,
+          voice: plan.voice.name,
+          pitch: plan.pitch,
+        }))
+      )
+
       queueRef.current = [...segments]
 
       setSpeaking(true)
