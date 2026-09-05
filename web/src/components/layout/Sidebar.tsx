@@ -1,8 +1,8 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Home, Brain, BookOpen, Headphones, PenLine, Mic,
-  BarChart3, Calendar, FlaskConical, Settings as SettingsIcon, ChevronLeft
+  BarChart3, Calendar, FlaskConical, Settings as SettingsIcon, ChevronLeft, LogOut
 } from 'lucide-react'
 import { useSettingsStore } from '@/stores/settings.store'
 import { useAuthStore } from '@/stores/auth.store'
@@ -25,10 +25,15 @@ const navItems = [
 
 export function Sidebar() {
   const { sidebarCollapsed, toggleSidebar } = useSettingsStore()
-  const { user } = useAuthStore()
+  const { user, signOut } = useAuthStore()
   const location = useLocation()
+  const navigate = useNavigate()
 
   const levelInfo = getLevel(user?.total_xp || 0)
+
+  const handleSignOut = async () => {
+    await signOut()
+  }
 
   return (
     <motion.aside
@@ -89,17 +94,35 @@ export function Sidebar() {
         })}
       </nav>
 
-      {/* Level badge */}
+      {/* Level badge + user info */}
       <div className="p-3 border-t border-border">
-        <div className={cn('flex items-center gap-2', sidebarCollapsed && 'justify-center')}>
+        <div className={cn('flex items-center gap-2 mb-2', sidebarCollapsed && 'justify-center')}>
           <span className="text-xl">{levelInfo.emoji}</span>
           {!sidebarCollapsed && (
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <p className="text-xs text-gray-400">{user?.total_xp || 0} XP</p>
               <p className="text-xs font-medium text-white truncate">{levelInfo.name}</p>
             </div>
           )}
+          {!sidebarCollapsed && (
+            <button
+              onClick={handleSignOut}
+              className="text-gray-500 hover:text-error transition-colors"
+              title="Sign out"
+            >
+              <LogOut className="h-4 w-4" />
+            </button>
+          )}
         </div>
+        {sidebarCollapsed && (
+          <button
+            onClick={handleSignOut}
+            className="flex items-center justify-center w-full py-1 text-gray-500 hover:text-error transition-colors"
+            title="Sign out"
+          >
+            <LogOut className="h-4 w-4" />
+          </button>
+        )}
       </div>
 
       {/* Collapse toggle */}

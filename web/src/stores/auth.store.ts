@@ -61,6 +61,8 @@ export const useAuthStore = create<AuthState>()(
         }
         signOutLocal()
         set({ user: null, session: null })
+        // Redirect to login page
+        window.location.href = '/auth'
       },
       onLocalAuth: async (userId: string, name: string, email: string) => {
         // Load or create local profile

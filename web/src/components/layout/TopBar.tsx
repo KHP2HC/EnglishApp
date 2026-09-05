@@ -1,10 +1,10 @@
-import { Flame } from 'lucide-react'
+import { Flame, LogOut } from 'lucide-react'
 import { useAuthStore } from '@/stores/auth.store'
 import { useOnlineStatus } from '@/hooks/useNotifications'
 import { getLevel } from '@/lib/srs'
 
 export function TopBar() {
-  const { user } = useAuthStore()
+  const { user, signOut } = useAuthStore()
   const online = useOnlineStatus()
   const level = user ? getLevel(user.total_xp || 0) : null
 
@@ -29,6 +29,13 @@ export function TopBar() {
             <span className="font-bold">{user.streak_days || 0}</span>
           </div>
         )}
+        <button
+          onClick={() => signOut()}
+          className="text-gray-500 hover:text-error transition-colors"
+          title="Sign out"
+        >
+          <LogOut className="h-4 w-4" />
+        </button>
         <span className="text-2xl">{user?.avatar_emoji || '🧑'}</span>
       </div>
     </header>

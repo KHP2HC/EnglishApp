@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { supabase } from '@/lib/supabase'
 import { useAuthStore } from '@/stores/auth.store'
+import { getSession } from '@/lib/localAuth'
 import { AppLayout } from '@/components/layout/AppLayout'
 import { Landing } from '@/pages/Landing'
 import { Auth } from '@/pages/Auth'
@@ -24,20 +25,18 @@ function isSupabaseConfigured(): boolean {
   return !!url && !url.includes('placeholder')
 }
 
-function isApiConfigured(): boolean {
-  const url = import.meta.env.VITE_API_BASE_URL
-  return !!url && !url.includes('placeholder')
-}
-
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { session, loading } = useAuthStore()
   const location = useLocation()
 
-  // If Supabase is not configured, allow direct access (demo mode)
-  if (!isSupabaseConfigured()) return <>{children}</>
-
   if (loading) return <div className="flex items-center justify-center h-screen text-gray-400">Loading…</div>
-  if (!session) return <Navigate to="/auth" state={{ from: location }} replace />
+
+  // Check for either a Supabase session or a local session
+  const hasLocalSession = !!getSession()
+  if (!session && !hasLocalSession) {
+    return <Navigate to="/auth" state={{ from: location }} replace />
+  }
+
   return <>{children}</>
 }
 
@@ -45,7 +44,14 @@ export default function App() {
   const { setSession, setUser, setLoading, refreshProfile } = useAuthStore()
 
   useEffect(() => {
-    // If Supabase is not configured, use demo mode immediately
+    // Check for local session first (works without Supabase)
+    const localSession = getSession()
+    if (localSession) {
+      refreshProfile().then(() => setLoading(false))
+      return
+    }
+
+    // If Supabase is not configured, use demo mode
     if (!isSupabaseConfigured()) {
       setLoading(false)
       refreshProfile()
@@ -74,11 +80,14 @@ export default function App() {
     return () => listener.subscription.unsubscribe()
   }, [])
 
+  // Check if any auth exists (local or Supabase)
+  const hasAuth = isSupabaseConfigured() || getSession()
+
   return (
     <Routes>
-      <Route path="/" element={isSupabaseConfigured() ? <Landing /> : <Navigate to="/app" replace />} />
-      <Route path="/auth" element={isSupabaseConfigured() ? <Auth /> : <Navigate to="/app" replace />} />
-      <Route path="/onboarding" element={isSupabaseConfigured() ? <Onboarding /> : <Navigate to="/app" replace />} />
+      <Route path="/" element={hasAuth ? <Landing /> : <Navigate to="/app" replace />} />
+      <Route path="/auth" element={hasAuth ? <Auth /> : <Navigate to="/app" replace />} />
+      <Route path="/onboarding" element={hasAuth ? <Onboarding /> : <Navigate to="/app" replace />} />
       <Route
         path="/app"
         element={
