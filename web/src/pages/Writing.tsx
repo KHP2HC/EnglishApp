@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useAuthStore } from '@/stores/auth.store'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { Loader2, Sparkles, Timer, ChevronDown } from 'lucide-react'
+import { Loader2, Sparkles, Timer, ChevronDown, CheckCircle2, AlertTriangle } from 'lucide-react'
 import { loadWritingTests, type WritingTest, type WritingSubTask } from '@/lib/seed-data'
 import { writingApi } from '@/api/writing'
 
@@ -17,6 +17,96 @@ interface AIFeedback {
   rewritten_paragraph?: string
   overall_tip?: string
   raw_feedback?: string
+}
+
+// ── Local fallback feedback (when API is unavailable) ───────────────
+
+function generateLocalFeedback(prompt: string, essay: string, minWords: number): AIFeedback {
+  const words = essay.split(/\s+/).filter(Boolean)
+  const wordCount = words.length
+  const sentences = essay.split(/[.!?]+/).filter((s) => s.trim().length > 0)
+  const sentenceCount = sentences.length
+  const avgSentenceLength = sentenceCount > 0 ? wordCount / sentenceCount : 0
+
+  // Simple grammar checks
+  const lowercaseEssay = essay.toLowerCase()
+  const hasCommaSplice = /,\s+(and|but|so|because|although)\b/.test(essay) && sentenceCount < wordCount / 15
+  const startsWithAnd = /^\s*(and|but|so|because)\b/i.test(essay)
+  const hasRunOn = avgSentenceLength > 30
+
+  // Vocabulary diversity
+  const uniqueWords = new Set(words.map((w) => w.toLowerCase().replace(/[^a-z']/g, '')))
+  const diversity = wordCount > 0 ? uniqueWords.size / wordCount : 0
+
+  // Linking words check
+  const linkers = ['however', 'therefore', 'moreover', 'furthermore', 'in addition', 'consequently', 'nevertheless', 'on the other hand', 'for instance', 'for example', 'such as', 'in contrast', 'whereas', 'while', 'although', 'despite']
+  const linkerCount = linkers.filter((l) => lowercaseEssay.includes(l)).length
+
+  // Scoring (rough estimates)
+  const meetsMin = wordCount >= minWords
+  const taskScore = meetsMin ? 6 : 4
+  const coherenceScore = linkerCount >= 3 ? 7 : linkerCount >= 1 ? 5 : 4
+  const lexicalScore = diversity > 0.6 ? 7 : diversity > 0.45 ? 6 : 5
+  const grammarScore = !hasRunOn && !startsWithAnd ? 6 : 4
+
+  const bandEstimate = Math.round(((taskScore + coherenceScore + lexicalScore + grammarScore) / 4) * 10) / 10
+
+  const corrections: { original: string; corrected: string; explanation: string }[] = []
+  if (startsWithAnd) {
+    corrections.push({
+      original: essay.match(/^\s*(And|But|So|Because)\b[^.]*\./)?.[0] || 'Starting sentence',
+      corrected: 'Consider rewriting without starting with a conjunction',
+      explanation: 'In formal writing, avoid starting sentences with "and", "but", "so", or "because". Use a more formal transition instead.',
+    })
+  }
+  if (hasRunOn) {
+    corrections.push({
+      original: `Long sentence (${Math.round(avgSentenceLength)} words avg)`,
+      corrected: 'Break into shorter sentences',
+      explanation: 'Your average sentence length is quite long. Try to keep sentences between 15-25 words for clarity.',
+    })
+  }
+
+  const suggestions: string[] = []
+  if (linkerCount < 3) {
+    suggestions.push('Use more linking words (however, therefore, moreover, in addition) to connect your ideas.')
+  }
+  if (diversity < 0.5) {
+    suggestions.push('Try to use a wider range of vocabulary — avoid repeating the same words.')
+  }
+  if (!meetsMin) {
+    suggestions.push(`Your essay is ${wordCount} words — you need at least ${minWords}. Develop your ideas further.`)
+  }
+
+  return {
+    band_estimate: bandEstimate,
+    task_achievement: {
+      score: taskScore,
+      feedback: meetsMin
+        ? `Your essay meets the minimum word count (${wordCount}/${minWords} words). ${sentenceCount > 3 ? 'You have a good number of developed points.' : 'Try to develop your points more fully with examples.'}`
+        : `Your essay is below the minimum word count (${wordCount}/${minWords} words). You need to write more to fully address the task.`,
+    },
+    coherence: {
+      score: coherenceScore,
+      feedback: `You used ${linkerCount} linking word(s). ${linkerCount >= 3 ? 'Good use of cohesive devices.' : 'Add more transitions to guide the reader through your arguments.'} ${sentenceCount > 0 ? `Your essay has ${sentenceCount} sentence(s) with an average of ${Math.round(avgSentenceLength)} words.` : ''}`,
+    },
+    lexical_resource: {
+      score: lexicalScore,
+      feedback: `Vocabulary diversity: ${Math.round(diversity * 100)}%. ${diversity > 0.6 ? 'Excellent range of vocabulary.' : diversity > 0.45 ? 'Good vocabulary, but could be more varied.' : 'Try to use synonyms and avoid repetition.'}`,
+      suggestions: suggestions.length > 0 ? suggestions : undefined,
+    },
+    grammar_range: {
+      score: grammarScore,
+      corrections: corrections.length > 0 ? corrections : [{
+        original: 'No major issues detected',
+        corrected: 'Continue practicing complex structures',
+        explanation: 'No obvious grammar errors were found by the local checker. For detailed grammar analysis, use the AI Feedback button when the API server is running.',
+      }],
+    },
+    overall_tip: suggestions.length > 0
+      ? suggestions[0]
+      : 'Good work! Focus on developing your arguments with specific examples and varied sentence structures.',
+  }
 }
 
 export function Writing() {
@@ -32,6 +122,30 @@ export function Writing() {
   const [secondsLeft, setSecondsLeft] = useState(0)
   const [timerActive, setTimerActive] = useState(false)
   const [showTestList, setShowTestList] = useState(false)
+  const [feedbackSource, setFeedbackSource] = useState<'ai' | 'local' | null>(null)
+  const autoSaveRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Load saved drafts from localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('writing-drafts')
+      if (saved) setEssays(JSON.parse(saved))
+    } catch { /* ignore */ }
+  }, [])
+
+  // Auto-save drafts to localStorage
+  const saveDraft = (taskId: string, text: string) => {
+    setEssays((prev) => {
+      const updated = { ...prev, [taskId]: text }
+      if (autoSaveRef.current) clearTimeout(autoSaveRef.current)
+      autoSaveRef.current = setTimeout(() => {
+        try {
+          localStorage.setItem('writing-drafts', JSON.stringify(updated))
+        } catch { /* ignore */ }
+      }, 1000)
+      return updated
+    })
+  }
 
   useEffect(() => {
     loadWritingTests()
@@ -65,6 +179,7 @@ export function Writing() {
   const wordCount = essay.split(/\s+/).filter(Boolean).length
   const minWords = task.min_words || 150
   const meetsMin = wordCount >= minWords
+  const wordProgress = Math.min(100, (wordCount / minWords) * 100)
 
   const fmtTime = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`
 
@@ -102,9 +217,21 @@ export function Writing() {
       })
 
       const fb = submission.ai_feedback as AIFeedback
-      setFeedback((f) => ({ ...f, [task.id]: fb }))
+      if (fb) {
+        setFeedback((f) => ({ ...f, [task.id]: fb }))
+        setFeedbackSource('ai')
+      } else {
+        // API returned no feedback — use local
+        const localFb = generateLocalFeedback(task.prompt, essay, minWords)
+        setFeedback((f) => ({ ...f, [task.id]: localFb }))
+        setFeedbackSource('local')
+      }
     } catch (err: any) {
-      setError(err.message || 'Failed to get feedback. Make sure the API server is running.')
+      // API failed — fall back to local analysis
+      const localFb = generateLocalFeedback(task.prompt, essay, minWords)
+      setFeedback((f) => ({ ...f, [task.id]: localFb }))
+      setFeedbackSource('local')
+      setError('API server unavailable — showing local analysis instead.')
     } finally {
       setLoading(false)
     }
@@ -118,7 +245,7 @@ export function Writing() {
         <h1 className="text-2xl font-bold font-heading">✍️ Writing Practice</h1>
         <div className={`flex items-center gap-2 font-mono font-bold ${secondsLeft < 60 && timerActive ? 'text-error animate-pulse' : 'text-warning'}`}>
           <Timer className="h-5 w-5" />
-          {fmtTime(secondsLeft)}
+          {timerActive ? fmtTime(secondsLeft) : '--:--'}
         </div>
       </div>
 
@@ -191,16 +318,26 @@ export function Writing() {
             <Label>Your Essay</Label>
             <Textarea
               value={essay}
-              onChange={(e) => setEssays((prev) => ({ ...prev, [task.id]: e.target.value }))}
+              onChange={(e) => saveDraft(task.id, e.target.value)}
               placeholder={`Write at least ${minWords} words…`}
               className="mt-1"
               rows={12}
             />
-            <div className="flex items-center justify-between mt-1">
-              <p className={`text-xs ${meetsMin ? 'text-success' : 'text-warning'}`}>
-                {wordCount} / {minWords} words minimum {meetsMin && '✓'}
-              </p>
-              <p className="text-xs text-gray-400">Suggested time: {task.time_minutes} min</p>
+            {/* Word count progress bar */}
+            <div className="mt-2 space-y-1">
+              <div className="flex items-center justify-between">
+                <p className={`text-xs flex items-center gap-1 ${meetsMin ? 'text-success' : 'text-warning'}`}>
+                  {meetsMin && <CheckCircle2 className="h-3 w-3" />}
+                  {wordCount} / {minWords} words minimum
+                </p>
+                <p className="text-xs text-gray-400">Suggested time: {task.time_minutes} min</p>
+              </div>
+              <div className="h-1.5 rounded-full bg-surface-dark overflow-hidden">
+                <div
+                  className={`h-full rounded-full transition-all ${meetsMin ? 'bg-success' : 'bg-warning'}`}
+                  style={{ width: `${wordProgress}%` }}
+                />
+              </div>
             </div>
           </div>
 
@@ -212,13 +349,27 @@ export function Writing() {
           )}
 
           {/* Submit for AI feedback */}
-          <Button onClick={getFeedback} disabled={loading || !essay.trim()}>
+          <Button onClick={getFeedback} disabled={loading || !essay.trim()} className="w-full">
             {loading ? (
               <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Analyzing…</>
             ) : (
               <><Sparkles className="h-4 w-4 mr-2" /> Get AI Feedback</>
             )}
           </Button>
+
+          {error && (
+            <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3">
+              <AlertTriangle className="h-4 w-4 text-warning flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-warning">{error}</p>
+            </div>
+          )}
+
+          {feedbackSource === 'local' && !error && (
+            <div className="flex items-start gap-2 rounded-lg border border-info/30 bg-info/10 p-3">
+              <AlertTriangle className="h-4 w-4 text-info flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-info">Showing local analysis. For full AI-powered feedback, ensure the API server is running.</p>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -255,14 +406,6 @@ export function Writing() {
         </Card>
       )}
 
-      {error && (
-        <Card>
-          <CardContent className="py-4">
-            <p className="text-sm text-error">{error}</p>
-          </CardContent>
-        </Card>
-      )}
-
       {currentFeedback && (
         <div className="space-y-4">
           {currentFeedback.band_estimate && (
@@ -270,6 +413,9 @@ export function Writing() {
               <CardContent className="py-4 text-center">
                 <p className="text-sm text-gray-400">Estimated Band Score</p>
                 <p className="text-4xl font-bold text-accent">{currentFeedback.band_estimate}</p>
+                {feedbackSource === 'local' && (
+                  <p className="text-xs text-gray-500 mt-1">(Local estimate — connect API for AI scoring)</p>
+                )}
               </CardContent>
             </Card>
           )}

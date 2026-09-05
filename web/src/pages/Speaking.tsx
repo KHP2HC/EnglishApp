@@ -1,22 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Mic, Volume2, AlertCircle, Clock, ChevronDown } from 'lucide-react'
+import { Mic, Volume2, AlertCircle, Clock, ChevronDown, RotateCcw, CheckCircle2, XCircle } from 'lucide-react'
 import { useSpeechRecognition } from '@/hooks/useSpeech'
 import { loadSpeakingTests, type SpeakingTest } from '@/lib/seed-data'
 
 export function Speaking() {
-  const { speak, startListening, listening, transcript, isSupported, scorePronunciation } = useSpeechRecognition()
+  const { speak, stopSpeaking, startListening, stopListening, listening, transcript, isSupported, scorePronunciation } = useSpeechRecognition()
   const [tests, setTests] = useState<SpeakingTest[]>([])
   const [testIdx, setTestIdx] = useState(0)
   const [partIdx, setPartIdx] = useState(0)
   const [questionIdx, setQuestionIdx] = useState(0)
-  const [result, setResult] = useState<{ accuracy: number; mismatches: string[] } | null>(null)
+  const [result, setResult] = useState<{ accuracy: number; mismatches: string[]; results: { word: string; correct: boolean; suggestion: string | null }[] } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [secondsLeft, setSecondsLeft] = useState(0)
   const [timerActive, setTimerActive] = useState(false)
+  const [timerMode, setTimerMode] = useState<'prep' | 'speak' | null>(null)
   const [loading, setLoading] = useState(true)
   const [showTestList, setShowTestList] = useState(false)
+  const [recordSeconds, setRecordSeconds] = useState(0)
+  const recordIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     loadSpeakingTests()
@@ -27,7 +30,7 @@ export function Speaking() {
       .catch(() => setLoading(false))
   }, [])
 
-  // Timer
+  // Countdown timer
   useEffect(() => {
     if (timerActive && secondsLeft > 0) {
       const t = setTimeout(() => setSecondsLeft((s) => s - 1), 1000)
@@ -35,8 +38,34 @@ export function Speaking() {
     }
     if (timerActive && secondsLeft === 0) {
       setTimerActive(false)
+      if (timerMode === 'prep') {
+        // Auto-switch from prep to speaking time
+        setTimerMode('speak')
+        setSecondsLeft(120)
+        setTimerActive(true)
+      } else if (timerMode === 'speak') {
+        setTimerMode(null)
+      }
     }
-  }, [timerActive, secondsLeft])
+  }, [timerActive, secondsLeft, timerMode])
+
+  // Recording duration counter
+  useEffect(() => {
+    if (listening) {
+      setRecordSeconds(0)
+      recordIntervalRef.current = setInterval(() => {
+        setRecordSeconds((s) => s + 1)
+      }, 1000)
+    } else {
+      if (recordIntervalRef.current) {
+        clearInterval(recordIntervalRef.current)
+        recordIntervalRef.current = null
+      }
+    }
+    return () => {
+      if (recordIntervalRef.current) clearInterval(recordIntervalRef.current)
+    }
+  }, [listening])
 
   if (loading) return <p className="text-gray-400">Loading speaking tests…</p>
   if (tests.length === 0) return <p className="text-gray-400">No speaking tests available.</p>
@@ -48,12 +77,28 @@ export function Speaking() {
 
   const fmtTime = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`
 
-  const startPartTimer = () => {
+  const startPrepTimer = () => {
+    setSecondsLeft(60) // 1 minute prep
+    setTimerActive(true)
+    setTimerMode('prep')
+  }
+
+  const startSpeakTimer = () => {
     setSecondsLeft(part.timeMinutes * 60)
     setTimerActive(true)
+    setTimerMode('speak')
+  }
+
+  const stopTimer = () => {
+    setTimerActive(false)
+    setTimerMode(null)
   }
 
   const handleRecord = async () => {
+    if (listening) {
+      stopListening()
+      return
+    }
     setError(null)
     setResult(null)
     try {
@@ -65,35 +110,39 @@ export function Speaking() {
     }
   }
 
-  const next = () => {
+  const resetResult = () => {
     setResult(null)
     setError(null)
+    stopSpeaking()
+  }
+
+  const next = () => {
+    resetResult()
+    stopTimer()
     if (questionIdx < part.questions.length - 1) {
       setQuestionIdx((i) => i + 1)
     } else if (partIdx < parts.length - 1) {
       setPartIdx((i) => i + 1)
       setQuestionIdx(0)
     } else {
-      // Move to next test, or wrap around
       const nextTestIdx = testIdx < tests.length - 1 ? testIdx + 1 : 0
       setTestIdx(nextTestIdx)
       setPartIdx(0)
       setQuestionIdx(0)
     }
-    setTimerActive(false)
   }
 
   const selectTest = (idx: number) => {
     setTestIdx(idx)
     setPartIdx(0)
     setQuestionIdx(0)
-    setResult(null)
-    setError(null)
-    setTimerActive(false)
+    resetResult()
+    stopTimer()
     setShowTestList(false)
   }
 
   const words = question.split(/\s+/).filter(Boolean)
+  const isPart2 = part?.part === 2
 
   return (
     <div className="space-y-6 max-w-2xl mx-auto">
@@ -101,7 +150,9 @@ export function Speaking() {
         <h1 className="text-2xl font-bold font-heading">🗣️ Speaking Practice</h1>
         <div className={`flex items-center gap-2 font-mono font-bold ${secondsLeft < 30 && timerActive ? 'text-error animate-pulse' : 'text-warning'}`}>
           <Clock className="h-5 w-5" />
-          {fmtTime(secondsLeft)}
+          {timerActive ? fmtTime(secondsLeft) : '--:--'}
+          {timerMode === 'prep' && <span className="text-xs text-gray-400 ml-1">prep</span>}
+          {timerMode === 'speak' && <span className="text-xs text-gray-400 ml-1">speak</span>}
         </div>
       </div>
 
@@ -139,7 +190,7 @@ export function Speaking() {
         {parts.map((p, i) => (
           <button
             key={p.part}
-            onClick={() => { setPartIdx(i); setQuestionIdx(0); setResult(null); setTimerActive(false) }}
+            onClick={() => { setPartIdx(i); setQuestionIdx(0); resetResult(); stopTimer() }}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
               partIdx === i ? 'bg-accent text-white' : 'bg-surface-dark text-gray-400 hover:text-white'
             }`}
@@ -190,10 +241,29 @@ export function Speaking() {
             </p>
           </div>
 
-          {/* Start timer */}
-          {!timerActive && (
-            <Button variant="outline" className="w-full" onClick={startPartTimer}>
+          {/* Part 2: Preparation timer */}
+          {isPart2 && !timerActive && (
+            <Button variant="outline" className="w-full" onClick={startPrepTimer}>
+              <Clock className="h-4 w-4 mr-2" /> Start 1-minute Preparation Timer
+            </Button>
+          )}
+
+          {/* Speaking timer */}
+          {!timerActive && !isPart2 && (
+            <Button variant="outline" className="w-full" onClick={startSpeakTimer}>
               <Clock className="h-4 w-4 mr-2" /> Start {part.timeMinutes}-minute Timer
+            </Button>
+          )}
+          {isPart2 && !timerActive && timerMode === null && (
+            <Button variant="outline" className="w-full" onClick={startSpeakTimer}>
+              <Clock className="h-4 w-4 mr-2" /> Start {part.timeMinutes}-minute Speaking Timer
+            </Button>
+          )}
+
+          {/* Stop timer */}
+          {timerActive && (
+            <Button variant="outline" className="w-full" onClick={stopTimer}>
+              <RotateCcw className="h-4 w-4 mr-2" /> Stop Timer
             </Button>
           )}
 
@@ -205,22 +275,56 @@ export function Speaking() {
           {/* Record button */}
           <Button
             onClick={handleRecord}
-            disabled={listening || !isSupported}
+            disabled={!isSupported}
             className="w-full"
             variant={listening ? 'destructive' : 'default'}
           >
             <Mic className="h-4 w-4 mr-2" />
-            {listening ? 'Listening…' : 'Record & Evaluate'}
+            {listening ? `Listening… ${fmtTime(recordSeconds)}` : 'Record & Evaluate'}
           </Button>
 
           {error && <p className="text-sm text-error">{error}</p>}
 
           {result && (
             <div className="space-y-3">
+              {/* Accuracy score */}
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">{Math.round(result.accuracy)}%</p>
+                <p className="text-4xl font-bold text-accent">{Math.round(result.accuracy)}%</p>
                 <p className="text-sm text-gray-400">Pronunciation Accuracy</p>
               </div>
+
+              {/* Correct / incorrect summary */}
+              <div className="flex items-center justify-center gap-6 text-sm">
+                <span className="flex items-center gap-1 text-success">
+                  <CheckCircle2 className="h-4 w-4" />
+                  {result.results.filter((r) => r.correct).length} correct
+                </span>
+                <span className="flex items-center gap-1 text-error">
+                  <XCircle className="h-4 w-4" />
+                  {result.results.filter((r) => !r.correct).length} to improve
+                </span>
+              </div>
+
+              {/* Word-by-word breakdown */}
+              <div className="rounded-lg border border-border p-3">
+                <p className="text-xs font-medium text-gray-400 mb-2">Word-by-word breakdown:</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {result.results.map((r, i) => (
+                    <span
+                      key={i}
+                      className={`px-2 py-0.5 rounded text-xs ${
+                        r.correct
+                          ? 'bg-success/20 text-success'
+                          : 'bg-error/20 text-error'
+                      }`}
+                      title={r.suggestion ? `Heard: ${r.suggestion}` : undefined}
+                    >
+                      {r.word}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               {result.mismatches.length > 0 && (
                 <p className="text-sm text-warning">
                   Words to practice: {result.mismatches.join(', ')}
