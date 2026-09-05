@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useNotifications } from '@/hooks/useNotifications'
-import { getLevelInfo } from '@/lib/srs'
+import { getLevel } from '@/lib/srs'
 import { profileApi } from '@/api/profile'
 
 export function Settings() {
@@ -19,7 +19,7 @@ export function Settings() {
 
   if (!user) return <p>Loading…</p>
 
-  const levelInfo = getLevelInfo(user.total_xp || 0)
+  const levelInfo = getLevel(user.total_xp || 0)
 
   const save = async () => {
     try {
@@ -53,7 +53,7 @@ export function Settings() {
           </div>
           <div className="flex items-center gap-2 text-sm">
             <span className="text-2xl">{levelInfo.emoji}</span>
-            <span>Level {levelInfo.level} — {levelInfo.name}</span>
+            <span>Level — {levelInfo.name}</span>
             <span className="text-gray-400">({user.total_xp || 0} XP)</span>
           </div>
           <Button onClick={save}>{saved ? '✅ Saved!' : 'Save Changes'}</Button>

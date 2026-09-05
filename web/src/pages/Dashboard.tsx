@@ -6,6 +6,7 @@ import { WordOfDay } from '@/components/dashboard/WordOfDay'
 import { useProgressStats, useDailyActivity } from '@/hooks/useProgress'
 import { useStudyPlan } from '@/hooks/useStudyPlan'
 import { daysUntil, formatDate } from '@/lib/utils'
+import { getLevelProgress } from '@/lib/srs'
 import { format } from 'date-fns'
 import { Brain, Target, Zap, Calendar } from 'lucide-react'
 
@@ -45,6 +46,36 @@ export function Dashboard() {
 
       {/* Streak + XP */}
       <StreakBanner userId={user.id} streak={user.streak_days || 0} />
+
+      {/* Level Progress */}
+      {(() => {
+        const lp = getLevelProgress(user.total_xp || 0)
+        return (
+          <div className="rounded-xl border border-border bg-surface-light dark:bg-surface-dark p-4">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">{lp.current.emoji}</span>
+                <div>
+                  <p className="text-sm font-bold">{lp.current.name}</p>
+                  <p className="text-xs text-gray-400">{user.total_xp || 0} XP</p>
+                </div>
+              </div>
+              {lp.next && (
+                <div className="text-right">
+                  <p className="text-xs text-gray-400">Next: {lp.next.emoji} {lp.next.name}</p>
+                  <p className="text-xs text-gray-500">{lp.xpForNext - lp.xpIntoLevel} XP to go</p>
+                </div>
+              )}
+            </div>
+            <div className="h-2 rounded-full bg-black/20 overflow-hidden">
+              <div
+                className="h-full rounded-full bg-accent transition-all duration-500"
+                style={{ width: `${lp.progress}%` }}
+              />
+            </div>
+          </div>
+        )
+      })()}
 
       {/* Goal Ring + Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

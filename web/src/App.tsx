@@ -6,6 +6,7 @@ import { AppLayout } from '@/components/layout/AppLayout'
 import { Landing } from '@/pages/Landing'
 import { Auth } from '@/pages/Auth'
 import { Onboarding } from '@/pages/Onboarding'
+import { Placement } from '@/pages/Placement'
 import { Dashboard } from '@/pages/Dashboard'
 import { Vocabulary } from '@/pages/Vocabulary'
 import { Grammar } from '@/pages/Grammar'
@@ -96,6 +97,7 @@ export default function App() {
         <Route path="mock-test" element={<MockTest />} />
         <Route path="progress" element={<Progress />} />
         <Route path="planner" element={<Planner />} />
+        <Route path="placement" element={<Placement />} />
         <Route path="settings" element={<Settings />} />
       </Route>
       <Route path="*" element={<Navigate to="/app" replace />} />

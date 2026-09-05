@@ -1,10 +1,12 @@
 import { Flame } from 'lucide-react'
 import { useAuthStore } from '@/stores/auth.store'
 import { useOnlineStatus } from '@/hooks/useNotifications'
+import { getLevel } from '@/lib/srs'
 
 export function TopBar() {
   const { user } = useAuthStore()
   const online = useOnlineStatus()
+  const level = user ? getLevel(user.total_xp || 0) : null
 
   return (
     <header className="flex items-center justify-between px-4 h-16 border-b border-border bg-surface-dark md:hidden">
@@ -17,6 +19,9 @@ export function TopBar() {
       <div className="flex items-center gap-3">
         {!online && (
           <span className="text-xs text-warning">Offline</span>
+        )}
+        {level && (
+          <span className="text-xs text-gray-400 hidden sm:inline">{level.emoji} {level.name}</span>
         )}
         {user && (
           <div className="flex items-center gap-1 text-sm text-white">

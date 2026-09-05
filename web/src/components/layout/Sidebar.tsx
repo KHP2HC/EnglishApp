@@ -6,7 +6,7 @@ import {
 } from 'lucide-react'
 import { useSettingsStore } from '@/stores/settings.store'
 import { useAuthStore } from '@/stores/auth.store'
-import { getLevelInfo } from '@/lib/srs'
+import { getLevel } from '@/lib/srs'
 import { cn } from '@/lib/utils'
 
 const navItems = [
@@ -28,7 +28,7 @@ export function Sidebar() {
   const { user } = useAuthStore()
   const location = useLocation()
 
-  const levelInfo = getLevelInfo(user?.total_xp || 0)
+  const levelInfo = getLevel(user?.total_xp || 0)
 
   return (
     <motion.aside
@@ -95,7 +95,7 @@ export function Sidebar() {
           <span className="text-xl">{levelInfo.emoji}</span>
           {!sidebarCollapsed && (
             <div className="min-w-0">
-              <p className="text-xs text-gray-400">Level {levelInfo.level}</p>
+              <p className="text-xs text-gray-400">{user?.total_xp || 0} XP</p>
               <p className="text-xs font-medium text-white truncate">{levelInfo.name}</p>
             </div>
           )}

@@ -78,7 +78,61 @@ export function calculateXp(
   }
 }
 
-// ── Level System ─────────────────────────────────────────────────────
+// ── Level System ──────────────────────────────────────────────────────
+
+export interface Level {
+  name: string
+  emoji: string
+  minXP: number
+}
+
+export const LEVELS: Level[] = [
+  { name: 'A1 Newcomer', emoji: '🌱', minXP: 0 },
+  { name: 'A2 Explorer', emoji: '🗺️', minXP: 500 },
+  { name: 'B1 Builder', emoji: '🏗️', minXP: 1500 },
+  { name: 'B2 Achiever', emoji: '🎯', minXP: 3500 },
+  { name: 'C1 Expert', emoji: '💡', minXP: 7000 },
+  { name: 'C2 Master', emoji: '👑', minXP: 12000 },
+  { name: 'Exam Ready', emoji: '🎓', minXP: 20000 },
+]
+
+export function getLevel(xp: number): Level {
+  let current = LEVELS[0]
+  for (const level of LEVELS) {
+    if (xp >= level.minXP) current = level
+  }
+  return current
+}
+
+export function getNextLevel(xp: number): Level | null {
+  for (const level of LEVELS) {
+    if (level.minXP > xp) return level
+  }
+  return null
+}
+
+export function getLevelProgress(xp: number): {
+  current: Level
+  next: Level | null
+  progress: number
+  xpIntoLevel: number
+  xpForNext: number
+} {
+  const current = getLevel(xp)
+  const next = getNextLevel(xp)
+
+  if (!next) {
+    return { current, next: null, progress: 100, xpIntoLevel: xp - current.minXP, xpForNext: 0 }
+  }
+
+  const xpIntoLevel = xp - current.minXP
+  const xpForNext = next.minXP - current.minXP
+  const progress = Math.min(100, (xpIntoLevel / xpForNext) * 100)
+
+  return { current, next, progress, xpIntoLevel, xpForNext }
+}
+
+// ── Legacy level info (kept for backward compatibility) ───────────────
 
 export interface LevelInfo {
   name: string
@@ -88,26 +142,16 @@ export interface LevelInfo {
   xpForNext: number
 }
 
-const LEVELS = [
-  { threshold: 0, name: 'A1 Newcomer', emoji: '🌱' },
-  { threshold: 500, name: 'A2 Explorer', emoji: '🗺️' },
-  { threshold: 1500, name: 'B1 Builder', emoji: '🏗️' },
-  { threshold: 3000, name: 'B2 Achiever', emoji: '🎯' },
-  { threshold: 5000, name: 'C1 Expert', emoji: '💡' },
-  { threshold: 8000, name: 'C2 Master', emoji: '👑' },
-  { threshold: 12000, name: 'Exam Ready', emoji: '🎓' },
-]
-
 export function getLevelInfo(totalXp: number): LevelInfo {
   for (let i = LEVELS.length - 1; i >= 0; i--) {
-    if (totalXp >= LEVELS[i].threshold) {
+    if (totalXp >= LEVELS[i].minXP) {
       const next = LEVELS[i + 1]
       return {
         name: LEVELS[i].name,
         emoji: LEVELS[i].emoji,
         level: i + 1,
-        xpInLevel: totalXp - LEVELS[i].threshold,
-        xpForNext: next ? next.threshold - LEVELS[i].threshold : 1000,
+        xpInLevel: totalXp - LEVELS[i].minXP,
+        xpForNext: next ? next.minXP - LEVELS[i].minXP : 1000,
       }
     }
   }
